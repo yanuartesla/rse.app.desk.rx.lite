@@ -1,0 +1,1278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="yakkumdb" targetNamespace="http://tempuri.org/yakkumdb.xsd" xmlns:mstns="http://tempuri.org/yakkumdb.xsd" xmlns="http://tempuri.org/yakkumdb.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="yakkumdatabaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="yakkumdatabaseConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.rse.app.desk.rx.lite.Properties.Settings.GlobalReference.Default.yakkumdatabaseConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RM_KUNJUNGTableAdapter" GeneratorDataComponentClassName="RM_KUNJUNGTableAdapter" Name="RM_KUNJUNG" UserDataComponentName="RM_KUNJUNGTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        RMKUNJUNG.DT_TGL_REG, RMKUNJUNG.VC_JAM_REG, RMKUNJUNG.VC_NO_RM AS Expr1, RMKUNJUNG.VC_K_KLINIK, RMKUNJUNG.VC_K_DOKTER, RMKUNJUNG.IN_NO_URUT, RMKUNJUNG.IN_NO_URUT_DOKTER, 
+                         RMKUNJUNG.VC_K_PNG, RMKUNJUNG.VC_K_INSTANSI, RMKUNJUNG.VC_STATUS, RMKUNJUNG.VC_KARTU_BARU, RMKUNJUNG.VC_RAWAT_INAP, RMKUNJUNG.VC_NO_REG, RMKUNJUNG.VC_KAMAR, 
+                         RMKUNJUNG.VC_NAMA_WALI, RMKUNJUNG.VC_K_HUBUNGAN, RMKUNJUNG.VC_NAMA_IBU, RMKUNJUNG.VC_K_PEKWALI, RMKUNJUNG.VC_NO_REGJ, RMKUNJUNG.VC_NO_REGJ_DOKTER, RMKUNJUNG.VC_DIAGNOSA, 
+                         RMKUNJUNG.VC_KASUS, RMKUNJUNG.VC_RESEP, RMKUNJUNG.VC_NO_BUKTI, RMKUNJUNG.VC_NIK_PNG AS Expr2, RMKUNJUNG.VC_ICDSEBAB, RMKUNJUNG.VC_SEBABMATI, RMKUNJUNG.VC_RUJUKAN, 
+                         RMKUNJUNG.BT_JANJI, RMKUNJUNG.VC_ICD_RAJAL, RMKUNJUNG.VC_SBB_RAJAL, RMKUNJUNG.VC_kd_sumber, RMKUNJUNG.VC_alergi AS Expr3, RMKUNJUNG.VC_Jam_awal, RMKUNJUNG.VC_Proses_awal, 
+                         RMKUNJUNG.VC_Jam_akhir, RMKUNJUNG.VC_Proses_akhir, RMKUNJUNG.VC_printer, RMKUNJUNG.DT_tgl_layan_igd, RMKUNJUNG.VC_jam_layan_igd, RMKUNJUNG.VC_rujukan_Igd, RMKUNJUNG.VC_nama_pgt_igd, 
+                         RMKUNJUNG.VC_alamat_pgt_igd, RMKUNJUNG.VC_NoKTP_pgt_igd, RMKUNJUNG.VC_penyebab_Igd, RMKUNJUNG.DT_tgl_kej_igd, RMKUNJUNG.VC_jam_kej_Igd, RMKUNJUNG.VC_tempat_kej_igd, 
+                         RMKUNJUNG.VC_jam_masuk_igd, RMKUNJUNG.VC_transport_igd, RMKUNJUNG.vc_jenis_kunjungan, RMKUNJUNG.vc_operator, RMKUNJUNG.vc_keterangan_order, RMKUNJUNG.bt_pakai, RMKUNJUNG.dt_create_date, 
+                         RMKUNJUNG.vc_create_time, RMKUNJUNG.vc_anamnese, RMKUNJUNG.vc_hak_akprj, RMKUNJUNG.vc_png_lain, RMPasien.*
+FROM            RMKUNJUNG INNER JOIN
+                         RMPasien ON RMKUNJUNG.VC_NO_RM = RMPasien.vc_no_rm</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DT_TGL_REG" DataSetColumn="DT_TGL_REG" />
+              <Mapping SourceColumn="VC_JAM_REG" DataSetColumn="VC_JAM_REG" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="VC_K_KLINIK" DataSetColumn="VC_K_KLINIK" />
+              <Mapping SourceColumn="VC_K_DOKTER" DataSetColumn="VC_K_DOKTER" />
+              <Mapping SourceColumn="IN_NO_URUT" DataSetColumn="IN_NO_URUT" />
+              <Mapping SourceColumn="IN_NO_URUT_DOKTER" DataSetColumn="IN_NO_URUT_DOKTER" />
+              <Mapping SourceColumn="VC_K_PNG" DataSetColumn="VC_K_PNG" />
+              <Mapping SourceColumn="VC_K_INSTANSI" DataSetColumn="VC_K_INSTANSI" />
+              <Mapping SourceColumn="VC_STATUS" DataSetColumn="VC_STATUS" />
+              <Mapping SourceColumn="VC_KARTU_BARU" DataSetColumn="VC_KARTU_BARU" />
+              <Mapping SourceColumn="VC_RAWAT_INAP" DataSetColumn="VC_RAWAT_INAP" />
+              <Mapping SourceColumn="VC_NO_REG" DataSetColumn="VC_NO_REG" />
+              <Mapping SourceColumn="VC_KAMAR" DataSetColumn="VC_KAMAR" />
+              <Mapping SourceColumn="VC_NAMA_WALI" DataSetColumn="VC_NAMA_WALI" />
+              <Mapping SourceColumn="VC_K_HUBUNGAN" DataSetColumn="VC_K_HUBUNGAN" />
+              <Mapping SourceColumn="VC_NAMA_IBU" DataSetColumn="VC_NAMA_IBU" />
+              <Mapping SourceColumn="VC_K_PEKWALI" DataSetColumn="VC_K_PEKWALI" />
+              <Mapping SourceColumn="VC_NO_REGJ" DataSetColumn="VC_NO_REGJ" />
+              <Mapping SourceColumn="VC_NO_REGJ_DOKTER" DataSetColumn="VC_NO_REGJ_DOKTER" />
+              <Mapping SourceColumn="VC_DIAGNOSA" DataSetColumn="VC_DIAGNOSA" />
+              <Mapping SourceColumn="VC_KASUS" DataSetColumn="VC_KASUS" />
+              <Mapping SourceColumn="VC_RESEP" DataSetColumn="VC_RESEP" />
+              <Mapping SourceColumn="VC_NO_BUKTI" DataSetColumn="VC_NO_BUKTI" />
+              <Mapping SourceColumn="Expr2" DataSetColumn="Expr2" />
+              <Mapping SourceColumn="VC_ICDSEBAB" DataSetColumn="VC_ICDSEBAB" />
+              <Mapping SourceColumn="VC_SEBABMATI" DataSetColumn="VC_SEBABMATI" />
+              <Mapping SourceColumn="VC_RUJUKAN" DataSetColumn="VC_RUJUKAN" />
+              <Mapping SourceColumn="BT_JANJI" DataSetColumn="BT_JANJI" />
+              <Mapping SourceColumn="VC_ICD_RAJAL" DataSetColumn="VC_ICD_RAJAL" />
+              <Mapping SourceColumn="VC_SBB_RAJAL" DataSetColumn="VC_SBB_RAJAL" />
+              <Mapping SourceColumn="VC_kd_sumber" DataSetColumn="VC_kd_sumber" />
+              <Mapping SourceColumn="Expr3" DataSetColumn="Expr3" />
+              <Mapping SourceColumn="VC_Jam_awal" DataSetColumn="VC_Jam_awal" />
+              <Mapping SourceColumn="VC_Proses_awal" DataSetColumn="VC_Proses_awal" />
+              <Mapping SourceColumn="VC_Jam_akhir" DataSetColumn="VC_Jam_akhir" />
+              <Mapping SourceColumn="VC_Proses_akhir" DataSetColumn="VC_Proses_akhir" />
+              <Mapping SourceColumn="VC_printer" DataSetColumn="VC_printer" />
+              <Mapping SourceColumn="DT_tgl_layan_igd" DataSetColumn="DT_tgl_layan_igd" />
+              <Mapping SourceColumn="VC_jam_layan_igd" DataSetColumn="VC_jam_layan_igd" />
+              <Mapping SourceColumn="VC_rujukan_Igd" DataSetColumn="VC_rujukan_Igd" />
+              <Mapping SourceColumn="VC_nama_pgt_igd" DataSetColumn="VC_nama_pgt_igd" />
+              <Mapping SourceColumn="VC_alamat_pgt_igd" DataSetColumn="VC_alamat_pgt_igd" />
+              <Mapping SourceColumn="VC_NoKTP_pgt_igd" DataSetColumn="VC_NoKTP_pgt_igd" />
+              <Mapping SourceColumn="VC_penyebab_Igd" DataSetColumn="VC_penyebab_Igd" />
+              <Mapping SourceColumn="DT_tgl_kej_igd" DataSetColumn="DT_tgl_kej_igd" />
+              <Mapping SourceColumn="VC_jam_kej_Igd" DataSetColumn="VC_jam_kej_Igd" />
+              <Mapping SourceColumn="VC_tempat_kej_igd" DataSetColumn="VC_tempat_kej_igd" />
+              <Mapping SourceColumn="VC_jam_masuk_igd" DataSetColumn="VC_jam_masuk_igd" />
+              <Mapping SourceColumn="VC_transport_igd" DataSetColumn="VC_transport_igd" />
+              <Mapping SourceColumn="vc_jenis_kunjungan" DataSetColumn="vc_jenis_kunjungan" />
+              <Mapping SourceColumn="vc_operator" DataSetColumn="vc_operator" />
+              <Mapping SourceColumn="vc_keterangan_order" DataSetColumn="vc_keterangan_order" />
+              <Mapping SourceColumn="bt_pakai" DataSetColumn="bt_pakai" />
+              <Mapping SourceColumn="dt_create_date" DataSetColumn="dt_create_date" />
+              <Mapping SourceColumn="vc_create_time" DataSetColumn="vc_create_time" />
+              <Mapping SourceColumn="vc_anamnese" DataSetColumn="vc_anamnese" />
+              <Mapping SourceColumn="vc_hak_akprj" DataSetColumn="vc_hak_akprj" />
+              <Mapping SourceColumn="vc_png_lain" DataSetColumn="vc_png_lain" />
+              <Mapping SourceColumn="vc_no_rm" DataSetColumn="vc_no_rm" />
+              <Mapping SourceColumn="vc_nama_p" DataSetColumn="vc_nama_p" />
+              <Mapping SourceColumn="vc_jenis_k" DataSetColumn="vc_jenis_k" />
+              <Mapping SourceColumn="vc_tp_lhr" DataSetColumn="vc_tp_lhr" />
+              <Mapping SourceColumn="dt_tgl_lhr" DataSetColumn="dt_tgl_lhr" />
+              <Mapping SourceColumn="in_umurth" DataSetColumn="in_umurth" />
+              <Mapping SourceColumn="in_umurbl" DataSetColumn="in_umurbl" />
+              <Mapping SourceColumn="in_umurhr" DataSetColumn="in_umurhr" />
+              <Mapping SourceColumn="vc_gol_d" DataSetColumn="vc_gol_d" />
+              <Mapping SourceColumn="vc_k_agm" DataSetColumn="vc_k_agm" />
+              <Mapping SourceColumn="vc_alamat" DataSetColumn="vc_alamat" />
+              <Mapping SourceColumn="vc_telpon" DataSetColumn="vc_telpon" />
+              <Mapping SourceColumn="vc_k_pos" DataSetColumn="vc_k_pos" />
+              <Mapping SourceColumn="vc_kelurahan" DataSetColumn="vc_kelurahan" />
+              <Mapping SourceColumn="vc_kecamatan" DataSetColumn="vc_kecamatan" />
+              <Mapping SourceColumn="vc_kota" DataSetColumn="vc_kota" />
+              <Mapping SourceColumn="vc_k_negara" DataSetColumn="vc_k_negara" />
+              <Mapping SourceColumn="vc_turis" DataSetColumn="vc_turis" />
+              <Mapping SourceColumn="vc_wni" DataSetColumn="vc_wni" />
+              <Mapping SourceColumn="vc_k_pek" DataSetColumn="vc_k_pek" />
+              <Mapping SourceColumn="vc_k_pend" DataSetColumn="vc_k_pend" />
+              <Mapping SourceColumn="vc_k_status" DataSetColumn="vc_k_status" />
+              <Mapping SourceColumn="dt_tgl_daf" DataSetColumn="dt_tgl_daf" />
+              <Mapping SourceColumn="vc_alergi" DataSetColumn="vc_alergi" />
+              <Mapping SourceColumn="in_thn_pr" DataSetColumn="in_thn_pr" />
+              <Mapping SourceColumn="vc_is_pgw" DataSetColumn="vc_is_pgw" />
+              <Mapping SourceColumn="vc_nik" DataSetColumn="vc_nik" />
+              <Mapping SourceColumn="vc_k_lunasan" DataSetColumn="vc_k_lunasan" />
+              <Mapping SourceColumn="vc_k_askes" DataSetColumn="vc_k_askes" />
+              <Mapping SourceColumn="vc_propinsi" DataSetColumn="vc_propinsi" />
+              <Mapping SourceColumn="vc_normgabung" DataSetColumn="vc_normgabung" />
+              <Mapping SourceColumn="vc_k_kota" DataSetColumn="vc_k_kota" />
+              <Mapping SourceColumn="vc_k_prop" DataSetColumn="vc_k_prop" />
+              <Mapping SourceColumn="vc_nik_png" DataSetColumn="vc_nik_png" />
+              <Mapping SourceColumn="vc_alamat2" DataSetColumn="vc_alamat2" />
+              <Mapping SourceColumn="vc_fax" DataSetColumn="vc_fax" />
+              <Mapping SourceColumn="vc_email" DataSetColumn="vc_email" />
+              <Mapping SourceColumn="vc_status_kry" DataSetColumn="vc_status_kry" />
+              <Mapping SourceColumn="bt_kary" DataSetColumn="bt_kary" />
+              <Mapping SourceColumn="vc_kode_camat" DataSetColumn="vc_kode_camat" />
+              <Mapping SourceColumn="vc_k_kota_l" DataSetColumn="vc_k_kota_l" />
+              <Mapping SourceColumn="vc_pengunjung" DataSetColumn="vc_pengunjung" />
+              <Mapping SourceColumn="vc_b20" DataSetColumn="vc_b20" />
+              <Mapping SourceColumn="vc_BB" DataSetColumn="vc_BB" />
+              <Mapping SourceColumn="vc_TB" DataSetColumn="vc_TB" />
+              <Mapping SourceColumn="bt_retensi" DataSetColumn="bt_retensi" />
+              <Mapping SourceColumn="vc_no_hp" DataSetColumn="vc_no_hp" />
+              <Mapping SourceColumn="bt_kartu" DataSetColumn="bt_kartu" />
+              <Mapping SourceColumn="vc_no_peserta_bpjs" DataSetColumn="vc_no_peserta_bpjs" />
+              <Mapping SourceColumn="vc_ket_sosial" DataSetColumn="vc_ket_sosial" />
+              <Mapping SourceColumn="vc_kd_cacat" DataSetColumn="vc_kd_cacat" />
+              <Mapping SourceColumn="VC_KET_KOMPLAIN" DataSetColumn="VC_KET_KOMPLAIN" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByKlinik" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByKlinik" GeneratorSourceName="FillByKlinik" GetMethodModifier="Public" GetMethodName="GetDataByKlinik" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByKlinik" UserSourceName="FillByKlinik">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        RMKUNJUNG.DT_TGL_REG, RMKUNJUNG.VC_JAM_REG, RMKUNJUNG.VC_NO_RM AS NO_RM, RMKUNJUNG.VC_K_KLINIK, RMKUNJUNG.VC_K_DOKTER, RMKUNJUNG.IN_NO_URUT, RMKUNJUNG.IN_NO_URUT_DOKTER, 
+                         RMKUNJUNG.VC_K_PNG, RMKUNJUNG.VC_K_INSTANSI, RMKUNJUNG.VC_STATUS, RMKUNJUNG.VC_KARTU_BARU, RMKUNJUNG.VC_RAWAT_INAP, RMKUNJUNG.VC_NO_REG, RMKUNJUNG.VC_KAMAR, 
+                         RMKUNJUNG.VC_NAMA_WALI, RMKUNJUNG.VC_K_HUBUNGAN, RMKUNJUNG.VC_NAMA_IBU, RMKUNJUNG.VC_K_PEKWALI, RMKUNJUNG.VC_NO_REGJ, RMKUNJUNG.VC_NO_REGJ_DOKTER, RMKUNJUNG.VC_DIAGNOSA, 
+                         RMKUNJUNG.VC_KASUS, RMKUNJUNG.VC_RESEP, RMKUNJUNG.VC_NO_BUKTI, RMKUNJUNG.VC_NIK_PNG AS PNG, RMKUNJUNG.VC_ICDSEBAB, RMKUNJUNG.VC_SEBABMATI, RMKUNJUNG.VC_RUJUKAN, 
+                         RMKUNJUNG.BT_JANJI, RMKUNJUNG.VC_ICD_RAJAL, RMKUNJUNG.VC_SBB_RAJAL, RMKUNJUNG.VC_kd_sumber, RMKUNJUNG.VC_alergi AS ALRGI, RMKUNJUNG.VC_Jam_awal, RMKUNJUNG.VC_Proses_awal, 
+                         RMKUNJUNG.VC_Jam_akhir, RMKUNJUNG.VC_Proses_akhir, RMKUNJUNG.VC_printer, RMKUNJUNG.DT_tgl_layan_igd, RMKUNJUNG.VC_jam_layan_igd, RMKUNJUNG.VC_rujukan_Igd, RMKUNJUNG.VC_nama_pgt_igd, 
+                         RMKUNJUNG.VC_alamat_pgt_igd, RMKUNJUNG.VC_NoKTP_pgt_igd, RMKUNJUNG.VC_penyebab_Igd, RMKUNJUNG.DT_tgl_kej_igd, RMKUNJUNG.VC_jam_kej_Igd, RMKUNJUNG.VC_tempat_kej_igd, 
+                         RMKUNJUNG.VC_jam_masuk_igd, RMKUNJUNG.VC_transport_igd, RMKUNJUNG.vc_jenis_kunjungan, RMKUNJUNG.vc_operator, RMKUNJUNG.vc_keterangan_order, RMKUNJUNG.bt_pakai, RMKUNJUNG.dt_create_date, 
+                         RMKUNJUNG.vc_create_time, RMKUNJUNG.vc_anamnese, RMKUNJUNG.vc_hak_akprj, RMKUNJUNG.vc_png_lain, RMPasien.vc_no_rm, RMPasien.vc_nama_p, RMPasien.vc_jenis_k, RMPasien.vc_tp_lhr, 
+                         RMPasien.dt_tgl_lhr, RMPasien.in_umurth, RMPasien.in_umurbl, RMPasien.in_umurhr, RMPasien.vc_gol_d, RMPasien.vc_k_agm, RMPasien.vc_alamat, RMPasien.vc_telpon, RMPasien.vc_k_pos, RMPasien.vc_kelurahan, 
+                         RMPasien.vc_kecamatan, RMPasien.vc_kota, RMPasien.vc_k_negara, RMPasien.vc_turis, RMPasien.vc_wni, RMPasien.vc_k_pek, RMPasien.vc_k_pend, RMPasien.vc_k_status, RMPasien.dt_tgl_daf, RMPasien.vc_alergi, 
+                         RMPasien.in_thn_pr, RMPasien.vc_is_pgw, RMPasien.vc_nik, RMPasien.vc_k_lunasan, RMPasien.vc_k_askes, RMPasien.vc_propinsi, RMPasien.vc_normgabung, RMPasien.vc_k_kota, RMPasien.vc_k_prop, 
+                         RMPasien.vc_nik_png, RMPasien.vc_alamat2, RMPasien.vc_fax, RMPasien.vc_email, RMPasien.vc_status_kry, RMPasien.bt_kary, RMPasien.vc_kode_camat, RMPasien.vc_k_kota_l, RMPasien.vc_pengunjung, 
+                         RMPasien.vc_b20, RMPasien.vc_BB, RMPasien.vc_TB, RMPasien.bt_retensi, RMPasien.vc_no_hp, RMPasien.bt_kartu, RMPasien.vc_no_peserta_bpjs, RMPasien.vc_ket_sosial, RMPasien.vc_kd_cacat, 
+                         RMPasien.VC_KET_KOMPLAIN
+FROM            RMKUNJUNG LEFT OUTER JOIN
+                         RMPasien ON RMKUNJUNG.VC_NO_RM = RMPasien.vc_no_rm
+WHERE        (RMKUNJUNG.VC_K_KLINIK = '0200') AND (YEAR(RMKUNJUNG.DT_TGL_REG) = YEAR(GETDATE())) AND (MONTH(RMKUNJUNG.DT_TGL_REG) = MONTH(GETDATE())) AND (DAY(RMKUNJUNG.DT_TGL_REG) = 7) AND 
+                         (RMKUNJUNG.VC_K_DOKTER = '0201')
+ORDER BY RMKUNJUNG.DT_TGL_REG</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="view_rse_fa_obatTableAdapter" GeneratorDataComponentClassName="view_rse_fa_obatTableAdapter" Name="view_rse_fa_obat" UserDataComponentName="view_rse_fa_obatTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="yakkumdatabase.dbo.view_rse_fa_obat" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        retensi_per_kasus, fornas, kodefornas, vc_kodeobat, vc_namaobat, vc_satuan_pb, satuan_pb, vc_satuan_ps, satuan_ps, vc_kemasan, vc_golongan, nama_golongan, vc_jenis, jenis, fl_kekuatan, bt_racik, 
+                         CAST(retensi_per_kasus AS varchar(10)) + ' ' + satuan_pb AS retensi_full
+FROM            view_rse_fa_obat</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="retensi_per_kasus" DataSetColumn="retensi_per_kasus" />
+              <Mapping SourceColumn="fornas" DataSetColumn="fornas" />
+              <Mapping SourceColumn="kodefornas" DataSetColumn="kodefornas" />
+              <Mapping SourceColumn="vc_kodeobat" DataSetColumn="vc_kodeobat" />
+              <Mapping SourceColumn="vc_namaobat" DataSetColumn="vc_namaobat" />
+              <Mapping SourceColumn="vc_satuan_pb" DataSetColumn="vc_satuan_pb" />
+              <Mapping SourceColumn="satuan_pb" DataSetColumn="satuan_pb" />
+              <Mapping SourceColumn="vc_satuan_ps" DataSetColumn="vc_satuan_ps" />
+              <Mapping SourceColumn="satuan_ps" DataSetColumn="satuan_ps" />
+              <Mapping SourceColumn="vc_kemasan" DataSetColumn="vc_kemasan" />
+              <Mapping SourceColumn="vc_golongan" DataSetColumn="vc_golongan" />
+              <Mapping SourceColumn="nama_golongan" DataSetColumn="nama_golongan" />
+              <Mapping SourceColumn="vc_jenis" DataSetColumn="vc_jenis" />
+              <Mapping SourceColumn="jenis" DataSetColumn="jenis" />
+              <Mapping SourceColumn="fl_kekuatan" DataSetColumn="fl_kekuatan" />
+              <Mapping SourceColumn="bt_racik" DataSetColumn="bt_racik" />
+              <Mapping SourceColumn="retensi_full" DataSetColumn="retensi_full" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="yakkumdatabase.dbo.view_rse_fa_obat" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByKodeobat" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByKodeobat" GeneratorSourceName="FillByKodeobat" GetMethodModifier="Public" GetMethodName="GetDataByKodeobat" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByKodeobat" UserSourceName="FillByKodeobat">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT bt_racik, fl_kekuatan, fornas, jenis, kodefornas, nama_golongan, retensi_per_kasus, satuan_pb, satuan_ps, vc_golongan, vc_jenis, vc_kemasan, vc_kodeobat, vc_namaobat, vc_satuan_pb, vc_satuan_ps FROM view_rse_fa_obat WHERE (kodefornas &gt;= 2) AND (vc_kodeobat = @kode_obat)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="kode_obat" ColumnName="vc_kodeobat" DataSourceName="yakkumdatabase.dbo.view_rse_fa_obat" DataTypeServer="varchar(6)" DbType="AnsiString" Direction="Input" ParameterName="@kode_obat" Precision="0" ProviderType="VarChar" Scale="0" Size="6" SourceColumn="vc_kodeobat" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="yakkumdatabase.dbo.view_rse_fa_obat" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByNamaObat" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByNamaObat" GeneratorSourceName="FillByNamaObat" GetMethodModifier="Public" GetMethodName="GetDataByNamaObat" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByNamaObat" UserSourceName="FillByNamaObat">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CAST(retensi_per_kasus AS varchar(10)) + ' ' + satuan_pb AS retensi_full, bt_racik, fl_kekuatan, fornas, jenis, kodefornas, nama_golongan, retensi_per_kasus, satuan_pb, satuan_ps, vc_golongan, vc_jenis, vc_kemasan, 
+                         vc_kodeobat, vc_namaobat, vc_satuan_pb, vc_satuan_ps
+FROM            view_rse_fa_obat
+WHERE        (vc_namaobat = @namaobat)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="namaobat" ColumnName="vc_namaobat" DataSourceName="yakkumdatabase.dbo.view_rse_fa_obat" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@namaobat" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="vc_namaobat" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="resep_hTableAdapter" GeneratorDataComponentClassName="resep_hTableAdapter" Name="resep_h" UserDataComponentName="resep_hTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="yakkumdatabase.dbo.fa_rx_resep_h" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id, vc_kode_rx, vc_no_reg, vc_no_rm, vc_k_dokter, vc_k_klinik, vc_status
+FROM            fa_rx_resep_h</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="vc_no_reg" DataSetColumn="vc_no_reg" />
+              <Mapping SourceColumn="vc_kode_rx" DataSetColumn="vc_kode_rx" />
+              <Mapping SourceColumn="vc_no_rm" DataSetColumn="vc_no_rm" />
+              <Mapping SourceColumn="vc_k_dokter" DataSetColumn="vc_k_dokter" />
+              <Mapping SourceColumn="vc_k_klinik" DataSetColumn="vc_k_klinik" />
+              <Mapping SourceColumn="vc_status" DataSetColumn="vc_status" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO fa_rx_resep_h
+                         (vc_kode_rx, vc_no_reg, vc_no_rm, vc_k_dokter, vc_k_klinik, vc_status)
+VALUES        (@koderx,@noreg,@norm,@kdokter,@kklinik,@status)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="koderx" ColumnName="vc_kode_rx" DataSourceName="" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@koderx" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="vc_kode_rx" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="noreg" ColumnName="vc_no_reg" DataSourceName="" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@noreg" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="vc_no_reg" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="norm" ColumnName="vc_no_rm" DataSourceName="" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@norm" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="vc_no_rm" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="kdokter" ColumnName="vc_k_dokter" DataSourceName="" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@kdokter" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="vc_k_dokter" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="kklinik" ColumnName="vc_k_klinik" DataSourceName="" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@kklinik" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="vc_k_klinik" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="status" ColumnName="vc_status" DataSourceName="" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@status" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="vc_status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpsertQuery" Modifier="Public" Name="UpsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpsertQuery">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>--MERGE SQL statement - Part 2
+--Synchronize the target table with
+--refreshed data from source table
+MERGE dbo.[fa_rx_resep_h] AS TARGET
+USING (SELECT @koderx,@noreg,@norm,@kdokter,@kklinik,@status)
+AS SOURCE (vc_kode_rx, vc_no_reg, vc_no_rm, vc_k_dokter, vc_k_klinik, vc_status)
+ON (TARGET.vc_kode_rx = SOURCE.vc_kode_rx ) 
+--When records are matched, update 
+--the records if there is any change
+WHEN MATCHED 
+
+THEN 
+UPDATE SET 
+
+TARGET.vc_kode_rx = SOURCE.vc_kode_rx,
+TARGET.vc_no_reg = SOURCE.vc_no_reg,
+TARGET.vc_no_rm = SOURCE.vc_no_rm,
+TARGET.vc_k_dokter = SOURCE.vc_k_dokter,
+TARGET.vc_k_klinik = SOURCE.vc_k_klinik,
+TARGET.vc_status = SOURCE.vc_status
+
+
+--When no records are matched, insert
+--the incoming records from source
+--table to target table
+WHEN NOT MATCHED BY TARGET THEN 
+INSERT ( vc_kode_rx,vc_no_reg,vc_no_rm,vc_k_dokter,vc_k_klinik,vc_status) 
+VALUES ( SOURCE.vc_kode_rx
+      ,SOURCE.vc_no_reg
+     ,SOURCE.vc_no_rm
+	 ,SOURCE.vc_k_dokter
+	 ,SOURCE.vc_k_klinik
+	 ,SOURCE.vc_status
+      );
+
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" ColumnName="@koderx" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@koderx" Precision="0" Scale="0" Size="0" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" ColumnName="@noreg" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@noreg" Precision="0" Scale="0" Size="0" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" ColumnName="@norm" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@norm" Precision="0" Scale="0" Size="0" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" ColumnName="@kdokter" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@kdokter" Precision="0" Scale="0" Size="0" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" ColumnName="@kklinik" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@kklinik" Precision="0" Scale="0" Size="0" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" ColumnName="@status" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@status" Precision="0" Scale="0" Size="0" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="fa_rx_resep_dTableAdapter" GeneratorDataComponentClassName="fa_rx_resep_dTableAdapter" Name="fa_rx_resep_d" UserDataComponentName="fa_rx_resep_dTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        fa_rx_resep_d.id, fa_rx_resep_d.vc_kode_rx, fa_rx_resep_d.vc_kode_rx_d, fa_rx_resep_d.vc_kode_obat, fa_rx_resep_d.vc_kode_racikan, fa_rx_resep_d.bt_racikan, fa_rx_resep_d.num_dd1, fa_rx_resep_d.num_dd2, 
+                         fa_rx_resep_d.vc_signalain, fa_rx_resep_d.bt_iter, fa_rx_resep_d.num_jmliter, fa_rx_resep_d.bt_fav, view_rse_fa_obat.vc_namaobat, view_rse_fa_obat.nama_golongan
+FROM            fa_rx_resep_d LEFT OUTER JOIN
+                         view_rse_fa_obat ON fa_rx_resep_d.vc_kode_obat = view_rse_fa_obat.vc_kodeobat</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="vc_kode_rx" DataSetColumn="vc_kode_rx" />
+              <Mapping SourceColumn="vc_kode_rx_d" DataSetColumn="vc_kode_rx_d" />
+              <Mapping SourceColumn="vc_kode_obat" DataSetColumn="vc_kode_obat" />
+              <Mapping SourceColumn="vc_kode_racikan" DataSetColumn="vc_kode_racikan" />
+              <Mapping SourceColumn="bt_racikan" DataSetColumn="bt_racikan" />
+              <Mapping SourceColumn="num_dd1" DataSetColumn="num_dd1" />
+              <Mapping SourceColumn="num_dd2" DataSetColumn="num_dd2" />
+              <Mapping SourceColumn="vc_signalain" DataSetColumn="vc_signalain" />
+              <Mapping SourceColumn="bt_iter" DataSetColumn="bt_iter" />
+              <Mapping SourceColumn="num_jmliter" DataSetColumn="num_jmliter" />
+              <Mapping SourceColumn="bt_fav" DataSetColumn="bt_fav" />
+              <Mapping SourceColumn="vc_namaobat" DataSetColumn="vc_namaobat" />
+              <Mapping SourceColumn="nama_golongan" DataSetColumn="nama_golongan" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO [fa_rx_resep_d] ( [vc_kode_rx], [vc_kode_rx_d], [vc_kode_obat], [vc_kode_racikan], [bt_racikan], [num_dd1], [num_dd2], [vc_signalain], [bt_iter], [num_jmliter], [bt_fav]) VALUES ( @vc_kode_rx, @vc_kode_rx_d, @vc_kode_obat, @vc_kode_racikan, @bt_racikan, @num_dd1, @num_dd2, @vc_signalain, @bt_iter, @num_jmliter, @bt_fav)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="vc_kode_rx" ColumnName="vc_kode_rx" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@vc_kode_rx" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="vc_kode_rx" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="vc_kode_rx_d" ColumnName="vc_kode_rx_d" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@vc_kode_rx_d" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="vc_kode_rx_d" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="vc_kode_obat" ColumnName="vc_kode_obat" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@vc_kode_obat" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="vc_kode_obat" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="vc_kode_racikan" ColumnName="vc_kode_racikan" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@vc_kode_racikan" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="vc_kode_racikan" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="bt_racikan" ColumnName="bt_racikan" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@bt_racikan" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="bt_racikan" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="num_dd1" ColumnName="num_dd1" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@num_dd1" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="num_dd1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="num_dd2" ColumnName="num_dd2" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@num_dd2" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="num_dd2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="vc_signalain" ColumnName="vc_signalain" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@vc_signalain" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="vc_signalain" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="bt_iter" ColumnName="bt_iter" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@bt_iter" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="bt_iter" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="num_jmliter" ColumnName="num_jmliter" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@num_jmliter" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="num_jmliter" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="bt_fav" ColumnName="bt_fav" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@bt_fav" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="bt_fav" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="yakkumdb" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="yakkumdb" msprop:Generator_UserDSName="yakkumdb">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RM_KUNJUNG" msprop:Generator_TableClassName="RM_KUNJUNGDataTable" msprop:Generator_TableVarName="tableRM_KUNJUNG" msprop:Generator_RowChangedName="RM_KUNJUNGRowChanged" msprop:Generator_TablePropName="RM_KUNJUNG" msprop:Generator_RowDeletingName="RM_KUNJUNGRowDeleting" msprop:Generator_RowChangingName="RM_KUNJUNGRowChanging" msprop:Generator_RowEvHandlerName="RM_KUNJUNGRowChangeEventHandler" msprop:Generator_RowDeletedName="RM_KUNJUNGRowDeleted" msprop:Generator_RowClassName="RM_KUNJUNGRow" msprop:Generator_UserTableName="RM_KUNJUNG" msprop:Generator_RowEvArgName="RM_KUNJUNGRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DT_TGL_REG" msprop:Generator_ColumnVarNameInTable="columnDT_TGL_REG" msprop:Generator_ColumnPropNameInRow="DT_TGL_REG" msprop:Generator_ColumnPropNameInTable="DT_TGL_REGColumn" msprop:Generator_UserColumnName="DT_TGL_REG" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="VC_JAM_REG" msprop:Generator_ColumnVarNameInTable="columnVC_JAM_REG" msprop:Generator_ColumnPropNameInRow="VC_JAM_REG" msprop:Generator_ColumnPropNameInTable="VC_JAM_REGColumn" msprop:Generator_UserColumnName="VC_JAM_REG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_K_KLINIK" msprop:Generator_ColumnVarNameInTable="columnVC_K_KLINIK" msprop:Generator_ColumnPropNameInRow="VC_K_KLINIK" msprop:Generator_ColumnPropNameInTable="VC_K_KLINIKColumn" msprop:Generator_UserColumnName="VC_K_KLINIK" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_K_DOKTER" msprop:Generator_ColumnVarNameInTable="columnVC_K_DOKTER" msprop:Generator_ColumnPropNameInRow="VC_K_DOKTER" msprop:Generator_ColumnPropNameInTable="VC_K_DOKTERColumn" msprop:Generator_UserColumnName="VC_K_DOKTER" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IN_NO_URUT" msprop:Generator_ColumnVarNameInTable="columnIN_NO_URUT" msprop:Generator_ColumnPropNameInRow="IN_NO_URUT" msprop:Generator_ColumnPropNameInTable="IN_NO_URUTColumn" msprop:Generator_UserColumnName="IN_NO_URUT" type="xs:int" minOccurs="0" />
+              <xs:element name="IN_NO_URUT_DOKTER" msprop:Generator_ColumnVarNameInTable="columnIN_NO_URUT_DOKTER" msprop:Generator_ColumnPropNameInRow="IN_NO_URUT_DOKTER" msprop:Generator_ColumnPropNameInTable="IN_NO_URUT_DOKTERColumn" msprop:Generator_UserColumnName="IN_NO_URUT_DOKTER" type="xs:int" minOccurs="0" />
+              <xs:element name="VC_K_PNG" msprop:Generator_ColumnVarNameInTable="columnVC_K_PNG" msprop:Generator_ColumnPropNameInRow="VC_K_PNG" msprop:Generator_ColumnPropNameInTable="VC_K_PNGColumn" msprop:Generator_UserColumnName="VC_K_PNG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_K_INSTANSI" msprop:Generator_ColumnVarNameInTable="columnVC_K_INSTANSI" msprop:Generator_ColumnPropNameInRow="VC_K_INSTANSI" msprop:Generator_ColumnPropNameInTable="VC_K_INSTANSIColumn" msprop:Generator_UserColumnName="VC_K_INSTANSI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_STATUS" msprop:Generator_ColumnVarNameInTable="columnVC_STATUS" msprop:Generator_ColumnPropNameInRow="VC_STATUS" msprop:Generator_ColumnPropNameInTable="VC_STATUSColumn" msprop:Generator_UserColumnName="VC_STATUS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_KARTU_BARU" msprop:Generator_ColumnVarNameInTable="columnVC_KARTU_BARU" msprop:Generator_ColumnPropNameInRow="VC_KARTU_BARU" msprop:Generator_ColumnPropNameInTable="VC_KARTU_BARUColumn" msprop:Generator_UserColumnName="VC_KARTU_BARU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_RAWAT_INAP" msprop:Generator_ColumnVarNameInTable="columnVC_RAWAT_INAP" msprop:Generator_ColumnPropNameInRow="VC_RAWAT_INAP" msprop:Generator_ColumnPropNameInTable="VC_RAWAT_INAPColumn" msprop:Generator_UserColumnName="VC_RAWAT_INAP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_NO_REG" msprop:Generator_ColumnVarNameInTable="columnVC_NO_REG" msprop:Generator_ColumnPropNameInRow="VC_NO_REG" msprop:Generator_ColumnPropNameInTable="VC_NO_REGColumn" msprop:Generator_UserColumnName="VC_NO_REG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="9" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_KAMAR" msprop:Generator_ColumnVarNameInTable="columnVC_KAMAR" msprop:Generator_ColumnPropNameInRow="VC_KAMAR" msprop:Generator_ColumnPropNameInTable="VC_KAMARColumn" msprop:Generator_UserColumnName="VC_KAMAR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_NAMA_WALI" msprop:Generator_ColumnVarNameInTable="columnVC_NAMA_WALI" msprop:Generator_ColumnPropNameInRow="VC_NAMA_WALI" msprop:Generator_ColumnPropNameInTable="VC_NAMA_WALIColumn" msprop:Generator_UserColumnName="VC_NAMA_WALI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_K_HUBUNGAN" msprop:Generator_ColumnVarNameInTable="columnVC_K_HUBUNGAN" msprop:Generator_ColumnPropNameInRow="VC_K_HUBUNGAN" msprop:Generator_ColumnPropNameInTable="VC_K_HUBUNGANColumn" msprop:Generator_UserColumnName="VC_K_HUBUNGAN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_NAMA_IBU" msprop:Generator_ColumnVarNameInTable="columnVC_NAMA_IBU" msprop:Generator_ColumnPropNameInRow="VC_NAMA_IBU" msprop:Generator_ColumnPropNameInTable="VC_NAMA_IBUColumn" msprop:Generator_UserColumnName="VC_NAMA_IBU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_K_PEKWALI" msprop:Generator_ColumnVarNameInTable="columnVC_K_PEKWALI" msprop:Generator_ColumnPropNameInRow="VC_K_PEKWALI" msprop:Generator_ColumnPropNameInTable="VC_K_PEKWALIColumn" msprop:Generator_UserColumnName="VC_K_PEKWALI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_NO_REGJ" msprop:Generator_ColumnVarNameInTable="columnVC_NO_REGJ" msprop:Generator_ColumnPropNameInRow="VC_NO_REGJ" msprop:Generator_ColumnPropNameInTable="VC_NO_REGJColumn" msprop:Generator_UserColumnName="VC_NO_REGJ" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_NO_REGJ_DOKTER" msprop:Generator_ColumnVarNameInTable="columnVC_NO_REGJ_DOKTER" msprop:Generator_ColumnPropNameInRow="VC_NO_REGJ_DOKTER" msprop:Generator_ColumnPropNameInTable="VC_NO_REGJ_DOKTERColumn" msprop:Generator_UserColumnName="VC_NO_REGJ_DOKTER" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="17" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_DIAGNOSA" msprop:Generator_ColumnVarNameInTable="columnVC_DIAGNOSA" msprop:Generator_ColumnPropNameInRow="VC_DIAGNOSA" msprop:Generator_ColumnPropNameInTable="VC_DIAGNOSAColumn" msprop:Generator_UserColumnName="VC_DIAGNOSA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_KASUS" msprop:Generator_ColumnVarNameInTable="columnVC_KASUS" msprop:Generator_ColumnPropNameInRow="VC_KASUS" msprop:Generator_ColumnPropNameInTable="VC_KASUSColumn" msprop:Generator_UserColumnName="VC_KASUS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_RESEP" msprop:Generator_ColumnVarNameInTable="columnVC_RESEP" msprop:Generator_ColumnPropNameInRow="VC_RESEP" msprop:Generator_ColumnPropNameInTable="VC_RESEPColumn" msprop:Generator_UserColumnName="VC_RESEP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_NO_BUKTI" msprop:Generator_ColumnVarNameInTable="columnVC_NO_BUKTI" msprop:Generator_ColumnPropNameInRow="VC_NO_BUKTI" msprop:Generator_ColumnPropNameInTable="VC_NO_BUKTIColumn" msprop:Generator_UserColumnName="VC_NO_BUKTI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr2" msprop:Generator_ColumnVarNameInTable="columnExpr2" msprop:Generator_ColumnPropNameInRow="Expr2" msprop:Generator_ColumnPropNameInTable="Expr2Column" msprop:Generator_UserColumnName="Expr2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_ICDSEBAB" msprop:Generator_ColumnVarNameInTable="columnVC_ICDSEBAB" msprop:Generator_ColumnPropNameInRow="VC_ICDSEBAB" msprop:Generator_ColumnPropNameInTable="VC_ICDSEBABColumn" msprop:Generator_UserColumnName="VC_ICDSEBAB" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_SEBABMATI" msprop:Generator_ColumnVarNameInTable="columnVC_SEBABMATI" msprop:Generator_ColumnPropNameInRow="VC_SEBABMATI" msprop:Generator_ColumnPropNameInTable="VC_SEBABMATIColumn" msprop:Generator_UserColumnName="VC_SEBABMATI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_RUJUKAN" msprop:Generator_ColumnVarNameInTable="columnVC_RUJUKAN" msprop:Generator_ColumnPropNameInRow="VC_RUJUKAN" msprop:Generator_ColumnPropNameInTable="VC_RUJUKANColumn" msprop:Generator_UserColumnName="VC_RUJUKAN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BT_JANJI" msprop:Generator_ColumnVarNameInTable="columnBT_JANJI" msprop:Generator_ColumnPropNameInRow="BT_JANJI" msprop:Generator_ColumnPropNameInTable="BT_JANJIColumn" msprop:Generator_UserColumnName="BT_JANJI" type="xs:boolean" minOccurs="0" />
+              <xs:element name="VC_ICD_RAJAL" msprop:Generator_ColumnVarNameInTable="columnVC_ICD_RAJAL" msprop:Generator_ColumnPropNameInRow="VC_ICD_RAJAL" msprop:Generator_ColumnPropNameInTable="VC_ICD_RAJALColumn" msprop:Generator_UserColumnName="VC_ICD_RAJAL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_SBB_RAJAL" msprop:Generator_ColumnVarNameInTable="columnVC_SBB_RAJAL" msprop:Generator_ColumnPropNameInRow="VC_SBB_RAJAL" msprop:Generator_ColumnPropNameInTable="VC_SBB_RAJALColumn" msprop:Generator_UserColumnName="VC_SBB_RAJAL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_kd_sumber" msprop:Generator_ColumnVarNameInTable="columnVC_kd_sumber" msprop:Generator_ColumnPropNameInRow="VC_kd_sumber" msprop:Generator_ColumnPropNameInTable="VC_kd_sumberColumn" msprop:Generator_UserColumnName="VC_kd_sumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr3" msprop:Generator_ColumnVarNameInTable="columnExpr3" msprop:Generator_ColumnPropNameInRow="Expr3" msprop:Generator_ColumnPropNameInTable="Expr3Column" msprop:Generator_UserColumnName="Expr3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_Jam_awal" msprop:Generator_ColumnVarNameInTable="columnVC_Jam_awal" msprop:Generator_ColumnPropNameInRow="VC_Jam_awal" msprop:Generator_ColumnPropNameInTable="VC_Jam_awalColumn" msprop:Generator_UserColumnName="VC_Jam_awal" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_Proses_awal" msprop:Generator_ColumnVarNameInTable="columnVC_Proses_awal" msprop:Generator_ColumnPropNameInRow="VC_Proses_awal" msprop:Generator_ColumnPropNameInTable="VC_Proses_awalColumn" msprop:Generator_UserColumnName="VC_Proses_awal" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_Jam_akhir" msprop:Generator_ColumnVarNameInTable="columnVC_Jam_akhir" msprop:Generator_ColumnPropNameInRow="VC_Jam_akhir" msprop:Generator_ColumnPropNameInTable="VC_Jam_akhirColumn" msprop:Generator_UserColumnName="VC_Jam_akhir" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_Proses_akhir" msprop:Generator_ColumnVarNameInTable="columnVC_Proses_akhir" msprop:Generator_ColumnPropNameInRow="VC_Proses_akhir" msprop:Generator_ColumnPropNameInTable="VC_Proses_akhirColumn" msprop:Generator_UserColumnName="VC_Proses_akhir" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_printer" msprop:Generator_ColumnVarNameInTable="columnVC_printer" msprop:Generator_ColumnPropNameInRow="VC_printer" msprop:Generator_ColumnPropNameInTable="VC_printerColumn" msprop:Generator_UserColumnName="VC_printer" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DT_tgl_layan_igd" msprop:Generator_ColumnVarNameInTable="columnDT_tgl_layan_igd" msprop:Generator_ColumnPropNameInRow="DT_tgl_layan_igd" msprop:Generator_ColumnPropNameInTable="DT_tgl_layan_igdColumn" msprop:Generator_UserColumnName="DT_tgl_layan_igd" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="VC_jam_layan_igd" msprop:Generator_ColumnVarNameInTable="columnVC_jam_layan_igd" msprop:Generator_ColumnPropNameInRow="VC_jam_layan_igd" msprop:Generator_ColumnPropNameInTable="VC_jam_layan_igdColumn" msprop:Generator_UserColumnName="VC_jam_layan_igd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_rujukan_Igd" msprop:Generator_ColumnVarNameInTable="columnVC_rujukan_Igd" msprop:Generator_ColumnPropNameInRow="VC_rujukan_Igd" msprop:Generator_ColumnPropNameInTable="VC_rujukan_IgdColumn" msprop:Generator_UserColumnName="VC_rujukan_Igd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_nama_pgt_igd" msprop:Generator_ColumnVarNameInTable="columnVC_nama_pgt_igd" msprop:Generator_ColumnPropNameInRow="VC_nama_pgt_igd" msprop:Generator_ColumnPropNameInTable="VC_nama_pgt_igdColumn" msprop:Generator_UserColumnName="VC_nama_pgt_igd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_alamat_pgt_igd" msprop:Generator_ColumnVarNameInTable="columnVC_alamat_pgt_igd" msprop:Generator_ColumnPropNameInRow="VC_alamat_pgt_igd" msprop:Generator_ColumnPropNameInTable="VC_alamat_pgt_igdColumn" msprop:Generator_UserColumnName="VC_alamat_pgt_igd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_NoKTP_pgt_igd" msprop:Generator_ColumnVarNameInTable="columnVC_NoKTP_pgt_igd" msprop:Generator_ColumnPropNameInRow="VC_NoKTP_pgt_igd" msprop:Generator_ColumnPropNameInTable="VC_NoKTP_pgt_igdColumn" msprop:Generator_UserColumnName="VC_NoKTP_pgt_igd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_penyebab_Igd" msprop:Generator_ColumnVarNameInTable="columnVC_penyebab_Igd" msprop:Generator_ColumnPropNameInRow="VC_penyebab_Igd" msprop:Generator_ColumnPropNameInTable="VC_penyebab_IgdColumn" msprop:Generator_UserColumnName="VC_penyebab_Igd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DT_tgl_kej_igd" msprop:Generator_ColumnVarNameInTable="columnDT_tgl_kej_igd" msprop:Generator_ColumnPropNameInRow="DT_tgl_kej_igd" msprop:Generator_ColumnPropNameInTable="DT_tgl_kej_igdColumn" msprop:Generator_UserColumnName="DT_tgl_kej_igd" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="VC_jam_kej_Igd" msprop:Generator_ColumnVarNameInTable="columnVC_jam_kej_Igd" msprop:Generator_ColumnPropNameInRow="VC_jam_kej_Igd" msprop:Generator_ColumnPropNameInTable="VC_jam_kej_IgdColumn" msprop:Generator_UserColumnName="VC_jam_kej_Igd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_tempat_kej_igd" msprop:Generator_ColumnVarNameInTable="columnVC_tempat_kej_igd" msprop:Generator_ColumnPropNameInRow="VC_tempat_kej_igd" msprop:Generator_ColumnPropNameInTable="VC_tempat_kej_igdColumn" msprop:Generator_UserColumnName="VC_tempat_kej_igd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_jam_masuk_igd" msprop:Generator_ColumnVarNameInTable="columnVC_jam_masuk_igd" msprop:Generator_ColumnPropNameInRow="VC_jam_masuk_igd" msprop:Generator_ColumnPropNameInTable="VC_jam_masuk_igdColumn" msprop:Generator_UserColumnName="VC_jam_masuk_igd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_transport_igd" msprop:Generator_ColumnVarNameInTable="columnVC_transport_igd" msprop:Generator_ColumnPropNameInRow="VC_transport_igd" msprop:Generator_ColumnPropNameInTable="VC_transport_igdColumn" msprop:Generator_UserColumnName="VC_transport_igd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_jenis_kunjungan" msprop:Generator_ColumnVarNameInTable="columnvc_jenis_kunjungan" msprop:Generator_ColumnPropNameInRow="vc_jenis_kunjungan" msprop:Generator_ColumnPropNameInTable="vc_jenis_kunjunganColumn" msprop:Generator_UserColumnName="vc_jenis_kunjungan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_operator" msprop:Generator_ColumnVarNameInTable="columnvc_operator" msprop:Generator_ColumnPropNameInRow="vc_operator" msprop:Generator_ColumnPropNameInTable="vc_operatorColumn" msprop:Generator_UserColumnName="vc_operator" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_keterangan_order" msprop:Generator_ColumnVarNameInTable="columnvc_keterangan_order" msprop:Generator_ColumnPropNameInRow="vc_keterangan_order" msprop:Generator_ColumnPropNameInTable="vc_keterangan_orderColumn" msprop:Generator_UserColumnName="vc_keterangan_order" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="bt_pakai" msprop:Generator_ColumnVarNameInTable="columnbt_pakai" msprop:Generator_ColumnPropNameInRow="bt_pakai" msprop:Generator_ColumnPropNameInTable="bt_pakaiColumn" msprop:Generator_UserColumnName="bt_pakai" type="xs:boolean" minOccurs="0" />
+              <xs:element name="dt_create_date" msprop:Generator_ColumnVarNameInTable="columndt_create_date" msprop:Generator_ColumnPropNameInRow="dt_create_date" msprop:Generator_ColumnPropNameInTable="dt_create_dateColumn" msprop:Generator_UserColumnName="dt_create_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="vc_create_time" msprop:Generator_ColumnVarNameInTable="columnvc_create_time" msprop:Generator_ColumnPropNameInRow="vc_create_time" msprop:Generator_ColumnPropNameInTable="vc_create_timeColumn" msprop:Generator_UserColumnName="vc_create_time" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_anamnese" msprop:Generator_ColumnVarNameInTable="columnvc_anamnese" msprop:Generator_ColumnPropNameInRow="vc_anamnese" msprop:Generator_ColumnPropNameInTable="vc_anamneseColumn" msprop:Generator_UserColumnName="vc_anamnese" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_hak_akprj" msprop:Generator_ColumnVarNameInTable="columnvc_hak_akprj" msprop:Generator_ColumnPropNameInRow="vc_hak_akprj" msprop:Generator_ColumnPropNameInTable="vc_hak_akprjColumn" msprop:Generator_UserColumnName="vc_hak_akprj" type="xs:boolean" minOccurs="0" />
+              <xs:element name="vc_png_lain" msprop:Generator_ColumnVarNameInTable="columnvc_png_lain" msprop:Generator_ColumnPropNameInRow="vc_png_lain" msprop:Generator_ColumnPropNameInTable="vc_png_lainColumn" msprop:Generator_UserColumnName="vc_png_lain" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_no_rm" msprop:Generator_ColumnVarNameInTable="columnvc_no_rm" msprop:Generator_ColumnPropNameInRow="vc_no_rm" msprop:Generator_ColumnPropNameInTable="vc_no_rmColumn" msprop:Generator_UserColumnName="vc_no_rm" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_nama_p" msprop:Generator_ColumnVarNameInTable="columnvc_nama_p" msprop:Generator_ColumnPropNameInRow="vc_nama_p" msprop:Generator_ColumnPropNameInTable="vc_nama_pColumn" msprop:Generator_UserColumnName="vc_nama_p" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_jenis_k" msprop:Generator_ColumnVarNameInTable="columnvc_jenis_k" msprop:Generator_ColumnPropNameInRow="vc_jenis_k" msprop:Generator_ColumnPropNameInTable="vc_jenis_kColumn" msprop:Generator_UserColumnName="vc_jenis_k" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_tp_lhr" msprop:Generator_ColumnVarNameInTable="columnvc_tp_lhr" msprop:Generator_ColumnPropNameInRow="vc_tp_lhr" msprop:Generator_ColumnPropNameInTable="vc_tp_lhrColumn" msprop:Generator_UserColumnName="vc_tp_lhr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dt_tgl_lhr" msprop:Generator_ColumnVarNameInTable="columndt_tgl_lhr" msprop:Generator_ColumnPropNameInRow="dt_tgl_lhr" msprop:Generator_ColumnPropNameInTable="dt_tgl_lhrColumn" msprop:Generator_UserColumnName="dt_tgl_lhr" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="in_umurth" msprop:Generator_ColumnVarNameInTable="columnin_umurth" msprop:Generator_ColumnPropNameInRow="in_umurth" msprop:Generator_ColumnPropNameInTable="in_umurthColumn" msprop:Generator_UserColumnName="in_umurth" type="xs:int" minOccurs="0" />
+              <xs:element name="in_umurbl" msprop:Generator_ColumnVarNameInTable="columnin_umurbl" msprop:Generator_ColumnPropNameInRow="in_umurbl" msprop:Generator_ColumnPropNameInTable="in_umurblColumn" msprop:Generator_UserColumnName="in_umurbl" type="xs:int" minOccurs="0" />
+              <xs:element name="in_umurhr" msprop:Generator_ColumnVarNameInTable="columnin_umurhr" msprop:Generator_ColumnPropNameInRow="in_umurhr" msprop:Generator_ColumnPropNameInTable="in_umurhrColumn" msprop:Generator_UserColumnName="in_umurhr" type="xs:int" minOccurs="0" />
+              <xs:element name="vc_gol_d" msprop:Generator_ColumnVarNameInTable="columnvc_gol_d" msprop:Generator_ColumnPropNameInRow="vc_gol_d" msprop:Generator_ColumnPropNameInTable="vc_gol_dColumn" msprop:Generator_UserColumnName="vc_gol_d" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_k_agm" msprop:Generator_ColumnVarNameInTable="columnvc_k_agm" msprop:Generator_ColumnPropNameInRow="vc_k_agm" msprop:Generator_ColumnPropNameInTable="vc_k_agmColumn" msprop:Generator_UserColumnName="vc_k_agm" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_alamat" msprop:Generator_ColumnVarNameInTable="columnvc_alamat" msprop:Generator_ColumnPropNameInRow="vc_alamat" msprop:Generator_ColumnPropNameInTable="vc_alamatColumn" msprop:Generator_UserColumnName="vc_alamat" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_telpon" msprop:Generator_ColumnVarNameInTable="columnvc_telpon" msprop:Generator_ColumnPropNameInRow="vc_telpon" msprop:Generator_ColumnPropNameInTable="vc_telponColumn" msprop:Generator_UserColumnName="vc_telpon" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_k_pos" msprop:Generator_ColumnVarNameInTable="columnvc_k_pos" msprop:Generator_ColumnPropNameInRow="vc_k_pos" msprop:Generator_ColumnPropNameInTable="vc_k_posColumn" msprop:Generator_UserColumnName="vc_k_pos" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_kelurahan" msprop:Generator_ColumnVarNameInTable="columnvc_kelurahan" msprop:Generator_ColumnPropNameInRow="vc_kelurahan" msprop:Generator_ColumnPropNameInTable="vc_kelurahanColumn" msprop:Generator_UserColumnName="vc_kelurahan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_kecamatan" msprop:Generator_ColumnVarNameInTable="columnvc_kecamatan" msprop:Generator_ColumnPropNameInRow="vc_kecamatan" msprop:Generator_ColumnPropNameInTable="vc_kecamatanColumn" msprop:Generator_UserColumnName="vc_kecamatan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_kota" msprop:Generator_ColumnVarNameInTable="columnvc_kota" msprop:Generator_ColumnPropNameInRow="vc_kota" msprop:Generator_ColumnPropNameInTable="vc_kotaColumn" msprop:Generator_UserColumnName="vc_kota" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_k_negara" msprop:Generator_ColumnVarNameInTable="columnvc_k_negara" msprop:Generator_ColumnPropNameInRow="vc_k_negara" msprop:Generator_ColumnPropNameInTable="vc_k_negaraColumn" msprop:Generator_UserColumnName="vc_k_negara" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_turis" msprop:Generator_ColumnVarNameInTable="columnvc_turis" msprop:Generator_ColumnPropNameInRow="vc_turis" msprop:Generator_ColumnPropNameInTable="vc_turisColumn" msprop:Generator_UserColumnName="vc_turis" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_wni" msprop:Generator_ColumnVarNameInTable="columnvc_wni" msprop:Generator_ColumnPropNameInRow="vc_wni" msprop:Generator_ColumnPropNameInTable="vc_wniColumn" msprop:Generator_UserColumnName="vc_wni" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_k_pek" msprop:Generator_ColumnVarNameInTable="columnvc_k_pek" msprop:Generator_ColumnPropNameInRow="vc_k_pek" msprop:Generator_ColumnPropNameInTable="vc_k_pekColumn" msprop:Generator_UserColumnName="vc_k_pek" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_k_pend" msprop:Generator_ColumnVarNameInTable="columnvc_k_pend" msprop:Generator_ColumnPropNameInRow="vc_k_pend" msprop:Generator_ColumnPropNameInTable="vc_k_pendColumn" msprop:Generator_UserColumnName="vc_k_pend" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_k_status" msprop:Generator_ColumnVarNameInTable="columnvc_k_status" msprop:Generator_ColumnPropNameInRow="vc_k_status" msprop:Generator_ColumnPropNameInTable="vc_k_statusColumn" msprop:Generator_UserColumnName="vc_k_status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dt_tgl_daf" msprop:Generator_ColumnVarNameInTable="columndt_tgl_daf" msprop:Generator_ColumnPropNameInRow="dt_tgl_daf" msprop:Generator_ColumnPropNameInTable="dt_tgl_dafColumn" msprop:Generator_UserColumnName="dt_tgl_daf" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="vc_alergi" msprop:Generator_ColumnVarNameInTable="columnvc_alergi" msprop:Generator_ColumnPropNameInRow="vc_alergi" msprop:Generator_ColumnPropNameInTable="vc_alergiColumn" msprop:Generator_UserColumnName="vc_alergi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="in_thn_pr" msprop:Generator_ColumnVarNameInTable="columnin_thn_pr" msprop:Generator_ColumnPropNameInRow="in_thn_pr" msprop:Generator_ColumnPropNameInTable="in_thn_prColumn" msprop:Generator_UserColumnName="in_thn_pr" type="xs:int" minOccurs="0" />
+              <xs:element name="vc_is_pgw" msprop:Generator_ColumnVarNameInTable="columnvc_is_pgw" msprop:Generator_ColumnPropNameInRow="vc_is_pgw" msprop:Generator_ColumnPropNameInTable="vc_is_pgwColumn" msprop:Generator_UserColumnName="vc_is_pgw" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_nik" msprop:Generator_ColumnVarNameInTable="columnvc_nik" msprop:Generator_ColumnPropNameInRow="vc_nik" msprop:Generator_ColumnPropNameInTable="vc_nikColumn" msprop:Generator_UserColumnName="vc_nik" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_k_lunasan" msprop:Generator_ColumnVarNameInTable="columnvc_k_lunasan" msprop:Generator_ColumnPropNameInRow="vc_k_lunasan" msprop:Generator_ColumnPropNameInTable="vc_k_lunasanColumn" msprop:Generator_UserColumnName="vc_k_lunasan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_k_askes" msprop:Generator_ColumnVarNameInTable="columnvc_k_askes" msprop:Generator_ColumnPropNameInRow="vc_k_askes" msprop:Generator_ColumnPropNameInTable="vc_k_askesColumn" msprop:Generator_UserColumnName="vc_k_askes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_propinsi" msprop:Generator_ColumnVarNameInTable="columnvc_propinsi" msprop:Generator_ColumnPropNameInRow="vc_propinsi" msprop:Generator_ColumnPropNameInTable="vc_propinsiColumn" msprop:Generator_UserColumnName="vc_propinsi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_normgabung" msprop:Generator_ColumnVarNameInTable="columnvc_normgabung" msprop:Generator_ColumnPropNameInRow="vc_normgabung" msprop:Generator_ColumnPropNameInTable="vc_normgabungColumn" msprop:Generator_UserColumnName="vc_normgabung" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_k_kota" msprop:Generator_ColumnVarNameInTable="columnvc_k_kota" msprop:Generator_ColumnPropNameInRow="vc_k_kota" msprop:Generator_ColumnPropNameInTable="vc_k_kotaColumn" msprop:Generator_UserColumnName="vc_k_kota" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_k_prop" msprop:Generator_ColumnVarNameInTable="columnvc_k_prop" msprop:Generator_ColumnPropNameInRow="vc_k_prop" msprop:Generator_ColumnPropNameInTable="vc_k_propColumn" msprop:Generator_UserColumnName="vc_k_prop" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_nik_png" msprop:Generator_ColumnVarNameInTable="columnvc_nik_png" msprop:Generator_ColumnPropNameInRow="vc_nik_png" msprop:Generator_ColumnPropNameInTable="vc_nik_pngColumn" msprop:Generator_UserColumnName="vc_nik_png" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_alamat2" msprop:Generator_ColumnVarNameInTable="columnvc_alamat2" msprop:Generator_ColumnPropNameInRow="vc_alamat2" msprop:Generator_ColumnPropNameInTable="vc_alamat2Column" msprop:Generator_UserColumnName="vc_alamat2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_fax" msprop:Generator_ColumnVarNameInTable="columnvc_fax" msprop:Generator_ColumnPropNameInRow="vc_fax" msprop:Generator_ColumnPropNameInTable="vc_faxColumn" msprop:Generator_UserColumnName="vc_fax" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_email" msprop:Generator_ColumnVarNameInTable="columnvc_email" msprop:Generator_ColumnPropNameInRow="vc_email" msprop:Generator_ColumnPropNameInTable="vc_emailColumn" msprop:Generator_UserColumnName="vc_email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_status_kry" msprop:Generator_ColumnVarNameInTable="columnvc_status_kry" msprop:Generator_ColumnPropNameInRow="vc_status_kry" msprop:Generator_ColumnPropNameInTable="vc_status_kryColumn" msprop:Generator_UserColumnName="vc_status_kry" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="bt_kary" msprop:Generator_ColumnVarNameInTable="columnbt_kary" msprop:Generator_ColumnPropNameInRow="bt_kary" msprop:Generator_ColumnPropNameInTable="bt_karyColumn" msprop:Generator_UserColumnName="bt_kary" type="xs:boolean" minOccurs="0" />
+              <xs:element name="vc_kode_camat" msprop:Generator_ColumnVarNameInTable="columnvc_kode_camat" msprop:Generator_ColumnPropNameInRow="vc_kode_camat" msprop:Generator_ColumnPropNameInTable="vc_kode_camatColumn" msprop:Generator_UserColumnName="vc_kode_camat" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_k_kota_l" msprop:Generator_ColumnVarNameInTable="columnvc_k_kota_l" msprop:Generator_ColumnPropNameInRow="vc_k_kota_l" msprop:Generator_ColumnPropNameInTable="vc_k_kota_lColumn" msprop:Generator_UserColumnName="vc_k_kota_l" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_pengunjung" msprop:Generator_ColumnVarNameInTable="columnvc_pengunjung" msprop:Generator_ColumnPropNameInRow="vc_pengunjung" msprop:Generator_ColumnPropNameInTable="vc_pengunjungColumn" msprop:Generator_UserColumnName="vc_pengunjung" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_b20" msprop:Generator_ColumnVarNameInTable="columnvc_b20" msprop:Generator_ColumnPropNameInRow="vc_b20" msprop:Generator_ColumnPropNameInTable="vc_b20Column" msprop:Generator_UserColumnName="vc_b20" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_BB" msprop:Generator_ColumnVarNameInTable="columnvc_BB" msprop:Generator_ColumnPropNameInRow="vc_BB" msprop:Generator_ColumnPropNameInTable="vc_BBColumn" msprop:Generator_UserColumnName="vc_BB" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_TB" msprop:Generator_ColumnVarNameInTable="columnvc_TB" msprop:Generator_ColumnPropNameInRow="vc_TB" msprop:Generator_ColumnPropNameInTable="vc_TBColumn" msprop:Generator_UserColumnName="vc_TB" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="bt_retensi" msprop:Generator_ColumnVarNameInTable="columnbt_retensi" msprop:Generator_ColumnPropNameInRow="bt_retensi" msprop:Generator_ColumnPropNameInTable="bt_retensiColumn" msprop:Generator_UserColumnName="bt_retensi" type="xs:boolean" minOccurs="0" />
+              <xs:element name="vc_no_hp" msprop:Generator_ColumnVarNameInTable="columnvc_no_hp" msprop:Generator_ColumnPropNameInRow="vc_no_hp" msprop:Generator_ColumnPropNameInTable="vc_no_hpColumn" msprop:Generator_UserColumnName="vc_no_hp" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="bt_kartu" msprop:Generator_ColumnVarNameInTable="columnbt_kartu" msprop:Generator_ColumnPropNameInRow="bt_kartu" msprop:Generator_ColumnPropNameInTable="bt_kartuColumn" msprop:Generator_UserColumnName="bt_kartu" type="xs:boolean" minOccurs="0" />
+              <xs:element name="vc_no_peserta_bpjs" msprop:Generator_ColumnVarNameInTable="columnvc_no_peserta_bpjs" msprop:Generator_ColumnPropNameInRow="vc_no_peserta_bpjs" msprop:Generator_ColumnPropNameInTable="vc_no_peserta_bpjsColumn" msprop:Generator_UserColumnName="vc_no_peserta_bpjs" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_ket_sosial" msprop:Generator_ColumnVarNameInTable="columnvc_ket_sosial" msprop:Generator_ColumnPropNameInRow="vc_ket_sosial" msprop:Generator_ColumnPropNameInTable="vc_ket_sosialColumn" msprop:Generator_UserColumnName="vc_ket_sosial" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_kd_cacat" msprop:Generator_ColumnVarNameInTable="columnvc_kd_cacat" msprop:Generator_ColumnPropNameInRow="vc_kd_cacat" msprop:Generator_ColumnPropNameInTable="vc_kd_cacatColumn" msprop:Generator_UserColumnName="vc_kd_cacat" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VC_KET_KOMPLAIN" msprop:Generator_ColumnVarNameInTable="columnVC_KET_KOMPLAIN" msprop:Generator_ColumnPropNameInRow="VC_KET_KOMPLAIN" msprop:Generator_ColumnPropNameInTable="VC_KET_KOMPLAINColumn" msprop:Generator_UserColumnName="VC_KET_KOMPLAIN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="view_rse_fa_obat" msprop:Generator_TableClassName="view_rse_fa_obatDataTable" msprop:Generator_TableVarName="tableview_rse_fa_obat" msprop:Generator_TablePropName="view_rse_fa_obat" msprop:Generator_RowDeletingName="view_rse_fa_obatRowDeleting" msprop:Generator_RowChangingName="view_rse_fa_obatRowChanging" msprop:Generator_RowEvHandlerName="view_rse_fa_obatRowChangeEventHandler" msprop:Generator_RowDeletedName="view_rse_fa_obatRowDeleted" msprop:Generator_UserTableName="view_rse_fa_obat" msprop:Generator_RowChangedName="view_rse_fa_obatRowChanged" msprop:Generator_RowEvArgName="view_rse_fa_obatRowChangeEvent" msprop:Generator_RowClassName="view_rse_fa_obatRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="retensi_per_kasus" msprop:Generator_ColumnVarNameInTable="columnretensi_per_kasus" msprop:Generator_ColumnPropNameInRow="retensi_per_kasus" msprop:Generator_ColumnPropNameInTable="retensi_per_kasusColumn" msprop:Generator_UserColumnName="retensi_per_kasus" type="xs:decimal" minOccurs="0" />
+              <xs:element name="fornas" msprop:Generator_ColumnVarNameInTable="columnfornas" msprop:Generator_ColumnPropNameInRow="fornas" msprop:Generator_ColumnPropNameInTable="fornasColumn" msprop:Generator_UserColumnName="fornas" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="kodefornas" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnkodefornas" msprop:Generator_ColumnPropNameInRow="kodefornas" msprop:Generator_ColumnPropNameInTable="kodefornasColumn" msprop:Generator_UserColumnName="kodefornas" type="xs:int" minOccurs="0" />
+              <xs:element name="vc_kodeobat" msprop:Generator_ColumnVarNameInTable="columnvc_kodeobat" msprop:Generator_ColumnPropNameInRow="vc_kodeobat" msprop:Generator_ColumnPropNameInTable="vc_kodeobatColumn" msprop:Generator_UserColumnName="vc_kodeobat">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_namaobat" msprop:Generator_ColumnVarNameInTable="columnvc_namaobat" msprop:Generator_ColumnPropNameInRow="vc_namaobat" msprop:Generator_ColumnPropNameInTable="vc_namaobatColumn" msprop:Generator_UserColumnName="vc_namaobat" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_satuan_pb" msprop:Generator_ColumnVarNameInTable="columnvc_satuan_pb" msprop:Generator_ColumnPropNameInRow="vc_satuan_pb" msprop:Generator_ColumnPropNameInTable="vc_satuan_pbColumn" msprop:Generator_UserColumnName="vc_satuan_pb" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="satuan_pb" msprop:Generator_ColumnVarNameInTable="columnsatuan_pb" msprop:Generator_ColumnPropNameInRow="satuan_pb" msprop:Generator_ColumnPropNameInTable="satuan_pbColumn" msprop:Generator_UserColumnName="satuan_pb" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_satuan_ps" msprop:Generator_ColumnVarNameInTable="columnvc_satuan_ps" msprop:Generator_ColumnPropNameInRow="vc_satuan_ps" msprop:Generator_ColumnPropNameInTable="vc_satuan_psColumn" msprop:Generator_UserColumnName="vc_satuan_ps" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="satuan_ps" msprop:Generator_ColumnVarNameInTable="columnsatuan_ps" msprop:Generator_ColumnPropNameInRow="satuan_ps" msprop:Generator_ColumnPropNameInTable="satuan_psColumn" msprop:Generator_UserColumnName="satuan_ps" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_kemasan" msprop:Generator_ColumnVarNameInTable="columnvc_kemasan" msprop:Generator_ColumnPropNameInRow="vc_kemasan" msprop:Generator_ColumnPropNameInTable="vc_kemasanColumn" msprop:Generator_UserColumnName="vc_kemasan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_golongan" msprop:Generator_ColumnVarNameInTable="columnvc_golongan" msprop:Generator_ColumnPropNameInRow="vc_golongan" msprop:Generator_ColumnPropNameInTable="vc_golonganColumn" msprop:Generator_UserColumnName="vc_golongan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nama_golongan" msprop:Generator_ColumnVarNameInTable="columnnama_golongan" msprop:Generator_ColumnPropNameInRow="nama_golongan" msprop:Generator_ColumnPropNameInTable="nama_golonganColumn" msprop:Generator_UserColumnName="nama_golongan">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_jenis" msprop:Generator_ColumnVarNameInTable="columnvc_jenis" msprop:Generator_ColumnPropNameInRow="vc_jenis" msprop:Generator_ColumnPropNameInTable="vc_jenisColumn" msprop:Generator_UserColumnName="vc_jenis" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="jenis" msprop:Generator_ColumnVarNameInTable="columnjenis" msprop:Generator_ColumnPropNameInRow="jenis" msprop:Generator_ColumnPropNameInTable="jenisColumn" msprop:Generator_UserColumnName="jenis" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fl_kekuatan" msprop:Generator_ColumnVarNameInTable="columnfl_kekuatan" msprop:Generator_ColumnPropNameInRow="fl_kekuatan" msprop:Generator_ColumnPropNameInTable="fl_kekuatanColumn" msprop:Generator_UserColumnName="fl_kekuatan" type="xs:double" minOccurs="0" />
+              <xs:element name="bt_racik" msprop:Generator_ColumnVarNameInTable="columnbt_racik" msprop:Generator_ColumnPropNameInRow="bt_racik" msprop:Generator_ColumnPropNameInTable="bt_racikColumn" msprop:Generator_UserColumnName="bt_racik" type="xs:boolean" minOccurs="0" />
+              <xs:element name="retensi_full" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnretensi_full" msprop:Generator_ColumnPropNameInRow="retensi_full" msprop:Generator_ColumnPropNameInTable="retensi_fullColumn" msprop:Generator_UserColumnName="retensi_full" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="61" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="resep_h" msprop:Generator_TableClassName="resep_hDataTable" msprop:Generator_TableVarName="tableresep_h" msprop:Generator_TablePropName="resep_h" msprop:Generator_RowDeletingName="resep_hRowDeleting" msprop:Generator_RowChangingName="resep_hRowChanging" msprop:Generator_RowEvHandlerName="resep_hRowChangeEventHandler" msprop:Generator_RowDeletedName="resep_hRowDeleted" msprop:Generator_UserTableName="resep_h" msprop:Generator_RowChangedName="resep_hRowChanged" msprop:Generator_RowEvArgName="resep_hRowChangeEvent" msprop:Generator_RowClassName="resep_hRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="vc_no_reg" msprop:Generator_ColumnVarNameInTable="columnvc_no_reg" msprop:Generator_ColumnPropNameInRow="vc_no_reg" msprop:Generator_ColumnPropNameInTable="vc_no_regColumn" msprop:Generator_UserColumnName="vc_no_reg" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_kode_rx" msprop:Generator_ColumnVarNameInTable="columnvc_kode_rx" msprop:Generator_ColumnPropNameInRow="vc_kode_rx" msprop:Generator_ColumnPropNameInTable="vc_kode_rxColumn" msprop:Generator_UserColumnName="vc_kode_rx" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_no_rm" msprop:Generator_ColumnVarNameInTable="columnvc_no_rm" msprop:Generator_ColumnPropNameInRow="vc_no_rm" msprop:Generator_ColumnPropNameInTable="vc_no_rmColumn" msprop:Generator_UserColumnName="vc_no_rm" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_k_dokter" msprop:Generator_ColumnVarNameInTable="columnvc_k_dokter" msprop:Generator_ColumnPropNameInRow="vc_k_dokter" msprop:Generator_ColumnPropNameInTable="vc_k_dokterColumn" msprop:Generator_UserColumnName="vc_k_dokter" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_k_klinik" msprop:Generator_ColumnVarNameInTable="columnvc_k_klinik" msprop:Generator_ColumnPropNameInRow="vc_k_klinik" msprop:Generator_ColumnPropNameInTable="vc_k_klinikColumn" msprop:Generator_UserColumnName="vc_k_klinik" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_status" msprop:Generator_ColumnVarNameInTable="columnvc_status" msprop:Generator_ColumnPropNameInRow="vc_status" msprop:Generator_ColumnPropNameInTable="vc_statusColumn" msprop:Generator_UserColumnName="vc_status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="fa_rx_resep_d" msprop:Generator_TableClassName="fa_rx_resep_dDataTable" msprop:Generator_TableVarName="tablefa_rx_resep_d" msprop:Generator_TablePropName="fa_rx_resep_d" msprop:Generator_RowDeletingName="fa_rx_resep_dRowDeleting" msprop:Generator_RowChangingName="fa_rx_resep_dRowChanging" msprop:Generator_RowEvHandlerName="fa_rx_resep_dRowChangeEventHandler" msprop:Generator_RowDeletedName="fa_rx_resep_dRowDeleted" msprop:Generator_UserTableName="fa_rx_resep_d" msprop:Generator_RowChangedName="fa_rx_resep_dRowChanged" msprop:Generator_RowEvArgName="fa_rx_resep_dRowChangeEvent" msprop:Generator_RowClassName="fa_rx_resep_dRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="vc_kode_rx" msprop:Generator_ColumnVarNameInTable="columnvc_kode_rx" msprop:Generator_ColumnPropNameInRow="vc_kode_rx" msprop:Generator_ColumnPropNameInTable="vc_kode_rxColumn" msprop:Generator_UserColumnName="vc_kode_rx" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_kode_rx_d" msprop:Generator_ColumnVarNameInTable="columnvc_kode_rx_d" msprop:Generator_ColumnPropNameInRow="vc_kode_rx_d" msprop:Generator_ColumnPropNameInTable="vc_kode_rx_dColumn" msprop:Generator_UserColumnName="vc_kode_rx_d" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_kode_obat" msprop:Generator_ColumnVarNameInTable="columnvc_kode_obat" msprop:Generator_ColumnPropNameInRow="vc_kode_obat" msprop:Generator_ColumnPropNameInTable="vc_kode_obatColumn" msprop:Generator_UserColumnName="vc_kode_obat" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_kode_racikan" msprop:Generator_ColumnVarNameInTable="columnvc_kode_racikan" msprop:Generator_ColumnPropNameInRow="vc_kode_racikan" msprop:Generator_ColumnPropNameInTable="vc_kode_racikanColumn" msprop:Generator_UserColumnName="vc_kode_racikan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="bt_racikan" msprop:Generator_ColumnVarNameInTable="columnbt_racikan" msprop:Generator_ColumnPropNameInRow="bt_racikan" msprop:Generator_ColumnPropNameInTable="bt_racikanColumn" msprop:Generator_UserColumnName="bt_racikan" type="xs:boolean" minOccurs="0" />
+              <xs:element name="num_dd1" msprop:Generator_ColumnVarNameInTable="columnnum_dd1" msprop:Generator_ColumnPropNameInRow="num_dd1" msprop:Generator_ColumnPropNameInTable="num_dd1Column" msprop:Generator_UserColumnName="num_dd1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="num_dd2" msprop:Generator_ColumnVarNameInTable="columnnum_dd2" msprop:Generator_ColumnPropNameInRow="num_dd2" msprop:Generator_ColumnPropNameInTable="num_dd2Column" msprop:Generator_UserColumnName="num_dd2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="vc_signalain" msprop:Generator_ColumnVarNameInTable="columnvc_signalain" msprop:Generator_ColumnPropNameInRow="vc_signalain" msprop:Generator_ColumnPropNameInTable="vc_signalainColumn" msprop:Generator_UserColumnName="vc_signalain" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="bt_iter" msprop:Generator_ColumnVarNameInTable="columnbt_iter" msprop:Generator_ColumnPropNameInRow="bt_iter" msprop:Generator_ColumnPropNameInTable="bt_iterColumn" msprop:Generator_UserColumnName="bt_iter" type="xs:boolean" minOccurs="0" />
+              <xs:element name="num_jmliter" msprop:Generator_ColumnVarNameInTable="columnnum_jmliter" msprop:Generator_ColumnPropNameInRow="num_jmliter" msprop:Generator_ColumnPropNameInTable="num_jmliterColumn" msprop:Generator_UserColumnName="num_jmliter" type="xs:decimal" minOccurs="0" />
+              <xs:element name="bt_fav" msprop:Generator_ColumnVarNameInTable="columnbt_fav" msprop:Generator_ColumnPropNameInRow="bt_fav" msprop:Generator_ColumnPropNameInTable="bt_favColumn" msprop:Generator_UserColumnName="bt_fav" type="xs:boolean" minOccurs="0" />
+              <xs:element name="vc_namaobat" msprop:Generator_ColumnVarNameInTable="columnvc_namaobat" msprop:Generator_ColumnPropNameInRow="vc_namaobat" msprop:Generator_ColumnPropNameInTable="vc_namaobatColumn" msprop:Generator_UserColumnName="vc_namaobat" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nama_golongan" msprop:Generator_ColumnVarNameInTable="columnnama_golongan" msprop:Generator_ColumnPropNameInRow="nama_golongan" msprop:Generator_ColumnPropNameInTable="nama_golonganColumn" msprop:Generator_UserColumnName="nama_golongan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:RM_KUNJUNG" />
+      <xs:field xpath="mstns:vc_no_rm" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
