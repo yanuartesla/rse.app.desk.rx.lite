@@ -76,5 +76,15 @@ namespace rse.app.desk.rx.lite
             myuc.Show();
 
         }
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnGambar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

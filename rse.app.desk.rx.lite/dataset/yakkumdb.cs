@@ -4,6 +4,9 @@
 
     partial class yakkumdb
     {
+        partial class fa_rx_resep_dDataTable
+        {
+        }
     }
 }
 

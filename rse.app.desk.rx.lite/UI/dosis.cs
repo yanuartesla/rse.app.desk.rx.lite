@@ -25,17 +25,20 @@ namespace rse.app.desk.rx.lite.UI
           );
         public String _nmobat { get; set; }
         private String _kobat { get; set; }
-        private decimal _retensi { get; set; }
+        private decimal _retriksi { get; set; }
         private String _norx { get; set; }
         private Boolean _btIter { get; set; }
         private Boolean _btFav { get; set; }
+        private string _kdokter { get; set; }
+        private decimal _jmliter { get; set; }
 
-        public dosis(string namaobat,string norx)
+        public dosis(string namaobat,string norx, string kodedokter)
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 64, 64));
             _nmobat = namaobat;
             _norx = norx;
+            _kdokter = kodedokter;
         }
 
         private void dosis_Load(object sender, EventArgs e)
@@ -44,22 +47,26 @@ namespace rse.app.desk.rx.lite.UI
             this.view_rse_fa_obatTableAdapter.Fill(this.yakkumdb.view_rse_fa_obat);
             // TODO: This line of code loads data into the 'yakkumdb.view_rse_fa_obat' table. You can move, or remove it, as needed.
             this.view_rse_fa_obatTableAdapter.FillByNamaObat(this.yakkumdb.view_rse_fa_obat, _nmobat);
-            retensi.Text = "Retensi : " + retensi.Text + " / kasus";
+            
 
             dataset.yakkumdbTableAdapters.view_rse_fa_obatTableAdapter da = new dataset.yakkumdbTableAdapters.view_rse_fa_obatTableAdapter();
 
             DataTable dt = da.GetDataByNamaObat(_nmobat);
             foreach (DataRow r in dt.Rows)
             {
-                if (r.Field<float>(0).Equals(null))
-                {
-                    _retensi = 9999;
-                }
-                else { _retensi = r.Field<decimal>(0); }
+            
+                _retriksi = r.Field<decimal>(0);
                 _kobat = r.Field<string>(3);
-                
+
+                if (_retriksi == 999)
+                {
+                    retensi.Visible = false;
+                }
+                else {  }
+
             }
             bsObat.Filter = "vc_namaobat = '" +Obat.Text+"'";
+            retensi.Text = "Retriksi : " + retensi.Text + " / kasus";
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -74,6 +81,7 @@ namespace rse.app.desk.rx.lite.UI
             {
                 numiter.Visible = true;
                 _btIter = true;
+                _jmliter = numiter.Value;
             }
             else if(!EtherCheck.Checked)
             {
@@ -82,46 +90,36 @@ namespace rse.app.desk.rx.lite.UI
             }
         }
 
-        private void numDD1_ValueChanged(object sender, EventArgs e)
+    
+
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            var _jml = numDD1.Value * numDD2.Value;
-            if(_jml > _retensi)
+            if (checkretriksi() == true)
             {
-                MessageBox.Show("Jumlah " +_jml.ToString()+" melebihi retensi");
+                var dh = new dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
+                dh.InsertQuery
+                    (_norx,
+                    _norx + _kobat,
+                    _kobat,
+                    "",
+                    false,
+                    numDD1.Value,
+                    numDD2.Value,
+                    txtSignalain.Text,
+                    _btIter,
+                    _jmliter,
+                    _btFav,
+                    Int32.Parse(txtJumlah.Text),
+                    _kdokter
+
+                    );
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-           
-            var dh = new dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
-            dh.InsertQuery
-                (_norx,
-                _norx+_kobat,
-                _kobat,
-                "",
-                false,
-                numDD1.Value,
-                numDD2.Value,
-                txtSignalain.Text,
-                _btIter,
-                numiter.Value,
-                _btFav
-
-                );
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-        }
-
-        private void numDD2_ValueChanged(object sender, EventArgs e)
-        {
-            var _jml = numDD1.Value * numDD2.Value;
-            if (_jml > _retensi)
-            {
-                MessageBox.Show("Jumlah " + _jml.ToString() + " melebihi retensi");
-            }
-        }
+      
 
         private void favCheckBox_CheckedChanged(object sender, EventArgs e)
         {
@@ -133,6 +131,118 @@ namespace rse.app.desk.rx.lite.UI
             {
                 _btFav = false;
             }
+        }
+
+        private void txtJumlah_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+            
+        }
+
+        private Boolean checkretriksi() {
+            
+            
+            if(txtJumlah.Text == "")
+            {
+                MessageBox.Show("Masukan Jumlah Obat");
+                return false;
+            }
+            else
+            {
+                var _jml = Int32.Parse(txtJumlah.Text);
+                if (_jml > _retriksi)
+                {
+                    MessageBox.Show("Jumlah " + _jml.ToString() + " melebihi Retriksi Obat");
+                    return false;
+                }
+                else { return true; }
+            }
+            
+        }
+
+        private void txtJumlah_TextChanged(object sender, EventArgs e)
+        {
+            checkretriksi();
+        }
+
+        private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Obat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bsObat_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblkodeobat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numiter_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numDD2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numDD1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSignalain_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void retensi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Separator1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
