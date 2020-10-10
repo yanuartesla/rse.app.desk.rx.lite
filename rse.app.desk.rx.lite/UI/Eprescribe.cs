@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace rse.app.desk.rx.lite
         {
             // TODO: This line of code loads data into the 'yakkumdb.RM_KUNJUNG' table. You can move, or remove it, as needed.
             this.rM_KUNJUNGTableAdapter.FillByKlinik(this.yakkumdb.RM_KUNJUNG);
+            
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
@@ -86,5 +88,40 @@ namespace rse.app.desk.rx.lite
         {
 
         }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://192.168.10.40/efile/irj/");
+        }
+
+        private void lblNoreg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NoRM_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel4_TextChanged(object sender, EventArgs e)
+        {
+            //MessageBox.Show("test");
+            //switch(txtJnsK.Text)
+            //{
+            //    case "L":
+            //        pictureBox2.Image = Properties.Resources.pharmacist_male;
+            //        break;
+            //    case "P":
+            //        pictureBox2.Image = Properties.Resources.pharmacist_female;
+            //        break;
+            //    default:
+            //        pictureBox2.Image = Properties.Resources.image_search;
+            //        break;
+            //}
+
+        }
+
+       
     }
 }

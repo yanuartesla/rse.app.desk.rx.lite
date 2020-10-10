@@ -31,14 +31,16 @@ namespace rse.app.desk.rx.lite.UI
         private Boolean _btFav { get; set; }
         private string _kdokter { get; set; }
         private decimal _jmliter { get; set; }
+        private int _nourut { get; set; }
 
-        public dosis(string namaobat,string norx, string kodedokter)
+        public dosis(string namaobat,string norx, string kodedokter, int nourut)
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 64, 64));
             _nmobat = namaobat;
             _norx = norx;
             _kdokter = kodedokter;
+            _nourut = nourut;
         }
 
         private void dosis_Load(object sender, EventArgs e)
@@ -110,7 +112,8 @@ namespace rse.app.desk.rx.lite.UI
                     _jmliter,
                     _btFav,
                     Int32.Parse(txtJumlah.Text),
-                    _kdokter
+                    _kdokter,
+                    _nourut
 
                     );
                 this.DialogResult = DialogResult.OK;

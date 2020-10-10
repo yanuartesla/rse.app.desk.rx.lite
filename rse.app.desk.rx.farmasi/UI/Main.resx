@@ -117,37 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="in_no_urut.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="aturanpakai.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="edit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Delete.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="bs_view_resep.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>432, 17</value>
-  </metadata>
-  <metadata name="yakkumdb.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>108, 17</value>
-  </metadata>
-  <metadata name="bsObat.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="view_rse_fa_obatTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>216, 17</value>
-  </metadata>
-  <metadata name="view_resepTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>556, 17</value>
-  </metadata>
-  <metadata name="guna2Elipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>43</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="bunifuPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
 </root>

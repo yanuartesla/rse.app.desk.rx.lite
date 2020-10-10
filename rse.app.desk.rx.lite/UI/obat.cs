@@ -20,6 +20,7 @@ namespace rse.app.desk.rx.lite.UI
         public string _noreg { get; set; }
         public string _kdokter { get; set; }
         public string[] _listobat { get; set; }
+        public string[] _listobatdetil { get; set; }
 
         AutoCompleteStringCollection namesCollection =
         new AutoCompleteStringCollection();
@@ -35,8 +36,10 @@ namespace rse.app.desk.rx.lite.UI
         private void txtCariObat_Load(object sender, EventArgs e)
         {
 
-            this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep);
+            this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep,lblKodeRtx.Text);
             bs_view_resep.Filter = "vc_kode_rx = '"+ lblKodeRtx.Text +"'";
+            
+
             SqlDataReader dReader;
             SqlConnection conn = new SqlConnection();
 
@@ -73,6 +76,10 @@ namespace rse.app.desk.rx.lite.UI
             txtCariObat.AutoCompleteCustomSource = namesCollection;
 
             lblKodeRtx.Text = "RX" + _noreg + _kdokter;
+
+            this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep, lblKodeRtx.Text);
+            dgvResep.Update();
+            dgvResep.Refresh();
         }
 
        
@@ -83,6 +90,7 @@ namespace rse.app.desk.rx.lite.UI
             {
                 List<string> daftarobat = new List<string>();
                 var dh = new dataset.yakkumdbTableAdapters.view_rse_fa_obatTableAdapter();
+                var _resepdetail = new dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
                 dh.Fill(yakkumdb.view_rse_fa_obat);
                 DataTable dt = dh.GetData();
                 foreach(DataRow r in dt.Rows)
@@ -90,16 +98,31 @@ namespace rse.app.desk.rx.lite.UI
                     daftarobat.Add(r.Field<string>(4));
                 }
                 _listobat = daftarobat.ToArray();
+
+                _resepdetail.FillByNoRx(yakkumdb.fa_rx_resep_d, lblKodeRtx.Text);
+                DataTable dta = _resepdetail.GetDataByNoRx(lblKodeRtx.Text);
+                List<string> obatdiresep = new List<string>();
+                foreach(DataRow rs in dta.Rows)
+                {
+                    obatdiresep.Add(rs.Field<string>(1));
+                }
+                _listobatdetil = obatdiresep.ToArray();
+
                 if (_listobat.Contains(txtCariObat.Text.ToUpper()) == false )
                 { MessageBox.Show("Pastikan Nama Obat Sesuai !!", "Important Message"); }
+                //else if (_listobatdetil.Contains(txtCariObat.Text.ToUpper()) == false)
+                //{ MessageBox.Show("Obat Sudah Berada di Resep, Edit untuk melakukan perubahan."); }
                 else
                 {
+                                   
+                    var _maxno = (int)_resepdetail.ScalarQueryMaxNoUrutResep(lblKodeRtx.Text) + 1;
+                    MessageBox.Show(_maxno.ToString());
                     _kodeobat = txtCariObat.Text;
-                    dosis ds = new dosis(_kodeobat, lblKodeRtx.Text,_kdokter);
+                    dosis ds = new dosis(_kodeobat, lblKodeRtx.Text,_kdokter,_maxno);
                     var result = ds.ShowDialog();
                     if (result == DialogResult.OK)
                     {
-                        this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep);
+                        this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep,lblKodeRtx.Text);
                         bs_view_resep.Filter = "vc_kode_rx = '" + lblKodeRtx.Text + "'";
                         dgvResep.Update();
                         dgvResep.Refresh();
@@ -124,7 +147,7 @@ namespace rse.app.desk.rx.lite.UI
                 return;
 
             //I supposed your button column is at index 0
-            if (e.ColumnIndex == 5)
+            if (e.ColumnIndex == 6)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
@@ -136,7 +159,7 @@ namespace rse.app.desk.rx.lite.UI
                 e.Graphics.DrawImage(Properties.Resources.pencil, new Rectangle(x, y, w, h));
                 e.Handled = true;
             }
-            if (e.ColumnIndex == 6)
+            if (e.ColumnIndex == 7)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
@@ -154,7 +177,6 @@ namespace rse.app.desk.rx.lite.UI
         {
             if (e.RowIndex < 0)
                 return;
-
             ////I supposed the image column is at index 1
             //if (e.ColumnIndex == 6)
             //    e.Value = Properties.Resources.delete;
@@ -177,19 +199,31 @@ namespace rse.app.desk.rx.lite.UI
                 var val = this.dgvResep[1, e.RowIndex].Value.ToString();
                 MessageBox.Show("Deleted! " + val);
             }
-                
         }
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-            Racikan  rc = new Racikan("1");
-            rc.Show();
+            //var dh = new dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
+            //dh.Fill(yakkumdb.fa_rx_resep_d);
+
+            //var _koderacikan = "RC" + _noreg + "nourut";
+            //var _namaracikan = "Racikan " + ;
+            //Racikan  rc = new Racikan("1",_namaracikan, _kode);
+            //rc.Show();
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void dgvResep_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            using (SolidBrush b = new SolidBrush(((DataGridView)sender).RowHeadersDefaultCellStyle.ForeColor))
+            {
+                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
+
+            }
+        }
     }
-        
 }

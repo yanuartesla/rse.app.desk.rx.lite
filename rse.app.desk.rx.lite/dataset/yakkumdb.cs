@@ -10,9 +10,12 @@
     }
 }
 
-namespace rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters {
-    
-    
+namespace rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters
+{
+    partial class fa_rx_resep_dTableAdapter
+    {
+    }
+
     public partial class view_rse_fa_obatTableAdapter {
     }
 }

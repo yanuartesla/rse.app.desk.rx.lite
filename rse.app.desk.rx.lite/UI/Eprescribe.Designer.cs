@@ -54,6 +54,9 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txtJnsK = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -69,12 +72,12 @@
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnAddRx = new Guna.UI2.WinForms.Guna2Button();
             this.btnGambar = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.rM_KUNJUNGTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.RM_KUNJUNGTableAdapter();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.rM_KUNJUNGTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.RM_KUNJUNGTableAdapter();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             ((System.ComponentModel.ISupportInitialize)(guna2DataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rMKUNJUNGBindingSource)).BeginInit();
@@ -330,6 +333,9 @@
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel6);
+            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel5);
+            this.guna2Panel1.Controls.Add(this.txtJnsK);
             this.guna2Panel1.Controls.Add(this.pictureBox2);
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel3);
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel2);
@@ -348,10 +354,47 @@
             this.guna2Panel1.Size = new System.Drawing.Size(300, 711);
             this.guna2Panel1.TabIndex = 1;
             // 
+            // guna2HtmlLabel6
+            // 
+            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(60, 430);
+            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(42, 19);
+            this.guna2HtmlLabel6.TabIndex = 13;
+            this.guna2HtmlLabel6.Text = "Tahun";
+            // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rMKUNJUNGBindingSource, "in_umurth", true));
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(22, 430);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(37, 19);
+            this.guna2HtmlLabel5.TabIndex = 12;
+            this.guna2HtmlLabel5.Text = "Umur";
+            this.guna2HtmlLabel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtJnsK
+            // 
+            this.txtJnsK.BackColor = System.Drawing.Color.Transparent;
+            this.txtJnsK.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rMKUNJUNGBindingSource, "vc_jenis_k", true));
+            this.txtJnsK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtJnsK.ForeColor = System.Drawing.Color.White;
+            this.txtJnsK.Location = new System.Drawing.Point(22, 407);
+            this.txtJnsK.Name = "txtJnsK";
+            this.txtJnsK.Size = new System.Drawing.Size(108, 23);
+            this.txtJnsK.TabIndex = 11;
+            this.txtJnsK.Text = "Jenis Kelamin";
+            this.txtJnsK.TextChanged += new System.EventHandler(this.guna2HtmlLabel4_TextChanged);
+            // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::rse.app.desk.rx.lite.Properties.Resources.pharmacist_female;
-            this.pictureBox2.Location = new System.Drawing.Point(73, 209);
+            this.pictureBox2.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.rMKUNJUNGBindingSource, "vc_jenis_k", true));
+            this.pictureBox2.Location = new System.Drawing.Point(23, 209);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(135, 128);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -429,25 +472,27 @@
             // 
             this.lblNoreg.BackColor = System.Drawing.Color.Transparent;
             this.lblNoreg.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rMKUNJUNGBindingSource, "VC_NO_REGJ", true));
-            this.lblNoreg.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoreg.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoreg.ForeColor = System.Drawing.Color.White;
-            this.lblNoreg.Location = new System.Drawing.Point(21, 438);
+            this.lblNoreg.Location = new System.Drawing.Point(23, 343);
             this.lblNoreg.Name = "lblNoreg";
-            this.lblNoreg.Size = new System.Drawing.Size(83, 32);
+            this.lblNoreg.Size = new System.Drawing.Size(52, 19);
             this.lblNoreg.TabIndex = 3;
             this.lblNoreg.Text = "No. Reg";
+            this.lblNoreg.Click += new System.EventHandler(this.lblNoreg_Click);
             // 
             // NamaPASIEN
             // 
             this.NamaPASIEN.BackColor = System.Drawing.Color.Transparent;
             this.NamaPASIEN.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rMKUNJUNGBindingSource, "vc_nama_p", true));
-            this.NamaPASIEN.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NamaPASIEN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NamaPASIEN.ForeColor = System.Drawing.Color.White;
-            this.NamaPASIEN.Location = new System.Drawing.Point(21, 400);
+            this.NamaPASIEN.Location = new System.Drawing.Point(23, 387);
             this.NamaPASIEN.Name = "NamaPASIEN";
-            this.NamaPASIEN.Size = new System.Drawing.Size(61, 32);
+            this.NamaPASIEN.Size = new System.Drawing.Size(49, 23);
             this.NamaPASIEN.TabIndex = 2;
             this.NamaPASIEN.Text = "Nama";
+            this.NamaPASIEN.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // NoRM
             // 
@@ -455,11 +500,12 @@
             this.NoRM.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rMKUNJUNGBindingSource, "vc_no_rm", true));
             this.NoRM.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NoRM.ForeColor = System.Drawing.Color.White;
-            this.NoRM.Location = new System.Drawing.Point(21, 362);
+            this.NoRM.Location = new System.Drawing.Point(23, 359);
             this.NoRM.Name = "NoRM";
             this.NoRM.Size = new System.Drawing.Size(73, 32);
             this.NoRM.TabIndex = 1;
             this.NoRM.Text = "No RM\r\n";
+            this.NoRM.Click += new System.EventHandler(this.NoRM_Click);
             // 
             // guna2TextBox1
             // 
@@ -555,10 +601,6 @@
             this.btnGambar.TabStop = false;
             this.btnGambar.Click += new System.EventHandler(this.btnGambar_Click);
             // 
-            // rM_KUNJUNGTableAdapter
-            // 
-            this.rM_KUNJUNGTableAdapter.ClearBeforeFill = true;
-            // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 32;
@@ -580,6 +622,10 @@
             // guna2DragControl2
             // 
             this.guna2DragControl2.TargetControl = this.btnGambar;
+            // 
+            // rM_KUNJUNGTableAdapter
+            // 
+            this.rM_KUNJUNGTableAdapter.ClearBeforeFill = true;
             // 
             // Eprescribe
             // 
@@ -654,6 +700,9 @@
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl2;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel txtJnsK;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
     }
 }
 

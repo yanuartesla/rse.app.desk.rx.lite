@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,10 +19,12 @@ namespace rse.app.desk.rx.lite.UI
         private  string _kodefornas { get; set; }
         private Boolean _btIter { get; set; }
         private decimal _jmliter { get; set; }
-        public Racikan(String kodefornas)
+        private string _racikan { get; set; }
+        public Racikan(String kodefornas,string namaracikan)
         {
             InitializeComponent();
             _kodefornas = kodefornas;
+            _racikan = namaracikan;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -87,18 +90,24 @@ namespace rse.app.desk.rx.lite.UI
 
         private void dgvRacik_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            var grid = sender as DataGridView;
-            var rowIdx = (e.RowIndex + 1).ToString();
+            //var grid = sender as DataGridView;
+            //var rowIdx = (e.RowIndex + 1).ToString();
 
-            var centerFormat = new StringFormat()
+            //var centerFormat = new StringFormat()
+            //{
+            //    // right alignment might actually make more sense for numbers
+            //    Alignment = StringAlignment.Center,
+            //    LineAlignment = StringAlignment.Center
+            //};
+
+            //var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
+            //e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+
+            using (SolidBrush b = new SolidBrush(((DataGridView)sender).RowHeadersDefaultCellStyle.ForeColor))
             {
-                // right alignment might actually make more sense for numbers
-                Alignment = StringAlignment.Center,
-                LineAlignment = StringAlignment.Center
-            };
-
-            var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
-            e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
+                
+            }
         }
 
         private void EtherCheck_CheckedChanged(object sender, EventArgs e)
@@ -118,6 +127,27 @@ namespace rse.app.desk.rx.lite.UI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            var dt = new dataset.yakkumdbTableAdapters.fa_rx_racikanTableAdapter();
+            for (int i = 0; i < dgvRacik.RowCount-1;i++)
+            {
+                
+                if (dgvRacik.Rows[i].Cells[1].Value.Equals(null))
+                {
+                   
+                }
+                else
+                {
+                    dt.InsertQuery(
+               "koderxd",
+               i+1,
+               "kodeobat",
+               dgvRacik.Rows[i].Cells[1].Value.ToString(),
+               dgvRacik.Rows[i].Cells[2].Value.ToString(),
+               dgvRacik.Rows[i].Cells[3].Value.ToString()
+               );
+                }
+
+            }
             
         }
     }

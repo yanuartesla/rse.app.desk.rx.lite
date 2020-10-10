@@ -735,9 +735,6 @@
         v/Hf+jX8Wmcqfm2/h9/L7+n3dg17KW9QXJtrdK2cpgeK9m//9v8BIDlKIHYcxGAAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="rM_KUNJUNGTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>513, 17</value>
-  </metadata>
   <metadata name="guna2Elipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>714, 17</value>
   </metadata>
@@ -2579,5 +2576,8 @@
   </metadata>
   <metadata name="guna2DragControl2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>484, 56</value>
+  </metadata>
+  <metadata name="rM_KUNJUNGTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>513, 17</value>
   </metadata>
 </root>

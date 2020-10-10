@@ -223,6 +223,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="prescription.ico" />
+    <None Include="Resources\image_search.png" />
     <None Include="Resources\pharmacist_male.png" />
     <None Include="Resources\pharmacist_female.png" />
     <None Include="Resources\prescription %283%291.png" />
