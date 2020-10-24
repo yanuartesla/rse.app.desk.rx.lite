@@ -9,20 +9,31 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RM_KUNJUNGTableAdapter" GeneratorDataComponentClassName="RM_KUNJUNGTableAdapter" Name="RM_KUNJUNG" UserDataComponentName="RM_KUNJUNGTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        RMKUNJUNG.DT_TGL_REG, RMKUNJUNG.VC_JAM_REG, RMKUNJUNG.VC_NO_RM AS Expr1, RMKUNJUNG.VC_K_KLINIK, RMKUNJUNG.VC_K_DOKTER, RMKUNJUNG.IN_NO_URUT, RMKUNJUNG.IN_NO_URUT_DOKTER, 
+                    <CommandText>SELECT        RMKUNJUNG.DT_TGL_REG, RMKUNJUNG.VC_JAM_REG, RMKUNJUNG.VC_NO_RM AS NO_RM, RMKUNJUNG.VC_K_KLINIK, RMKUNJUNG.VC_K_DOKTER, RMKUNJUNG.IN_NO_URUT, RMKUNJUNG.IN_NO_URUT_DOKTER, 
                          RMKUNJUNG.VC_K_PNG, RMKUNJUNG.VC_K_INSTANSI, RMKUNJUNG.VC_STATUS, RMKUNJUNG.VC_KARTU_BARU, RMKUNJUNG.VC_RAWAT_INAP, RMKUNJUNG.VC_NO_REG, RMKUNJUNG.VC_KAMAR, 
                          RMKUNJUNG.VC_NAMA_WALI, RMKUNJUNG.VC_K_HUBUNGAN, RMKUNJUNG.VC_NAMA_IBU, RMKUNJUNG.VC_K_PEKWALI, RMKUNJUNG.VC_NO_REGJ, RMKUNJUNG.VC_NO_REGJ_DOKTER, RMKUNJUNG.VC_DIAGNOSA, 
-                         RMKUNJUNG.VC_KASUS, RMKUNJUNG.VC_RESEP, RMKUNJUNG.VC_NO_BUKTI, RMKUNJUNG.VC_NIK_PNG AS Expr2, RMKUNJUNG.VC_ICDSEBAB, RMKUNJUNG.VC_SEBABMATI, RMKUNJUNG.VC_RUJUKAN, 
-                         RMKUNJUNG.BT_JANJI, RMKUNJUNG.VC_ICD_RAJAL, RMKUNJUNG.VC_SBB_RAJAL, RMKUNJUNG.VC_kd_sumber, RMKUNJUNG.VC_alergi AS Expr3, RMKUNJUNG.VC_Jam_awal, RMKUNJUNG.VC_Proses_awal, 
+                         RMKUNJUNG.VC_KASUS, RMKUNJUNG.VC_RESEP, RMKUNJUNG.VC_NO_BUKTI, RMKUNJUNG.VC_NIK_PNG AS PNG, RMKUNJUNG.VC_ICDSEBAB, RMKUNJUNG.VC_SEBABMATI, RMKUNJUNG.VC_RUJUKAN, 
+                         RMKUNJUNG.BT_JANJI, RMKUNJUNG.VC_ICD_RAJAL, RMKUNJUNG.VC_SBB_RAJAL, RMKUNJUNG.VC_kd_sumber, RMKUNJUNG.VC_alergi AS ALRGI, RMKUNJUNG.VC_Jam_awal, RMKUNJUNG.VC_Proses_awal, 
                          RMKUNJUNG.VC_Jam_akhir, RMKUNJUNG.VC_Proses_akhir, RMKUNJUNG.VC_printer, RMKUNJUNG.DT_tgl_layan_igd, RMKUNJUNG.VC_jam_layan_igd, RMKUNJUNG.VC_rujukan_Igd, RMKUNJUNG.VC_nama_pgt_igd, 
                          RMKUNJUNG.VC_alamat_pgt_igd, RMKUNJUNG.VC_NoKTP_pgt_igd, RMKUNJUNG.VC_penyebab_Igd, RMKUNJUNG.DT_tgl_kej_igd, RMKUNJUNG.VC_jam_kej_Igd, RMKUNJUNG.VC_tempat_kej_igd, 
                          RMKUNJUNG.VC_jam_masuk_igd, RMKUNJUNG.VC_transport_igd, RMKUNJUNG.vc_jenis_kunjungan, RMKUNJUNG.vc_operator, RMKUNJUNG.vc_keterangan_order, RMKUNJUNG.bt_pakai, RMKUNJUNG.dt_create_date, 
-                         RMKUNJUNG.vc_create_time, RMKUNJUNG.vc_anamnese, RMKUNJUNG.vc_hak_akprj, RMKUNJUNG.vc_png_lain, RMPasien.*
-FROM            RMKUNJUNG INNER JOIN
-                         RMPasien ON RMKUNJUNG.VC_NO_RM = RMPasien.vc_no_rm</CommandText>
+                         RMKUNJUNG.vc_create_time, RMKUNJUNG.vc_anamnese, RMKUNJUNG.vc_hak_akprj, RMKUNJUNG.vc_png_lain, RMPasien.vc_no_rm, RMPasien.vc_nama_p, RMPasien.vc_jenis_k, RMPasien.vc_tp_lhr, 
+                         RMPasien.dt_tgl_lhr, RMPasien.in_umurth, RMPasien.in_umurbl, RMPasien.in_umurhr, RMPasien.vc_gol_d, RMPasien.vc_k_agm, RMPasien.vc_alamat, RMPasien.vc_telpon, RMPasien.vc_k_pos, RMPasien.vc_kelurahan, 
+                         RMPasien.vc_kecamatan, RMPasien.vc_kota, RMPasien.vc_k_negara, RMPasien.vc_turis, RMPasien.vc_wni, RMPasien.vc_k_pek, RMPasien.vc_k_pend, RMPasien.vc_k_status, RMPasien.dt_tgl_daf, RMPasien.vc_alergi, 
+                         RMPasien.in_thn_pr, RMPasien.vc_is_pgw, RMPasien.vc_nik, RMPasien.vc_k_lunasan, RMPasien.vc_k_askes, RMPasien.vc_propinsi, RMPasien.vc_normgabung, RMPasien.vc_k_kota, RMPasien.vc_k_prop, 
+                         RMPasien.vc_nik_png, RMPasien.vc_alamat2, RMPasien.vc_fax, RMPasien.vc_email, RMPasien.vc_status_kry, RMPasien.bt_kary, RMPasien.vc_kode_camat, RMPasien.vc_k_kota_l, RMPasien.vc_pengunjung, 
+                         RMPasien.vc_b20, RMPasien.vc_BB, RMPasien.vc_TB, RMPasien.bt_retensi, RMPasien.vc_no_hp, RMPasien.bt_kartu, RMPasien.vc_no_peserta_bpjs, RMPasien.vc_ket_sosial, RMPasien.vc_kd_cacat, 
+                         RMPasien.VC_KET_KOMPLAIN, RMKLINIK.vc_N_KLINIK, SDMDOKTER.vc_nama_kry AS nama_dokter
+FROM            RMKUNJUNG LEFT OUTER JOIN
+                         SDMDOKTER ON RMKUNJUNG.VC_K_DOKTER = SDMDOKTER.vc_nid LEFT OUTER JOIN
+                         RMKLINIK ON RMKUNJUNG.VC_K_KLINIK = RMKLINIK.vc_K_KLINIK LEFT OUTER JOIN
+                         fa_rx_resep_h ON RMKUNJUNG.VC_NO_REGJ = fa_rx_resep_h.vc_no_reg LEFT OUTER JOIN
+                         RMPasien ON RMKUNJUNG.VC_NO_RM = RMPasien.vc_no_rm
+WHERE        (RMKUNJUNG.VC_K_PNG = '3') AND (fa_rx_resep_h.int_k_status IS NULL)
+ORDER BY RMKUNJUNG.IN_NO_URUT_DOKTER, RMKUNJUNG.DT_TGL_REG</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -31,7 +42,6 @@ FROM            RMKUNJUNG INNER JOIN
             <Mappings>
               <Mapping SourceColumn="DT_TGL_REG" DataSetColumn="DT_TGL_REG" />
               <Mapping SourceColumn="VC_JAM_REG" DataSetColumn="VC_JAM_REG" />
-              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
               <Mapping SourceColumn="VC_K_KLINIK" DataSetColumn="VC_K_KLINIK" />
               <Mapping SourceColumn="VC_K_DOKTER" DataSetColumn="VC_K_DOKTER" />
               <Mapping SourceColumn="IN_NO_URUT" DataSetColumn="IN_NO_URUT" />
@@ -53,7 +63,6 @@ FROM            RMKUNJUNG INNER JOIN
               <Mapping SourceColumn="VC_KASUS" DataSetColumn="VC_KASUS" />
               <Mapping SourceColumn="VC_RESEP" DataSetColumn="VC_RESEP" />
               <Mapping SourceColumn="VC_NO_BUKTI" DataSetColumn="VC_NO_BUKTI" />
-              <Mapping SourceColumn="Expr2" DataSetColumn="Expr2" />
               <Mapping SourceColumn="VC_ICDSEBAB" DataSetColumn="VC_ICDSEBAB" />
               <Mapping SourceColumn="VC_SEBABMATI" DataSetColumn="VC_SEBABMATI" />
               <Mapping SourceColumn="VC_RUJUKAN" DataSetColumn="VC_RUJUKAN" />
@@ -61,7 +70,6 @@ FROM            RMKUNJUNG INNER JOIN
               <Mapping SourceColumn="VC_ICD_RAJAL" DataSetColumn="VC_ICD_RAJAL" />
               <Mapping SourceColumn="VC_SBB_RAJAL" DataSetColumn="VC_SBB_RAJAL" />
               <Mapping SourceColumn="VC_kd_sumber" DataSetColumn="VC_kd_sumber" />
-              <Mapping SourceColumn="Expr3" DataSetColumn="Expr3" />
               <Mapping SourceColumn="VC_Jam_awal" DataSetColumn="VC_Jam_awal" />
               <Mapping SourceColumn="VC_Proses_awal" DataSetColumn="VC_Proses_awal" />
               <Mapping SourceColumn="VC_Jam_akhir" DataSetColumn="VC_Jam_akhir" />
@@ -140,6 +148,11 @@ FROM            RMKUNJUNG INNER JOIN
               <Mapping SourceColumn="vc_ket_sosial" DataSetColumn="vc_ket_sosial" />
               <Mapping SourceColumn="vc_kd_cacat" DataSetColumn="vc_kd_cacat" />
               <Mapping SourceColumn="VC_KET_KOMPLAIN" DataSetColumn="VC_KET_KOMPLAIN" />
+              <Mapping SourceColumn="NO_RM" DataSetColumn="NO_RM" />
+              <Mapping SourceColumn="PNG" DataSetColumn="PNG" />
+              <Mapping SourceColumn="ALRGI" DataSetColumn="ALRGI" />
+              <Mapping SourceColumn="vc_N_KLINIK" DataSetColumn="vc_N_KLINIK" />
+              <Mapping SourceColumn="nama_dokter" DataSetColumn="nama_dokter" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByKlinik" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByKlinik" GeneratorSourceName="FillByKlinik" GetMethodModifier="Public" GetMethodName="GetDataByKlinik" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByKlinik" UserSourceName="FillByKlinik">
@@ -159,12 +172,15 @@ FROM            RMKUNJUNG INNER JOIN
                          RMPasien.in_thn_pr, RMPasien.vc_is_pgw, RMPasien.vc_nik, RMPasien.vc_k_lunasan, RMPasien.vc_k_askes, RMPasien.vc_propinsi, RMPasien.vc_normgabung, RMPasien.vc_k_kota, RMPasien.vc_k_prop, 
                          RMPasien.vc_nik_png, RMPasien.vc_alamat2, RMPasien.vc_fax, RMPasien.vc_email, RMPasien.vc_status_kry, RMPasien.bt_kary, RMPasien.vc_kode_camat, RMPasien.vc_k_kota_l, RMPasien.vc_pengunjung, 
                          RMPasien.vc_b20, RMPasien.vc_BB, RMPasien.vc_TB, RMPasien.bt_retensi, RMPasien.vc_no_hp, RMPasien.bt_kartu, RMPasien.vc_no_peserta_bpjs, RMPasien.vc_ket_sosial, RMPasien.vc_kd_cacat, 
-                         RMPasien.VC_KET_KOMPLAIN
+                         RMPasien.VC_KET_KOMPLAIN, RMKLINIK.vc_N_KLINIK, SDMDOKTER.vc_nama_kry AS nama_dokter
 FROM            RMKUNJUNG LEFT OUTER JOIN
+                         SDMDOKTER ON RMKUNJUNG.VC_K_DOKTER = SDMDOKTER.vc_nid LEFT OUTER JOIN
+                         RMKLINIK ON RMKUNJUNG.VC_K_KLINIK = RMKLINIK.vc_K_KLINIK LEFT OUTER JOIN
+                         fa_rx_resep_h ON RMKUNJUNG.VC_NO_REGJ = fa_rx_resep_h.vc_no_reg LEFT OUTER JOIN
                          RMPasien ON RMKUNJUNG.VC_NO_RM = RMPasien.vc_no_rm
-WHERE        (RMKUNJUNG.VC_K_KLINIK = '0200') AND (YEAR(RMKUNJUNG.DT_TGL_REG) = YEAR(GETDATE())) AND (MONTH(RMKUNJUNG.DT_TGL_REG) = MONTH(GETDATE())) AND (DAY(RMKUNJUNG.DT_TGL_REG) = 7) AND 
-                         (RMKUNJUNG.VC_K_DOKTER = '0201')
-ORDER BY RMKUNJUNG.DT_TGL_REG</CommandText>
+WHERE        (YEAR(RMKUNJUNG.DT_TGL_REG) = YEAR(GETDATE())) AND (MONTH(RMKUNJUNG.DT_TGL_REG) = MONTH(GETDATE())) AND (DAY(RMKUNJUNG.DT_TGL_REG) = DAY(GETDATE())) AND (RMKUNJUNG.VC_K_PNG = '3') AND 
+                         (fa_rx_resep_h.int_k_status IS NULL) AND (RMKUNJUNG.VC_K_KLINIK = '0200')
+ORDER BY RMKUNJUNG.IN_NO_URUT_DOKTER, RMKUNJUNG.DT_TGL_REG</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -234,7 +250,7 @@ WHERE        (vc_namaobat = @namaobat)</CommandText>
               <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="yakkumdatabase.dbo.fa_rx_resep_h" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        id, vc_kode_rx, vc_no_reg, vc_no_rm, vc_k_dokter, vc_k_klinik, vc_status
+                    <CommandText>SELECT        id, vc_kode_rx, vc_no_reg, vc_no_rm, vc_k_dokter, vc_k_klinik, vc_status, dt_order, dt_respon, int_k_status, bt_lock
 FROM            fa_rx_resep_h</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -249,6 +265,10 @@ FROM            fa_rx_resep_h</CommandText>
               <Mapping SourceColumn="vc_k_dokter" DataSetColumn="vc_k_dokter" />
               <Mapping SourceColumn="vc_k_klinik" DataSetColumn="vc_k_klinik" />
               <Mapping SourceColumn="vc_status" DataSetColumn="vc_status" />
+              <Mapping SourceColumn="dt_order" DataSetColumn="dt_order" />
+              <Mapping SourceColumn="dt_respon" DataSetColumn="dt_respon" />
+              <Mapping SourceColumn="int_k_status" DataSetColumn="int_k_status" />
+              <Mapping SourceColumn="bt_lock" DataSetColumn="bt_lock" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
@@ -268,7 +288,22 @@ VALUES        (@koderx,@noreg,@norm,@kdokter,@kklinik,@status)</CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpsertQuery" Modifier="Public" Name="UpsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpsertQuery">
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateStatus" Modifier="Public" Name="UpdateStatus" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateStatus">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE       fa_rx_resep_h
+SET                vc_status = @status, int_k_status = @kstatus, dt_order = @dtorder
+WHERE        (vc_kode_rx = @rx)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="status" ColumnName="vc_status" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_h" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@status" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="vc_status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="kstatus" ColumnName="int_k_status" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_h" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@kstatus" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="int_k_status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="dtorder" ColumnName="dt_order" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_h" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@dtorder" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="dt_order" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="rx" ColumnName="vc_kode_rx" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_h" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@rx" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="vc_kode_rx" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpsertQuery" Modifier="Public" Name="UpsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>--MERGE SQL statement - Part 2
@@ -325,9 +360,9 @@ VALUES ( SOURCE.vc_kode_rx
               <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        fa_rx_resep_d.id, fa_rx_resep_d.vc_kode_rx, fa_rx_resep_d.vc_kode_rx_d, fa_rx_resep_d.in_no_urut, fa_rx_resep_d.vc_kode_obat, fa_rx_resep_d.vc_kode_racikan, fa_rx_resep_d.bt_racikan, fa_rx_resep_d.num_dd1, 
-                         fa_rx_resep_d.num_dd2, fa_rx_resep_d.vc_signalain, fa_rx_resep_d.bt_iter, fa_rx_resep_d.num_jmliter, fa_rx_resep_d.bt_fav, view_rse_fa_obat.vc_namaobat, view_rse_fa_obat.nama_golongan, fa_rx_resep_d.num_jml, 
-                         fa_rx_resep_d.vc_kdokter
+                    <CommandText>SELECT        fa_rx_resep_d.id, fa_rx_resep_d.vc_kode_rx, fa_rx_resep_d.vc_kode_rx_d, fa_rx_resep_d.in_no_urut, fa_rx_resep_d.vc_kode_obat, fa_rx_resep_d.vc_kode_racikan, fa_rx_resep_d.bt_racikan, fa_rx_resep_d.vc_signalain, 
+                         fa_rx_resep_d.bt_iter, fa_rx_resep_d.num_jmliter, fa_rx_resep_d.bt_fav, view_rse_fa_obat.vc_namaobat, view_rse_fa_obat.nama_golongan, fa_rx_resep_d.num_jml, fa_rx_resep_d.vc_kdokter, fa_rx_resep_d.vc_nama_obat, 
+                         fa_rx_resep_d.vc_satuan, fa_rx_resep_d.nvc_dd1, fa_rx_resep_d.nvc_dd2, fa_rx_resep_d.vc_satuan_dosis
 FROM            fa_rx_resep_d LEFT OUTER JOIN
                          view_rse_fa_obat ON fa_rx_resep_d.vc_kode_obat = view_rse_fa_obat.vc_kodeobat</CommandText>
                     <Parameters />
@@ -342,8 +377,6 @@ FROM            fa_rx_resep_d LEFT OUTER JOIN
               <Mapping SourceColumn="vc_kode_obat" DataSetColumn="vc_kode_obat" />
               <Mapping SourceColumn="vc_kode_racikan" DataSetColumn="vc_kode_racikan" />
               <Mapping SourceColumn="bt_racikan" DataSetColumn="bt_racikan" />
-              <Mapping SourceColumn="num_dd1" DataSetColumn="num_dd1" />
-              <Mapping SourceColumn="num_dd2" DataSetColumn="num_dd2" />
               <Mapping SourceColumn="vc_signalain" DataSetColumn="vc_signalain" />
               <Mapping SourceColumn="bt_iter" DataSetColumn="bt_iter" />
               <Mapping SourceColumn="num_jmliter" DataSetColumn="num_jmliter" />
@@ -353,14 +386,19 @@ FROM            fa_rx_resep_d LEFT OUTER JOIN
               <Mapping SourceColumn="num_jml" DataSetColumn="num_jml" />
               <Mapping SourceColumn="vc_kdokter" DataSetColumn="vc_kdokter" />
               <Mapping SourceColumn="in_no_urut" DataSetColumn="in_no_urut" />
+              <Mapping SourceColumn="vc_nama_obat" DataSetColumn="vc_nama_obat" />
+              <Mapping SourceColumn="vc_satuan" DataSetColumn="vc_satuan" />
+              <Mapping SourceColumn="nvc_dd1" DataSetColumn="nvc_dd1" />
+              <Mapping SourceColumn="nvc_dd2" DataSetColumn="nvc_dd2" />
+              <Mapping SourceColumn="vc_satuan_dosis" DataSetColumn="vc_satuan_dosis" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByNoRx" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByNoRx" GeneratorSourceName="FillByNoRx" GetMethodModifier="Public" GetMethodName="GetDataByNoRx" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByNoRx" UserSourceName="FillByNoRx">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        fa_rx_resep_d.id, fa_rx_resep_d.vc_kode_rx, fa_rx_resep_d.vc_kode_rx_d, fa_rx_resep_d.in_no_urut, fa_rx_resep_d.vc_kode_obat, fa_rx_resep_d.vc_kode_racikan, fa_rx_resep_d.bt_racikan, fa_rx_resep_d.num_dd1, 
-                         fa_rx_resep_d.num_dd2, fa_rx_resep_d.vc_signalain, fa_rx_resep_d.bt_iter, fa_rx_resep_d.num_jmliter, fa_rx_resep_d.bt_fav, view_rse_fa_obat.vc_namaobat, view_rse_fa_obat.nama_golongan, fa_rx_resep_d.num_jml, 
-                         fa_rx_resep_d.vc_kdokter
+                    <CommandText>SELECT        fa_rx_resep_d.id, fa_rx_resep_d.vc_kode_rx, fa_rx_resep_d.vc_kode_rx_d, fa_rx_resep_d.in_no_urut, fa_rx_resep_d.vc_kode_obat, fa_rx_resep_d.vc_kode_racikan, fa_rx_resep_d.bt_racikan, fa_rx_resep_d.nvc_dd1, 
+                         fa_rx_resep_d.nvc_dd2, fa_rx_resep_d.vc_signalain, fa_rx_resep_d.bt_iter, fa_rx_resep_d.num_jmliter, fa_rx_resep_d.bt_fav, view_rse_fa_obat.vc_namaobat, view_rse_fa_obat.nama_golongan, fa_rx_resep_d.num_jml, 
+                         fa_rx_resep_d.vc_kdokter, fa_rx_resep_d.vc_satuan_dosis, fa_rx_resep_d.vc_satuan
 FROM            fa_rx_resep_d LEFT OUTER JOIN
                          view_rse_fa_obat ON fa_rx_resep_d.vc_kode_obat = view_rse_fa_obat.vc_kodeobat
 WHERE        (fa_rx_resep_d.vc_kode_rx = @koderx)</CommandText>
@@ -374,16 +412,14 @@ WHERE        (fa_rx_resep_d.vc_kode_rx = @koderx)</CommandText>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO fa_rx_resep_d
-                         (vc_kode_rx, vc_kode_rx_d, vc_kode_obat, vc_kode_racikan, bt_racikan, num_dd1, num_dd2, vc_signalain, bt_iter, num_jmliter, bt_fav, num_jml, vc_kdokter, in_no_urut)
-VALUES        (@vc_kode_rx,@vc_kode_rx_d,@vc_kode_obat,@vc_kode_racikan,@bt_racikan,@num_dd1,@num_dd2,@vc_signalain,@bt_iter,@num_jmliter,@bt_fav,@jumlah,@kdokter,@nourut)</CommandText>
+                         (vc_kode_rx, vc_kode_rx_d, vc_kode_obat, vc_kode_racikan, bt_racikan, vc_signalain, bt_iter, num_jmliter, bt_fav, num_jml, vc_kdokter, in_no_urut, nvc_dd1, nvc_dd2, vc_satuan, vc_nama_obat, vc_satuan_dosis)
+VALUES        (@vc_kode_rx,@vc_kode_rx_d,@vc_kode_obat,@vc_kode_racikan,@bt_racikan,@vc_signalain,@bt_iter,@num_jmliter,@bt_fav,@jumlah,@kdokter,@nourut,@dd1,@dd2,@satuan,@namaobat,@sat_dosis)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="vc_kode_rx" ColumnName="vc_kode_rx" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@vc_kode_rx" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="vc_kode_rx" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="vc_kode_rx_d" ColumnName="vc_kode_rx_d" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@vc_kode_rx_d" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="vc_kode_rx_d" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="vc_kode_obat" ColumnName="vc_kode_obat" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@vc_kode_obat" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="vc_kode_obat" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="vc_kode_racikan" ColumnName="vc_kode_racikan" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@vc_kode_racikan" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="vc_kode_racikan" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="bt_racikan" ColumnName="bt_racikan" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@bt_racikan" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="bt_racikan" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="num_dd1" ColumnName="num_dd1" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@num_dd1" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="num_dd1" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="num_dd2" ColumnName="num_dd2" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@num_dd2" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="num_dd2" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="vc_signalain" ColumnName="vc_signalain" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@vc_signalain" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="vc_signalain" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="bt_iter" ColumnName="bt_iter" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@bt_iter" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="bt_iter" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="num_jmliter" ColumnName="num_jmliter" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@num_jmliter" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="num_jmliter" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -391,6 +427,11 @@ VALUES        (@vc_kode_rx,@vc_kode_rx_d,@vc_kode_obat,@vc_kode_racikan,@bt_raci
                       <Parameter AllowDbNull="true" AutogeneratedName="jumlah" ColumnName="num_jml" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@jumlah" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="num_jml" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="kdokter" ColumnName="vc_kdokter" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@kdokter" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="vc_kdokter" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="nourut" ColumnName="in_no_urut" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@nourut" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="in_no_urut" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="dd1" ColumnName="nvc_dd1" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="nvarchar(10)" DbType="String" Direction="Input" ParameterName="@dd1" Precision="0" ProviderType="NVarChar" Scale="0" Size="10" SourceColumn="nvc_dd1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="dd2" ColumnName="nvc_dd2" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="nvarchar(10)" DbType="String" Direction="Input" ParameterName="@dd2" Precision="0" ProviderType="NVarChar" Scale="0" Size="10" SourceColumn="nvc_dd2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="satuan" ColumnName="vc_satuan" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@satuan" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="vc_satuan" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="namaobat" ColumnName="vc_nama_obat" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@namaobat" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="vc_nama_obat" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="sat_dosis" ColumnName="vc_satuan_dosis" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@sat_dosis" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="vc_satuan_dosis" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
@@ -407,16 +448,28 @@ WHERE        (vc_kode_rx = @k_rx)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ScalarQueryNoRacikan" Modifier="Public" Name="ScalarQueryNoRacikan" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="ScalarQueryNoRacikan">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CASE WHEN MAX(CAST([vc_kode_racikan] AS int)) IS NULL THEN 0 ELSE MAX(CAST([vc_kode_racikan] AS int)) END AS maxnourut
+FROM            fa_rx_resep_d
+WHERE        (vc_kode_rx = @k_rx)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="k_rx" ColumnName="vc_kode_rx" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_d" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@k_rx" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="vc_kode_rx" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
             </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="view_resepTableAdapter" GeneratorDataComponentClassName="view_resepTableAdapter" Name="view_resep" UserDataComponentName="view_resepTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="yakkumdatabase.dbo.fa_rx_resep_d" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        fa_rx_resep_d.vc_kode_rx, fa_obat.vc_namaobat, fa_rx_resep_d.num_dd1, fa_rx_resep_d.num_dd2, fa_rx_resep_d.vc_signalain, fa_rx_resep_d.num_jmliter, fa_rx_resep_d.bt_fav, fa_rx_resep_d.num_jml, 
-                         CAST(fa_rx_resep_d.num_dd1 AS varchar) + ' ' + 'dd' + ' ' + CAST(fa_rx_resep_d.num_dd2 AS varchar) AS aturanpakai, fa_rx_resep_d.in_no_urut
-FROM            fa_rx_resep_d INNER JOIN
+                    <CommandText>SELECT        fa_rx_resep_d.vc_kode_rx, fa_rx_resep_d.vc_nama_obat, fa_rx_resep_d.vc_signalain, fa_rx_resep_d.num_jmliter, fa_rx_resep_d.bt_fav, fa_rx_resep_d.num_jml, CAST(fa_rx_resep_d.nvc_dd1 AS varchar) 
+                         + ' ' + 'dd' + ' ' + CAST(fa_rx_resep_d.nvc_dd2 AS varchar) AS aturanpakai, fa_rx_resep_d.in_no_urut
+FROM            fa_rx_resep_d LEFT OUTER JOIN
                          fa_obat ON fa_rx_resep_d.vc_kode_obat = fa_obat.vc_kodeobat
 WHERE        (fa_rx_resep_d.vc_kode_rx = @koderx)</CommandText>
                     <Parameters>
@@ -428,15 +481,13 @@ WHERE        (fa_rx_resep_d.vc_kode_rx = @koderx)</CommandText>
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="vc_kode_rx" DataSetColumn="vc_kode_rx" />
-              <Mapping SourceColumn="vc_namaobat" DataSetColumn="vc_namaobat" />
-              <Mapping SourceColumn="num_dd1" DataSetColumn="num_dd1" />
-              <Mapping SourceColumn="num_dd2" DataSetColumn="num_dd2" />
               <Mapping SourceColumn="vc_signalain" DataSetColumn="vc_signalain" />
               <Mapping SourceColumn="num_jmliter" DataSetColumn="num_jmliter" />
               <Mapping SourceColumn="bt_fav" DataSetColumn="bt_fav" />
               <Mapping SourceColumn="num_jml" DataSetColumn="num_jml" />
               <Mapping SourceColumn="aturanpakai" DataSetColumn="aturanpakai" />
               <Mapping SourceColumn="in_no_urut" DataSetColumn="in_no_urut" />
+              <Mapping SourceColumn="vc_nama_obat" DataSetColumn="vc_nama_obat" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -505,13 +556,6 @@ FROM            fa_rx_racikan</CommandText>
             <xs:sequence>
               <xs:element name="DT_TGL_REG" msprop:Generator_ColumnVarNameInTable="columnDT_TGL_REG" msprop:Generator_ColumnPropNameInRow="DT_TGL_REG" msprop:Generator_ColumnPropNameInTable="DT_TGL_REGColumn" msprop:Generator_UserColumnName="DT_TGL_REG" type="xs:dateTime" minOccurs="0" />
               <xs:element name="VC_JAM_REG" msprop:Generator_ColumnVarNameInTable="columnVC_JAM_REG" msprop:Generator_ColumnPropNameInRow="VC_JAM_REG" msprop:Generator_ColumnPropNameInTable="VC_JAM_REGColumn" msprop:Generator_UserColumnName="VC_JAM_REG" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="8" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="8" />
@@ -653,13 +697,6 @@ FROM            fa_rx_racikan</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Expr2" msprop:Generator_ColumnVarNameInTable="columnExpr2" msprop:Generator_ColumnPropNameInRow="Expr2" msprop:Generator_ColumnPropNameInTable="Expr2Column" msprop:Generator_UserColumnName="Expr2" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="4" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="VC_ICDSEBAB" msprop:Generator_ColumnVarNameInTable="columnVC_ICDSEBAB" msprop:Generator_ColumnPropNameInRow="VC_ICDSEBAB" msprop:Generator_ColumnPropNameInTable="VC_ICDSEBABColumn" msprop:Generator_UserColumnName="VC_ICDSEBAB" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -700,13 +737,6 @@ FROM            fa_rx_racikan</CommandText>
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="4" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Expr3" msprop:Generator_ColumnVarNameInTable="columnExpr3" msprop:Generator_ColumnPropNameInRow="Expr3" msprop:Generator_ColumnPropNameInTable="Expr3Column" msprop:Generator_UserColumnName="Expr3" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -1172,6 +1202,41 @@ FROM            fa_rx_racikan</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="NO_RM" msprop:Generator_ColumnVarNameInTable="columnNO_RM" msprop:Generator_ColumnPropNameInRow="NO_RM" msprop:Generator_ColumnPropNameInTable="NO_RMColumn" msprop:Generator_UserColumnName="NO_RM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PNG" msprop:Generator_ColumnVarNameInTable="columnPNG" msprop:Generator_ColumnPropNameInRow="PNG" msprop:Generator_ColumnPropNameInTable="PNGColumn" msprop:Generator_UserColumnName="PNG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ALRGI" msprop:Generator_ColumnVarNameInTable="columnALRGI" msprop:Generator_ColumnPropNameInRow="ALRGI" msprop:Generator_ColumnPropNameInTable="ALRGIColumn" msprop:Generator_UserColumnName="ALRGI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_N_KLINIK" msprop:Generator_ColumnVarNameInTable="columnvc_N_KLINIK" msprop:Generator_ColumnPropNameInRow="vc_N_KLINIK" msprop:Generator_ColumnPropNameInTable="vc_N_KLINIKColumn" msprop:Generator_UserColumnName="vc_N_KLINIK" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nama_dokter" msprop:Generator_ColumnVarNameInTable="columnnama_dokter" msprop:Generator_ColumnPropNameInRow="nama_dokter" msprop:Generator_ColumnPropNameInTable="nama_dokterColumn" msprop:Generator_UserColumnName="nama_dokter" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1322,6 +1387,10 @@ FROM            fa_rx_racikan</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="dt_order" msprop:Generator_ColumnVarNameInTable="columndt_order" msprop:Generator_ColumnPropNameInRow="dt_order" msprop:Generator_ColumnPropNameInTable="dt_orderColumn" msprop:Generator_UserColumnName="dt_order" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="dt_respon" msprop:Generator_ColumnVarNameInTable="columndt_respon" msprop:Generator_ColumnPropNameInRow="dt_respon" msprop:Generator_ColumnPropNameInTable="dt_responColumn" msprop:Generator_UserColumnName="dt_respon" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="int_k_status" msprop:Generator_ColumnVarNameInTable="columnint_k_status" msprop:Generator_ColumnPropNameInRow="int_k_status" msprop:Generator_ColumnPropNameInTable="int_k_statusColumn" msprop:Generator_UserColumnName="int_k_status" type="xs:int" minOccurs="0" />
+              <xs:element name="bt_lock" msprop:Generator_ColumnVarNameInTable="columnbt_lock" msprop:Generator_ColumnPropNameInRow="bt_lock" msprop:Generator_ColumnPropNameInTable="bt_lockColumn" msprop:Generator_UserColumnName="bt_lock" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1358,8 +1427,6 @@ FROM            fa_rx_racikan</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="bt_racikan" msprop:Generator_ColumnVarNameInTable="columnbt_racikan" msprop:Generator_ColumnPropNameInRow="bt_racikan" msprop:Generator_ColumnPropNameInTable="bt_racikanColumn" msprop:Generator_UserColumnName="bt_racikan" type="xs:boolean" minOccurs="0" />
-              <xs:element name="num_dd1" msprop:Generator_ColumnVarNameInTable="columnnum_dd1" msprop:Generator_ColumnPropNameInRow="num_dd1" msprop:Generator_ColumnPropNameInTable="num_dd1Column" msprop:Generator_UserColumnName="num_dd1" type="xs:decimal" minOccurs="0" />
-              <xs:element name="num_dd2" msprop:Generator_ColumnVarNameInTable="columnnum_dd2" msprop:Generator_ColumnPropNameInRow="num_dd2" msprop:Generator_ColumnPropNameInTable="num_dd2Column" msprop:Generator_UserColumnName="num_dd2" type="xs:decimal" minOccurs="0" />
               <xs:element name="vc_signalain" msprop:Generator_ColumnVarNameInTable="columnvc_signalain" msprop:Generator_ColumnPropNameInRow="vc_signalain" msprop:Generator_ColumnPropNameInTable="vc_signalainColumn" msprop:Generator_UserColumnName="vc_signalain" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -1393,6 +1460,41 @@ FROM            fa_rx_racikan</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="in_no_urut" msprop:Generator_ColumnVarNameInTable="columnin_no_urut" msprop:Generator_ColumnPropNameInRow="in_no_urut" msprop:Generator_ColumnPropNameInTable="in_no_urutColumn" msprop:Generator_UserColumnName="in_no_urut" type="xs:int" minOccurs="0" />
+              <xs:element name="vc_nama_obat" msprop:Generator_ColumnVarNameInTable="columnvc_nama_obat" msprop:Generator_ColumnPropNameInRow="vc_nama_obat" msprop:Generator_ColumnPropNameInTable="vc_nama_obatColumn" msprop:Generator_UserColumnName="vc_nama_obat" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_satuan" msprop:Generator_ColumnVarNameInTable="columnvc_satuan" msprop:Generator_ColumnPropNameInRow="vc_satuan" msprop:Generator_ColumnPropNameInTable="vc_satuanColumn" msprop:Generator_UserColumnName="vc_satuan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nvc_dd1" msprop:Generator_ColumnVarNameInTable="columnnvc_dd1" msprop:Generator_ColumnPropNameInRow="nvc_dd1" msprop:Generator_ColumnPropNameInTable="nvc_dd1Column" msprop:Generator_UserColumnName="nvc_dd1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nvc_dd2" msprop:Generator_ColumnVarNameInTable="columnnvc_dd2" msprop:Generator_ColumnPropNameInRow="nvc_dd2" msprop:Generator_ColumnPropNameInTable="nvc_dd2Column" msprop:Generator_UserColumnName="nvc_dd2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_satuan_dosis" msprop:Generator_ColumnVarNameInTable="columnvc_satuan_dosis" msprop:Generator_ColumnPropNameInRow="vc_satuan_dosis" msprop:Generator_ColumnPropNameInTable="vc_satuan_dosisColumn" msprop:Generator_UserColumnName="vc_satuan_dosis" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1406,15 +1508,6 @@ FROM            fa_rx_racikan</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="vc_namaobat" msprop:Generator_ColumnVarNameInTable="columnvc_namaobat" msprop:Generator_ColumnPropNameInRow="vc_namaobat" msprop:Generator_ColumnPropNameInTable="vc_namaobatColumn" msprop:Generator_UserColumnName="vc_namaobat" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="num_dd1" msprop:Generator_ColumnVarNameInTable="columnnum_dd1" msprop:Generator_ColumnPropNameInRow="num_dd1" msprop:Generator_ColumnPropNameInTable="num_dd1Column" msprop:Generator_UserColumnName="num_dd1" type="xs:decimal" minOccurs="0" />
-              <xs:element name="num_dd2" msprop:Generator_ColumnVarNameInTable="columnnum_dd2" msprop:Generator_ColumnPropNameInRow="num_dd2" msprop:Generator_ColumnPropNameInTable="num_dd2Column" msprop:Generator_UserColumnName="num_dd2" type="xs:decimal" minOccurs="0" />
               <xs:element name="vc_signalain" msprop:Generator_ColumnVarNameInTable="columnvc_signalain" msprop:Generator_ColumnPropNameInRow="vc_signalain" msprop:Generator_ColumnPropNameInTable="vc_signalainColumn" msprop:Generator_UserColumnName="vc_signalain" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -1433,6 +1526,13 @@ FROM            fa_rx_racikan</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="in_no_urut" msprop:Generator_ColumnVarNameInTable="columnin_no_urut" msprop:Generator_ColumnPropNameInRow="in_no_urut" msprop:Generator_ColumnPropNameInTable="in_no_urutColumn" msprop:Generator_UserColumnName="in_no_urut" type="xs:int" minOccurs="0" />
+              <xs:element name="vc_nama_obat" msprop:Generator_ColumnVarNameInTable="columnvc_nama_obat" msprop:Generator_ColumnPropNameInRow="vc_nama_obat" msprop:Generator_ColumnPropNameInTable="vc_nama_obatColumn" msprop:Generator_UserColumnName="vc_nama_obat" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

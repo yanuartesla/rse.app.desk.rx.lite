@@ -30,17 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.Obat = new System.Windows.Forms.Label();
-            this.bsObat = new System.Windows.Forms.BindingSource(this.components);
-            this.yakkumdb = new rse.app.desk.rx.lite.dataset.yakkumdb();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.txtdd2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtdd1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblSatuan = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmbSatuanDosis = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtJumlah = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblkodeobat = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.numiter = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.favCheckBox = new Guna.UI2.WinForms.Guna2ImageCheckBox();
-            this.numDD2 = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.numDD1 = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.EtherCheck = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.txtSignalain = new Guna.UI2.WinForms.Guna2TextBox();
@@ -49,15 +48,15 @@
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
-            this.view_rse_fa_obatTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.view_rse_fa_obatTableAdapter();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.bsObat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).BeginInit();
+            this.bsObat = new System.Windows.Forms.BindingSource(this.components);
+            this.yakkumdb = new rse.app.desk.rx.lite.dataset.yakkumdb();
+            this.view_rse_fa_obatTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.view_rse_fa_obatTableAdapter();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numiter)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDD2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDD1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsObat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).BeginInit();
             this.SuspendLayout();
             // 
             // Obat
@@ -72,28 +71,18 @@
             this.Obat.Text = "Nama Obat";
             this.Obat.Click += new System.EventHandler(this.Obat_Click);
             // 
-            // bsObat
-            // 
-            this.bsObat.DataMember = "view_rse_fa_obat";
-            this.bsObat.DataSource = this.yakkumdb;
-            this.bsObat.CurrentChanged += new System.EventHandler(this.bsObat_CurrentChanged);
-            // 
-            // yakkumdb
-            // 
-            this.yakkumdb.DataSetName = "yakkumdb";
-            this.yakkumdb.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.txtdd2);
+            this.guna2ShadowPanel1.Controls.Add(this.txtdd1);
+            this.guna2ShadowPanel1.Controls.Add(this.lblSatuan);
             this.guna2ShadowPanel1.Controls.Add(this.label3);
-            this.guna2ShadowPanel1.Controls.Add(this.guna2ComboBox1);
+            this.guna2ShadowPanel1.Controls.Add(this.cmbSatuanDosis);
             this.guna2ShadowPanel1.Controls.Add(this.txtJumlah);
             this.guna2ShadowPanel1.Controls.Add(this.lblkodeobat);
             this.guna2ShadowPanel1.Controls.Add(this.numiter);
             this.guna2ShadowPanel1.Controls.Add(this.favCheckBox);
-            this.guna2ShadowPanel1.Controls.Add(this.numDD2);
-            this.guna2ShadowPanel1.Controls.Add(this.numDD1);
             this.guna2ShadowPanel1.Controls.Add(this.label2);
             this.guna2ShadowPanel1.Controls.Add(this.EtherCheck);
             this.guna2ShadowPanel1.Controls.Add(this.txtSignalain);
@@ -113,33 +102,99 @@
             this.guna2ShadowPanel1.TabIndex = 1;
             this.guna2ShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
             // 
+            // txtdd2
+            // 
+            this.txtdd2.Animated = true;
+            this.txtdd2.AutoRoundedCorners = true;
+            this.txtdd2.BorderRadius = 17;
+            this.txtdd2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtdd2.DefaultText = "";
+            this.txtdd2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtdd2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtdd2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtdd2.DisabledState.Parent = this.txtdd2;
+            this.txtdd2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtdd2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtdd2.FocusedState.Parent = this.txtdd2;
+            this.txtdd2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtdd2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtdd2.HoverState.Parent = this.txtdd2;
+            this.txtdd2.Location = new System.Drawing.Point(172, 111);
+            this.txtdd2.MaxLength = 4;
+            this.txtdd2.Name = "txtdd2";
+            this.txtdd2.PasswordChar = '\0';
+            this.txtdd2.PlaceholderText = "de die";
+            this.txtdd2.SelectedText = "";
+            this.txtdd2.ShadowDecoration.Parent = this.txtdd2;
+            this.txtdd2.Size = new System.Drawing.Size(81, 36);
+            this.txtdd2.TabIndex = 20;
+            // 
+            // txtdd1
+            // 
+            this.txtdd1.Animated = true;
+            this.txtdd1.AutoRoundedCorners = true;
+            this.txtdd1.BorderRadius = 17;
+            this.txtdd1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtdd1.DefaultText = "";
+            this.txtdd1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtdd1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtdd1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtdd1.DisabledState.Parent = this.txtdd1;
+            this.txtdd1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtdd1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtdd1.FocusedState.Parent = this.txtdd1;
+            this.txtdd1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtdd1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtdd1.HoverState.Parent = this.txtdd1;
+            this.txtdd1.Location = new System.Drawing.Point(29, 111);
+            this.txtdd1.MaxLength = 4;
+            this.txtdd1.Name = "txtdd1";
+            this.txtdd1.PasswordChar = '\0';
+            this.txtdd1.PlaceholderText = "de die";
+            this.txtdd1.SelectedText = "";
+            this.txtdd1.ShadowDecoration.Parent = this.txtdd1;
+            this.txtdd1.Size = new System.Drawing.Size(86, 36);
+            this.txtdd1.TabIndex = 19;
+            // 
+            // lblSatuan
+            // 
+            this.lblSatuan.AutoSize = true;
+            this.lblSatuan.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsObat, "satuan_pb", true));
+            this.lblSatuan.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.lblSatuan.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.lblSatuan.Location = new System.Drawing.Point(196, 168);
+            this.lblSatuan.Name = "lblSatuan";
+            this.lblSatuan.Size = new System.Drawing.Size(93, 32);
+            this.lblSatuan.TabIndex = 18;
+            this.lblSatuan.Text = "Satuan";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(331, 99);
+            this.label3.Location = new System.Drawing.Point(324, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 17;
             this.label3.Text = "Satuan Dosis";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // guna2ComboBox1
+            // cmbSatuanDosis
             // 
-            this.guna2ComboBox1.Animated = true;
-            this.guna2ComboBox1.AutoRoundedCorners = true;
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderRadius = 17;
-            this.guna2ComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsObat, "vc_satuan_ps", true));
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.HoverState.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
+            this.cmbSatuanDosis.Animated = true;
+            this.cmbSatuanDosis.AutoRoundedCorners = true;
+            this.cmbSatuanDosis.BackColor = System.Drawing.Color.Transparent;
+            this.cmbSatuanDosis.BorderRadius = 17;
+            this.cmbSatuanDosis.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsObat, "vc_satuan_ps", true));
+            this.cmbSatuanDosis.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbSatuanDosis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSatuanDosis.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbSatuanDosis.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbSatuanDosis.FocusedState.Parent = this.cmbSatuanDosis;
+            this.cmbSatuanDosis.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbSatuanDosis.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbSatuanDosis.HoverState.Parent = this.cmbSatuanDosis;
+            this.cmbSatuanDosis.ItemHeight = 30;
+            this.cmbSatuanDosis.Items.AddRange(new object[] {
             "C",
             "Cth",
             "Kapsul",
@@ -154,15 +209,15 @@
             "Tetes Telinga",
             "ue",
             "Unit"});
-            this.guna2ComboBox1.ItemsAppearance.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(291, 115);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.ShadowDecoration.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Size = new System.Drawing.Size(148, 36);
-            this.guna2ComboBox1.Sorted = true;
-            this.guna2ComboBox1.StartIndex = 0;
-            this.guna2ComboBox1.TabIndex = 2;
-            this.guna2ComboBox1.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
+            this.cmbSatuanDosis.ItemsAppearance.Parent = this.cmbSatuanDosis;
+            this.cmbSatuanDosis.Location = new System.Drawing.Point(289, 112);
+            this.cmbSatuanDosis.Name = "cmbSatuanDosis";
+            this.cmbSatuanDosis.ShadowDecoration.Parent = this.cmbSatuanDosis;
+            this.cmbSatuanDosis.Size = new System.Drawing.Size(148, 36);
+            this.cmbSatuanDosis.Sorted = true;
+            this.cmbSatuanDosis.StartIndex = 0;
+            this.cmbSatuanDosis.TabIndex = 2;
+            this.cmbSatuanDosis.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
             // 
             // txtJumlah
             // 
@@ -256,72 +311,6 @@
             this.favCheckBox.TabStop = false;
             this.favCheckBox.CheckedChanged += new System.EventHandler(this.favCheckBox_CheckedChanged);
             // 
-            // numDD2
-            // 
-            this.numDD2.AutoRoundedCorners = true;
-            this.numDD2.BackColor = System.Drawing.Color.Transparent;
-            this.numDD2.BorderRadius = 17;
-            this.numDD2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.numDD2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.numDD2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.numDD2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.numDD2.DisabledState.Parent = this.numDD2;
-            this.numDD2.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.numDD2.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
-            this.numDD2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.numDD2.FocusedState.Parent = this.numDD2;
-            this.numDD2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.numDD2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.numDD2.Location = new System.Drawing.Point(193, 111);
-            this.numDD2.Maximum = new decimal(new int[] {
-            99,
-            0,
-            0,
-            0});
-            this.numDD2.Name = "numDD2";
-            this.numDD2.ShadowDecoration.Parent = this.numDD2;
-            this.numDD2.Size = new System.Drawing.Size(79, 36);
-            this.numDD2.TabIndex = 1;
-            this.numDD2.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numDD2.ValueChanged += new System.EventHandler(this.numDD2_ValueChanged);
-            // 
-            // numDD1
-            // 
-            this.numDD1.AutoRoundedCorners = true;
-            this.numDD1.BackColor = System.Drawing.Color.Transparent;
-            this.numDD1.BorderRadius = 17;
-            this.numDD1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.numDD1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.numDD1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.numDD1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.numDD1.DisabledState.Parent = this.numDD1;
-            this.numDD1.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.numDD1.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
-            this.numDD1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.numDD1.FocusedState.Parent = this.numDD1;
-            this.numDD1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.numDD1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.numDD1.Location = new System.Drawing.Point(28, 111);
-            this.numDD1.Maximum = new decimal(new int[] {
-            99,
-            0,
-            0,
-            0});
-            this.numDD1.Name = "numDD1";
-            this.numDD1.ShadowDecoration.Parent = this.numDD1;
-            this.numDD1.Size = new System.Drawing.Size(79, 36);
-            this.numDD1.TabIndex = 0;
-            this.numDD1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numDD1.ValueChanged += new System.EventHandler(this.numDD1_ValueChanged);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -384,7 +373,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(128, 115);
+            this.label1.Location = new System.Drawing.Point(121, 115);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 32);
             this.label1.TabIndex = 7;
@@ -451,10 +440,6 @@
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // view_rse_fa_obatTableAdapter
-            // 
-            this.view_rse_fa_obatTableAdapter.ClearBeforeFill = true;
-            // 
             // guna2AnimateWindow1
             // 
             this.guna2AnimateWindow1.TargetForm = this;
@@ -463,6 +448,21 @@
             // 
             this.guna2DragControl1.TargetControl = this.guna2ShadowPanel1;
             this.guna2DragControl1.UseTransparentDrag = true;
+            // 
+            // bsObat
+            // 
+            this.bsObat.DataMember = "view_rse_fa_obat";
+            this.bsObat.DataSource = this.yakkumdb;
+            this.bsObat.CurrentChanged += new System.EventHandler(this.bsObat_CurrentChanged);
+            // 
+            // yakkumdb
+            // 
+            this.yakkumdb.DataSetName = "yakkumdb";
+            this.yakkumdb.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // view_rse_fa_obatTableAdapter
+            // 
+            this.view_rse_fa_obatTableAdapter.ClearBeforeFill = true;
             // 
             // dosis
             // 
@@ -479,13 +479,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "dosis";
             this.Load += new System.EventHandler(this.dosis_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bsObat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).EndInit();
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numiter)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDD2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDD1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsObat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -505,15 +503,16 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2CustomCheckBox EtherCheck;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2NumericUpDown numDD1;
-        private Guna.UI2.WinForms.Guna2NumericUpDown numDD2;
         private Guna.UI2.WinForms.Guna2ImageCheckBox favCheckBox;
         private Guna.UI2.WinForms.Guna2NumericUpDown numiter;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblkodeobat;
         private Guna.UI2.WinForms.Guna2TextBox txtJumlah;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbSatuanDosis;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private System.Windows.Forms.Label lblSatuan;
+        private Guna.UI2.WinForms.Guna2TextBox txtdd2;
+        private Guna.UI2.WinForms.Guna2TextBox txtdd1;
     }
 }

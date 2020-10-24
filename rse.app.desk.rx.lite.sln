@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rse.app.desk.rx.lite", "rse
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rse.app.desk.rx.pharmacist", "rse.app.desk.rx.pharmacist\rse.app.desk.rx.pharmacist.csproj", "{753A35B7-1E20-4440-AE30-7D37BA37D05E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rse.app.desk.rx.nurse", "rse.app.desk.rx.nurse\rse.app.desk.rx.nurse.csproj", "{9F14A4F0-32B4-44E4-93BA-BC69E6021624}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{753A35B7-1E20-4440-AE30-7D37BA37D05E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{753A35B7-1E20-4440-AE30-7D37BA37D05E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{753A35B7-1E20-4440-AE30-7D37BA37D05E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F14A4F0-32B4-44E4-93BA-BC69E6021624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F14A4F0-32B4-44E4-93BA-BC69E6021624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F14A4F0-32B4-44E4-93BA-BC69E6021624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F14A4F0-32B4-44E4-93BA-BC69E6021624}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

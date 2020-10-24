@@ -23,6 +23,19 @@ namespace rse.app.desk.rx.lite
         {
             // TODO: This line of code loads data into the 'yakkumdb.RM_KUNJUNG' table. You can move, or remove it, as needed.
             this.rM_KUNJUNGTableAdapter.FillByKlinik(this.yakkumdb.RM_KUNJUNG);
+            switch (txtJnsK.Text)
+            {
+                case "L":
+                    pictureBox2.Image = Properties.Resources.pharmacist_male;
+                    break;
+                case "P":
+                    pictureBox2.Image = Properties.Resources.pharmacist_female;
+                    break;
+                default:
+                    pictureBox2.Image = Properties.Resources.image_search;
+                    break;
+            }
+            if(stKary.Text == "TRUE") { lblKary.Visible = true; }
             
         }
 
@@ -62,6 +75,8 @@ namespace rse.app.desk.rx.lite
             btnGambar.Visible = false;
             var _noreg = lblNoreg.Text;
             var _kdokter = lblkdokter.Text;
+            var _kdfornas = 3;
+            if (stKary.Text == "TRUE") { _kdfornas = 2; }
 
             var dt = new dataset.yakkumdbTableAdapters.resep_hTableAdapter();
             dt.UpsertQuery("RX" + _noreg + _kdokter,
@@ -72,7 +87,7 @@ namespace rse.app.desk.rx.lite
                 "DRAFT"
                 );
 
-            obat myuc = new obat(_noreg, _kdokter);
+            obat myuc = new obat(_noreg, _kdokter,_kdfornas);
             myuc.Dock = DockStyle.Fill;
             LoadPanel.Controls.Add(myuc);
             myuc.Show();
@@ -81,7 +96,8 @@ namespace rse.app.desk.rx.lite
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+
         }
 
         private void btnGambar_Click(object sender, EventArgs e)
@@ -104,24 +120,24 @@ namespace rse.app.desk.rx.lite
 
         }
 
-        private void guna2HtmlLabel4_TextChanged(object sender, EventArgs e)
+        
+
+        private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //MessageBox.Show("test");
-            //switch(txtJnsK.Text)
-            //{
-            //    case "L":
-            //        pictureBox2.Image = Properties.Resources.pharmacist_male;
-            //        break;
-            //    case "P":
-            //        pictureBox2.Image = Properties.Resources.pharmacist_female;
-            //        break;
-            //    default:
-            //        pictureBox2.Image = Properties.Resources.image_search;
-            //        break;
-            //}
+            switch (txtJnsK.Text)
+            {
+                case "L":
+                    pictureBox2.Image = Properties.Resources.pharmacist_male;
+                    break;
+                case "P":
+                    pictureBox2.Image = Properties.Resources.pharmacist_female;
+                    break;
+                default:
+                    pictureBox2.Image = Properties.Resources.image_search;
+                    break;
+            }
+            if (stKary.Text == "TRUE") { lblKary.Visible = true; }
 
         }
-
-       
     }
 }

@@ -98,6 +98,7 @@ namespace rse.app.desk.rx.lite.UI
         {
             if (checkretriksi() == true)
             {
+
                 var dh = new dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
                 dh.InsertQuery
                     (_norx,
@@ -105,15 +106,18 @@ namespace rse.app.desk.rx.lite.UI
                     _kobat,
                     "",
                     false,
-                    numDD1.Value,
-                    numDD2.Value,
                     txtSignalain.Text,
                     _btIter,
                     _jmliter,
                     _btFav,
                     Int32.Parse(txtJumlah.Text),
                     _kdokter,
-                    _nourut
+                    _nourut,
+                    txtdd1.Text,
+                    txtdd2.Text,
+                    lblSatuan.Text,
+                    Obat.Text,
+                    cmbSatuanDosis.Text
 
                     );
                 this.DialogResult = DialogResult.OK;
@@ -160,6 +164,8 @@ namespace rse.app.desk.rx.lite.UI
                 MessageBox.Show("Masukan Jumlah Obat");
                 return false;
             }
+            if (cmbSatuanDosis.Text == "")
+            { MessageBox.Show("Masukan Satuan Dosis");return false; }
             else
             {
                 var _jml = Int32.Parse(txtJumlah.Text);

@@ -24,10 +24,10 @@ namespace rse.app.desk.rx.lite.UI
 
         AutoCompleteStringCollection namesCollection =
         new AutoCompleteStringCollection();
-        public obat(string noreg, string kdokter)
+        public obat(string noreg, string kdokter, int kfornas)
         {
             InitializeComponent();
-            _kodefornas = 1;
+            _kodefornas = kfornas;
             _noreg = noreg;
             _kdokter = kdokter;
 
@@ -38,7 +38,6 @@ namespace rse.app.desk.rx.lite.UI
 
             this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep,lblKodeRtx.Text);
             bs_view_resep.Filter = "vc_kode_rx = '"+ lblKodeRtx.Text +"'";
-            
 
             SqlDataReader dReader;
             SqlConnection conn = new SqlConnection();
@@ -61,7 +60,6 @@ namespace rse.app.desk.rx.lite.UI
             {
                 while (dReader.Read())
                     namesCollection.Add(dReader["vc_namaobat"].ToString());
-                   
             }
             else
             {
@@ -78,8 +76,12 @@ namespace rse.app.desk.rx.lite.UI
             lblKodeRtx.Text = "RX" + _noreg + _kdokter;
 
             this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep, lblKodeRtx.Text);
+            bs_view_resep.Filter = "vc_kode_rx = '" + lblKodeRtx.Text + "'";
             dgvResep.Update();
             dgvResep.Refresh();
+
+            
+            
         }
 
        
@@ -116,7 +118,7 @@ namespace rse.app.desk.rx.lite.UI
                 {
                                    
                     var _maxno = (int)_resepdetail.ScalarQueryMaxNoUrutResep(lblKodeRtx.Text) + 1;
-                    MessageBox.Show(_maxno.ToString());
+                    //MessageBox.Show(_maxno.ToString());
                     _kodeobat = txtCariObat.Text;
                     dosis ds = new dosis(_kodeobat, lblKodeRtx.Text,_kdokter,_maxno);
                     var result = ds.ShowDialog();
@@ -188,13 +190,13 @@ namespace rse.app.desk.rx.lite.UI
                 return;
 
             //I suposed you want to handle the event for column at index 1
-            if (e.ColumnIndex == 5)
+            if (e.ColumnIndex == 6)
             {
                 var val = this.dgvResep[1, e.RowIndex].Value.ToString();
                 MessageBox.Show("Edited! " + val);
             }
                
-            if (e.ColumnIndex == 6)
+            if (e.ColumnIndex == 7)
             {
                 var val = this.dgvResep[1, e.RowIndex].Value.ToString();
                 MessageBox.Show("Deleted! " + val);
@@ -203,18 +205,43 @@ namespace rse.app.desk.rx.lite.UI
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-            //var dh = new dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
-            //dh.Fill(yakkumdb.fa_rx_resep_d);
+            var dh = new dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
+            dh.Fill(yakkumdb.fa_rx_resep_d);
+            var sc = dh.ScalarQueryNoRacikan(lblKodeRtx.Text).ToString();
+            var cs = Int32.Parse(sc) + 1;
+            var _koderacikan = "RC" + _noreg + _kdokter +cs.ToString("00000");
+            var _namaracikan = "Racikan " + cs.ToString("00");
 
-            //var _koderacikan = "RC" + _noreg + "nourut";
-            //var _namaracikan = "Racikan " + ;
-            //Racikan  rc = new Racikan("1",_namaracikan, _kode);
-            //rc.Show();
+            var nu = dh.ScalarQueryMaxNoUrutResep(lblKodeRtx.Text).ToString();
+            var nurs = int.Parse(nu) + 1;
+           // MessageBox.Show(nurs.ToString());
+            Racikan rc = new Racikan(_kodefornas, _namaracikan, _koderacikan, lblKodeRtx.Text, cs.ToString(),_kdokter,nurs);
+            var result = rc.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep, lblKodeRtx.Text);
+                bs_view_resep.Filter = "vc_kode_rx = '" + lblKodeRtx.Text + "'";
+                dgvResep.Update();
+                dgvResep.Refresh();
+            }
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            var dh = new dataset.yakkumdbTableAdapters.resep_hTableAdapter();
+            Pilihan pl = new Pilihan();
+            var result = pl.ShowDialog();
+            if (result == DialogResult.Yes)
+            {
+                dh.UpdateStatus("WAITING", 2,DateTime.UtcNow, lblKodeRtx.Text);
+            }
+            if (result == DialogResult.No)
+            {
+                dh.UpdateStatus("ORDER", 3, DateTime.UtcNow, lblKodeRtx.Text);
+            }
 
+            Eprescribe ep = new Eprescribe();
+            ep.Show();
         }
 
         private void dgvResep_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -222,7 +249,6 @@ namespace rse.app.desk.rx.lite.UI
             using (SolidBrush b = new SolidBrush(((DataGridView)sender).RowHeadersDefaultCellStyle.ForeColor))
             {
                 e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
-
             }
         }
     }

@@ -55,7 +55,7 @@
             this.view_resepTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.view_resepTableAdapter();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.in_no_urut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vcnamaobatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vc_nama_obat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numjmlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aturanpakai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vcsignalainDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -114,7 +114,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(669, 439);
+            this.panel2.Size = new System.Drawing.Size(795, 439);
             this.panel2.TabIndex = 3;
             // 
             // paneldgv
@@ -124,7 +124,7 @@
             this.paneldgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.paneldgv.Location = new System.Drawing.Point(0, 0);
             this.paneldgv.Name = "paneldgv";
-            this.paneldgv.Size = new System.Drawing.Size(669, 383);
+            this.paneldgv.Size = new System.Drawing.Size(795, 383);
             this.paneldgv.TabIndex = 3;
             // 
             // dgvResep
@@ -151,7 +151,7 @@
             this.dgvResep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvResep.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.in_no_urut,
-            this.vcnamaobatDataGridViewTextBoxColumn,
+            this.vc_nama_obat,
             this.numjmlDataGridViewTextBoxColumn,
             this.aturanpakai,
             this.vcsignalainDataGridViewTextBoxColumn,
@@ -185,7 +185,7 @@
             this.dgvResep.RowHeadersVisible = false;
             this.dgvResep.RowTemplate.Height = 30;
             this.dgvResep.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvResep.Size = new System.Drawing.Size(669, 383);
+            this.dgvResep.Size = new System.Drawing.Size(795, 383);
             this.dgvResep.TabIndex = 1;
             this.dgvResep.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvResep.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -232,7 +232,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 383);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(669, 56);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(795, 56);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // guna2Button1
@@ -245,7 +245,7 @@
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(510, 3);
+            this.guna2Button1.Location = new System.Drawing.Point(636, 3);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(156, 42);
@@ -257,9 +257,9 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(669, 0);
+            this.panel1.Location = new System.Drawing.Point(795, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 439);
+            this.panel1.Size = new System.Drawing.Size(62, 439);
             this.panel1.TabIndex = 2;
             // 
             // guna2Panel3
@@ -300,12 +300,12 @@
             this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
             this.guna2GradientButton1.Image = global::rse.app.desk.rx.lite.Properties.Resources.plus;
             this.guna2GradientButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(480, 36);
+            this.guna2GradientButton1.Location = new System.Drawing.Point(492, 41);
             this.guna2GradientButton1.Name = "guna2GradientButton1";
             this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Size = new System.Drawing.Size(131, 33);
+            this.guna2GradientButton1.Size = new System.Drawing.Size(191, 33);
             this.guna2GradientButton1.TabIndex = 3;
-            this.guna2GradientButton1.Text = "Racikan";
+            this.guna2GradientButton1.Text = "Tambah Racikan";
             this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
             // 
             // label1
@@ -388,13 +388,13 @@
             this.in_no_urut.Name = "in_no_urut";
             this.in_no_urut.ReadOnly = true;
             // 
-            // vcnamaobatDataGridViewTextBoxColumn
+            // vc_nama_obat
             // 
-            this.vcnamaobatDataGridViewTextBoxColumn.DataPropertyName = "vc_namaobat";
-            this.vcnamaobatDataGridViewTextBoxColumn.FillWeight = 225F;
-            this.vcnamaobatDataGridViewTextBoxColumn.HeaderText = "Nama Obat";
-            this.vcnamaobatDataGridViewTextBoxColumn.Name = "vcnamaobatDataGridViewTextBoxColumn";
-            this.vcnamaobatDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vc_nama_obat.DataPropertyName = "vc_nama_obat";
+            this.vc_nama_obat.FillWeight = 175F;
+            this.vc_nama_obat.HeaderText = "Nama Obat";
+            this.vc_nama_obat.Name = "vc_nama_obat";
+            this.vc_nama_obat.ReadOnly = true;
             // 
             // numjmlDataGridViewTextBoxColumn
             // 
@@ -431,7 +431,7 @@
             // 
             this.edit.FillWeight = 20F;
             this.edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.edit.HeaderText = "";
+            this.edit.HeaderText = "Edit";
             this.edit.Name = "edit";
             this.edit.ReadOnly = true;
             this.edit.Text = "Edit";
@@ -441,7 +441,7 @@
             // 
             this.Delete.FillWeight = 20F;
             this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Delete.HeaderText = "";
+            this.Delete.HeaderText = "Delete";
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
             this.Delete.Text = "Delete";
@@ -494,8 +494,9 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.Panel paneldgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn in_no_urut;
         private System.Windows.Forms.DataGridViewTextBoxColumn vcnamaobatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn in_no_urut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vc_nama_obat;
         private System.Windows.Forms.DataGridViewTextBoxColumn numjmlDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aturanpakai;
         private System.Windows.Forms.DataGridViewTextBoxColumn vcsignalainDataGridViewTextBoxColumn;

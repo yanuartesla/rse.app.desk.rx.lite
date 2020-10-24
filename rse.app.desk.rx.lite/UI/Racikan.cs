@@ -16,15 +16,27 @@ namespace rse.app.desk.rx.lite.UI
     {
         AutoCompleteStringCollection namesCollection =
         new AutoCompleteStringCollection();
-        private  string _kodefornas { get; set; }
+        private  int _kodefornas { get; set; }
         private Boolean _btIter { get; set; }
         private decimal _jmliter { get; set; }
-        private string _racikan { get; set; }
-        public Racikan(String kodefornas,string namaracikan)
+        private string _namaracikan { get; set; }
+        private string _koderxd { get; set; }
+        private string _koderx { get; set; }
+        private string _kracik { get; set; }
+        private string _kdokter { get; set; }
+        private int _nourut { get; set; }
+
+        public Racikan(int kodefornas,string namaracikan, string koderxd, string koderx,string kracik,string kdokter,int nourut)
         {
             InitializeComponent();
             _kodefornas = kodefornas;
-            _racikan = namaracikan;
+            _namaracikan = namaracikan;
+            Obat.Text= _namaracikan;
+            _koderxd = koderxd;
+            _koderx = koderx;
+            _kracik = kracik;
+            _nourut = nourut;
+            _kdokter = kdokter;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -76,7 +88,6 @@ namespace rse.app.desk.rx.lite.UI
         {
             // TODO: This line of code loads data into the 'yakkumdb.view_rse_fa_obat' table. You can move, or remove it, as needed.
             this.view_rse_fa_obatTableAdapter.Fill(this.yakkumdb.view_rse_fa_obat);
-
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -85,7 +96,11 @@ namespace rse.app.desk.rx.lite.UI
             row.Cells[1].Value = txtNamaObat.Text;
             row.Cells[2].Value = txtDosis.Text;
             row.Cells[3].Value = cmbSat.Text;
+            row.Cells[5].Value = lblKobat.Text;
             dgvRacik.Rows.Add(row);
+            txtNamaObat.Clear();
+            txtDosis.Clear();
+            cmbSat.SelectedIndex = -1;
         }
 
         private void dgvRacik_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -138,17 +153,78 @@ namespace rse.app.desk.rx.lite.UI
                 else
                 {
                     dt.InsertQuery(
-               "koderxd",
-               i+1,
-               "kodeobat",
-               dgvRacik.Rows[i].Cells[1].Value.ToString(),
-               dgvRacik.Rows[i].Cells[2].Value.ToString(),
-               dgvRacik.Rows[i].Cells[3].Value.ToString()
-               );
+                       _koderxd,
+                       i+1,
+                       dgvRacik.Rows[i].Cells[5].Value.ToString(),
+                       dgvRacik.Rows[i].Cells[1].Value.ToString(),
+                       dgvRacik.Rows[i].Cells[2].Value.ToString(),
+                       dgvRacik.Rows[i].Cells[3].Value.ToString()
+                    );
+
+                    
                 }
 
             }
+            var dh = new dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
+            dh.InsertQuery
+                (_koderx,
+                _koderxd,
+                "999999",
+                _kracik,
+                true,
+                txtSignalain.Text,
+                _btIter,
+                _jmliter,
+                false,
+                Int32.Parse(txtJumlah.Text),
+                _kdokter,
+                _nourut,
+                txtdd1.Text,
+                txtdd2.Text,
+                cmbSatuan.Text,
+                _namaracikan,
+                cmbSatuanDosis.Text
+
+                );
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void dgvRacik_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            //I supposed your button column is at index 0
             
+            if (e.ColumnIndex == 4)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var w = 15;//Properties.Resources.pencil.Width;
+                var h = 15;// Properties.Resources.pencil.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.delete, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+        }
+        private Boolean cekkelengkapan()
+        {
+            if (txtJumlah.Text == "")
+            {
+                MessageBox.Show("Masukan Jumlah Obat");
+                return false;
+            }
+            else if (cmbSatuanDosis.Text == "")
+            { MessageBox.Show("Masukan Satuan Dosis"); return false; }
+            else if (cmbSatuan.Text == "")
+            { MessageBox.Show("Masukan Satuan Jumlah Obat"); return false; }
+            else
+            {
+                return true; 
+            }
         }
     }
 }
