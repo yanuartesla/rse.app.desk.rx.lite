@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using rse.app.desk.rx.lite.UI;
 
 namespace rse.app.desk.rx.lite
 {
@@ -16,7 +17,7 @@ namespace rse.app.desk.rx.lite
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Eprescribe());
+            Application.Run(new Login());
         }
     }
 }
