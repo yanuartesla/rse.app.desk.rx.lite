@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.Obat = new System.Windows.Forms.Label();
+            this.bsObat = new System.Windows.Forms.BindingSource(this.components);
+            this.yakkumdb = new rse.app.desk.rx.lite.dataset.yakkumdb();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.txtdd2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtdd1 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -50,13 +52,14 @@
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.bsObat = new System.Windows.Forms.BindingSource(this.components);
-            this.yakkumdb = new rse.app.desk.rx.lite.dataset.yakkumdb();
             this.view_rse_fa_obatTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.view_rse_fa_obatTableAdapter();
-            this.guna2ShadowPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numiter)).BeginInit();
+            this.bsRxD = new System.Windows.Forms.BindingSource(this.components);
+            this.fa_rx_resep_dTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bsObat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).BeginInit();
+            this.guna2ShadowPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numiter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRxD)).BeginInit();
             this.SuspendLayout();
             // 
             // Obat
@@ -70,6 +73,17 @@
             this.Obat.TabIndex = 0;
             this.Obat.Text = "Nama Obat";
             this.Obat.Click += new System.EventHandler(this.Obat_Click);
+            // 
+            // bsObat
+            // 
+            this.bsObat.DataMember = "view_rse_fa_obat";
+            this.bsObat.DataSource = this.yakkumdb;
+            this.bsObat.CurrentChanged += new System.EventHandler(this.bsObat_CurrentChanged);
+            // 
+            // yakkumdb
+            // 
+            this.yakkumdb.DataSetName = "yakkumdb";
+            this.yakkumdb.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // guna2ShadowPanel1
             // 
@@ -108,6 +122,7 @@
             this.txtdd2.AutoRoundedCorners = true;
             this.txtdd2.BorderRadius = 17;
             this.txtdd2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtdd2.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bsRxD, "nvc_dd2", true));
             this.txtdd2.DefaultText = "";
             this.txtdd2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtdd2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -135,6 +150,7 @@
             this.txtdd1.AutoRoundedCorners = true;
             this.txtdd1.BorderRadius = 17;
             this.txtdd1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtdd1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bsRxD, "nvc_dd1", true));
             this.txtdd1.DefaultText = "";
             this.txtdd1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtdd1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -266,6 +282,7 @@
             this.numiter.BackColor = System.Drawing.Color.Transparent;
             this.numiter.BorderRadius = 17;
             this.numiter.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.numiter.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bsRxD, "num_jmliter", true));
             this.numiter.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.numiter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.numiter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -331,6 +348,7 @@
             this.EtherCheck.CheckedState.BorderThickness = 0;
             this.EtherCheck.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.EtherCheck.CheckedState.Parent = this.EtherCheck;
+            this.EtherCheck.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bsRxD, "bt_iter", true));
             this.EtherCheck.Location = new System.Drawing.Point(29, 324);
             this.EtherCheck.Name = "EtherCheck";
             this.EtherCheck.ShadowDecoration.Parent = this.EtherCheck;
@@ -446,23 +464,23 @@
             // 
             // guna2DragControl1
             // 
+            this.guna2DragControl1.ContainerControl = this;
             this.guna2DragControl1.TargetControl = this.guna2ShadowPanel1;
+            this.guna2DragControl1.TransparentWhileDrag = true;
             this.guna2DragControl1.UseTransparentDrag = true;
-            // 
-            // bsObat
-            // 
-            this.bsObat.DataMember = "view_rse_fa_obat";
-            this.bsObat.DataSource = this.yakkumdb;
-            this.bsObat.CurrentChanged += new System.EventHandler(this.bsObat_CurrentChanged);
-            // 
-            // yakkumdb
-            // 
-            this.yakkumdb.DataSetName = "yakkumdb";
-            this.yakkumdb.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // view_rse_fa_obatTableAdapter
             // 
             this.view_rse_fa_obatTableAdapter.ClearBeforeFill = true;
+            // 
+            // bsRxD
+            // 
+            this.bsRxD.DataMember = "fa_rx_resep_d";
+            this.bsRxD.DataSource = this.yakkumdb;
+            // 
+            // fa_rx_resep_dTableAdapter
+            // 
+            this.fa_rx_resep_dTableAdapter.ClearBeforeFill = true;
             // 
             // dosis
             // 
@@ -479,11 +497,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "dosis";
             this.Load += new System.EventHandler(this.dosis_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bsObat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).EndInit();
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numiter)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsObat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRxD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -514,5 +533,7 @@
         private System.Windows.Forms.Label lblSatuan;
         private Guna.UI2.WinForms.Guna2TextBox txtdd2;
         private Guna.UI2.WinForms.Guna2TextBox txtdd1;
+        private System.Windows.Forms.BindingSource bsRxD;
+        private dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter fa_rx_resep_dTableAdapter;
     }
 }

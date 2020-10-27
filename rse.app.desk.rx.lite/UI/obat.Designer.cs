@@ -39,8 +39,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.paneldgv = new System.Windows.Forms.Panel();
             this.dgvResep = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.bs_view_resep = new System.Windows.Forms.BindingSource(this.components);
-            this.yakkumdb = new rse.app.desk.rx.lite.dataset.yakkumdb();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -50,10 +48,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblKodeRtx = new System.Windows.Forms.Label();
             this.txtCariObat = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.bs_view_resep = new System.Windows.Forms.BindingSource(this.components);
+            this.yakkumdb = new rse.app.desk.rx.lite.dataset.yakkumdb();
             this.bsObat = new System.Windows.Forms.BindingSource(this.components);
             this.view_rse_fa_obatTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.view_rse_fa_obatTableAdapter();
             this.view_resepTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.view_resepTableAdapter();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.in_no_urut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vc_nama_obat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numjmlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,15 +62,18 @@
             this.numjmliterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.vc_kode_rx_d = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vc_kode_rx = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.paneldgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResep)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_view_resep)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_view_resep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsObat)).BeginInit();
             this.SuspendLayout();
             // 
@@ -157,7 +160,10 @@
             this.vcsignalainDataGridViewTextBoxColumn,
             this.numjmliterDataGridViewTextBoxColumn,
             this.edit,
-            this.Delete});
+            this.Delete,
+            this.vc_kode_rx_d,
+            this.vc_kode_rx,
+            this.dataGridViewTextBoxColumn1});
             this.dgvResep.DataSource = this.bs_view_resep;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -213,16 +219,6 @@
             this.dgvResep.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvResep_CellFormatting);
             this.dgvResep.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvResep_CellPainting);
             this.dgvResep.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvResep_RowPostPaint);
-            // 
-            // bs_view_resep
-            // 
-            this.bs_view_resep.DataMember = "view_resep";
-            this.bs_view_resep.DataSource = this.yakkumdb;
-            // 
-            // yakkumdb
-            // 
-            this.yakkumdb.DataSetName = "yakkumdb";
-            this.yakkumdb.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // flowLayoutPanel1
             // 
@@ -363,6 +359,21 @@
             this.txtCariObat.Load += new System.EventHandler(this.txtCariObat_Load);
             this.txtCariObat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCariObat_KeyDown);
             // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 64;
+            this.guna2Elipse1.TargetControl = this;
+            // 
+            // bs_view_resep
+            // 
+            this.bs_view_resep.DataMember = "view_resep";
+            this.bs_view_resep.DataSource = this.yakkumdb;
+            // 
+            // yakkumdb
+            // 
+            this.yakkumdb.DataSetName = "yakkumdb";
+            this.yakkumdb.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // bsObat
             // 
             this.bsObat.DataMember = "view_rse_fa_obat";
@@ -375,11 +386,6 @@
             // view_resepTableAdapter
             // 
             this.view_resepTableAdapter.ClearBeforeFill = true;
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 64;
-            this.guna2Elipse1.TargetControl = this;
             // 
             // in_no_urut
             // 
@@ -447,6 +453,30 @@
             this.Delete.Text = "Delete";
             this.Delete.ToolTipText = "Delete";
             // 
+            // vc_kode_rx_d
+            // 
+            this.vc_kode_rx_d.DataPropertyName = "vc_kode_rx_d";
+            this.vc_kode_rx_d.HeaderText = "vc_kode_rx_d";
+            this.vc_kode_rx_d.Name = "vc_kode_rx_d";
+            this.vc_kode_rx_d.ReadOnly = true;
+            this.vc_kode_rx_d.Visible = false;
+            // 
+            // vc_kode_rx
+            // 
+            this.vc_kode_rx.DataPropertyName = "vc_kode_rx";
+            this.vc_kode_rx.HeaderText = "vc_kode_rx";
+            this.vc_kode_rx.Name = "vc_kode_rx";
+            this.vc_kode_rx.ReadOnly = true;
+            this.vc_kode_rx.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "in_no_urut";
+            this.dataGridViewTextBoxColumn1.HeaderText = "in_no_urut";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
             // obat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -461,11 +491,11 @@
             this.panel2.ResumeLayout(false);
             this.paneldgv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResep)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_view_resep)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_view_resep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsObat)).EndInit();
             this.ResumeLayout(false);
 
@@ -502,5 +532,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn numjmliterDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn edit;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vc_kode_rx_d;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vc_kode_rx;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

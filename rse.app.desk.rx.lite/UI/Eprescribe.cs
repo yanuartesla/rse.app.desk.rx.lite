@@ -17,7 +17,7 @@ namespace rse.app.desk.rx.lite
         private void Eprescribe_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'yakkumdb.RM_KUNJUNG' table. You can move, or remove it, as needed.
-            this.rM_KUNJUNGTableAdapter.FillByKlinik(this.yakkumdb.RM_KUNJUNG,_nid);
+            this.rM_KUNJUNGTableAdapter.FillByKlinik(this.yakkumdb.RM_KUNJUNG,_nid,_nid.Substring(0,2)+"00");
             switch (txtJnsK.Text)
             {
                 case "L":
@@ -140,6 +140,12 @@ namespace rse.app.desk.rx.lite
             LoadPanel.Dock = DockStyle.Right;
             NavPanel.Dock = DockStyle.Fill;
             LoadPanel.Width = 100;
+        }
+
+        private void btnEfile_Click(object sender, EventArgs e)
+        {
+            Efile ef = new Efile(lblNoreg.Text);
+            ef.Show();
         }
     }
 }

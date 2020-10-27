@@ -104,7 +104,6 @@ namespace rse.app.desk.rx.lite.UI
                     obatdiresep.Add(rs.Field<string>(1));
                 }
                 _listobatdetil = obatdiresep.ToArray();
-                MessageBox.Show(_listobatdetil.ToString());
                 if (_listobat.Contains(txtCariObat.Text.ToUpper()) == false)
                 { MessageBox.Show("Pastikan Nama Obat Sesuai !!", "Important Message"); }
                 //else if (_listobatdetil.Contains(txtCariObat.Text.ToUpper()) == false)
@@ -181,20 +180,41 @@ namespace rse.app.desk.rx.lite.UI
 
         private void dgvResep_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            var rxd = new dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
             if (e.RowIndex < 0)
                 return;
 
             //I suposed you want to handle the event for column at index 1
             if (e.ColumnIndex == 6)
             {
-                var val = this.dgvResep[1, e.RowIndex].Value.ToString();
-                MessageBox.Show("Edited! " + val);
+                MessageBox.Show("Mohon Maaf fungsi ini sedang dalam pengembangan..");
+                //Edit Event
+                //var kdrxd = this.dgvResep[8, e.RowIndex].Value.ToString();
+                //var kdrx = this.dgvResep[9, e.RowIndex].Value.ToString();
+                //var nourut = Int32.Parse(this.dgvResep[10, e.RowIndex].Value.ToString());
+                //var namaobat = this.dgvResep[1, e.RowIndex].Value.ToString();
+                //MessageBox.Show(namaobat + kdrx+_kdokter+nourut);
+                //dosis ds = new dosis(namaobat, kdrx, _kdokter, nourut);
+                //var result = ds.ShowDialog();
+                //if (result == DialogResult.OK)
+                //{
+                //    this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep, lblKodeRtx.Text);
+                //    dgvResep.Update();
+                //    dgvResep.Refresh();
+                //}
+
             }
 
             if (e.ColumnIndex == 7)
             {
-                var val = this.dgvResep[1, e.RowIndex].Value.ToString();
-                MessageBox.Show("Deleted! " + val);
+                // Deleted event
+                var val = this.dgvResep[8, e.RowIndex].Value.ToString();
+                rxd.DeleteObat(val);
+
+                this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep, lblKodeRtx.Text);
+                dgvResep.Update();
+                dgvResep.Refresh();
+               // MessageBox.Show("Deleted! " + val);
             }
         }
 

@@ -39,7 +39,12 @@
             this.vc_nama_p = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vc_jenis_k = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.in_umurth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vckotaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vckecamatanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iNNOURUTDOKTERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rMKUNJUNGBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.yakkumdbBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.yakkumdb = new rse.app.desk.rx.lite.dataset.yakkumdb();
             this.NavPanel = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -66,6 +71,7 @@
             this.NoRM = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.LoadPanel = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.btnEfile = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnAddRx = new Guna.UI2.WinForms.Guna2Button();
             this.btnGambar = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -74,15 +80,12 @@
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.vckotaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vckecamatanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iNNOURUTDOKTERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yakkumdbBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.yakkumdb = new rse.app.desk.rx.lite.dataset.yakkumdb();
             this.rM_KUNJUNGTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.RM_KUNJUNGTableAdapter();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             ((System.ComponentModel.ISupportInitialize)(guna2DataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rMKUNJUNGBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yakkumdbBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).BeginInit();
             this.NavPanel.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -91,8 +94,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.LoadPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnGambar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yakkumdbBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2DataGridView1
@@ -205,10 +206,41 @@
             this.in_umurth.Name = "in_umurth";
             this.in_umurth.ReadOnly = true;
             // 
+            // vckotaDataGridViewTextBoxColumn
+            // 
+            this.vckotaDataGridViewTextBoxColumn.DataPropertyName = "vc_kota";
+            this.vckotaDataGridViewTextBoxColumn.HeaderText = "Kota";
+            this.vckotaDataGridViewTextBoxColumn.Name = "vckotaDataGridViewTextBoxColumn";
+            this.vckotaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // vckecamatanDataGridViewTextBoxColumn
+            // 
+            this.vckecamatanDataGridViewTextBoxColumn.DataPropertyName = "vc_kecamatan";
+            this.vckecamatanDataGridViewTextBoxColumn.HeaderText = "Kecamatan";
+            this.vckecamatanDataGridViewTextBoxColumn.Name = "vckecamatanDataGridViewTextBoxColumn";
+            this.vckecamatanDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iNNOURUTDOKTERDataGridViewTextBoxColumn
+            // 
+            this.iNNOURUTDOKTERDataGridViewTextBoxColumn.DataPropertyName = "IN_NO_URUT_DOKTER";
+            this.iNNOURUTDOKTERDataGridViewTextBoxColumn.HeaderText = "No. Urut";
+            this.iNNOURUTDOKTERDataGridViewTextBoxColumn.Name = "iNNOURUTDOKTERDataGridViewTextBoxColumn";
+            this.iNNOURUTDOKTERDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // rMKUNJUNGBindingSource
             // 
             this.rMKUNJUNGBindingSource.DataMember = "RM_KUNJUNG";
             this.rMKUNJUNGBindingSource.DataSource = this.yakkumdbBindingSource;
+            // 
+            // yakkumdbBindingSource
+            // 
+            this.yakkumdbBindingSource.DataSource = this.yakkumdb;
+            this.yakkumdbBindingSource.Position = 0;
+            // 
+            // yakkumdb
+            // 
+            this.yakkumdb.DataSetName = "yakkumdb";
+            this.yakkumdb.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // NavPanel
             // 
@@ -551,6 +583,7 @@
             // LoadPanel
             // 
             this.LoadPanel.BackColor = System.Drawing.Color.Transparent;
+            this.LoadPanel.Controls.Add(this.btnEfile);
             this.LoadPanel.Controls.Add(this.guna2CircleButton1);
             this.LoadPanel.Controls.Add(this.btnAddRx);
             this.LoadPanel.Controls.Add(this.btnGambar);
@@ -562,6 +595,24 @@
             this.LoadPanel.ShadowColor = System.Drawing.Color.Black;
             this.LoadPanel.Size = new System.Drawing.Size(884, 711);
             this.LoadPanel.TabIndex = 1;
+            // 
+            // btnEfile
+            // 
+            this.btnEfile.Animated = true;
+            this.btnEfile.AutoRoundedCorners = true;
+            this.btnEfile.BorderRadius = 26;
+            this.btnEfile.CheckedState.Parent = this.btnEfile;
+            this.btnEfile.CustomImages.Parent = this.btnEfile;
+            this.btnEfile.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnEfile.ForeColor = System.Drawing.Color.White;
+            this.btnEfile.HoverState.Parent = this.btnEfile;
+            this.btnEfile.Location = new System.Drawing.Point(313, 270);
+            this.btnEfile.Name = "btnEfile";
+            this.btnEfile.ShadowDecoration.Parent = this.btnEfile;
+            this.btnEfile.Size = new System.Drawing.Size(247, 55);
+            this.btnEfile.TabIndex = 4;
+            this.btnEfile.Text = "+    Efile";
+            this.btnEfile.Click += new System.EventHandler(this.btnEfile_Click);
             // 
             // guna2CircleButton1
             // 
@@ -637,37 +688,6 @@
             this.guna2DragControl2.ContainerControl = this;
             this.guna2DragControl2.TargetControl = this.btnGambar;
             // 
-            // vckotaDataGridViewTextBoxColumn
-            // 
-            this.vckotaDataGridViewTextBoxColumn.DataPropertyName = "vc_kota";
-            this.vckotaDataGridViewTextBoxColumn.HeaderText = "Kota";
-            this.vckotaDataGridViewTextBoxColumn.Name = "vckotaDataGridViewTextBoxColumn";
-            this.vckotaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // vckecamatanDataGridViewTextBoxColumn
-            // 
-            this.vckecamatanDataGridViewTextBoxColumn.DataPropertyName = "vc_kecamatan";
-            this.vckecamatanDataGridViewTextBoxColumn.HeaderText = "Kecamatan";
-            this.vckecamatanDataGridViewTextBoxColumn.Name = "vckecamatanDataGridViewTextBoxColumn";
-            this.vckecamatanDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iNNOURUTDOKTERDataGridViewTextBoxColumn
-            // 
-            this.iNNOURUTDOKTERDataGridViewTextBoxColumn.DataPropertyName = "IN_NO_URUT_DOKTER";
-            this.iNNOURUTDOKTERDataGridViewTextBoxColumn.HeaderText = "No. Urut";
-            this.iNNOURUTDOKTERDataGridViewTextBoxColumn.Name = "iNNOURUTDOKTERDataGridViewTextBoxColumn";
-            this.iNNOURUTDOKTERDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // yakkumdbBindingSource
-            // 
-            this.yakkumdbBindingSource.DataSource = this.yakkumdb;
-            this.yakkumdbBindingSource.Position = 0;
-            // 
-            // yakkumdb
-            // 
-            this.yakkumdb.DataSetName = "yakkumdb";
-            this.yakkumdb.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // rM_KUNJUNGTableAdapter
             // 
             this.rM_KUNJUNGTableAdapter.ClearBeforeFill = true;
@@ -688,6 +708,8 @@
             this.Load += new System.EventHandler(this.Eprescribe_Load);
             ((System.ComponentModel.ISupportInitialize)(guna2DataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rMKUNJUNGBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yakkumdbBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).EndInit();
             this.NavPanel.ResumeLayout(false);
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
@@ -697,8 +719,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.LoadPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnGambar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yakkumdbBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -750,6 +770,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2HtmlLabel stKary;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblKary;
+        private Guna.UI2.WinForms.Guna2Button btnEfile;
     }
 }
 

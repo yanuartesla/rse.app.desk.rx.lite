@@ -402,6 +402,7 @@
             this.btPrint.Size = new System.Drawing.Size(158, 45);
             this.btPrint.TabIndex = 0;
             this.btPrint.Text = "Print";
+            this.btPrint.Visible = false;
             this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
             // 
             // rvResep
