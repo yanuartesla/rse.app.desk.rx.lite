@@ -39,6 +39,7 @@
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.lblSEP = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblNoRM = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblKdokter = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +57,7 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.guna2Panel1.BorderRadius = 64;
+            this.guna2Panel1.Controls.Add(this.lblKdokter);
             this.guna2Panel1.Controls.Add(this.lblNoResep);
             this.guna2Panel1.Controls.Add(this.lblklinik);
             this.guna2Panel1.Controls.Add(this.lblDokter);
@@ -77,7 +79,7 @@
             this.lblNoResep.BackColor = System.Drawing.Color.Transparent;
             this.lblNoResep.Enabled = false;
             this.lblNoResep.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoResep.Location = new System.Drawing.Point(223, 8);
+            this.lblNoResep.Location = new System.Drawing.Point(206, 8);
             this.lblNoResep.Name = "lblNoResep";
             this.lblNoResep.Size = new System.Drawing.Size(49, 15);
             this.lblNoResep.TabIndex = 6;
@@ -87,33 +89,35 @@
             // 
             this.lblklinik.BackColor = System.Drawing.Color.Transparent;
             this.lblklinik.Enabled = false;
-            this.lblklinik.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblklinik.Font = new System.Drawing.Font("Segoe UI", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblklinik.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblklinik.Location = new System.Drawing.Point(223, 4);
+            this.lblklinik.Location = new System.Drawing.Point(206, 17);
             this.lblklinik.Name = "lblklinik";
-            this.lblklinik.Size = new System.Drawing.Size(120, 88);
+            this.lblklinik.Size = new System.Drawing.Size(134, 83);
             this.lblklinik.TabIndex = 5;
-            this.lblklinik.Text = "KLK";
+            this.lblklinik.Text = "ANA";
             // 
             // lblDokter
             // 
+            this.lblDokter.AutoSize = false;
             this.lblDokter.BackColor = System.Drawing.Color.Transparent;
             this.lblDokter.Enabled = false;
             this.lblDokter.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDokter.Location = new System.Drawing.Point(8, 73);
             this.lblDokter.Name = "lblDokter";
-            this.lblDokter.Size = new System.Drawing.Size(62, 27);
+            this.lblDokter.Size = new System.Drawing.Size(201, 27);
             this.lblDokter.TabIndex = 4;
             this.lblDokter.Text = "Dokter";
             // 
             // lblNama
             // 
+            this.lblNama.AutoSize = false;
             this.lblNama.BackColor = System.Drawing.Color.Transparent;
             this.lblNama.Enabled = false;
             this.lblNama.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNama.Location = new System.Drawing.Point(8, 54);
             this.lblNama.Name = "lblNama";
-            this.lblNama.Size = new System.Drawing.Size(45, 23);
+            this.lblNama.Size = new System.Drawing.Size(201, 23);
             this.lblNama.TabIndex = 3;
             this.lblNama.Text = "Nama";
             // 
@@ -146,6 +150,18 @@
             this.lblNoRM.TabIndex = 0;
             this.lblNoRM.Text = "No RM";
             // 
+            // lblKdokter
+            // 
+            this.lblKdokter.BackColor = System.Drawing.Color.Transparent;
+            this.lblKdokter.Enabled = false;
+            this.lblKdokter.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKdokter.Location = new System.Drawing.Point(291, 90);
+            this.lblKdokter.Name = "lblKdokter";
+            this.lblKdokter.Size = new System.Drawing.Size(46, 15);
+            this.lblKdokter.TabIndex = 7;
+            this.lblKdokter.Text = "k dokter";
+            this.lblKdokter.Visible = false;
+            // 
             // CardResep
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,5 +189,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNoRM;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNoResep;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblKdokter;
     }
 }

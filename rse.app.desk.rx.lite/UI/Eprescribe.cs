@@ -1,28 +1,23 @@
 ﻿using rse.app.desk.rx.lite.UI;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace rse.app.desk.rx.lite
 {
     public partial class Eprescribe : Form
     {
-        public Eprescribe()
+        private string _nid { get; set; }
+        public Eprescribe(string nid)
         {
             InitializeComponent();
+            _nid = nid;
         }
 
         private void Eprescribe_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'yakkumdb.RM_KUNJUNG' table. You can move, or remove it, as needed.
-            this.rM_KUNJUNGTableAdapter.FillByKlinik(this.yakkumdb.RM_KUNJUNG);
+            this.rM_KUNJUNGTableAdapter.FillByKlinik(this.yakkumdb.RM_KUNJUNG,_nid);
             switch (txtJnsK.Text)
             {
                 case "L":
@@ -35,18 +30,18 @@ namespace rse.app.desk.rx.lite
                     pictureBox2.Image = Properties.Resources.image_search;
                     break;
             }
-            if(stKary.Text == "TRUE") { lblKary.Visible = true; }
-            
+            if (stKary.Text == "TRUE") { lblKary.Visible = true; }
+
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
             //LoadPanel.Width = 100;
             LoadPanel.Dock = DockStyle.Right;
-           
+
             NavPanel.Dock = DockStyle.Fill;
             LoadPanel.Width = 100;
-            rMKUNJUNGBindingSource.Filter = "vc_nama_p like '%" + guna2TextBox1.Text + "%' or vc_no_rm like '%" +guna2TextBox1.Text +"%'";
+            rMKUNJUNGBindingSource.Filter = "vc_nama_p like '%" + guna2TextBox1.Text + "%' or vc_no_rm like '%" + guna2TextBox1.Text + "%'";
         }
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
@@ -87,7 +82,7 @@ namespace rse.app.desk.rx.lite
                 "DRAFT"
                 );
 
-            obat myuc = new obat(_noreg, _kdokter,_kdfornas);
+            obat myuc = new obat(_noreg, _kdokter, _kdfornas);
             myuc.Dock = DockStyle.Fill;
             LoadPanel.Controls.Add(myuc);
             myuc.Show();
@@ -120,7 +115,7 @@ namespace rse.app.desk.rx.lite
 
         }
 
-        
+
 
         private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -138,6 +133,13 @@ namespace rse.app.desk.rx.lite
             }
             if (stKary.Text == "TRUE") { lblKary.Visible = true; }
 
+        }
+
+        private void guna2TextBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            LoadPanel.Dock = DockStyle.Right;
+            NavPanel.Dock = DockStyle.Fill;
+            LoadPanel.Width = 100;
         }
     }
 }

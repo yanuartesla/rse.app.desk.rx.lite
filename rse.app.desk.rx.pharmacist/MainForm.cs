@@ -127,7 +127,6 @@ namespace rse.app.desk.rx.pharmacist
             rd.Show();
             rd.Refresh();
 
-            
         }
 
         private void timerRefresh_Tick(object sender, EventArgs e)

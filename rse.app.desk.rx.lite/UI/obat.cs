@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Configuration;
-using System.Windows.Forms.VisualStyles;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace rse.app.desk.rx.lite.UI
 {
@@ -36,8 +31,8 @@ namespace rse.app.desk.rx.lite.UI
         private void txtCariObat_Load(object sender, EventArgs e)
         {
 
-            this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep,lblKodeRtx.Text);
-            bs_view_resep.Filter = "vc_kode_rx = '"+ lblKodeRtx.Text +"'";
+            this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep, lblKodeRtx.Text);
+            bs_view_resep.Filter = "vc_kode_rx = '" + lblKodeRtx.Text + "'";
 
             SqlDataReader dReader;
             SqlConnection conn = new SqlConnection();
@@ -48,11 +43,11 @@ namespace rse.app.desk.rx.lite.UI
             cmd.CommandType = CommandType.Text;
             cmd.CommandText =
             "Select  [vc_namaobat],[vc_kodeobat] from [dbo].[view_rse_fa_obat]" +
-            "where [kodefornas] >= "+ _kodefornas + "and [vc_golongan] = '01'"+
-             " or vc_namaobat like '%alat bantu dengar%'"+
-               " or vc_namaobat like '%corset%'"+
-                "or vc_namaobat like '%Neck Collar%'"+
-               " or vc_namaobat like '%kruk%'"+
+            "where [kodefornas] >= " + _kodefornas + "and [vc_golongan] = '01'" +
+             " or vc_namaobat like '%alat bantu dengar%'" +
+               " or vc_namaobat like '%corset%'" +
+                "or vc_namaobat like '%Neck Collar%'" +
+               " or vc_namaobat like '%kruk%'" +
             " order by [vc_namaobat] asc";
             conn.Open();
             dReader = cmd.ExecuteReader();
@@ -65,7 +60,7 @@ namespace rse.app.desk.rx.lite.UI
             {
                 MessageBox.Show("Data not found");
             }
-           
+
             dReader.Close();
             conn.Close();
 
@@ -80,11 +75,11 @@ namespace rse.app.desk.rx.lite.UI
             dgvResep.Update();
             dgvResep.Refresh();
 
-            
-            
+
+
         }
 
-       
+
         private void txtCariObat_KeyDown(object sender, KeyEventArgs e)
         {
 
@@ -95,7 +90,7 @@ namespace rse.app.desk.rx.lite.UI
                 var _resepdetail = new dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
                 dh.Fill(yakkumdb.view_rse_fa_obat);
                 DataTable dt = dh.GetData();
-                foreach(DataRow r in dt.Rows)
+                foreach (DataRow r in dt.Rows)
                 {
                     daftarobat.Add(r.Field<string>(4));
                 }
@@ -104,38 +99,38 @@ namespace rse.app.desk.rx.lite.UI
                 _resepdetail.FillByNoRx(yakkumdb.fa_rx_resep_d, lblKodeRtx.Text);
                 DataTable dta = _resepdetail.GetDataByNoRx(lblKodeRtx.Text);
                 List<string> obatdiresep = new List<string>();
-                foreach(DataRow rs in dta.Rows)
+                foreach (DataRow rs in dta.Rows)
                 {
                     obatdiresep.Add(rs.Field<string>(1));
                 }
                 _listobatdetil = obatdiresep.ToArray();
-
-                if (_listobat.Contains(txtCariObat.Text.ToUpper()) == false )
+                MessageBox.Show(_listobatdetil.ToString());
+                if (_listobat.Contains(txtCariObat.Text.ToUpper()) == false)
                 { MessageBox.Show("Pastikan Nama Obat Sesuai !!", "Important Message"); }
                 //else if (_listobatdetil.Contains(txtCariObat.Text.ToUpper()) == false)
                 //{ MessageBox.Show("Obat Sudah Berada di Resep, Edit untuk melakukan perubahan."); }
                 else
                 {
-                                   
+
                     var _maxno = (int)_resepdetail.ScalarQueryMaxNoUrutResep(lblKodeRtx.Text) + 1;
                     //MessageBox.Show(_maxno.ToString());
                     _kodeobat = txtCariObat.Text;
-                    dosis ds = new dosis(_kodeobat, lblKodeRtx.Text,_kdokter,_maxno);
+                    dosis ds = new dosis(_kodeobat, lblKodeRtx.Text, _kdokter, _maxno);
                     var result = ds.ShowDialog();
                     if (result == DialogResult.OK)
                     {
-                        this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep,lblKodeRtx.Text);
+                        this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep, lblKodeRtx.Text);
                         bs_view_resep.Filter = "vc_kode_rx = '" + lblKodeRtx.Text + "'";
                         dgvResep.Update();
                         dgvResep.Refresh();
                     }
                 }
-                
+
             }
         }
         private void txtCariObat_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
@@ -195,7 +190,7 @@ namespace rse.app.desk.rx.lite.UI
                 var val = this.dgvResep[1, e.RowIndex].Value.ToString();
                 MessageBox.Show("Edited! " + val);
             }
-               
+
             if (e.ColumnIndex == 7)
             {
                 var val = this.dgvResep[1, e.RowIndex].Value.ToString();
@@ -209,13 +204,13 @@ namespace rse.app.desk.rx.lite.UI
             dh.Fill(yakkumdb.fa_rx_resep_d);
             var sc = dh.ScalarQueryNoRacikan(lblKodeRtx.Text).ToString();
             var cs = Int32.Parse(sc) + 1;
-            var _koderacikan = "RC" + _noreg + _kdokter +cs.ToString("00000");
+            var _koderacikan = "RC" + _noreg + _kdokter + cs.ToString("00000");
             var _namaracikan = "Racikan " + cs.ToString("00");
 
             var nu = dh.ScalarQueryMaxNoUrutResep(lblKodeRtx.Text).ToString();
             var nurs = int.Parse(nu) + 1;
-           // MessageBox.Show(nurs.ToString());
-            Racikan rc = new Racikan(_kodefornas, _namaracikan, _koderacikan, lblKodeRtx.Text, cs.ToString(),_kdokter,nurs);
+            // MessageBox.Show(nurs.ToString());
+            Racikan rc = new Racikan(_kodefornas, _namaracikan, _koderacikan, lblKodeRtx.Text, cs.ToString(), _kdokter, nurs);
             var result = rc.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -233,14 +228,15 @@ namespace rse.app.desk.rx.lite.UI
             var result = pl.ShowDialog();
             if (result == DialogResult.Yes)
             {
-                dh.UpdateStatus("WAITING", 2,DateTime.UtcNow, lblKodeRtx.Text);
+                dh.UpdateStatus("WAITING", 2, DateTime.UtcNow, lblKodeRtx.Text);
             }
             if (result == DialogResult.No)
             {
                 dh.UpdateStatus("ORDER", 3, DateTime.UtcNow, lblKodeRtx.Text);
             }
 
-            Eprescribe ep = new Eprescribe();
+            MessageBox.Show("Resep Berhasil di Simpan");
+            Eprescribe ep = new Eprescribe(_kdokter);
             ep.Show();
         }
 

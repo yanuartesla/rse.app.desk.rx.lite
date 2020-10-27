@@ -24,6 +24,7 @@ namespace rse.app.desk.rx.pharmacist.UI
             // TODO: This line of code loads data into the 'yakkumdb.resep_detil' table. You can move, or remove it, as needed.
             this.resep_detilTableAdapter.FillByKobat(this.yakkumdb.resep_detil,_kodeobat);
             this.ActiveControl = txtJumlah;
+            this.txtJumlah.Focus();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)

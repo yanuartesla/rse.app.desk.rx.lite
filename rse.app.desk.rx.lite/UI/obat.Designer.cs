@@ -494,7 +494,6 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.Panel paneldgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vcnamaobatDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn in_no_urut;
         private System.Windows.Forms.DataGridViewTextBoxColumn vc_nama_obat;
         private System.Windows.Forms.DataGridViewTextBoxColumn numjmlDataGridViewTextBoxColumn;

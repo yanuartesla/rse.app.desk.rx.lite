@@ -22,6 +22,7 @@ namespace rse.app.desk.rx.nurse
         private string _noresep;
         private string _nama;
         private string _klinik;
+        private string _kdokter;
 
 
         [Category("Custom Prop")]
@@ -61,6 +62,13 @@ namespace rse.app.desk.rx.nurse
         {
             get { return _sep; }
             set { _sep = value; lblSEP.Text = value; }
+        }
+
+        [Category("Custom Prop")]
+        public string kdokter
+        {
+            get { return _kdokter; }
+            set { _kdokter = value; lblKdokter.Text = value; }
         }
     }
 }

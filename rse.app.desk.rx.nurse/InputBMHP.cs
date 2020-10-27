@@ -17,10 +17,12 @@ namespace rse.app.desk.rx.nurse
         AutoCompleteStringCollection namesCollection =
         new AutoCompleteStringCollection();
         private string _koderx { get; set; }
-        public InputBMHP(string koderx)
+        private string _kdokter { get; set; }
+        public InputBMHP(string kdokter,string koderx)
         {
             InitializeComponent();
             _koderx = koderx;
+            _kdokter = kdokter;
         }
 
         private void InputBMHP_Load(object sender, EventArgs e)
@@ -56,19 +58,23 @@ namespace rse.app.desk.rx.nurse
             txtcariBMHP.AutoCompleteCustomSource = namesCollection;
 
             this.bmhpTableAdapter.Fill(this.yakkumdb.bmhp, _koderx);
-            //lblKodeRtx.Text = "RX" + _noreg + _kdokter;
 
-            //this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep, lblKodeRtx.Text);
-            //bs_view_resep.Filter = "vc_kode_rx = '" + lblKodeRtx.Text + "'";
-            //dgvResep.Update();
-            //dgvResep.Refresh();
+            dgvBMHP.Update();
+            dgvBMHP.Refresh();
+
+            this.fa_rx_tindakanTableAdapter.Fill(this.yakkumdb.fa_rx_tindakan, _koderx);
+            dgvTindakan.Update();
+            dgvTindakan.Refresh();
+            
         }
 
         private void txtcariBMHP_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                JumlahBMHP jj = new JumlahBMHP(txtcariBMHP.Text,_koderx);
+                var dt =new yakkumdbTableAdapters.bmhpTableAdapter();
+                var nourut = (int)dt.ScalarNoUrut(_koderx) + 1;
+                JumlahBMHP jj = new JumlahBMHP(txtcariBMHP.Text,_koderx,_kdokter,nourut);
                 var result = jj.ShowDialog();
                 if(result == DialogResult.OK)
                 {
@@ -144,24 +150,27 @@ namespace rse.app.desk.rx.nurse
             var dt = new yakkumdbTableAdapters.fa_rx_tindakanTableAdapter();
             for (int i = 0; i < dgvTindakan.RowCount - 1; i++)
             {
-                MessageBox.Show(dgvTindakan.Rows[i].Cells[1].Value.ToString());
 
-                //if (dgvTindakan.Rows[i].Cells[1].Value.Equals(null))
-                //{
 
-                //}
-                //else
-                //{
-                //    dt.InsertQuery(
-                //        _koderx,
-                //        dgvTindakan.Rows[i].Cells[1].Value.ToString()
-                //        );
-                //}
+                // if (dgvTindakan.Rows[i].Cells[1].Value.Equals(null))
+
+                if (dgvTindakan.Rows[i].Cells[1].Value != null)
+                {
+                    dt.DeleteTindakan(_koderx);
+                    dt.InsertQuery(
+                        _koderx,
+                        dgvTindakan.Rows[i].Cells[1].Value.ToString()
+                        );
+                }
+                else
+                {
+                    
+                }
             }
 
             var dh = new yakkumdbTableAdapters.resep_waitingTableAdapter();
             dh.UpdateQuery(_koderx);
-
+            MessageBox.Show("Data Berhasil di Simpan");
             this.Controls.Clear();
         }
     }

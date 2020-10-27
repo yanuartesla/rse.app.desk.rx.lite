@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.flpNotif = new System.Windows.Forms.FlowLayoutPanel();
+            this.cardResep1 = new rse.app.desk.rx.nurse.CardResep();
             this.pnlContent = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -49,7 +50,6 @@
             this.bsResep = new System.Windows.Forms.BindingSource(this.components);
             this.resep_waitingTableAdapter = new rse.app.desk.rx.nurse.yakkumdbTableAdapters.resep_waitingTableAdapter();
             this.timerreset = new System.Windows.Forms.Timer(this.components);
-            this.cardResep1 = new rse.app.desk.rx.nurse.CardResep();
             this.flpNotif.SuspendLayout();
             this.pnlContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -71,6 +71,22 @@
             this.flpNotif.Padding = new System.Windows.Forms.Padding(10);
             this.flpNotif.Size = new System.Drawing.Size(391, 400);
             this.flpNotif.TabIndex = 0;
+            // 
+            // cardResep1
+            // 
+            this.cardResep1.BackColor = System.Drawing.Color.Indigo;
+            this.cardResep1.Dokter = null;
+            this.cardResep1.Location = new System.Drawing.Point(13, 13);
+            this.cardResep1.Nama = null;
+            this.cardResep1.namaklinik = null;
+            this.cardResep1.Name = "cardResep1";
+            this.cardResep1.NoResep = null;
+            this.cardResep1.NoRM = null;
+            this.cardResep1.Padding = new System.Windows.Forms.Padding(7);
+            this.cardResep1.SEP = null;
+            this.cardResep1.Size = new System.Drawing.Size(365, 122);
+            this.cardResep1.TabIndex = 0;
+            this.cardResep1.Visible = false;
             // 
             // pnlContent
             // 
@@ -206,6 +222,7 @@
             this.guna2CheckBox1.UncheckedState.BorderRadius = 0;
             this.guna2CheckBox1.UncheckedState.BorderThickness = 0;
             this.guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox1.CheckedChanged += new System.EventHandler(this.guna2CheckBox1_CheckedChanged);
             // 
             // cmbNKlinik
             // 
@@ -221,40 +238,38 @@
             this.cmbNKlinik.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbNKlinik.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbNKlinik.HoverState.Parent = this.cmbNKlinik;
+            this.cmbNKlinik.IntegralHeight = false;
             this.cmbNKlinik.ItemHeight = 30;
             this.cmbNKlinik.Items.AddRange(new object[] {
-            "4503 | Akupuntur                          ",
-            "0800 | Bedah                              ",
-            "2601 | Bedah Orthopedi                    ",
-            "2300 | Bedah Saraf                        ",
-            "2400 | FARMASI",
-            "2500 | Geriatri",
-            "2605 | Gigi dan Mulut Sore                  ",
-            "2612 | Ginekologi                         ",
-            "1801 | Ginekologi/Kandungan Sore          ",
-            "0100 | Gizi                               ",
-            "0200 | Hemodialisa",
-            "0300 | IRD (Instalasi Rawat Darurat)      ",
-            "0301 | Jantung dan Pembuluh Darah",
-            "0400 | Karyawan",
-            "0503 | Kesehatan Anak                     ",
-            "0500 | KIA",
-            "0600 | Klinik Gigi dan Mulut                ",
-            "0700 | Klinik Jiwa",
-            "0900 | Klinik Rehab. Medik",
-            "1000 | Klinik Urologi",
-            "1100 | Konseling",
-            "1200 | Kulit dan Kelamin                    ",
-            "1300 | Laboratorium",
-            "1500 | Mata                               ",
-            "1800 | ObsGini / Kebidanan dan Kandungan               ",
-            "1900 | Penyakit Dalam                     ",
-            "2100 | Penyakit Dalam Sore                ",
-            "2200 | Radiologi                          ",
-            "4100 | Rehabilitasi Medik",
-            "4600 | Saraf                              ",
-            "4700 | THT                                ",
-            "4800 | Umum                               "});
+            "2100 | Akupuntur                          ",
+            "0200 | Bedah                              ",
+            "1500 | Bedah Orthopedi                    ",
+            "0600 | Bedah Saraf                        ",
+            "2300 | Geriatri",
+            "2612 | Gigi dan Mulut Sore                  ",
+            "0500 | Ginekologi                         ",
+            "2605 | Ginekologi/Kandungan Sore          ",
+            "2200 | Gizi                               ",
+            "4503 | Hemodialisa",
+            "1900 | IRD (Instalasi Rawat Darurat)      ",
+            "1300 | Jantung dan Pembuluh Darah",
+            "1801 | Karyawan",
+            "0300 | Kesehatan Anak                     ",
+            "0301 | KIA",
+            "1200 | Klinik Gigi dan Mulut                ",
+            "0800 | Klinik Jiwa",
+            "2400 | Klinik Rehab. Medik",
+            "2500 | Klinik Urologi",
+            "0503 | Konseling",
+            "1100 | Kulit dan Kelamin                    ",
+            "1000 | Mata                               ",
+            "0400 | ObsGini / Kebidanan dan Kandungan               ",
+            "0100 | Penyakit Dalam                     ",
+            "2601 | Penyakit Dalam Sore                ",
+            "4800 | Rehabilitasi Medik",
+            "0700 | Saraf                              ",
+            "0900 | THT                                ",
+            "1800 | Umum                               "});
             this.cmbNKlinik.ItemsAppearance.Parent = this.cmbNKlinik;
             this.cmbNKlinik.Location = new System.Drawing.Point(70, 106);
             this.cmbNKlinik.Name = "cmbNKlinik";
@@ -289,24 +304,8 @@
             // 
             // timerreset
             // 
-            this.timerreset.Interval = 3000;
+            this.timerreset.Interval = 4000;
             this.timerreset.Tick += new System.EventHandler(this.timerreset_Tick);
-            // 
-            // cardResep1
-            // 
-            this.cardResep1.BackColor = System.Drawing.Color.Indigo;
-            this.cardResep1.Dokter = null;
-            this.cardResep1.Location = new System.Drawing.Point(13, 13);
-            this.cardResep1.Nama = null;
-            this.cardResep1.namaklinik = null;
-            this.cardResep1.Name = "cardResep1";
-            this.cardResep1.NoResep = null;
-            this.cardResep1.NoRM = null;
-            this.cardResep1.Padding = new System.Windows.Forms.Padding(7);
-            this.cardResep1.SEP = null;
-            this.cardResep1.Size = new System.Drawing.Size(365, 122);
-            this.cardResep1.TabIndex = 0;
-            this.cardResep1.Visible = false;
             // 
             // MainForm
             // 

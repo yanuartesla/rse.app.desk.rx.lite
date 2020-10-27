@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace rse.app.desk.rx.lite.UI
@@ -16,7 +10,7 @@ namespace rse.app.desk.rx.lite.UI
     {
         AutoCompleteStringCollection namesCollection =
         new AutoCompleteStringCollection();
-        private  int _kodefornas { get; set; }
+        private int _kodefornas { get; set; }
         private Boolean _btIter { get; set; }
         private decimal _jmliter { get; set; }
         private string _namaracikan { get; set; }
@@ -26,12 +20,12 @@ namespace rse.app.desk.rx.lite.UI
         private string _kdokter { get; set; }
         private int _nourut { get; set; }
 
-        public Racikan(int kodefornas,string namaracikan, string koderxd, string koderx,string kracik,string kdokter,int nourut)
+        public Racikan(int kodefornas, string namaracikan, string koderxd, string koderx, string kracik, string kdokter, int nourut)
         {
             InitializeComponent();
             _kodefornas = kodefornas;
             _namaracikan = namaracikan;
-            Obat.Text= _namaracikan;
+            Obat.Text = _namaracikan;
             _koderxd = koderxd;
             _koderx = koderx;
             _kracik = kracik;
@@ -55,8 +49,8 @@ namespace rse.app.desk.rx.lite.UI
             cmd.CommandType = CommandType.Text;
             cmd.CommandText =
             "Select  [vc_namaobat],[vc_kodeobat] from [dbo].[view_rse_fa_obat]" +
-            "where [kodefornas] >= " + _kodefornas + "and [vc_golongan] = '01'"+
-           
+            "where [kodefornas] >= " + _kodefornas + "and [vc_golongan] = '01'" +
+
             " order by [vc_namaobat] asc";
             conn.Open();
             dReader = cmd.ExecuteReader();
@@ -81,7 +75,7 @@ namespace rse.app.desk.rx.lite.UI
 
         private void txtNamaObat_TextChanged(object sender, EventArgs e)
         {
-           // viewrsefaobatBindingSource.Filter = "[vc_namaobat] = '" + txtNamaObat.Text + "'";
+            // viewrsefaobatBindingSource.Filter = "[vc_namaobat] = '" + txtNamaObat.Text + "'";
         }
 
         private void Racikan_Load(object sender, EventArgs e)
@@ -121,7 +115,7 @@ namespace rse.app.desk.rx.lite.UI
             using (SolidBrush b = new SolidBrush(((DataGridView)sender).RowHeadersDefaultCellStyle.ForeColor))
             {
                 e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
-                
+
             }
         }
 
@@ -142,52 +136,64 @@ namespace rse.app.desk.rx.lite.UI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            var dt = new dataset.yakkumdbTableAdapters.fa_rx_racikanTableAdapter();
-            for (int i = 0; i < dgvRacik.RowCount-1;i++)
+            if(txtJumlah.Text == "")
             {
-                
-                if (dgvRacik.Rows[i].Cells[1].Value.Equals(null))
-                {
-                   
-                }
-                else
-                {
-                    dt.InsertQuery(
-                       _koderxd,
-                       i+1,
-                       dgvRacik.Rows[i].Cells[5].Value.ToString(),
-                       dgvRacik.Rows[i].Cells[1].Value.ToString(),
-                       dgvRacik.Rows[i].Cells[2].Value.ToString(),
-                       dgvRacik.Rows[i].Cells[3].Value.ToString()
-                    );
-
-                    
-                }
-
+                MessageBox.Show("Masukkan Jumlah Racikan");
             }
-            var dh = new dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
-            dh.InsertQuery
-                (_koderx,
-                _koderxd,
-                "999999",
-                _kracik,
-                true,
-                txtSignalain.Text,
-                _btIter,
-                _jmliter,
-                false,
-                Int32.Parse(txtJumlah.Text),
-                _kdokter,
-                _nourut,
-                txtdd1.Text,
-                txtdd2.Text,
-                cmbSatuan.Text,
-                _namaracikan,
-                cmbSatuanDosis.Text
+            if(cmbSatuanDosis.SelectedIndex == -1)
+            {
+                MessageBox.Show("Pilih Satuan Dosis");
+            }
+            else
+            {
+                var dt = new dataset.yakkumdbTableAdapters.fa_rx_racikanTableAdapter();
+                for (int i = 0; i < dgvRacik.RowCount - 1; i++)
+                {
 
-                );
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+                    if (dgvRacik.Rows[i].Cells[1].Value.Equals(null))
+                    {
+
+                    }
+                    else
+                    {
+                        dt.InsertQuery(
+                           _koderxd,
+                           i + 1,
+                           dgvRacik.Rows[i].Cells[5].Value.ToString(),
+                           dgvRacik.Rows[i].Cells[1].Value.ToString(),
+                           dgvRacik.Rows[i].Cells[2].Value.ToString(),
+                           dgvRacik.Rows[i].Cells[3].Value.ToString()
+                        );
+
+
+                    }
+
+                }
+                var dh = new dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
+                dh.InsertQuery
+                    (_koderx,
+                    _koderxd,
+                    "999999",
+                    _kracik,
+                    true,
+                    txtSignalain.Text,
+                    _btIter,
+                    _jmliter,
+                    false,
+                    Int32.Parse(txtJumlah.Text),
+                    _kdokter,
+                    _nourut,
+                    txtdd1.Text,
+                    txtdd2.Text,
+                    cmbSatuan.Text,
+                    _namaracikan,
+                    cmbSatuanDosis.Text
+
+                    );
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            
         }
 
         private void dgvRacik_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -196,7 +202,7 @@ namespace rse.app.desk.rx.lite.UI
                 return;
 
             //I supposed your button column is at index 0
-            
+
             if (e.ColumnIndex == 4)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
@@ -223,7 +229,7 @@ namespace rse.app.desk.rx.lite.UI
             { MessageBox.Show("Masukan Satuan Jumlah Obat"); return false; }
             else
             {
-                return true; 
+                return true;
             }
         }
     }

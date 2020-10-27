@@ -10616,9 +10616,10 @@ namespace rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters {
                 "KUNJUNG.VC_NO_RM = RMPasien.vc_no_rm\r\nWHERE        (YEAR(RMKUNJUNG.DT_TGL_REG) =" +
                 " YEAR(GETDATE())) AND (MONTH(RMKUNJUNG.DT_TGL_REG) = MONTH(GETDATE())) AND (DAY(" +
                 "RMKUNJUNG.DT_TGL_REG) = DAY(GETDATE())) AND (RMKUNJUNG.VC_K_PNG = \'3\') AND \r\n   " +
-                "                      (fa_rx_resep_h.int_k_status IS NULL) AND (RMKUNJUNG.VC_K_K" +
-                "LINIK = \'0200\')\r\nORDER BY RMKUNJUNG.IN_NO_URUT_DOKTER, RMKUNJUNG.DT_TGL_REG";
+                "                      (fa_rx_resep_h.int_k_status IS NULL) AND (RMKUNJUNG.VC_K_D" +
+                "OKTER = @kdokter)\r\nORDER BY RMKUNJUNG.IN_NO_URUT_DOKTER, RMKUNJUNG.DT_TGL_REG";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kdokter", global::System.Data.SqlDbType.VarChar, 4, global::System.Data.ParameterDirection.Input, 0, 0, "VC_K_DOKTER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10649,8 +10650,14 @@ namespace rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByKlinik(yakkumdb.RM_KUNJUNGDataTable dataTable) {
+        public virtual int FillByKlinik(yakkumdb.RM_KUNJUNGDataTable dataTable, string kdokter) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((kdokter == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(kdokter));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -10662,8 +10669,14 @@ namespace rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual yakkumdb.RM_KUNJUNGDataTable GetDataByKlinik() {
+        public virtual yakkumdb.RM_KUNJUNGDataTable GetDataByKlinik(string kdokter) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((kdokter == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(kdokter));
+            }
             yakkumdb.RM_KUNJUNGDataTable dataTable = new yakkumdb.RM_KUNJUNGDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -11981,7 +11994,7 @@ VALUES        (@vc_kode_rx,@vc_kode_rx_d,@vc_kode_obat,@vc_kode_racikan,@bt_raci
                          + ' ' + 'dd' + ' ' + CAST(fa_rx_resep_d.nvc_dd2 AS varchar) AS aturanpakai, fa_rx_resep_d.in_no_urut
 FROM            fa_rx_resep_d LEFT OUTER JOIN
                          fa_obat ON fa_rx_resep_d.vc_kode_obat = fa_obat.vc_kodeobat
-WHERE        (fa_rx_resep_d.vc_kode_rx = @koderx)";
+WHERE        (fa_rx_resep_d.vc_kode_rx = @koderx) AND (fa_rx_resep_d.vc_kode_rx NOT LIKE 'AL%')";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@koderx", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kode_rx", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

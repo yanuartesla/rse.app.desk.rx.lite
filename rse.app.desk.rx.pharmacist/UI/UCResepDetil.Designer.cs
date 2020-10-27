@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource10 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.data_resepBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.yakkumdb = new rse.app.desk.rx.pharmacist.Dataset.yakkumdb();
             this.data_pasienBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -163,7 +163,7 @@
             this.lblNoReg.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.data_pasienBindingSource, "vc_no_reg", true));
             this.lblNoReg.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoReg.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblNoReg.Location = new System.Drawing.Point(568, 3);
+            this.lblNoReg.Location = new System.Drawing.Point(556, 3);
             this.lblNoReg.Name = "lblNoReg";
             this.lblNoReg.Size = new System.Drawing.Size(50, 23);
             this.lblNoReg.TabIndex = 13;
@@ -407,21 +407,21 @@
             // rvResep
             // 
             this.rvResep.Dock = System.Windows.Forms.DockStyle.Bottom;
-            reportDataSource6.Name = "dsResep";
-            reportDataSource6.Value = this.data_resepBindingSource;
-            reportDataSource7.Name = "dsPasien";
-            reportDataSource7.Value = this.data_pasienBindingSource;
-            reportDataSource8.Name = "dsDiagnosa";
-            reportDataSource8.Value = this.diagnosautamaBindingSource;
-            reportDataSource9.Name = "dsDiagSec";
-            reportDataSource9.Value = this.rMIcdSekunderRalanBindingSource;
-            reportDataSource10.Name = "dsTindakanPer";
-            reportDataSource10.Value = this.farxtindakanBindingSource;
-            this.rvResep.LocalReport.DataSources.Add(reportDataSource6);
-            this.rvResep.LocalReport.DataSources.Add(reportDataSource7);
-            this.rvResep.LocalReport.DataSources.Add(reportDataSource8);
-            this.rvResep.LocalReport.DataSources.Add(reportDataSource9);
-            this.rvResep.LocalReport.DataSources.Add(reportDataSource10);
+            reportDataSource1.Name = "dsResep";
+            reportDataSource1.Value = this.data_resepBindingSource;
+            reportDataSource2.Name = "dsPasien";
+            reportDataSource2.Value = this.data_pasienBindingSource;
+            reportDataSource3.Name = "dsDiagnosa";
+            reportDataSource3.Value = this.diagnosautamaBindingSource;
+            reportDataSource4.Name = "dsDiagSec";
+            reportDataSource4.Value = this.rMIcdSekunderRalanBindingSource;
+            reportDataSource5.Name = "dsTindakanPer";
+            reportDataSource5.Value = this.farxtindakanBindingSource;
+            this.rvResep.LocalReport.DataSources.Add(reportDataSource1);
+            this.rvResep.LocalReport.DataSources.Add(reportDataSource2);
+            this.rvResep.LocalReport.DataSources.Add(reportDataSource3);
+            this.rvResep.LocalReport.DataSources.Add(reportDataSource4);
+            this.rvResep.LocalReport.DataSources.Add(reportDataSource5);
             this.rvResep.LocalReport.ReportEmbeddedResource = "rse.app.desk.rx.pharmacist.Reports.reportResep.rdlc";
             this.rvResep.Location = new System.Drawing.Point(5, 308);
             this.rvResep.Name = "rvResep";
@@ -446,22 +446,22 @@
             // 
             this.dgvResep.AllowUserToAddRows = false;
             this.dgvResep.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.dgvResep.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvResep.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvResep.AutoGenerateColumns = false;
             this.dgvResep.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvResep.BackgroundColor = System.Drawing.Color.White;
             this.dgvResep.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvResep.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvResep.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvResep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvResep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvResep.ColumnHeadersHeight = 40;
             this.dgvResep.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.innourutDataGridViewTextBoxColumn,
@@ -474,14 +474,14 @@
             this.edit,
             this.vc_kode_rx_d});
             this.dgvResep.DataSource = this.bsResep;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvResep.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvResep.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvResep.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvResep.EnableHeadersVisualStyles = false;
             this.dgvResep.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -575,9 +575,9 @@
             // 
             // edit
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(2);
-            this.edit.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
+            this.edit.DefaultCellStyle = dataGridViewCellStyle3;
             this.edit.FillWeight = 40F;
             this.edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.edit.HeaderText = "Edit";

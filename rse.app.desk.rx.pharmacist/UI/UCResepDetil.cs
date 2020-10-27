@@ -101,7 +101,8 @@ namespace rse.app.desk.rx.pharmacist.UI
             load_report();
             var _year = DateTime.Now.ToString("yyyy");
             var _month = DateTime.Now.ToString("MM");
-            var _datepath = _year + @"\" + _month;
+            var _day = DateTime.Now.ToString("dd");
+            var _datepath = _year + @"\" + _month+ @"\"+_day;
             var _filename = _sep + "_resep.Pdf";
             string _path = @"\\192.168.10.11\Data SEP\Casemix RJ\FARMASI RJ\" + _datepath + @"\" + _filename;
             Functions.SavePDF.SavedPDF(rvResep, _path);

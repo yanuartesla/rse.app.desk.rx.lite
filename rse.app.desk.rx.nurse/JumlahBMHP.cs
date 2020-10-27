@@ -14,16 +14,21 @@ namespace rse.app.desk.rx.nurse
     {
         private string _namabmhp { get; set; }
         private string _koderx { get; set; }
-        public JumlahBMHP(string nama, string korx)
+        private string _kdokter { get; set; }
+        private int _nourut { get; set; }
+        public JumlahBMHP(string nama, string korx, string kdokter, int nourut)
         {
             InitializeComponent();
             _namabmhp = nama;
             _koderx = korx;
+            _kdokter = kdokter;
+            _nourut = nourut;
         }
 
         private void JumlahBMHP_Load(object sender, EventArgs e)
         {
             this.view_rse_fa_obatTableAdapter.Fill(yakkumdb.view_rse_fa_obat,_namabmhp);
+            this.txtJumlah.Focus();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -42,13 +47,13 @@ namespace rse.app.desk.rx.nurse
                 var bm = new yakkumdbTableAdapters.bmhpTableAdapter();
                 bm.InsertQuery(
                     _koderx,
-                    _koderx + lblKodeObat.Text,
-                    12,
+                    "AL"+_koderx.Substring(2) + lblKodeObat.Text,
+                    _nourut,
                     lblKodeObat.Text,
                     lblNama.Text,
                     Int32.Parse(txtJumlah.Text),
                     lblSatuan.Text,
-                    ""
+                    _kdokter
                     );
                 this.DialogResult = DialogResult.OK;
                 this.Close();

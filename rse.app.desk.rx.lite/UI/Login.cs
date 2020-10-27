@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using rse.app.desk.rx.lite.Fungtion;
+using System;
 using System.Windows.Forms;
-using rse.app.desk.rx.lite.Fungtion;
 
 namespace rse.app.desk.rx.lite.UI
 {
@@ -22,9 +15,11 @@ namespace rse.app.desk.rx.lite.UI
         public Login()
         {
             InitializeComponent();
+            this.txtPass.KeyDown += txtPass_KeyDown;
+            this.txtUser.KeyDown += txtUser_KeyDown;
         }
         public roles UserRole { get; set; }
-       
+
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
@@ -65,11 +60,14 @@ namespace rse.app.desk.rx.lite.UI
 
                             break;
                     }
-                    this.DialogResult = DialogResult.OK;
+                    //this.DialogResult = DialogResult.OK;
                     //this.usernik = nik;
                     //_usernik = nik;
                     //this.userNIK = nik;
-                    this.Close();
+                    this.Hide();
+                    Eprescribe ep = new Eprescribe(nid);
+                    ep.ShowDialog();
+                    
                 }
                 else
                 {
@@ -81,6 +79,34 @@ namespace rse.app.desk.rx.lite.UI
         private void btnLogin_Click(object sender, EventArgs e)
         {
             DoLogin();
+        }
+
+        private void txtUser_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.txtPass.Focus();
+            }
+        }
+
+        private void txtPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                DoLogin();
+            }
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            SimpleAES enc = new SimpleAES();
+            txtpassstring.Text = enc.EncryptString(txtUser.Text);
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            SimpleAES enc = new SimpleAES();
+            txtdecrpit.Text = enc.DecryptString(txtpassstring.Text);
         }
     }
 }

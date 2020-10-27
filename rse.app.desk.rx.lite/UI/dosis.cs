@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace rse.app.desk.rx.lite.UI
 {
-    
+
     public partial class dosis : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -33,7 +27,7 @@ namespace rse.app.desk.rx.lite.UI
         private decimal _jmliter { get; set; }
         private int _nourut { get; set; }
 
-        public dosis(string namaobat,string norx, string kodedokter, int nourut)
+        public dosis(string namaobat, string norx, string kodedokter, int nourut)
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 64, 64));
@@ -49,14 +43,14 @@ namespace rse.app.desk.rx.lite.UI
             this.view_rse_fa_obatTableAdapter.Fill(this.yakkumdb.view_rse_fa_obat);
             // TODO: This line of code loads data into the 'yakkumdb.view_rse_fa_obat' table. You can move, or remove it, as needed.
             this.view_rse_fa_obatTableAdapter.FillByNamaObat(this.yakkumdb.view_rse_fa_obat, _nmobat);
-            
+
 
             dataset.yakkumdbTableAdapters.view_rse_fa_obatTableAdapter da = new dataset.yakkumdbTableAdapters.view_rse_fa_obatTableAdapter();
 
             DataTable dt = da.GetDataByNamaObat(_nmobat);
             foreach (DataRow r in dt.Rows)
             {
-            
+
                 _retriksi = r.Field<decimal>(0);
                 _kobat = r.Field<string>(3);
 
@@ -64,10 +58,10 @@ namespace rse.app.desk.rx.lite.UI
                 {
                     retensi.Visible = false;
                 }
-                else {  }
+                else { }
 
             }
-            bsObat.Filter = "vc_namaobat = '" +Obat.Text+"'";
+            bsObat.Filter = "vc_namaobat = '" + Obat.Text + "'";
             retensi.Text = "Retriksi : " + retensi.Text + " / kasus";
         }
 
@@ -76,7 +70,7 @@ namespace rse.app.desk.rx.lite.UI
             this.Close();
         }
 
-       
+
         private void guna2CustomCheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (EtherCheck.Checked)
@@ -85,14 +79,14 @@ namespace rse.app.desk.rx.lite.UI
                 _btIter = true;
                 _jmliter = numiter.Value;
             }
-            else if(!EtherCheck.Checked)
+            else if (!EtherCheck.Checked)
             {
                 numiter.Visible = false;
                 _btIter = false;
             }
         }
 
-    
+
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -123,10 +117,10 @@ namespace rse.app.desk.rx.lite.UI
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
-            
+
         }
 
-      
+
 
         private void favCheckBox_CheckedChanged(object sender, EventArgs e)
         {
@@ -153,19 +147,20 @@ namespace rse.app.desk.rx.lite.UI
             {
                 e.Handled = true;
             }
-            
+
         }
 
-        private Boolean checkretriksi() {
-            
-            
-            if(txtJumlah.Text == "")
+        private Boolean checkretriksi()
+        {
+
+
+            if (txtJumlah.Text == "")
             {
                 MessageBox.Show("Masukan Jumlah Obat");
                 return false;
             }
             if (cmbSatuanDosis.Text == "")
-            { MessageBox.Show("Masukan Satuan Dosis");return false; }
+            { MessageBox.Show("Masukan Satuan Dosis"); return false; }
             else
             {
                 var _jml = Int32.Parse(txtJumlah.Text);
@@ -176,7 +171,7 @@ namespace rse.app.desk.rx.lite.UI
                 }
                 else { return true; }
             }
-            
+
         }
 
         private void txtJumlah_TextChanged(object sender, EventArgs e)

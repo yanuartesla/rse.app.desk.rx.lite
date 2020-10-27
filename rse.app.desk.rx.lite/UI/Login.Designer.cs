@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.txtdecrpit = new System.Windows.Forms.TextBox();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.txtpassstring = new System.Windows.Forms.TextBox();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -66,6 +70,10 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.txtdecrpit);
+            this.splitContainer1.Panel1.Controls.Add(this.guna2Button3);
+            this.splitContainer1.Panel1.Controls.Add(this.txtpassstring);
+            this.splitContainer1.Panel1.Controls.Add(this.guna2Button2);
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
             this.splitContainer1.Panel1.Controls.Add(this.guna2Panel1);
             // 
@@ -76,6 +84,56 @@
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
             this.splitContainer1.SplitterDistance = 509;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // txtdecrpit
+            // 
+            this.txtdecrpit.Location = new System.Drawing.Point(84, 357);
+            this.txtdecrpit.Multiline = true;
+            this.txtdecrpit.Name = "txtdecrpit";
+            this.txtdecrpit.Size = new System.Drawing.Size(406, 33);
+            this.txtdecrpit.TabIndex = 11;
+            this.txtdecrpit.Visible = false;
+            // 
+            // guna2Button3
+            // 
+            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
+            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
+            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button3.ForeColor = System.Drawing.Color.White;
+            this.guna2Button3.HoverState.Parent = this.guna2Button3;
+            this.guna2Button3.Location = new System.Drawing.Point(22, 357);
+            this.guna2Button3.Name = "guna2Button3";
+            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
+            this.guna2Button3.Size = new System.Drawing.Size(56, 33);
+            this.guna2Button3.TabIndex = 10;
+            this.guna2Button3.Text = "decrypt pass";
+            this.guna2Button3.Visible = false;
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
+            // 
+            // txtpassstring
+            // 
+            this.txtpassstring.Location = new System.Drawing.Point(84, 396);
+            this.txtpassstring.Multiline = true;
+            this.txtpassstring.Name = "txtpassstring";
+            this.txtpassstring.Size = new System.Drawing.Size(406, 33);
+            this.txtpassstring.TabIndex = 9;
+            this.txtpassstring.Visible = false;
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
+            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.HoverState.Parent = this.guna2Button2;
+            this.guna2Button2.Location = new System.Drawing.Point(22, 396);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
+            this.guna2Button2.Size = new System.Drawing.Size(56, 33);
+            this.guna2Button2.TabIndex = 8;
+            this.guna2Button2.Text = "generate pass";
+            this.guna2Button2.Visible = false;
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // pictureBox1
             // 
@@ -229,6 +287,7 @@
             this.txtPass.ShadowDecoration.Parent = this.txtPass;
             this.txtPass.Size = new System.Drawing.Size(225, 36);
             this.txtPass.TabIndex = 1;
+            this.txtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPass_KeyDown);
             // 
             // txtUser
             // 
@@ -255,6 +314,7 @@
             this.txtUser.ShadowDecoration.Parent = this.txtUser;
             this.txtUser.Size = new System.Drawing.Size(225, 36);
             this.txtUser.TabIndex = 0;
+            this.txtUser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUser_KeyDown);
             // 
             // guna2ShadowForm1
             // 
@@ -304,6 +364,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
@@ -336,5 +397,9 @@
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl2;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl3;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private System.Windows.Forms.TextBox txtpassstring;
+        private System.Windows.Forms.TextBox txtdecrpit;
+        private Guna.UI2.WinForms.Guna2Button guna2Button3;
     }
 }
