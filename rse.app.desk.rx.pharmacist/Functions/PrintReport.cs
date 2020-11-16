@@ -8,6 +8,7 @@ using System.Drawing.Printing;
 using System.IO;
 using System.Drawing.Imaging;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace YourApp
 {
@@ -89,9 +90,12 @@ namespace YourApp
             else
             {
                 printDoc.PrintPage += new PrintPageEventHandler(PrintPage);
-                printDoc.PrinterSettings.Copies = _numberCoppies;
+                 
                 m_currentPageIndex = 0;
                 printDoc.Print();
+
+                //printDoc.PrinterSettings.DefaultPageSettings.PrinterSettings.Copies = _numberCoppies;
+
             }
         }
 

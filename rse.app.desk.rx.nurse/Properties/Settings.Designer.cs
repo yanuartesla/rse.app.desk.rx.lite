@@ -36,7 +36,7 @@ namespace rse.app.desk.rx.nurse.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0000 | Pilih Klinik")]
         public string strKlinik {
             get {
                 return ((string)(this["strKlinik"]));

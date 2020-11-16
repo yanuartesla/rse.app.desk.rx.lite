@@ -71,10 +71,12 @@
             this.NoRM = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.LoadPanel = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.btnEfile = new Guna.UI2.WinForms.Guna2Button();
+            this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
+            this.btEfile = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnEresep = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnBMHP = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnExpertise = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnAddRx = new Guna.UI2.WinForms.Guna2Button();
-            this.btnGambar = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
@@ -93,7 +95,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.LoadPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGambar)).BeginInit();
+            this.flpMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2DataGridView1
@@ -583,10 +585,8 @@
             // LoadPanel
             // 
             this.LoadPanel.BackColor = System.Drawing.Color.Transparent;
-            this.LoadPanel.Controls.Add(this.btnEfile);
+            this.LoadPanel.Controls.Add(this.flpMenu);
             this.LoadPanel.Controls.Add(this.guna2CircleButton1);
-            this.LoadPanel.Controls.Add(this.btnAddRx);
-            this.LoadPanel.Controls.Add(this.btnGambar);
             this.LoadPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LoadPanel.FillColor = System.Drawing.Color.White;
             this.LoadPanel.Location = new System.Drawing.Point(300, 0);
@@ -596,23 +596,98 @@
             this.LoadPanel.Size = new System.Drawing.Size(884, 711);
             this.LoadPanel.TabIndex = 1;
             // 
-            // btnEfile
+            // flpMenu
             // 
-            this.btnEfile.Animated = true;
-            this.btnEfile.AutoRoundedCorners = true;
-            this.btnEfile.BorderRadius = 26;
-            this.btnEfile.CheckedState.Parent = this.btnEfile;
-            this.btnEfile.CustomImages.Parent = this.btnEfile;
-            this.btnEfile.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnEfile.ForeColor = System.Drawing.Color.White;
-            this.btnEfile.HoverState.Parent = this.btnEfile;
-            this.btnEfile.Location = new System.Drawing.Point(313, 270);
-            this.btnEfile.Name = "btnEfile";
-            this.btnEfile.ShadowDecoration.Parent = this.btnEfile;
-            this.btnEfile.Size = new System.Drawing.Size(247, 55);
-            this.btnEfile.TabIndex = 4;
-            this.btnEfile.Text = "+    Efile";
-            this.btnEfile.Click += new System.EventHandler(this.btnEfile_Click);
+            this.flpMenu.Controls.Add(this.btEfile);
+            this.flpMenu.Controls.Add(this.btnEresep);
+            this.flpMenu.Controls.Add(this.btnBMHP);
+            this.flpMenu.Controls.Add(this.btnExpertise);
+            this.flpMenu.Location = new System.Drawing.Point(114, 79);
+            this.flpMenu.Margin = new System.Windows.Forms.Padding(5);
+            this.flpMenu.Name = "flpMenu";
+            this.flpMenu.Padding = new System.Windows.Forms.Padding(15);
+            this.flpMenu.Size = new System.Drawing.Size(711, 599);
+            this.flpMenu.TabIndex = 6;
+            // 
+            // btEfile
+            // 
+            this.btEfile.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btEfile.CheckedState.Parent = this.btEfile;
+            this.btEfile.HoverState.Image = global::rse.app.desk.rx.lite.Properties.Resources.efile;
+            this.btEfile.HoverState.ImageSize = new System.Drawing.Size(150, 150);
+            this.btEfile.HoverState.Parent = this.btEfile;
+            this.btEfile.Image = global::rse.app.desk.rx.lite.Properties.Resources.efile;
+            this.btEfile.ImageRotate = 0F;
+            this.btEfile.ImageSize = new System.Drawing.Size(128, 128);
+            this.btEfile.Location = new System.Drawing.Point(18, 18);
+            this.btEfile.Name = "btEfile";
+            this.btEfile.PressedState.Image = global::rse.app.desk.rx.lite.Properties.Resources.efile;
+            this.btEfile.PressedState.ImageSize = new System.Drawing.Size(150, 150);
+            this.btEfile.PressedState.Parent = this.btEfile;
+            this.btEfile.Size = new System.Drawing.Size(215, 215);
+            this.btEfile.TabIndex = 0;
+            this.btEfile.UseTransparentBackground = true;
+            this.btEfile.Click += new System.EventHandler(this.btEfile_Click);
+            // 
+            // btnEresep
+            // 
+            this.btnEresep.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnEresep.CheckedState.Parent = this.btnEresep;
+            this.btnEresep.HoverState.Image = global::rse.app.desk.rx.lite.Properties.Resources.eresep;
+            this.btnEresep.HoverState.ImageSize = new System.Drawing.Size(150, 150);
+            this.btnEresep.HoverState.Parent = this.btnEresep;
+            this.btnEresep.Image = global::rse.app.desk.rx.lite.Properties.Resources.eresep;
+            this.btnEresep.ImageRotate = 0F;
+            this.btnEresep.ImageSize = new System.Drawing.Size(128, 128);
+            this.btnEresep.Location = new System.Drawing.Point(239, 18);
+            this.btnEresep.Name = "btnEresep";
+            this.btnEresep.PressedState.Image = global::rse.app.desk.rx.lite.Properties.Resources.eresep;
+            this.btnEresep.PressedState.ImageSize = new System.Drawing.Size(150, 150);
+            this.btnEresep.PressedState.Parent = this.btnEresep;
+            this.btnEresep.Size = new System.Drawing.Size(215, 215);
+            this.btnEresep.TabIndex = 1;
+            this.btnEresep.UseTransparentBackground = true;
+            this.btnEresep.Click += new System.EventHandler(this.guna2ImageButton2_Click);
+            // 
+            // btnBMHP
+            // 
+            this.btnBMHP.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnBMHP.CheckedState.Parent = this.btnBMHP;
+            this.btnBMHP.HoverState.Image = global::rse.app.desk.rx.lite.Properties.Resources.bmhp;
+            this.btnBMHP.HoverState.ImageSize = new System.Drawing.Size(150, 150);
+            this.btnBMHP.HoverState.Parent = this.btnBMHP;
+            this.btnBMHP.Image = global::rse.app.desk.rx.lite.Properties.Resources.bmhp;
+            this.btnBMHP.ImageRotate = 0F;
+            this.btnBMHP.ImageSize = new System.Drawing.Size(128, 128);
+            this.btnBMHP.Location = new System.Drawing.Point(460, 18);
+            this.btnBMHP.Name = "btnBMHP";
+            this.btnBMHP.PressedState.Image = global::rse.app.desk.rx.lite.Properties.Resources.bmhp;
+            this.btnBMHP.PressedState.ImageSize = new System.Drawing.Size(150, 150);
+            this.btnBMHP.PressedState.Parent = this.btnBMHP;
+            this.btnBMHP.Size = new System.Drawing.Size(215, 215);
+            this.btnBMHP.TabIndex = 3;
+            this.btnBMHP.UseTransparentBackground = true;
+            this.btnBMHP.Click += new System.EventHandler(this.btnBMHP_Click);
+            // 
+            // btnExpertise
+            // 
+            this.btnExpertise.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnExpertise.CheckedState.Parent = this.btnExpertise;
+            this.btnExpertise.HoverState.Image = global::rse.app.desk.rx.lite.Properties.Resources.expertise;
+            this.btnExpertise.HoverState.ImageSize = new System.Drawing.Size(150, 150);
+            this.btnExpertise.HoverState.Parent = this.btnExpertise;
+            this.btnExpertise.Image = global::rse.app.desk.rx.lite.Properties.Resources.expertise;
+            this.btnExpertise.ImageRotate = 0F;
+            this.btnExpertise.ImageSize = new System.Drawing.Size(128, 128);
+            this.btnExpertise.Location = new System.Drawing.Point(18, 239);
+            this.btnExpertise.Name = "btnExpertise";
+            this.btnExpertise.PressedState.Image = global::rse.app.desk.rx.lite.Properties.Resources.expertise;
+            this.btnExpertise.PressedState.ImageSize = new System.Drawing.Size(150, 150);
+            this.btnExpertise.PressedState.Parent = this.btnExpertise;
+            this.btnExpertise.Size = new System.Drawing.Size(215, 215);
+            this.btnExpertise.TabIndex = 2;
+            this.btnExpertise.UseTransparentBackground = true;
+            this.btnExpertise.Click += new System.EventHandler(this.btnExpertise_Click);
             // 
             // guna2CircleButton1
             // 
@@ -624,7 +699,7 @@
             this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(826, 12);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(823, 12);
             this.guna2CircleButton1.Name = "guna2CircleButton1";
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
@@ -632,37 +707,6 @@
             this.guna2CircleButton1.TabIndex = 3;
             this.guna2CircleButton1.Text = "X";
             this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
-            // 
-            // btnAddRx
-            // 
-            this.btnAddRx.Animated = true;
-            this.btnAddRx.AutoRoundedCorners = true;
-            this.btnAddRx.BorderRadius = 26;
-            this.btnAddRx.CheckedState.Parent = this.btnAddRx;
-            this.btnAddRx.CustomImages.Parent = this.btnAddRx;
-            this.btnAddRx.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnAddRx.ForeColor = System.Drawing.Color.White;
-            this.btnAddRx.HoverState.Parent = this.btnAddRx;
-            this.btnAddRx.Location = new System.Drawing.Point(313, 209);
-            this.btnAddRx.Name = "btnAddRx";
-            this.btnAddRx.ShadowDecoration.Parent = this.btnAddRx;
-            this.btnAddRx.Size = new System.Drawing.Size(247, 55);
-            this.btnAddRx.TabIndex = 1;
-            this.btnAddRx.Text = "+    Add Prescription";
-            this.btnAddRx.Click += new System.EventHandler(this.btnAddRx_Click);
-            // 
-            // btnGambar
-            // 
-            this.btnGambar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnGambar.Image = global::rse.app.desk.rx.lite.Properties.Resources.home;
-            this.btnGambar.Location = new System.Drawing.Point(0, 0);
-            this.btnGambar.Name = "btnGambar";
-            this.btnGambar.ShadowDecoration.Parent = this.btnGambar;
-            this.btnGambar.Size = new System.Drawing.Size(884, 711);
-            this.btnGambar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnGambar.TabIndex = 2;
-            this.btnGambar.TabStop = false;
-            this.btnGambar.Click += new System.EventHandler(this.btnGambar_Click);
             // 
             // guna2Elipse1
             // 
@@ -686,7 +730,6 @@
             // guna2DragControl2
             // 
             this.guna2DragControl2.ContainerControl = this;
-            this.guna2DragControl2.TargetControl = this.btnGambar;
             // 
             // rM_KUNJUNGTableAdapter
             // 
@@ -718,7 +761,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.LoadPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnGambar)).EndInit();
+            this.flpMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -742,10 +785,8 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel NamaPASIEN;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblkdokter;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNoreg;
-        private Guna.UI2.WinForms.Guna2Button btnAddRx;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblKlinik;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2PictureBox btnGambar;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
@@ -770,7 +811,11 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2HtmlLabel stKary;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblKary;
-        private Guna.UI2.WinForms.Guna2Button btnEfile;
+        private System.Windows.Forms.FlowLayoutPanel flpMenu;
+        private Guna.UI2.WinForms.Guna2ImageButton btEfile;
+        private Guna.UI2.WinForms.Guna2ImageButton btnEresep;
+        private Guna.UI2.WinForms.Guna2ImageButton btnExpertise;
+        private Guna.UI2.WinForms.Guna2ImageButton btnBMHP;
     }
 }
 

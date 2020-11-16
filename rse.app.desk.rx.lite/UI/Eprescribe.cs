@@ -1,6 +1,7 @@
 ﻿using rse.app.desk.rx.lite.UI;
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
 
 namespace rse.app.desk.rx.lite
@@ -66,8 +67,7 @@ namespace rse.app.desk.rx.lite
 
         private void btnAddRx_Click(object sender, EventArgs e)
         {
-            btnAddRx.Visible = false;
-            btnGambar.Visible = false;
+            flpMenu.Visible = false;
             var _noreg = lblNoreg.Text;
             var _kdokter = lblkdokter.Text;
             var _kdfornas = 3;
@@ -146,6 +146,99 @@ namespace rse.app.desk.rx.lite
         {
             Efile ef = new Efile(lblNoreg.Text);
             ef.Show();
+        }
+
+        private void btexpertise_Click(object sender, EventArgs e)
+        {
+            
+
+            if (File.Exists(@"C:\Program Files\HP Inc\Setup_Expertise_Casemix\latih1.exe"))
+            {
+                Process.Start(@"C:\Program Files\HP Inc\Setup_Expertise_Casemix\latih1.exe");
+
+            }
+            else
+            {
+                Process.Start(@"C:\Program Files (x86)\HP Inc\Setup_Expertise_Casemix\latih1.exe");
+            }
+
+
+            //Process proc = new Process();
+            //ProcessStartInfo psi = new ProcessStartInfo("latih1.exe");
+            //psi.WindowStyle = ProcessWindowStyle.Maximized;
+            //proc.StartInfo = psi;
+
+            //proc.Start();
+        }
+
+        private void btnNotepad_Click(object sender, EventArgs e)
+        {
+            Expertise ex = new Expertise();
+            ex.Show();
+        }
+
+        private void btEfile_Click(object sender, EventArgs e)
+        {
+            Efile ef = new Efile(lblNoreg.Text);
+            ef.Show();
+        }
+
+        private void guna2ImageButton2_Click(object sender, EventArgs e)
+        {
+            flpMenu.Visible = false;
+            var _noreg = lblNoreg.Text;
+            var _kdokter = lblkdokter.Text;
+            var _kdfornas = 3;
+            if (stKary.Text == "TRUE") { _kdfornas = 2; }
+
+            var dt = new dataset.yakkumdbTableAdapters.resep_hTableAdapter();
+            dt.UpsertQuery("RX" + _noreg + _kdokter,
+                _noreg,
+                NoRM.Text,
+                lblkdokter.Text,
+                lblKlinik.Text,
+                "DRAFT"
+                );
+
+            obat myuc = new obat(_noreg, _kdokter, _kdfornas);
+            myuc.Dock = DockStyle.Fill;
+            LoadPanel.Controls.Add(myuc);
+            myuc.Show();
+        }
+
+        private void btnExpertise_Click(object sender, EventArgs e)
+        {
+
+
+            if (File.Exists(@"C:\Program Files\HP Inc\Setup_Expertise_Casemix\latih1.exe"))
+            {
+                Process.Start(@"C:\Program Files\HP Inc\Setup_Expertise_Casemix\latih1.exe");
+
+            }
+            else
+            {
+                Process.Start(@"C:\Program Files (x86)\HP Inc\Setup_Expertise_Casemix\latih1.exe");
+            }
+
+
+            //Process proc = new Process();
+            //ProcessStartInfo psi = new ProcessStartInfo("latih1.exe");
+            //psi.WindowStyle = ProcessWindowStyle.Maximized;
+            //proc.StartInfo = psi;
+
+            //proc.Start();
+        }
+
+        private void btnBMHP_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show("Masih dalam pengembangan...buka aplikasi secara manual");
+            //Process proc = new Process();
+            //ProcessStartInfo psi = new ProcessStartInfo(@"C:\Users\HP\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\HP Incrse.app.desk.rx.nurse.appref-ms");
+            //psi.WindowStyle = ProcessWindowStyle.Maximized;
+            //proc.StartInfo = psi;
+
+            //proc.Start();
         }
     }
 }

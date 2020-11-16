@@ -35,6 +35,7 @@
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label2 = new System.Windows.Forms.Label();
+            this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -78,6 +79,8 @@
             // 
             // guna2DragControl1
             // 
+            this.guna2DragControl1.ContainerControl = this;
+            this.guna2DragControl1.TransparentWhileDrag = true;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
             // guna2Elipse1
@@ -94,6 +97,10 @@
             this.label2.Size = new System.Drawing.Size(327, 30);
             this.label2.TabIndex = 3;
             this.label2.Text = "ALAT KESEHATAN HABIS PAKAI ?";
+            // 
+            // guna2ShadowForm1
+            // 
+            this.guna2ShadowForm1.TargetForm = this;
             // 
             // Pilihan
             // 
@@ -122,5 +129,6 @@
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
     }
 }

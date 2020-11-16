@@ -125,7 +125,6 @@ namespace rse.app.desk.rx.pharmacist.UI
 
         private void printResep()
         {
-            MessageBox.Show(_noreg);
 
             var ds = new Dataset.yakkumdbTableAdapters.data_pasienTableAdapter();
             ds.ClearBeforeFill = true;
@@ -228,7 +227,6 @@ namespace rse.app.desk.rx.pharmacist.UI
                     dgvResep.Refresh();
                     
                 }
-                
 
                 // MessageBox.Show("edited! " + val);
             }

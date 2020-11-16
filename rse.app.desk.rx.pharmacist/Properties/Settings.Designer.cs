@@ -26,8 +26,8 @@ namespace rse.app.desk.rx.pharmacist.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.10.1;Initial Catalog=yakkumdatabase;Persist Security Info=Tru" +
-            "e;User ID=sa;Password=z@q12wsx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.10.14;Initial Catalog=yakkumdatabase;Persist Security Info=Tr" +
+            "ue;User ID=sa;Password=z@q12wsx")]
         public string yakkumdatabaseConnectionString {
             get {
                 return ((string)(this["yakkumdatabaseConnectionString"]));

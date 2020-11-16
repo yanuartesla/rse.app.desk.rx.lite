@@ -36,8 +36,11 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.data_resepBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.yakkumdb = new rse.app.desk.rx.pharmacist.Dataset.yakkumdb();
             this.data_pasienBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -66,6 +69,15 @@
             this.btPrint = new Guna.UI2.WinForms.Guna2Button();
             this.rvResep = new Microsoft.Reporting.WinForms.ReportViewer();
             this.pnlMain = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.dgvRacikan = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.innourutDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vcdosisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vcsatuanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vckoderxdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsRacikan = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.dgvResep = new Guna.UI2.WinForms.Guna2DataGridView();
             this.innourutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vc_nama_obat = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,14 +88,16 @@
             this.numjmliterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.vc_kode_rx_d = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bt_racikan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.bsResep = new System.Windows.Forms.BindingSource(this.components);
-            this.resep_detilTableAdapter = new rse.app.desk.rx.pharmacist.Dataset.yakkumdbTableAdapters.resep_detilTableAdapter();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.data_pasienTableAdapter = new rse.app.desk.rx.pharmacist.Dataset.yakkumdbTableAdapters.data_pasienTableAdapter();
             this.diagnosa_utamaTableAdapter = new rse.app.desk.rx.pharmacist.Dataset.rmdbTableAdapters.diagnosa_utamaTableAdapter();
             this.rMIcdSekunderRalanTableAdapter = new rse.app.desk.rx.pharmacist.Dataset.rmdbTableAdapters.RMIcdSekunderRalanTableAdapter();
+            this.resep_detilTableAdapter = new rse.app.desk.rx.pharmacist.Dataset.yakkumdbTableAdapters.resep_detilTableAdapter();
+            this.data_pasienTableAdapter = new rse.app.desk.rx.pharmacist.Dataset.yakkumdbTableAdapters.data_pasienTableAdapter();
             this.fa_rx_tindakanTableAdapter = new rse.app.desk.rx.pharmacist.Dataset.yakkumdbTableAdapters.fa_rx_tindakanTableAdapter();
+            this.fa_rx_racikanTableAdapter = new rse.app.desk.rx.pharmacist.Dataset.yakkumdbTableAdapters.fa_rx_racikanTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.data_resepBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.data_pasienBindingSource)).BeginInit();
@@ -95,6 +109,9 @@
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCoppies)).BeginInit();
             this.pnlMain.SuspendLayout();
+            this.guna2Panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRacikan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRacikan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsResep)).BeginInit();
             this.SuspendLayout();
@@ -313,7 +330,7 @@
             this.guna2Panel2.Controls.Add(this.btnSimpan);
             this.guna2Panel2.Controls.Add(this.btPrint);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel2.Location = new System.Drawing.Point(5, 445);
+            this.guna2Panel2.Location = new System.Drawing.Point(5, 569);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
             this.guna2Panel2.Size = new System.Drawing.Size(625, 55);
@@ -424,7 +441,7 @@
             this.rvResep.LocalReport.DataSources.Add(reportDataSource4);
             this.rvResep.LocalReport.DataSources.Add(reportDataSource5);
             this.rvResep.LocalReport.ReportEmbeddedResource = "rse.app.desk.rx.pharmacist.Reports.reportResep.rdlc";
-            this.rvResep.Location = new System.Drawing.Point(5, 308);
+            this.rvResep.Location = new System.Drawing.Point(5, 432);
             this.rvResep.Name = "rvResep";
             this.rvResep.ServerReport.BearerToken = null;
             this.rvResep.Size = new System.Drawing.Size(615, 27);
@@ -433,6 +450,7 @@
             // 
             // pnlMain
             // 
+            this.pnlMain.Controls.Add(this.guna2Panel3);
             this.pnlMain.Controls.Add(this.rvResep);
             this.pnlMain.Controls.Add(this.dgvResep);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -440,21 +458,33 @@
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
             this.pnlMain.ShadowDecoration.Parent = this.pnlMain;
-            this.pnlMain.Size = new System.Drawing.Size(625, 340);
+            this.pnlMain.Size = new System.Drawing.Size(625, 464);
             this.pnlMain.TabIndex = 2;
             // 
-            // dgvResep
+            // guna2Panel3
             // 
-            this.dgvResep.AllowUserToAddRows = false;
-            this.dgvResep.AllowUserToDeleteRows = false;
+            this.guna2Panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.guna2Panel3.Controls.Add(this.dgvRacikan);
+            this.guna2Panel3.Controls.Add(this.label1);
+            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.guna2Panel3.Location = new System.Drawing.Point(5, 225);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
+            this.guna2Panel3.Size = new System.Drawing.Size(615, 207);
+            this.guna2Panel3.TabIndex = 3;
+            // 
+            // dgvRacikan
+            // 
+            this.dgvRacikan.AllowUserToAddRows = false;
+            this.dgvRacikan.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvResep.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvResep.AutoGenerateColumns = false;
-            this.dgvResep.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvResep.BackgroundColor = System.Drawing.Color.White;
-            this.dgvResep.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvResep.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvResep.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvRacikan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvRacikan.AutoGenerateColumns = false;
+            this.dgvRacikan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRacikan.BackgroundColor = System.Drawing.Color.White;
+            this.dgvRacikan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvRacikan.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvRacikan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -462,7 +492,131 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvResep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvRacikan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvRacikan.ColumnHeadersHeight = 4;
+            this.dgvRacikan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.innourutDataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn1,
+            this.vcdosisDataGridViewTextBoxColumn,
+            this.vcsatuanDataGridViewTextBoxColumn,
+            this.vckoderxdDataGridViewTextBoxColumn});
+            this.dgvRacikan.DataSource = this.bsRacikan;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRacikan.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvRacikan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRacikan.EnableHeadersVisualStyles = false;
+            this.dgvRacikan.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvRacikan.Location = new System.Drawing.Point(0, 17);
+            this.dgvRacikan.Name = "dgvRacikan";
+            this.dgvRacikan.ReadOnly = true;
+            this.dgvRacikan.RowHeadersVisible = false;
+            this.dgvRacikan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRacikan.Size = new System.Drawing.Size(615, 190);
+            this.dgvRacikan.TabIndex = 1;
+            this.dgvRacikan.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
+            this.dgvRacikan.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvRacikan.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvRacikan.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvRacikan.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvRacikan.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvRacikan.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvRacikan.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvRacikan.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvRacikan.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvRacikan.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvRacikan.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvRacikan.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvRacikan.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvRacikan.ThemeStyle.ReadOnly = true;
+            this.dgvRacikan.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvRacikan.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvRacikan.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvRacikan.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvRacikan.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvRacikan.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvRacikan.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // innourutDataGridViewTextBoxColumn1
+            // 
+            this.innourutDataGridViewTextBoxColumn1.DataPropertyName = "in_no_urut";
+            this.innourutDataGridViewTextBoxColumn1.FillWeight = 20F;
+            this.innourutDataGridViewTextBoxColumn1.HeaderText = "in_no_urut";
+            this.innourutDataGridViewTextBoxColumn1.Name = "innourutDataGridViewTextBoxColumn1";
+            this.innourutDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "vc_nama_obat";
+            this.dataGridViewTextBoxColumn1.FillWeight = 200F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "vc_nama_obat";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // vcdosisDataGridViewTextBoxColumn
+            // 
+            this.vcdosisDataGridViewTextBoxColumn.DataPropertyName = "vc_dosis";
+            this.vcdosisDataGridViewTextBoxColumn.HeaderText = "vc_dosis";
+            this.vcdosisDataGridViewTextBoxColumn.Name = "vcdosisDataGridViewTextBoxColumn";
+            this.vcdosisDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // vcsatuanDataGridViewTextBoxColumn
+            // 
+            this.vcsatuanDataGridViewTextBoxColumn.DataPropertyName = "vc_satuan";
+            this.vcsatuanDataGridViewTextBoxColumn.HeaderText = "vc_satuan";
+            this.vcsatuanDataGridViewTextBoxColumn.Name = "vcsatuanDataGridViewTextBoxColumn";
+            this.vcsatuanDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // vckoderxdDataGridViewTextBoxColumn
+            // 
+            this.vckoderxdDataGridViewTextBoxColumn.DataPropertyName = "vc_kode_rx_d";
+            this.vckoderxdDataGridViewTextBoxColumn.HeaderText = "vc_kode_rx_d";
+            this.vckoderxdDataGridViewTextBoxColumn.Name = "vckoderxdDataGridViewTextBoxColumn";
+            this.vckoderxdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vckoderxdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // bsRacikan
+            // 
+            this.bsRacikan.DataMember = "fa_rx_racikan";
+            this.bsRacikan.DataSource = this.yakkumdb;
+            this.bsRacikan.Sort = "in_no_urut ASC";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Racikan";
+            // 
+            // dgvResep
+            // 
+            this.dgvResep.AllowUserToAddRows = false;
+            this.dgvResep.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvResep.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvResep.AutoGenerateColumns = false;
+            this.dgvResep.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvResep.BackgroundColor = System.Drawing.Color.White;
+            this.dgvResep.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvResep.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvResep.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvResep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvResep.ColumnHeadersHeight = 40;
             this.dgvResep.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.innourutDataGridViewTextBoxColumn,
@@ -473,16 +627,17 @@
             this.vcsignalainDataGridViewTextBoxColumn,
             this.numjmliterDataGridViewTextBoxColumn,
             this.edit,
-            this.vc_kode_rx_d});
+            this.vc_kode_rx_d,
+            this.bt_racikan});
             this.dgvResep.DataSource = this.bsResep;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvResep.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvResep.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvResep.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvResep.EnableHeadersVisualStyles = false;
             this.dgvResep.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -492,7 +647,7 @@
             this.dgvResep.RowHeadersVisible = false;
             this.dgvResep.RowTemplate.Height = 35;
             this.dgvResep.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvResep.Size = new System.Drawing.Size(615, 325);
+            this.dgvResep.Size = new System.Drawing.Size(615, 449);
             this.dgvResep.TabIndex = 0;
             this.dgvResep.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvResep.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -576,9 +731,9 @@
             // 
             // edit
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            this.edit.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(2);
+            this.edit.DefaultCellStyle = dataGridViewCellStyle6;
             this.edit.FillWeight = 40F;
             this.edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.edit.HeaderText = "Edit";
@@ -593,14 +748,18 @@
             this.vc_kode_rx_d.ReadOnly = true;
             this.vc_kode_rx_d.Visible = false;
             // 
+            // bt_racikan
+            // 
+            this.bt_racikan.DataPropertyName = "bt_racikan";
+            this.bt_racikan.HeaderText = "bt_racikan";
+            this.bt_racikan.Name = "bt_racikan";
+            this.bt_racikan.ReadOnly = true;
+            this.bt_racikan.Visible = false;
+            // 
             // bsResep
             // 
             this.bsResep.DataMember = "resep_detil";
             this.bsResep.DataSource = this.yakkumdb;
-            // 
-            // resep_detilTableAdapter
-            // 
-            this.resep_detilTableAdapter.ClearBeforeFill = true;
             // 
             // guna2Elipse1
             // 
@@ -612,10 +771,6 @@
             this.guna2Elipse2.BorderRadius = 32;
             this.guna2Elipse2.TargetControl = this.guna2Panel1;
             // 
-            // data_pasienTableAdapter
-            // 
-            this.data_pasienTableAdapter.ClearBeforeFill = true;
-            // 
             // diagnosa_utamaTableAdapter
             // 
             this.diagnosa_utamaTableAdapter.ClearBeforeFill = true;
@@ -624,9 +779,21 @@
             // 
             this.rMIcdSekunderRalanTableAdapter.ClearBeforeFill = true;
             // 
+            // resep_detilTableAdapter
+            // 
+            this.resep_detilTableAdapter.ClearBeforeFill = true;
+            // 
+            // data_pasienTableAdapter
+            // 
+            this.data_pasienTableAdapter.ClearBeforeFill = true;
+            // 
             // fa_rx_tindakanTableAdapter
             // 
             this.fa_rx_tindakanTableAdapter.ClearBeforeFill = true;
+            // 
+            // fa_rx_racikanTableAdapter
+            // 
+            this.fa_rx_racikanTableAdapter.ClearBeforeFill = true;
             // 
             // UCResepDetil
             // 
@@ -638,7 +805,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.Name = "UCResepDetil";
             this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(635, 505);
+            this.Size = new System.Drawing.Size(635, 629);
             this.Load += new System.EventHandler(this.UCResepDetil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.data_resepBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).EndInit();
@@ -653,6 +820,10 @@
             this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCoppies)).EndInit();
             this.pnlMain.ResumeLayout(false);
+            this.guna2Panel3.ResumeLayout(false);
+            this.guna2Panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRacikan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRacikan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResep)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsResep)).EndInit();
             this.ResumeLayout(false);
@@ -688,15 +859,6 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Dataset.yakkumdbTableAdapters.data_pasienTableAdapter data_pasienTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn innourutDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vc_nama_obat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numjmlDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn satuan_pb;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aturan_pakai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vcsignalainDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numjmliterDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn edit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vc_kode_rx_d;
         private Guna.UI2.WinForms.Guna2NumericUpDown numCoppies;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private System.Windows.Forms.BindingSource diagnosautamaBindingSource;
@@ -708,5 +870,25 @@
         private Dataset.yakkumdbTableAdapters.fa_rx_tindakanTableAdapter fa_rx_tindakanTableAdapter;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNoReg;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvRacikan;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource bsRacikan;
+        private Dataset.yakkumdbTableAdapters.fa_rx_racikanTableAdapter fa_rx_racikanTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn innourutDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vcdosisDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vcsatuanDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vckoderxdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn innourutDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vc_nama_obat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numjmlDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn satuan_pb;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aturan_pakai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vcsignalainDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numjmliterDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn edit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vc_kode_rx_d;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn bt_racikan;
     }
 }

@@ -13,7 +13,6 @@ namespace rse.app.desk.rx.lite.UI
 {
     public partial class Efile : Form
     {
-        
         public Efile(string noreg)
         {
             InitializeComponent();
@@ -23,7 +22,9 @@ namespace rse.app.desk.rx.lite.UI
             using (var Key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION", true))
                 Key.SetValue(appName, 99999, RegistryValueKind.DWord);
 
-            string _url = "http://192.168.10.40/efile/irj/identitas.php?&VC_NO_REGJ=" + noreg;
+
+            string _url = "http://192.168.10.19/codeigniter/sign-sep/home/input/1115R0021120V000069" ;
+            //string _url = "http://192.168.10.40/efile/irj2/identitas.php?&VC_NO_REGJ=" + noreg;
 
             webBrowser1.Navigate(_url);
         }
