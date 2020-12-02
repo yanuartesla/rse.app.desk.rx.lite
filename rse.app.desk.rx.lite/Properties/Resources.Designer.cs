@@ -143,6 +143,26 @@ namespace rse.app.desk.rx.lite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Diagnosis {
+            get {
+                object obj = ResourceManager.GetObject("Diagnosis", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Diagnosis1 {
+            get {
+                object obj = ResourceManager.GetObject("Diagnosis1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap efile {
             get {
                 object obj = ResourceManager.GetObject("efile", resourceCulture);

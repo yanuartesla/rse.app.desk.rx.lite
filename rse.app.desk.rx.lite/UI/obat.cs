@@ -5,11 +5,13 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using static rse.app.desk.rx.lite.UI.Login;
 
 namespace rse.app.desk.rx.lite.UI
 {
     public partial class obat : UserControl
     {
+        private roles _currentroles { get; set; }
         public string _kodeobat { get; set; }
         public int _kodefornas { get; set; }
         public string _noreg { get; set; }
@@ -19,12 +21,13 @@ namespace rse.app.desk.rx.lite.UI
 
         AutoCompleteStringCollection namesCollection =
         new AutoCompleteStringCollection();
-        public obat(string noreg, string kdokter, int kfornas)
+        public obat(string noreg, string kdokter, int kfornas,roles _roles)
         {
             InitializeComponent();
             _kodefornas = kfornas;
             _noreg = noreg;
             _kdokter = kdokter;
+            _currentroles = _roles;
 
         }
 
@@ -74,7 +77,6 @@ namespace rse.app.desk.rx.lite.UI
             bs_view_resep.Filter = "vc_kode_rx = '" + lblKodeRtx.Text + "'";
             dgvResep.Update();
             dgvResep.Refresh();
-
 
 
         }
@@ -248,15 +250,15 @@ namespace rse.app.desk.rx.lite.UI
             var result = pl.ShowDialog();
             if (result == DialogResult.Yes)
             {
-                dh.UpdateStatus("WAITING", 2, DateTime.UtcNow, lblKodeRtx.Text);
+                dh.UpdateStatus("WAITING", 2, DateTime.Now, lblKodeRtx.Text);
             }
             if (result == DialogResult.No)
             {
-                dh.UpdateStatus("ORDER", 3, DateTime.UtcNow, lblKodeRtx.Text);
+                dh.UpdateStatus("ORDER", 3, DateTime.Now, lblKodeRtx.Text);
             }
 
             MessageBox.Show("Resep Berhasil di Simpan");
-            Eprescribe ep = new Eprescribe(_kdokter);
+            Eprescribe ep = new Eprescribe(_kdokter,_currentroles);
             ep.Show();
         }
 

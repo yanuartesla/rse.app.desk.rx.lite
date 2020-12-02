@@ -63,13 +63,11 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblNORM = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.numCoppies = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.btnSimpan = new Guna.UI2.WinForms.Guna2Button();
             this.btPrint = new Guna.UI2.WinForms.Guna2Button();
             this.rvResep = new Microsoft.Reporting.WinForms.ReportViewer();
             this.pnlMain = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnlRacikan = new Guna.UI2.WinForms.Guna2Panel();
             this.dgvRacikan = new Guna.UI2.WinForms.Guna2DataGridView();
             this.innourutDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -107,9 +105,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.farxtindakanBindingSource)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numCoppies)).BeginInit();
             this.pnlMain.SuspendLayout();
-            this.guna2Panel3.SuspendLayout();
+            this.pnlRacikan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRacikan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRacikan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResep)).BeginInit();
@@ -176,13 +173,14 @@
             // 
             // lblNoReg
             // 
+            this.lblNoReg.AutoSize = false;
             this.lblNoReg.BackColor = System.Drawing.Color.Transparent;
             this.lblNoReg.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.data_pasienBindingSource, "vc_no_reg", true));
             this.lblNoReg.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoReg.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblNoReg.Location = new System.Drawing.Point(556, 3);
+            this.lblNoReg.Location = new System.Drawing.Point(434, 3);
             this.lblNoReg.Name = "lblNoReg";
-            this.lblNoReg.Size = new System.Drawing.Size(50, 23);
+            this.lblNoReg.Size = new System.Drawing.Size(167, 23);
             this.lblNoReg.TabIndex = 13;
             this.lblNoReg.Text = "Noreg";
             this.lblNoReg.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -325,8 +323,6 @@
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.Controls.Add(this.guna2HtmlLabel3);
-            this.guna2Panel2.Controls.Add(this.numCoppies);
             this.guna2Panel2.Controls.Add(this.btnSimpan);
             this.guna2Panel2.Controls.Add(this.btPrint);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -335,54 +331,6 @@
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
             this.guna2Panel2.Size = new System.Drawing.Size(625, 55);
             this.guna2Panel2.TabIndex = 1;
-            // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(5, 14);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(125, 23);
-            this.guna2HtmlLabel3.TabIndex = 12;
-            this.guna2HtmlLabel3.Text = "Number of Copy";
-            // 
-            // numCoppies
-            // 
-            this.numCoppies.AutoRoundedCorners = true;
-            this.numCoppies.BackColor = System.Drawing.Color.Transparent;
-            this.numCoppies.BorderRadius = 17;
-            this.numCoppies.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.numCoppies.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.numCoppies.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.numCoppies.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.numCoppies.DisabledState.Parent = this.numCoppies;
-            this.numCoppies.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.numCoppies.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
-            this.numCoppies.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.numCoppies.FocusedState.Parent = this.numCoppies;
-            this.numCoppies.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.numCoppies.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.numCoppies.Location = new System.Drawing.Point(136, 7);
-            this.numCoppies.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numCoppies.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numCoppies.Name = "numCoppies";
-            this.numCoppies.ShadowDecoration.Parent = this.numCoppies;
-            this.numCoppies.Size = new System.Drawing.Size(66, 36);
-            this.numCoppies.TabIndex = 3;
-            this.numCoppies.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // btnSimpan
             // 
@@ -441,16 +389,16 @@
             this.rvResep.LocalReport.DataSources.Add(reportDataSource4);
             this.rvResep.LocalReport.DataSources.Add(reportDataSource5);
             this.rvResep.LocalReport.ReportEmbeddedResource = "rse.app.desk.rx.pharmacist.Reports.reportResep.rdlc";
-            this.rvResep.Location = new System.Drawing.Point(5, 432);
+            this.rvResep.Location = new System.Drawing.Point(5, 245);
             this.rvResep.Name = "rvResep";
             this.rvResep.ServerReport.BearerToken = null;
-            this.rvResep.Size = new System.Drawing.Size(615, 27);
+            this.rvResep.Size = new System.Drawing.Size(615, 214);
             this.rvResep.TabIndex = 2;
             this.rvResep.Visible = false;
             // 
             // pnlMain
             // 
-            this.pnlMain.Controls.Add(this.guna2Panel3);
+            this.pnlMain.Controls.Add(this.pnlRacikan);
             this.pnlMain.Controls.Add(this.rvResep);
             this.pnlMain.Controls.Add(this.dgvResep);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -461,17 +409,18 @@
             this.pnlMain.Size = new System.Drawing.Size(625, 464);
             this.pnlMain.TabIndex = 2;
             // 
-            // guna2Panel3
+            // pnlRacikan
             // 
-            this.guna2Panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.guna2Panel3.Controls.Add(this.dgvRacikan);
-            this.guna2Panel3.Controls.Add(this.label1);
-            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel3.Location = new System.Drawing.Point(5, 225);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
-            this.guna2Panel3.Size = new System.Drawing.Size(615, 207);
-            this.guna2Panel3.TabIndex = 3;
+            this.pnlRacikan.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlRacikan.Controls.Add(this.dgvRacikan);
+            this.pnlRacikan.Controls.Add(this.label1);
+            this.pnlRacikan.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlRacikan.Location = new System.Drawing.Point(5, 38);
+            this.pnlRacikan.Name = "pnlRacikan";
+            this.pnlRacikan.ShadowDecoration.Parent = this.pnlRacikan;
+            this.pnlRacikan.Size = new System.Drawing.Size(615, 207);
+            this.pnlRacikan.TabIndex = 3;
+            this.pnlRacikan.Visible = false;
             // 
             // dgvRacikan
             // 
@@ -817,11 +766,9 @@
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numCoppies)).EndInit();
             this.pnlMain.ResumeLayout(false);
-            this.guna2Panel3.ResumeLayout(false);
-            this.guna2Panel3.PerformLayout();
+            this.pnlRacikan.ResumeLayout(false);
+            this.pnlRacikan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRacikan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRacikan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResep)).EndInit();
@@ -859,8 +806,6 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Dataset.yakkumdbTableAdapters.data_pasienTableAdapter data_pasienTableAdapter;
-        private Guna.UI2.WinForms.Guna2NumericUpDown numCoppies;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private System.Windows.Forms.BindingSource diagnosautamaBindingSource;
         private Dataset.rmdb rmdb;
         private System.Windows.Forms.BindingSource rMIcdSekunderRalanBindingSource;
@@ -870,7 +815,7 @@
         private Dataset.yakkumdbTableAdapters.fa_rx_tindakanTableAdapter fa_rx_tindakanTableAdapter;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNoReg;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private Guna.UI2.WinForms.Guna2Panel pnlRacikan;
         private Guna.UI2.WinForms.Guna2DataGridView dgvRacikan;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource bsRacikan;

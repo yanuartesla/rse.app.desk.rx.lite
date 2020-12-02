@@ -7,13 +7,13 @@
     <ProjectGuid>{753A35B7-1E20-4440-AE30-7D37BA37D05E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>rse.app.desk.rx.pharmacist</RootNamespace>
-    <AssemblyName>rse.app.desk.rx.pharmacist</AssemblyName>
+    <AssemblyName>E-Prescription for Pharmacist</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\192.168.10.11\Data SEP\rse.app.desk\rse.app.desk.pharmacist\</PublishUrl>
+    <PublishUrl>\\192.168.10.11\rsedeskapp\rx\E-Pres for Pharmacist\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -23,11 +23,14 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\192.168.10.11\Data SEP\rse.app.desk\rse.app.desk.pharmacist\</InstallUrl>
+    <ProductName>E-PRESCRIPTION</ProductName>
+    <PublisherName>RS Emanuel</PublisherName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>13</ApplicationRevision>
+    <ApplicationRevision>24</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -142,6 +145,12 @@
     <Compile Include="UI\editObat.Designer.cs">
       <DependentUpon>editObat.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\LoadingWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\LoadingWindow.Designer.cs">
+      <DependentUpon>LoadingWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\PrintDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\editObat.resx">
       <DependentUpon>editObat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LoadingWindow.resx">
+      <DependentUpon>LoadingWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PrintDialog.resx">
       <DependentUpon>PrintDialog.cs</DependentUpon>

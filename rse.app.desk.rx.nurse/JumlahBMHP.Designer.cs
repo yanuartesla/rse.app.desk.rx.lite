@@ -31,16 +31,17 @@
             this.components = new System.ComponentModel.Container();
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.lblNama = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.bsDaftarBMHP = new System.Windows.Forms.BindingSource(this.components);
-            this.yakkumdb = new rse.app.desk.rx.nurse.yakkumdb();
             this.txtJumlah = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblSatuan = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.view_rse_fa_obatTableAdapter = new rse.app.desk.rx.nurse.yakkumdbTableAdapters.view_rse_fa_obatTableAdapter();
             this.lblKodeObat = new System.Windows.Forms.Label();
+            this.cmbSatuan = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.bsDaftarBMHP = new System.Windows.Forms.BindingSource(this.components);
+            this.yakkumdb = new rse.app.desk.rx.nurse.yakkumdb();
+            this.view_rse_fa_obatTableAdapter = new rse.app.desk.rx.nurse.yakkumdbTableAdapters.view_rse_fa_obatTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bsDaftarBMHP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).BeginInit();
             this.SuspendLayout();
@@ -59,16 +60,6 @@
             this.lblNama.Size = new System.Drawing.Size(123, 32);
             this.lblNama.TabIndex = 0;
             this.lblNama.Text = "NamaBMHP";
-            // 
-            // bsDaftarBMHP
-            // 
-            this.bsDaftarBMHP.DataMember = "view_rse_fa_obat";
-            this.bsDaftarBMHP.DataSource = this.yakkumdb;
-            // 
-            // yakkumdb
-            // 
-            this.yakkumdb.DataSetName = "yakkumdb";
-            this.yakkumdb.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtJumlah
             // 
@@ -101,11 +92,12 @@
             this.lblSatuan.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsDaftarBMHP, "satuan_pb", true));
             this.lblSatuan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSatuan.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblSatuan.Location = new System.Drawing.Point(263, 90);
+            this.lblSatuan.Location = new System.Drawing.Point(286, 55);
             this.lblSatuan.Name = "lblSatuan";
             this.lblSatuan.Size = new System.Drawing.Size(56, 23);
             this.lblSatuan.TabIndex = 2;
             this.lblSatuan.Text = "Satuan";
+            this.lblSatuan.Visible = false;
             // 
             // guna2Separator1
             // 
@@ -155,10 +147,6 @@
             this.guna2Elipse1.BorderRadius = 32;
             this.guna2Elipse1.TargetControl = this;
             // 
-            // view_rse_fa_obatTableAdapter
-            // 
-            this.view_rse_fa_obatTableAdapter.ClearBeforeFill = true;
-            // 
             // lblKodeObat
             // 
             this.lblKodeObat.AutoSize = true;
@@ -169,11 +157,73 @@
             this.lblKodeObat.TabIndex = 6;
             this.lblKodeObat.Text = "label1";
             // 
+            // cmbSatuan
+            // 
+            this.cmbSatuan.AutoRoundedCorners = true;
+            this.cmbSatuan.BackColor = System.Drawing.Color.Transparent;
+            this.cmbSatuan.BorderRadius = 17;
+            this.cmbSatuan.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.bsDaftarBMHP, "satuan_pb", true));
+            this.cmbSatuan.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bsDaftarBMHP, "satuan_pb", true));
+            this.cmbSatuan.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsDaftarBMHP, "satuan_pb", true));
+            this.cmbSatuan.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bsDaftarBMHP, "satuan_pb", true));
+            this.cmbSatuan.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbSatuan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSatuan.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbSatuan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbSatuan.FocusedState.Parent = this.cmbSatuan;
+            this.cmbSatuan.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbSatuan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbSatuan.HoverState.Parent = this.cmbSatuan;
+            this.cmbSatuan.ItemHeight = 30;
+            this.cmbSatuan.Items.AddRange(new object[] {
+            "- Pilih Satuan",
+            "ML",
+            "PCS",
+            "UNIT",
+            "TABLET",
+            "KAPSUL",
+            "BOX",
+            "BUNGKUS",
+            "GALON",
+            "LEMBAR",
+            "PAK",
+            "PASANG",
+            "PCS",
+            "ROL",
+            "SET/KIT",
+            "TUBE",
+            "CM",
+            "M",
+            "AMP"});
+            this.cmbSatuan.ItemsAppearance.Parent = this.cmbSatuan;
+            this.cmbSatuan.Location = new System.Drawing.Point(250, 84);
+            this.cmbSatuan.Name = "cmbSatuan";
+            this.cmbSatuan.ShadowDecoration.Parent = this.cmbSatuan;
+            this.cmbSatuan.Size = new System.Drawing.Size(140, 36);
+            this.cmbSatuan.StartIndex = 0;
+            this.cmbSatuan.TabIndex = 7;
+            this.cmbSatuan.SelectedIndexChanged += new System.EventHandler(this.cmbSatuan_SelectedIndexChanged);
+            // 
+            // bsDaftarBMHP
+            // 
+            this.bsDaftarBMHP.DataMember = "view_rse_fa_obat";
+            this.bsDaftarBMHP.DataSource = this.yakkumdb;
+            // 
+            // yakkumdb
+            // 
+            this.yakkumdb.DataSetName = "yakkumdb";
+            this.yakkumdb.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // view_rse_fa_obatTableAdapter
+            // 
+            this.view_rse_fa_obatTableAdapter.ClearBeforeFill = true;
+            // 
             // JumlahBMHP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(469, 257);
+            this.Controls.Add(this.cmbSatuan);
             this.Controls.Add(this.lblKodeObat);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -183,7 +233,8 @@
             this.Controls.Add(this.lblNama);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "JumlahBMHP";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Jumlah BMHP";
             this.Load += new System.EventHandler(this.JumlahBMHP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsDaftarBMHP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).EndInit();
@@ -206,5 +257,6 @@
         private yakkumdb yakkumdb;
         private yakkumdbTableAdapters.view_rse_fa_obatTableAdapter view_rse_fa_obatTableAdapter;
         private System.Windows.Forms.Label lblKodeObat;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbSatuan;
     }
 }

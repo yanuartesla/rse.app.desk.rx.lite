@@ -3,20 +3,24 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
+using static rse.app.desk.rx.lite.UI.Login;
 
 namespace rse.app.desk.rx.lite
 {
     public partial class Eprescribe : Form
     {
+        private roles _curentRoles { get; set; }
         private string _nid { get; set; }
-        public Eprescribe(string nid)
+        public Eprescribe(string nid, roles roles)
         {
             InitializeComponent();
             _nid = nid;
+            _curentRoles = roles;
         }
 
         private void Eprescribe_Load(object sender, EventArgs e)
         {
+            logincheck();
             // TODO: This line of code loads data into the 'yakkumdb.RM_KUNJUNG' table. You can move, or remove it, as needed.
             this.rM_KUNJUNGTableAdapter.FillByKlinik(this.yakkumdb.RM_KUNJUNG,_nid,_nid.Substring(0,2)+"00");
             switch (txtJnsK.Text)
@@ -32,7 +36,7 @@ namespace rse.app.desk.rx.lite
                     break;
             }
             if (stKary.Text == "TRUE") { lblKary.Visible = true; }
-
+            
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
@@ -82,7 +86,7 @@ namespace rse.app.desk.rx.lite
                 "DRAFT"
                 );
 
-            obat myuc = new obat(_noreg, _kdokter, _kdfornas);
+            obat myuc = new obat(_noreg, _kdokter, _kdfornas, _curentRoles);
             myuc.Dock = DockStyle.Fill;
             LoadPanel.Controls.Add(myuc);
             myuc.Show();
@@ -95,6 +99,24 @@ namespace rse.app.desk.rx.lite
 
         }
 
+        private void logincheck()
+        {
+
+                switch (_curentRoles)
+                {
+                    //TODO : atur role
+                    case roles.drgigi:
+                        this.btnBMHP.Visible = false;
+                        this.btnExpertise.Visible = false;
+                        this.btEfile.Visible = false;
+                        break;
+                    
+                    default:
+                        break;
+                }
+                
+           
+        }
         private void btnGambar_Click(object sender, EventArgs e)
         {
 
@@ -200,7 +222,7 @@ namespace rse.app.desk.rx.lite
                 "DRAFT"
                 );
 
-            obat myuc = new obat(_noreg, _kdokter, _kdfornas);
+            obat myuc = new obat(_noreg, _kdokter, _kdfornas,_curentRoles);
             myuc.Dock = DockStyle.Fill;
             LoadPanel.Controls.Add(myuc);
             myuc.Show();

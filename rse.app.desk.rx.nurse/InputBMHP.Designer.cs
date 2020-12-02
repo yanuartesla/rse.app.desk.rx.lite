@@ -36,10 +36,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.txtcariBMHP = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.dgvTindakan = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tindakan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,18 +52,23 @@
             this.btnSimpan = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.dgvBMHP = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.bsBMHP = new System.Windows.Forms.BindingSource(this.components);
+            this.yakkumdb = new rse.app.desk.rx.nurse.yakkumdb();
+            this.vcnoresepDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vcnamatindakanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bstindakan = new System.Windows.Forms.BindingSource(this.components);
+            this.bsResepWaiting = new System.Windows.Forms.BindingSource(this.components);
+            this.bmhpTableAdapter = new rse.app.desk.rx.nurse.yakkumdbTableAdapters.bmhpTableAdapter();
+            this.fa_rx_tindakanTableAdapter = new rse.app.desk.rx.nurse.yakkumdbTableAdapters.fa_rx_tindakanTableAdapter();
+            this.resep_waitingTableAdapter = new rse.app.desk.rx.nurse.yakkumdbTableAdapters.resep_waitingTableAdapter();
             this.nomor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vcnamaobatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numjmlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vcsatuanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsBMHP = new System.Windows.Forms.BindingSource(this.components);
-            this.yakkumdb = new rse.app.desk.rx.nurse.yakkumdb();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.bmhpTableAdapter = new rse.app.desk.rx.nurse.yakkumdbTableAdapters.bmhpTableAdapter();
-            this.bstindakan = new System.Windows.Forms.BindingSource(this.components);
-            this.fa_rx_tindakanTableAdapter = new rse.app.desk.rx.nurse.yakkumdbTableAdapters.fa_rx_tindakanTableAdapter();
-            this.no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tindakan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.vc_kode_rx_d = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vc_kode_rx = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTindakan)).BeginInit();
@@ -69,25 +79,65 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsBMHP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bstindakan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsResepWaiting)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
+            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel3);
+            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel2);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.txtcariBMHP);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(671, 70);
+            this.guna2Panel1.Size = new System.Drawing.Size(714, 142);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsResepWaiting, "vc_no_rm", true));
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Indigo;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(16, 3);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(99, 39);
+            this.guna2HtmlLabel1.TabIndex = 3;
+            this.guna2HtmlLabel1.Text = "No. RM";
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsResepWaiting, "dokter", true));
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.Indigo;
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(17, 61);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(132, 32);
+            this.guna2HtmlLabel3.TabIndex = 5;
+            this.guna2HtmlLabel3.Text = "Nama Dokter";
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsResepWaiting, "vc_nama_Peserta", true));
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Indigo;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(16, 33);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(145, 34);
+            this.guna2HtmlLabel2.TabIndex = 4;
+            this.guna2HtmlLabel2.Text = "Nama Pasien";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Indigo;
-            this.label2.Location = new System.Drawing.Point(14, 26);
+            this.label2.Location = new System.Drawing.Point(51, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 21);
             this.label2.TabIndex = 2;
@@ -110,7 +160,7 @@
             this.txtcariBMHP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtcariBMHP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtcariBMHP.HoverState.Parent = this.txtcariBMHP;
-            this.txtcariBMHP.Location = new System.Drawing.Point(116, 19);
+            this.txtcariBMHP.Location = new System.Drawing.Point(153, 97);
             this.txtcariBMHP.Name = "txtcariBMHP";
             this.txtcariBMHP.PasswordChar = '\0';
             this.txtcariBMHP.PlaceholderText = "Cari BMHP";
@@ -126,10 +176,10 @@
             this.guna2Panel2.Controls.Add(this.guna2ShadowPanel1);
             this.guna2Panel2.Controls.Add(this.guna2Panel4);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 353);
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 414);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
-            this.guna2Panel2.Size = new System.Drawing.Size(671, 162);
+            this.guna2Panel2.Size = new System.Drawing.Size(714, 177);
             this.guna2Panel2.TabIndex = 1;
             // 
             // dgvTindakan
@@ -153,7 +203,9 @@
             this.dgvTindakan.ColumnHeadersHeight = 21;
             this.dgvTindakan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.no,
-            this.tindakan});
+            this.tindakan,
+            this.vcnoresepDataGridViewTextBoxColumn,
+            this.vcnamatindakanDataGridViewTextBoxColumn});
             this.dgvTindakan.DataSource = this.bstindakan;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -171,7 +223,7 @@
             this.dgvTindakan.RowHeadersVisible = false;
             this.dgvTindakan.RowTemplate.Height = 25;
             this.dgvTindakan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTindakan.Size = new System.Drawing.Size(463, 107);
+            this.dgvTindakan.Size = new System.Drawing.Size(506, 122);
             this.dgvTindakan.TabIndex = 1;
             this.dgvTindakan.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvTindakan.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -198,6 +250,19 @@
             this.dgvTindakan.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvTindakan_EditingControlShowing);
             this.dgvTindakan.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvTindakan_RowPostPaint);
             // 
+            // no
+            // 
+            this.no.FillWeight = 15F;
+            this.no.HeaderText = "No.";
+            this.no.Name = "no";
+            this.no.ReadOnly = true;
+            // 
+            // tindakan
+            // 
+            this.tindakan.DataPropertyName = "vc_nama_tindakan";
+            this.tindakan.HeaderText = "Nama Tindakan";
+            this.tindakan.Name = "tindakan";
+            // 
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
@@ -208,7 +273,7 @@
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(463, 55);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(506, 55);
             this.guna2ShadowPanel1.TabIndex = 2;
             // 
             // label3
@@ -237,10 +302,10 @@
             // 
             this.guna2Panel4.Controls.Add(this.btnSimpan);
             this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Panel4.Location = new System.Drawing.Point(463, 0);
+            this.guna2Panel4.Location = new System.Drawing.Point(506, 0);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
-            this.guna2Panel4.Size = new System.Drawing.Size(208, 162);
+            this.guna2Panel4.Size = new System.Drawing.Size(208, 177);
             this.guna2Panel4.TabIndex = 1;
             // 
             // btnSimpan
@@ -264,10 +329,10 @@
             // 
             this.guna2Panel3.Controls.Add(this.dgvBMHP);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel3.Location = new System.Drawing.Point(0, 70);
+            this.guna2Panel3.Location = new System.Drawing.Point(0, 142);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
-            this.guna2Panel3.Size = new System.Drawing.Size(671, 283);
+            this.guna2Panel3.Size = new System.Drawing.Size(714, 272);
             this.guna2Panel3.TabIndex = 2;
             // 
             // dgvBMHP
@@ -295,7 +360,10 @@
             this.nomor,
             this.vcnamaobatDataGridViewTextBoxColumn,
             this.numjmlDataGridViewTextBoxColumn,
-            this.vcsatuanDataGridViewTextBoxColumn});
+            this.vcsatuanDataGridViewTextBoxColumn,
+            this.delete,
+            this.vc_kode_rx_d,
+            this.vc_kode_rx});
             this.dgvBMHP.DataSource = this.bsBMHP;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
@@ -313,7 +381,7 @@
             this.dgvBMHP.ReadOnly = true;
             this.dgvBMHP.RowHeadersVisible = false;
             this.dgvBMHP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBMHP.Size = new System.Drawing.Size(671, 283);
+            this.dgvBMHP.Size = new System.Drawing.Size(714, 272);
             this.dgvBMHP.TabIndex = 0;
             this.dgvBMHP.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvBMHP.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -337,34 +405,14 @@
             this.dgvBMHP.ThemeStyle.RowsStyle.Height = 22;
             this.dgvBMHP.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBMHP.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvBMHP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBMHP_CellClick);
+            this.dgvBMHP.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvBMHP_CellPainting);
+            this.dgvBMHP.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvBMHP_RowPostPaint);
             // 
-            // nomor
+            // guna2Elipse1
             // 
-            this.nomor.FillWeight = 20F;
-            this.nomor.HeaderText = "No.";
-            this.nomor.Name = "nomor";
-            this.nomor.ReadOnly = true;
-            // 
-            // vcnamaobatDataGridViewTextBoxColumn
-            // 
-            this.vcnamaobatDataGridViewTextBoxColumn.DataPropertyName = "vc_nama_obat";
-            this.vcnamaobatDataGridViewTextBoxColumn.HeaderText = "Nama Alkes";
-            this.vcnamaobatDataGridViewTextBoxColumn.Name = "vcnamaobatDataGridViewTextBoxColumn";
-            this.vcnamaobatDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // numjmlDataGridViewTextBoxColumn
-            // 
-            this.numjmlDataGridViewTextBoxColumn.DataPropertyName = "num_jml";
-            this.numjmlDataGridViewTextBoxColumn.HeaderText = "Jumlah";
-            this.numjmlDataGridViewTextBoxColumn.Name = "numjmlDataGridViewTextBoxColumn";
-            this.numjmlDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // vcsatuanDataGridViewTextBoxColumn
-            // 
-            this.vcsatuanDataGridViewTextBoxColumn.DataPropertyName = "vc_satuan";
-            this.vcsatuanDataGridViewTextBoxColumn.HeaderText = "Satuan";
-            this.vcsatuanDataGridViewTextBoxColumn.Name = "vcsatuanDataGridViewTextBoxColumn";
-            this.vcsatuanDataGridViewTextBoxColumn.ReadOnly = true;
+            this.guna2Elipse1.BorderRadius = 16;
+            this.guna2Elipse1.TargetControl = this.dgvTindakan;
             // 
             // bsBMHP
             // 
@@ -376,36 +424,98 @@
             this.yakkumdb.DataSetName = "yakkumdb";
             this.yakkumdb.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // guna2Elipse1
+            // vcnoresepDataGridViewTextBoxColumn
             // 
-            this.guna2Elipse1.BorderRadius = 16;
-            this.guna2Elipse1.TargetControl = this.dgvTindakan;
+            this.vcnoresepDataGridViewTextBoxColumn.DataPropertyName = "vc_no_resep";
+            this.vcnoresepDataGridViewTextBoxColumn.HeaderText = "vc_no_resep";
+            this.vcnoresepDataGridViewTextBoxColumn.Name = "vcnoresepDataGridViewTextBoxColumn";
+            this.vcnoresepDataGridViewTextBoxColumn.Visible = false;
             // 
-            // bmhpTableAdapter
+            // vcnamatindakanDataGridViewTextBoxColumn
             // 
-            this.bmhpTableAdapter.ClearBeforeFill = true;
+            this.vcnamatindakanDataGridViewTextBoxColumn.DataPropertyName = "vc_nama_tindakan";
+            this.vcnamatindakanDataGridViewTextBoxColumn.HeaderText = "vc_nama_tindakan";
+            this.vcnamatindakanDataGridViewTextBoxColumn.Name = "vcnamatindakanDataGridViewTextBoxColumn";
+            this.vcnamatindakanDataGridViewTextBoxColumn.Visible = false;
             // 
             // bstindakan
             // 
             this.bstindakan.DataMember = "fa_rx_tindakan";
             this.bstindakan.DataSource = this.yakkumdb;
             // 
+            // bsResepWaiting
+            // 
+            this.bsResepWaiting.DataMember = "resep_waiting";
+            this.bsResepWaiting.DataSource = this.yakkumdb;
+            // 
+            // bmhpTableAdapter
+            // 
+            this.bmhpTableAdapter.ClearBeforeFill = true;
+            // 
             // fa_rx_tindakanTableAdapter
             // 
             this.fa_rx_tindakanTableAdapter.ClearBeforeFill = true;
             // 
-            // no
+            // resep_waitingTableAdapter
             // 
-            this.no.FillWeight = 15F;
-            this.no.HeaderText = "No.";
-            this.no.Name = "no";
-            this.no.ReadOnly = true;
+            this.resep_waitingTableAdapter.ClearBeforeFill = true;
             // 
-            // tindakan
+            // nomor
             // 
-            this.tindakan.DataPropertyName = "vc_nama_tindakan";
-            this.tindakan.HeaderText = "Nama Tindakan";
-            this.tindakan.Name = "tindakan";
+            this.nomor.FillWeight = 22.25254F;
+            this.nomor.HeaderText = "No.";
+            this.nomor.Name = "nomor";
+            this.nomor.ReadOnly = true;
+            // 
+            // vcnamaobatDataGridViewTextBoxColumn
+            // 
+            this.vcnamaobatDataGridViewTextBoxColumn.DataPropertyName = "vc_nama_obat";
+            this.vcnamaobatDataGridViewTextBoxColumn.FillWeight = 111.2627F;
+            this.vcnamaobatDataGridViewTextBoxColumn.HeaderText = "Nama Alkes";
+            this.vcnamaobatDataGridViewTextBoxColumn.Name = "vcnamaobatDataGridViewTextBoxColumn";
+            this.vcnamaobatDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // numjmlDataGridViewTextBoxColumn
+            // 
+            this.numjmlDataGridViewTextBoxColumn.DataPropertyName = "num_jml";
+            this.numjmlDataGridViewTextBoxColumn.FillWeight = 111.2627F;
+            this.numjmlDataGridViewTextBoxColumn.HeaderText = "Jumlah";
+            this.numjmlDataGridViewTextBoxColumn.Name = "numjmlDataGridViewTextBoxColumn";
+            this.numjmlDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // vcsatuanDataGridViewTextBoxColumn
+            // 
+            this.vcsatuanDataGridViewTextBoxColumn.DataPropertyName = "vc_satuan";
+            this.vcsatuanDataGridViewTextBoxColumn.FillWeight = 111.2627F;
+            this.vcsatuanDataGridViewTextBoxColumn.HeaderText = "Satuan";
+            this.vcsatuanDataGridViewTextBoxColumn.Name = "vcsatuanDataGridViewTextBoxColumn";
+            this.vcsatuanDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // delete
+            // 
+            this.delete.FillWeight = 30F;
+            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete.HeaderText = "";
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.delete.ToolTipText = "Delete BMHP";
+            // 
+            // vc_kode_rx_d
+            // 
+            this.vc_kode_rx_d.DataPropertyName = "vc_kode_rx_d";
+            this.vc_kode_rx_d.HeaderText = "vc_kode_rx_d";
+            this.vc_kode_rx_d.Name = "vc_kode_rx_d";
+            this.vc_kode_rx_d.ReadOnly = true;
+            this.vc_kode_rx_d.Visible = false;
+            // 
+            // vc_kode_rx
+            // 
+            this.vc_kode_rx.DataPropertyName = "vc_kode_rx";
+            this.vc_kode_rx.HeaderText = "vc_kode_rx";
+            this.vc_kode_rx.Name = "vc_kode_rx";
+            this.vc_kode_rx.ReadOnly = true;
+            this.vc_kode_rx.Visible = false;
             // 
             // InputBMHP
             // 
@@ -415,7 +525,7 @@
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Name = "InputBMHP";
-            this.Size = new System.Drawing.Size(671, 515);
+            this.Size = new System.Drawing.Size(714, 591);
             this.Load += new System.EventHandler(this.InputBMHP_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
@@ -429,6 +539,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsBMHP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bstindakan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsResepWaiting)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -443,10 +554,6 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button btnSimpan;
         private System.Windows.Forms.BindingSource bsBMHP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vcnamaobatDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numjmlDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vcsatuanDataGridViewTextBoxColumn;
         private yakkumdb yakkumdb;
         private yakkumdbTableAdapters.bmhpTableAdapter bmhpTableAdapter;
         private Guna.UI2.WinForms.Guna2DataGridView dgvTindakan;
@@ -455,9 +562,23 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn no;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tindakan;
         private System.Windows.Forms.BindingSource bstindakan;
         private yakkumdbTableAdapters.fa_rx_tindakanTableAdapter fa_rx_tindakanTableAdapter;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private System.Windows.Forms.BindingSource bsResepWaiting;
+        private yakkumdbTableAdapters.resep_waitingTableAdapter resep_waitingTableAdapter;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn no;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tindakan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vcnoresepDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vcnamatindakanDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vcnamaobatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numjmlDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vcsatuanDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn delete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vc_kode_rx_d;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vc_kode_rx;
     }
 }

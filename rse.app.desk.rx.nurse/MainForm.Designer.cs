@@ -34,11 +34,9 @@
             this.cardResep1 = new rse.app.desk.rx.nurse.CardResep();
             this.pnlContent = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.lblKklinik = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -50,15 +48,18 @@
             this.bsResep = new System.Windows.Forms.BindingSource(this.components);
             this.resep_waitingTableAdapter = new rse.app.desk.rx.nurse.yakkumdbTableAdapters.resep_waitingTableAdapter();
             this.timerreset = new System.Windows.Forms.Timer(this.components);
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flpNotif.SuspendLayout();
             this.pnlContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.guna2ShadowPanel1.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsKlinik)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsResep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // flpNotif
@@ -76,6 +77,7 @@
             // 
             this.cardResep1.BackColor = System.Drawing.Color.Indigo;
             this.cardResep1.Dokter = null;
+            this.cardResep1.kdokter = null;
             this.cardResep1.Location = new System.Drawing.Point(13, 13);
             this.cardResep1.Nama = null;
             this.cardResep1.namaklinik = null;
@@ -90,6 +92,7 @@
             // 
             // pnlContent
             // 
+            this.pnlContent.AutoScroll = true;
             this.pnlContent.Controls.Add(this.label1);
             this.pnlContent.Controls.Add(this.pictureBox2);
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -110,17 +113,6 @@
             this.label1.Size = new System.Drawing.Size(117, 30);
             this.label1.TabIndex = 1;
             this.label1.Text = "Pilih Pasien";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = global::rse.app.desk.rx.nurse.Properties.Resources.patient;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(684, 595);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
             // 
             // guna2ShadowPanel1
             // 
@@ -165,16 +157,6 @@
             this.lblKklinik.TabIndex = 6;
             this.lblKklinik.Text = "0200";
             this.lblKklinik.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::rse.app.desk.rx.nurse.Properties.Resources.medical_equipment;
-            this.pictureBox1.Location = new System.Drawing.Point(7, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(111, 93);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
             // 
             // guna2HtmlLabel2
             // 
@@ -304,8 +286,29 @@
             // 
             // timerreset
             // 
-            this.timerreset.Interval = 4000;
+            this.timerreset.Interval = 30000;
             this.timerreset.Tick += new System.EventHandler(this.timerreset_Tick);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Image = global::rse.app.desk.rx.nurse.Properties.Resources.patient;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(684, 595);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::rse.app.desk.rx.nurse.Properties.Resources.medical_equipment;
+            this.pictureBox1.Location = new System.Drawing.Point(7, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(111, 93);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // MainForm
             // 
@@ -321,14 +324,14 @@
             this.flpNotif.ResumeLayout(false);
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsKlinik)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsResep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -355,6 +358,7 @@
         private System.Windows.Forms.BindingSource bsResep;
         private yakkumdbTableAdapters.resep_waitingTableAdapter resep_waitingTableAdapter;
         private System.Windows.Forms.Timer timerreset;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
     }
 }
 

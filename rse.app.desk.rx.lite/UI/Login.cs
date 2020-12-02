@@ -9,6 +9,7 @@ namespace rse.app.desk.rx.lite.UI
         public enum roles
         {
             dokter,
+            drgigi,
             sysadmin
         }
 
@@ -56,6 +57,9 @@ namespace rse.app.desk.rx.lite.UI
                         case "sysadmin":
                             this.UserRole = roles.sysadmin;
                             break;
+                        case "drgigi":
+                            this.UserRole = roles.drgigi;
+                            break;
                         default:
 
                             break;
@@ -65,7 +69,7 @@ namespace rse.app.desk.rx.lite.UI
                     //_usernik = nik;
                     //this.userNIK = nik;
                     this.Hide();
-                    Eprescribe ep = new Eprescribe(nid);
+                    Eprescribe ep = new Eprescribe(nid,UserRole);
                     ep.ShowDialog();
                     
                 }

@@ -15,20 +15,21 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>\\192.168.10.11\Data SEP\rse.app.desk\rse.app.desk.rx.lite\</PublishUrl>
+    <PublishUrl>\\192.168.10.222\Sharing Is Caring\RSE Desktop Aplication\RX\E-Presciption\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>E-Prescription</ProductName>
     <PublisherName>RSEmanuel</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationRevision>12</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -132,6 +133,12 @@
       <DependentUpon>yakkumdb.xsd</DependentUpon>
     </Compile>
     <Compile Include="Function\SimpleAES.cs" />
+    <Compile Include="UI\Diagnosis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Diagnosis.Designer.cs">
+      <DependentUpon>Diagnosis.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\dosis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +189,9 @@
     <Compile Include="UI\Racikan.Designer.cs">
       <DependentUpon>Racikan.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Diagnosis.resx">
+      <DependentUpon>Diagnosis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\dosis.resx">
       <DependentUpon>dosis.cs</DependentUpon>
     </EmbeddedResource>
@@ -298,6 +308,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="prescription.ico" />
+    <None Include="Resources\Diagnosis1.png" />
+    <None Include="Resources\Diagnosis.png" />
     <None Include="Resources\bmhp.png" />
     <None Include="Resources\Asset 1.png" />
     <None Include="Resources\expertise.png" />

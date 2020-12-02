@@ -7154,7 +7154,7 @@ WHERE        (fa_rx_resep_d.vc_kode_rx = @koderx)";
             this._commandCollection[3].CommandText = "UPDATE       fa_rx_resep_d\r\nSET                num_jml = @jumlah\r\nWHERE        (v" +
                 "c_kode_rx_d = @kodeobat)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@jumlah", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "num_jml", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@jumlah", global::System.Data.SqlDbType.Float, 9, global::System.Data.ParameterDirection.Input, 18, 0, "num_jml", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kodeobat", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kode_rx_d", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -7258,10 +7258,10 @@ WHERE        (fa_rx_resep_d.vc_kode_rx = @koderx)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateJumlah(global::System.Nullable<decimal> jumlah, string kodeobat) {
+        public virtual int UpdateJumlah(global::System.Nullable<double> jumlah, string kodeobat) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((jumlah.HasValue == true)) {
-                command.Parameters[0].Value = ((decimal)(jumlah.Value));
+                command.Parameters[0].Value = ((double)(jumlah.Value));
             }
             else {
                 command.Parameters[0].Value = global::System.DBNull.Value;
@@ -7468,13 +7468,13 @@ WHERE        (fa_rx_resep_d.vc_kode_rx = @koderx)";
                 "                      fa_rx_resep_h ON RMKLINIK.vc_K_KLINIK = fa_rx_resep_h.vc_k" +
                 "_klinik INNER JOIN\r\n                         SDMDOKTER ON fa_rx_resep_h.vc_k_dok" +
                 "ter = SDMDOKTER.vc_nid INNER JOIN\r\n                         RMPasien ON fa_rx_re" +
-                "sep_h.vc_no_rm = RMPasien.vc_no_rm INNER JOIN\r\n                         Scann_TT" +
-                "D_Dokter ON fa_rx_resep_h.vc_k_dokter = Scann_TTD_Dokter.vc_nid_dokter LEFT OUTE" +
-                "R JOIN\r\n                         BPJS_RefDiagnosis_Inasis INNER JOIN\r\n          " +
-                "               BPJS_SEP ON BPJS_RefDiagnosis_Inasis.Code = BPJS_SEP.vc_kode_diag" +
-                "nosa_awal INNER JOIN\r\n                         Bpjs_refppk ON BPJS_SEP.vc_kode_a" +
-                "sal_rujukan = Bpjs_refppk.KDPPK ON fa_rx_resep_h.vc_no_reg = BPJS_SEP.vc_no_regj" +
-                "\r\nWHERE        (fa_rx_resep_h.vc_kode_rx = @kresep)";
+                "sep_h.vc_no_rm = RMPasien.vc_no_rm LEFT OUTER JOIN\r\n                         Sca" +
+                "nn_TTD_Dokter ON fa_rx_resep_h.vc_k_dokter = Scann_TTD_Dokter.vc_nid_dokter LEFT" +
+                " OUTER JOIN\r\n                         BPJS_RefDiagnosis_Inasis RIGHT OUTER JOIN\r" +
+                "\n                         BPJS_SEP ON BPJS_RefDiagnosis_Inasis.Code = BPJS_SEP.v" +
+                "c_kode_diagnosa_awal LEFT OUTER JOIN\r\n                         Bpjs_refppk ON BP" +
+                "JS_SEP.vc_kode_asal_rujukan = Bpjs_refppk.KDPPK ON fa_rx_resep_h.vc_no_reg = BPJ" +
+                "S_SEP.vc_no_regj\r\nWHERE        (fa_rx_resep_h.vc_kode_rx = @kresep)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kresep", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kode_rx", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

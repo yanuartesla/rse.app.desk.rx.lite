@@ -38,12 +38,16 @@ namespace rse.app.desk.rx.nurse
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtJumlah.Text == "")
+            if (txtJumlah.Text == "" || cmbSatuan.SelectedIndex == 0 )
             {
                 MessageBox.Show("Masukan Jumlah Alat");
             }
             else
             {
+
+                float _jumlahbmhp = (float)Convert.ToDouble(txtJumlah.Text);
+                bool valid = float.TryParse(txtJumlah.Text.ToString(), out _jumlahbmhp);
+
                 var bm = new yakkumdbTableAdapters.bmhpTableAdapter();
                 bm.InsertQuery(
                     _koderx,
@@ -51,14 +55,19 @@ namespace rse.app.desk.rx.nurse
                     _nourut,
                     lblKodeObat.Text,
                     lblNama.Text,
-                    Int32.Parse(txtJumlah.Text),
-                    lblSatuan.Text,
+                    Math.Round(_jumlahbmhp,4),
+                    cmbSatuan.Text,
                     _kdokter
                     );
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             
+        }
+
+        private void cmbSatuan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

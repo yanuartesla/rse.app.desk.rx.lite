@@ -37,6 +37,9 @@
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.numCopies = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.numCopies)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Button1
@@ -48,11 +51,11 @@
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(27, 123);
+            this.guna2Button1.Location = new System.Drawing.Point(26, 174);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(104, 45);
-            this.guna2Button1.TabIndex = 0;
+            this.guna2Button1.TabIndex = 1;
             this.guna2Button1.Text = "Ya";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
@@ -67,11 +70,11 @@
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(156, 123);
+            this.guna2Button2.Location = new System.Drawing.Point(156, 174);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
             this.guna2Button2.Size = new System.Drawing.Size(104, 45);
-            this.guna2Button2.TabIndex = 1;
+            this.guna2Button2.TabIndex = 2;
             this.guna2Button2.Text = "Tidak";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
@@ -79,7 +82,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(63, 62);
+            this.label1.Location = new System.Drawing.Point(59, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(167, 32);
             this.label1.TabIndex = 2;
@@ -128,11 +131,60 @@
             this.guna2Separator1.Size = new System.Drawing.Size(200, 10);
             this.guna2Separator1.TabIndex = 5;
             // 
+            // numCopies
+            // 
+            this.numCopies.AutoRoundedCorners = true;
+            this.numCopies.BackColor = System.Drawing.Color.Transparent;
+            this.numCopies.BorderRadius = 17;
+            this.numCopies.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.numCopies.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.numCopies.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.numCopies.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.numCopies.DisabledState.Parent = this.numCopies;
+            this.numCopies.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.numCopies.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.numCopies.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.numCopies.FocusedState.Parent = this.numCopies;
+            this.numCopies.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numCopies.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.numCopies.Location = new System.Drawing.Point(158, 107);
+            this.numCopies.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numCopies.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numCopies.Name = "numCopies";
+            this.numCopies.ShadowDecoration.Parent = this.numCopies;
+            this.numCopies.Size = new System.Drawing.Size(64, 36);
+            this.numCopies.TabIndex = 0;
+            this.numCopies.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(55, 118);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 17);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "jumlah cetakan : ";
+            // 
             // PrintDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(293, 203);
+            this.ClientSize = new System.Drawing.Size(293, 243);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.numCopies);
             this.Controls.Add(this.guna2Separator1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.guna2CircleButton1);
@@ -143,6 +195,7 @@
             this.Name = "PrintDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PrintDialog";
+            ((System.ComponentModel.ISupportInitialize)(this.numCopies)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +211,7 @@
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2NumericUpDown numCopies;
     }
 }

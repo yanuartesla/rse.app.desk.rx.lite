@@ -19,11 +19,12 @@ namespace rse.app.desk.rx.nurse
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            //MessageBox.Show(lblKklinik.Text);
             // TODO: This line of code loads data into the 'yakkumdb.RMKLINIK' table. You can move, or remove it, as needed.
             //this.rMKLINIKTableAdapter.Fill(this.yakkumdb.RMKLINIK);
-            
             this.cmbNKlinik.Text = Properties.Settings.Default.strKlinik;
             this.lblKklinik.Text = Properties.Settings.Default.strKlinik.Substring(0, 4);
+            //MessageBox.Show(lblKklinik.Text);
             populateItems();
             timerreset.Start();
         }
@@ -46,8 +47,6 @@ namespace rse.app.desk.rx.nurse
                     Dokter = r["dokter"].ToString(),
                     SEP = r["vc_no_sep"].ToString(),
                     kdokter = r["vc_nid"].ToString()
-
-
                 };
 
                 if (flpNotif.Controls.Count < 0)
@@ -58,9 +57,7 @@ namespace rse.app.desk.rx.nurse
                 else
                 {
                     flpNotif.Controls.Add(uc);
-
                     uc.Click += uc_MouseCliked;
-
                 }
             }
         }
@@ -76,7 +73,7 @@ namespace rse.app.desk.rx.nurse
            //MessageBox.Show("jadi yess" + _filter);
             InputBMHP rd = new InputBMHP(_filter.Substring(0,4),_filter.Substring(4));
 
-            //rd.Dock = DockStyle.Fill;
+            rd.Dock = DockStyle.Fill;
             pnlContent.Controls.Add(rd);
             rd.Show();
             rd.Refresh();

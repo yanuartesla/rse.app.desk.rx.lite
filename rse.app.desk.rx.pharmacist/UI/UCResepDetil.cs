@@ -15,11 +15,13 @@ using System.Reflection;
 using rse.app.desk.rx.pharmacist;
 using YourApp;
 using rse.app.desk.rx.pharmacist.Dataset;
+using System.Threading;
 
 namespace rse.app.desk.rx.pharmacist.UI
 {
     public partial class UCResepDetil : UserControl
     {
+        private int _numofcopies { get; set; }
         private string _noresep { get; set; }
         private string _sep { get; set; }
         private string _noreg { get; set; }
@@ -69,7 +71,7 @@ namespace rse.app.desk.rx.pharmacist.UI
             report.DataSources.Add(_rds);
             report.DataSources.Add(_rds2);
             
-            PrintReport.PrintToPrinter(report, Int16.Parse(numCoppies.Value.ToString()));
+            PrintReport.PrintToPrinter(report,_numofcopies);
             
         }
 
@@ -81,9 +83,22 @@ namespace rse.app.desk.rx.pharmacist.UI
             var ds2 = new Dataset.yakkumdbTableAdapters.data_resepTableAdapter();
             ds2.ClearBeforeFill = true;
             ds2.Fill(yakkumdb.data_resep,_noresep);
-            
+
+
             this.rvResep.ZoomMode = ZoomMode.PageWidth;
             this.rvResep.RefreshReport();
+
+            //if (InvokeRequired)
+            //{
+            //    // after we've done all the processing, 
+            //    this.Invoke(new MethodInvoker(delegate {
+            //        // load the control with the appropriate data'
+            //        this.rvResep.ZoomMode = ZoomMode.PageWidth;
+            //        this.rvResep.RefreshReport();
+            //    }));
+            //    return;
+            //}
+            
 
             DataTable dt = ds.GetData(_noresep);
             foreach (DataRow r in dt.Rows)
@@ -92,24 +107,26 @@ namespace rse.app.desk.rx.pharmacist.UI
             }
         }
 
-        private void btnSimpan_Click(object sender, EventArgs e)
+        private void doSimpan()
         {
             var rh = new Dataset.yakkumdbTableAdapters.fa_rx_resep_hTableAdapter();
             //TODO : janganlupa uncomment
-            rh.UpdateResponTime(DateTime.UtcNow,_noresep);
-
+            rh.UpdateResponTime(DateTime.Now, _noresep);
             load_report();
             var _year = DateTime.Now.ToString("yyyy");
             var _month = DateTime.Now.ToString("MM");
             var _day = DateTime.Now.ToString("dd");
-            var _datepath = _year + @"\" + _month+ @"\"+_day;
+            var _datepath = _year + @"\" + _month + @"\" + _day;
             var _filename = _sep + "_resep.Pdf";
             string _path = @"\\192.168.10.11\Data SEP\Casemix RJ\FARMASI RJ\" + _datepath + @"\" + _filename;
+
             Functions.SavePDF.SavedPDF(rvResep, _path);
             PrintDialog pd = new PrintDialog();
             var result = pd.ShowDialog();
+
             if (result == DialogResult.Yes)
             {
+                this._numofcopies = pd._printcopy;
                 printResep();
                 this.Controls.Clear();
                 rh.UpdateStatusFinal(_noresep);
@@ -119,7 +136,15 @@ namespace rse.app.desk.rx.pharmacist.UI
                 this.Controls.Clear();
                 rh.UpdateStatusFinal(_noresep);
             }
-
+            
+        }
+        private void btnSimpan_Click(object sender, EventArgs e)
+        {
+            doSimpan();
+            //using (UI.LoadingWindow lw = new UI.LoadingWindow(doSimpan))
+            //{
+            //    lw.ShowDialog(this);
+            //}
 
         }
 
@@ -128,7 +153,7 @@ namespace rse.app.desk.rx.pharmacist.UI
 
             var ds = new Dataset.yakkumdbTableAdapters.data_pasienTableAdapter();
             ds.ClearBeforeFill = true;
-            ds.Fill(yakkumdb.data_pasien, _noresep);
+            ds.Fill(yakkumdb.data_pasien, _noresep);    
 
             var ds2 = new Dataset.yakkumdbTableAdapters.data_resepTableAdapter();
             ds2.ClearBeforeFill = true;
@@ -184,7 +209,11 @@ namespace rse.app.desk.rx.pharmacist.UI
             report.DataSources.Add(_rds4);
             report.DataSources.Add(_rds5);
 
-            PrintReport.PrintToPrinter(report, Int16.Parse(numCoppies.Value.ToString()));
+            for(int q = 1;q<=_numofcopies;q++)
+            {
+                PrintReport.PrintToPrinter(report, _numofcopies);
+            }
+            
         }
         private void dgvResep_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -227,8 +256,24 @@ namespace rse.app.desk.rx.pharmacist.UI
                     dgvResep.Refresh();
                     
                 }
-
                 // MessageBox.Show("edited! " + val);
+            }
+            else 
+            {
+                var btracik = this.dgvResep[9, e.RowIndex].Value.ToString();
+                if(btracik == "True")
+                {
+                    var _koderxd = this.dgvResep[8, e.RowIndex].Value.ToString();
+                    this.fa_rx_racikanTableAdapter.Fill(yakkumdb.fa_rx_racikan, _koderxd);
+                    dgvRacikan.Update();
+                    dgvRacikan.Refresh();
+                    pnlRacikan.Visible = true;
+                }
+                else 
+                {
+                    pnlRacikan.Visible = false;
+                }
+                //pnpMessageBox.Show(btracik);
             }
         }
 

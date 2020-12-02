@@ -72,8 +72,9 @@
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.LoadPanel = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
-            this.btEfile = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnDiagnosa = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnEresep = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btEfile = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnBMHP = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnExpertise = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -598,8 +599,9 @@
             // 
             // flpMenu
             // 
-            this.flpMenu.Controls.Add(this.btEfile);
+            this.flpMenu.Controls.Add(this.btnDiagnosa);
             this.flpMenu.Controls.Add(this.btnEresep);
+            this.flpMenu.Controls.Add(this.btEfile);
             this.flpMenu.Controls.Add(this.btnBMHP);
             this.flpMenu.Controls.Add(this.btnExpertise);
             this.flpMenu.Location = new System.Drawing.Point(114, 79);
@@ -609,25 +611,25 @@
             this.flpMenu.Size = new System.Drawing.Size(711, 599);
             this.flpMenu.TabIndex = 6;
             // 
-            // btEfile
+            // btnDiagnosa
             // 
-            this.btEfile.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btEfile.CheckedState.Parent = this.btEfile;
-            this.btEfile.HoverState.Image = global::rse.app.desk.rx.lite.Properties.Resources.efile;
-            this.btEfile.HoverState.ImageSize = new System.Drawing.Size(150, 150);
-            this.btEfile.HoverState.Parent = this.btEfile;
-            this.btEfile.Image = global::rse.app.desk.rx.lite.Properties.Resources.efile;
-            this.btEfile.ImageRotate = 0F;
-            this.btEfile.ImageSize = new System.Drawing.Size(128, 128);
-            this.btEfile.Location = new System.Drawing.Point(18, 18);
-            this.btEfile.Name = "btEfile";
-            this.btEfile.PressedState.Image = global::rse.app.desk.rx.lite.Properties.Resources.efile;
-            this.btEfile.PressedState.ImageSize = new System.Drawing.Size(150, 150);
-            this.btEfile.PressedState.Parent = this.btEfile;
-            this.btEfile.Size = new System.Drawing.Size(215, 215);
-            this.btEfile.TabIndex = 0;
-            this.btEfile.UseTransparentBackground = true;
-            this.btEfile.Click += new System.EventHandler(this.btEfile_Click);
+            this.btnDiagnosa.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnDiagnosa.CheckedState.Parent = this.btnDiagnosa;
+            this.btnDiagnosa.HoverState.Image = global::rse.app.desk.rx.lite.Properties.Resources.Diagnosis1;
+            this.btnDiagnosa.HoverState.ImageSize = new System.Drawing.Size(150, 150);
+            this.btnDiagnosa.HoverState.Parent = this.btnDiagnosa;
+            this.btnDiagnosa.Image = global::rse.app.desk.rx.lite.Properties.Resources.Diagnosis1;
+            this.btnDiagnosa.ImageRotate = 0F;
+            this.btnDiagnosa.ImageSize = new System.Drawing.Size(140, 140);
+            this.btnDiagnosa.IndicateFocus = true;
+            this.btnDiagnosa.Location = new System.Drawing.Point(18, 18);
+            this.btnDiagnosa.Name = "btnDiagnosa";
+            this.btnDiagnosa.PressedState.Image = global::rse.app.desk.rx.lite.Properties.Resources.Diagnosis1;
+            this.btnDiagnosa.PressedState.ImageSize = new System.Drawing.Size(150, 150);
+            this.btnDiagnosa.PressedState.Parent = this.btnDiagnosa;
+            this.btnDiagnosa.Size = new System.Drawing.Size(215, 215);
+            this.btnDiagnosa.TabIndex = 4;
+            this.btnDiagnosa.UseTransparentBackground = true;
             // 
             // btnEresep
             // 
@@ -649,6 +651,26 @@
             this.btnEresep.UseTransparentBackground = true;
             this.btnEresep.Click += new System.EventHandler(this.guna2ImageButton2_Click);
             // 
+            // btEfile
+            // 
+            this.btEfile.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btEfile.CheckedState.Parent = this.btEfile;
+            this.btEfile.HoverState.Image = global::rse.app.desk.rx.lite.Properties.Resources.efile;
+            this.btEfile.HoverState.ImageSize = new System.Drawing.Size(150, 150);
+            this.btEfile.HoverState.Parent = this.btEfile;
+            this.btEfile.Image = global::rse.app.desk.rx.lite.Properties.Resources.efile;
+            this.btEfile.ImageRotate = 0F;
+            this.btEfile.ImageSize = new System.Drawing.Size(128, 128);
+            this.btEfile.Location = new System.Drawing.Point(460, 18);
+            this.btEfile.Name = "btEfile";
+            this.btEfile.PressedState.Image = global::rse.app.desk.rx.lite.Properties.Resources.efile;
+            this.btEfile.PressedState.ImageSize = new System.Drawing.Size(150, 150);
+            this.btEfile.PressedState.Parent = this.btEfile;
+            this.btEfile.Size = new System.Drawing.Size(215, 215);
+            this.btEfile.TabIndex = 0;
+            this.btEfile.UseTransparentBackground = true;
+            this.btEfile.Click += new System.EventHandler(this.btEfile_Click);
+            // 
             // btnBMHP
             // 
             this.btnBMHP.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -659,7 +681,7 @@
             this.btnBMHP.Image = global::rse.app.desk.rx.lite.Properties.Resources.bmhp;
             this.btnBMHP.ImageRotate = 0F;
             this.btnBMHP.ImageSize = new System.Drawing.Size(128, 128);
-            this.btnBMHP.Location = new System.Drawing.Point(460, 18);
+            this.btnBMHP.Location = new System.Drawing.Point(18, 239);
             this.btnBMHP.Name = "btnBMHP";
             this.btnBMHP.PressedState.Image = global::rse.app.desk.rx.lite.Properties.Resources.bmhp;
             this.btnBMHP.PressedState.ImageSize = new System.Drawing.Size(150, 150);
@@ -679,7 +701,7 @@
             this.btnExpertise.Image = global::rse.app.desk.rx.lite.Properties.Resources.expertise;
             this.btnExpertise.ImageRotate = 0F;
             this.btnExpertise.ImageSize = new System.Drawing.Size(128, 128);
-            this.btnExpertise.Location = new System.Drawing.Point(18, 239);
+            this.btnExpertise.Location = new System.Drawing.Point(239, 239);
             this.btnExpertise.Name = "btnExpertise";
             this.btnExpertise.PressedState.Image = global::rse.app.desk.rx.lite.Properties.Resources.expertise;
             this.btnExpertise.PressedState.ImageSize = new System.Drawing.Size(150, 150);
@@ -816,6 +838,7 @@
         private Guna.UI2.WinForms.Guna2ImageButton btnEresep;
         private Guna.UI2.WinForms.Guna2ImageButton btnExpertise;
         private Guna.UI2.WinForms.Guna2ImageButton btnBMHP;
+        private Guna.UI2.WinForms.Guna2ImageButton btnDiagnosa;
     }
 }
 

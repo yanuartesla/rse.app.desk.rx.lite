@@ -17,7 +17,7 @@ namespace YourApp
 
         private static int m_currentPageIndex;
         private static IList<Stream> m_streams;
-        private static short _numberCoppies { get; set; }
+        private static int _numberCoppies { get; set; }
 
         public static Stream CreateStream(string name,
           string fileNameExtension, Encoding encoding,
@@ -83,6 +83,7 @@ namespace YourApp
             if (m_streams == null || m_streams.Count == 0)
                 throw new Exception("Error: no stream to print.");
             PrintDocument printDoc = new PrintDocument();
+            
             if (!printDoc.PrinterSettings.IsValid)
             {
                 throw new Exception("Error: cannot find the default printer.");
@@ -90,16 +91,13 @@ namespace YourApp
             else
             {
                 printDoc.PrintPage += new PrintPageEventHandler(PrintPage);
-                 
                 m_currentPageIndex = 0;
+                //printDoc.PrinterSettings.Copies = Convert.ToInt16(_numberCoppies);
                 printDoc.Print();
-
-                //printDoc.PrinterSettings.DefaultPageSettings.PrinterSettings.Copies = _numberCoppies;
-
             }
         }
 
-        public static void PrintToPrinter(this LocalReport report, short numbbercoppies)
+        public static void PrintToPrinter(this LocalReport report, int numbbercoppies)
         {
             _numberCoppies = numbbercoppies;
             Export(report);

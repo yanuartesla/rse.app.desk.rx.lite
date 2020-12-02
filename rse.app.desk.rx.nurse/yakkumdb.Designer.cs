@@ -645,8 +645,6 @@ namespace rse.app.desk.rx.nurse {
                 base.Columns.Add(this.columndokter);
                 this.columnvc_nid = new global::System.Data.DataColumn("vc_nid", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnvc_nid);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnvc_nid}, false));
                 this.columnvc_kode_rx.MaxLength = 50;
                 this.columnvc_no_rm.MaxLength = 50;
                 this.columnvc_kode_poli_bpjs.MaxLength = 4;
@@ -654,7 +652,6 @@ namespace rse.app.desk.rx.nurse {
                 this.columnvc_no_sep.MaxLength = 50;
                 this.columnvc_k_klinik.MaxLength = 50;
                 this.columndokter.MaxLength = 100;
-                this.columnvc_nid.Unique = true;
                 this.columnvc_nid.MaxLength = 4;
             }
             
@@ -3071,7 +3068,7 @@ namespace rse.app.desk.rx.nurse.yakkumdbTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT DISTINCT 
@@ -3086,10 +3083,34 @@ WHERE        (fa_rx_resep_h.int_k_status = 2) AND (fa_rx_resep_h.vc_k_klinik = @
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kklinik", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_k_klinik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "UPDATE       fa_rx_resep_h\r\nSET                vc_status = \'ORDER\', int_k_status " +
-                "= 3, dt_order = GETDATE()\r\nWHERE        (vc_kode_rx = @kdrx)";
+            this._commandCollection[1].CommandText = @"SELECT DISTINCT 
+                         fa_rx_resep_h.vc_kode_rx, fa_rx_resep_h.vc_no_rm, fa_rx_resep_h.int_k_status, BPJS_RSE_mapping_poli.vc_kode_poli_bpjs, BPJS_SEP.vc_nama_Peserta, BPJS_SEP.vc_no_sep, fa_rx_resep_h.vc_k_klinik, 
+                         SDMDOKTER.vc_nama_kry AS dokter, SDMDOKTER.vc_nid
+FROM            fa_rx_resep_h INNER JOIN
+                         SDMDOKTER ON fa_rx_resep_h.vc_k_dokter = SDMDOKTER.vc_nid LEFT OUTER JOIN
+                         BPJS_SEP ON fa_rx_resep_h.vc_no_reg = BPJS_SEP.vc_no_regj LEFT OUTER JOIN
+                         BPJS_RSE_mapping_poli ON fa_rx_resep_h.vc_k_klinik = BPJS_RSE_mapping_poli.vc_kode_poli_rs
+WHERE        (fa_rx_resep_h.int_k_status = 2)  AND (fa_rx_resep_h.vc_kode_rx = @koderx)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kdrx", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kode_rx", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@koderx", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kode_rx", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        vc_status\r\nFROM            fa_rx_resep_h\r\nWHERE        (int_k_statu" +
+                "s = 2) AND (vc_kode_rx = @kdrx)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kdrx", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kode_rx", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "UPDATE       fa_rx_resep_h\r\nSET                vc_status = \'ORDER\', int_k_status " +
+                "= 3, dt_order = GETDATE()\r\nWHERE        (vc_kode_rx = @kdrx)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kdrx", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kode_rx", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "UPDATE       fa_rx_resep_h\r\nSET                vc_status = \'PAKET\'\r\nWHERE        " +
+                "(vc_kode_rx = @kdrx)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kdrx", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kode_rx", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3131,9 +3152,108 @@ WHERE        (fa_rx_resep_h.int_k_status = 2) AND (fa_rx_resep_h.vc_k_klinik = @
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByKoderesep(yakkumdb.resep_waitingDataTable dataTable, string koderx) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((koderx == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(koderx));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual yakkumdb.resep_waitingDataTable GetDataByKoderesep(string koderx) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((koderx == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(koderx));
+            }
+            yakkumdb.resep_waitingDataTable dataTable = new yakkumdb.resep_waitingDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual string ScalarQueryStatPaket(string kdrx) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((kdrx == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(kdrx));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((string)(returnValue));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery(string kdrx) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((kdrx == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(kdrx));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQueryStatPaket(string kdrx) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             if ((kdrx == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -3550,7 +3670,7 @@ WHERE        (fa_rx_resep_h.int_k_status = 2) AND (fa_rx_resep_h.vc_k_klinik = @
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        vc_kode_rx, vc_kode_rx_d, in_no_urut, vc_kode_obat, vc_nama_obat, n" +
@@ -3560,24 +3680,82 @@ WHERE        (fa_rx_resep_h.int_k_status = 2) AND (fa_rx_resep_h.vc_k_klinik = @
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@krx", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kode_rx", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"INSERT INTO fa_rx_resep_d
-                         (vc_kode_rx, vc_kode_rx_d, in_no_urut, vc_kode_obat, vc_nama_obat, num_jml, vc_satuan, vc_kdokter)
-VALUES        (@vc_kode_rx,@vc_kode_rx_d,@in_no_urut,@vc_kode_obat,@vc_nama_obat,@num_jml,@vc_satuan,@vc_kdokter)";
+            this._commandCollection[1].CommandText = "DELETE FROM fa_rx_resep_d\r\nWHERE        (vc_kode_rx_d = @kdrxd)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vc_kode_rx", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kode_rx", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vc_kode_rx_d", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kode_rx_d", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@in_no_urut", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "in_no_urut", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vc_kode_obat", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kode_obat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vc_nama_obat", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "vc_nama_obat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@num_jml", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "num_jml", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vc_satuan", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_satuan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vc_kdokter", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kdokter", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kdrxd", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kode_rx_d", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        MAX(in_no_urut) AS nourut\r\nFROM            fa_rx_resep_d\r\nWHERE    " +
-                "    (vc_kode_rx = @koderx)\r\nGROUP BY vc_kode_rx";
+            this._commandCollection[2].CommandText = @"INSERT INTO fa_rx_resep_d
+                         (vc_kode_rx, vc_kode_rx_d, in_no_urut, vc_kode_obat, vc_nama_obat, num_jml, vc_satuan, vc_kdokter)
+VALUES        (@vc_kode_rx,@vc_kode_rx_d,@in_no_urut,@vc_kode_obat,@vc_nama_obat,@num_jml,@vc_satuan,@vc_kdokter)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@koderx", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kode_rx", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vc_kode_rx", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kode_rx", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vc_kode_rx_d", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kode_rx_d", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@in_no_urut", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "in_no_urut", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vc_kode_obat", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kode_obat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vc_nama_obat", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "vc_nama_obat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@num_jml", global::System.Data.SqlDbType.Float, 9, global::System.Data.ParameterDirection.Input, 2, 0, "num_jml", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vc_satuan", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_satuan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vc_kdokter", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kdokter", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"INSERT INTO fa_rx_resep_d
+  (vc_kode_rx
+  , vc_kode_rx_d
+  , in_no_urut
+  , vc_kode_obat
+  , vc_nama_obat
+  , num_jml
+  , vc_satuan
+  , vc_kdokter)
+VALUES       
+	(@vc_kode_rx
+	,CONCAT('AL',SUBSTRING(@vc_kode_rx,2,17),'002241')
+	,@in_no_urut
+	,'002241'
+	,'ALKOHOL 70% PER ML'
+	,20
+	,'CC'
+	,@vc_kdokter
+	),
+	(@vc_kode_rx
+	,CONCAT('AL',SUBSTRING(@vc_kode_rx,2,17),'002071')
+	,@in_no_urut+1
+	,'002071'
+	,'ANIOSYM PER CC'
+	,1
+	,'CC'
+	,@vc_kdokter
+	),
+	(@vc_kode_rx
+	,CONCAT('AL',SUBSTRING(@vc_kode_rx,2,17),'002769')
+	,@in_no_urut+2
+	,'002769'
+	,'BETADINE OBAT KUMUR 190 ML'
+	,0.1
+	,'BOTOL'
+	,@vc_kdokter
+	),
+	(@vc_kode_rx
+	,CONCAT('AL',SUBSTRING(@vc_kode_rx,2,17),'001376')
+	,@in_no_urut+3
+	,'001376'
+	,'SARUNG TANGAN DISP M'
+	,1
+	,'PASANG'
+	,@vc_kdokter
+	)
+";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vc_kode_rx", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kode_rx", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@in_no_urut", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "in_no_urut", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vc_kdokter", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kdokter", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT        CASE WHEN MAX(in_no_urut) IS NULL THEN 0 ELSE MAX(in_no_urut) END A" +
+                "S nourut\r\nFROM            fa_rx_resep_d\r\nWHERE        (vc_kode_rx = @koderx)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@koderx", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kode_rx", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3717,9 +3895,38 @@ VALUES        (@vc_kode_rx,@vc_kode_rx_d,@in_no_urut,@vc_kode_obat,@vc_nama_obat
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(string vc_kode_rx, string vc_kode_rx_d, global::System.Nullable<int> in_no_urut, string vc_kode_obat, string vc_nama_obat, global::System.Nullable<decimal> num_jml, string vc_satuan, string vc_kdokter) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteQuery(string kdrxd) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((kdrxd == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(kdrxd));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQuery(string vc_kode_rx, string vc_kode_rx_d, global::System.Nullable<int> in_no_urut, string vc_kode_obat, string vc_nama_obat, global::System.Nullable<double> num_jml, string vc_satuan, string vc_kdokter) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((vc_kode_rx == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -3751,7 +3958,7 @@ VALUES        (@vc_kode_rx,@vc_kode_rx_d,@in_no_urut,@vc_kode_obat,@vc_nama_obat
                 command.Parameters[4].Value = ((string)(vc_nama_obat));
             }
             if ((num_jml.HasValue == true)) {
-                command.Parameters[5].Value = ((decimal)(num_jml.Value));
+                command.Parameters[5].Value = ((double)(num_jml.Value));
             }
             else {
                 command.Parameters[5].Value = global::System.DBNull.Value;
@@ -3788,8 +3995,49 @@ VALUES        (@vc_kode_rx,@vc_kode_rx_d,@in_no_urut,@vc_kode_obat,@vc_nama_obat
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<int> ScalarNoUrut(string koderx) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQueryPaketGigi(string vc_kode_rx, global::System.Nullable<int> in_no_urut, string vc_kdokter) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((vc_kode_rx == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(vc_kode_rx));
+            }
+            if ((in_no_urut.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(in_no_urut.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((vc_kdokter == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(vc_kdokter));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object ScalarNoUrut(string koderx) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             if ((koderx == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -3812,10 +4060,10 @@ VALUES        (@vc_kode_rx,@vc_kode_rx_d,@in_no_urut,@vc_kode_obat,@vc_nama_obat
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<int>();
+                return null;
             }
             else {
-                return new global::System.Nullable<int>(((int)(returnValue)));
+                return ((object)(returnValue));
             }
         }
     }

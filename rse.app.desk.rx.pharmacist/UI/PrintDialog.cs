@@ -12,6 +12,7 @@ namespace rse.app.desk.rx.pharmacist.UI
 {
     public partial class PrintDialog : Form
     {
+        public int _printcopy { get; set; }
         public PrintDialog()
         {
             InitializeComponent();
@@ -25,6 +26,7 @@ namespace rse.app.desk.rx.pharmacist.UI
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Yes;
+            this._printcopy = Int32.Parse(numCopies.Value.ToString());
             this.Close();
         }
 

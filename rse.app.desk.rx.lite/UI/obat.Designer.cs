@@ -29,31 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.paneldgv = new System.Windows.Forms.Panel();
             this.dgvResep = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblKodeRtx = new System.Windows.Forms.Label();
-            this.txtCariObat = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.bs_view_resep = new System.Windows.Forms.BindingSource(this.components);
-            this.yakkumdb = new rse.app.desk.rx.lite.dataset.yakkumdb();
-            this.bsObat = new System.Windows.Forms.BindingSource(this.components);
-            this.view_rse_fa_obatTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.view_rse_fa_obatTableAdapter();
-            this.view_resepTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.view_resepTableAdapter();
             this.in_no_urut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vc_nama_obat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numjmlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,15 +50,30 @@
             this.vc_kode_rx_d = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vc_kode_rx = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bs_view_resep = new System.Windows.Forms.BindingSource(this.components);
+            this.yakkumdb = new rse.app.desk.rx.lite.dataset.yakkumdb();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblKodeRtx = new System.Windows.Forms.Label();
+            this.txtCariObat = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.bsObat = new System.Windows.Forms.BindingSource(this.components);
+            this.view_rse_fa_obatTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.view_rse_fa_obatTableAdapter();
+            this.view_resepTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.view_resepTableAdapter();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.paneldgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResep)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bs_view_resep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsObat)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,22 +134,22 @@
             // 
             this.dgvResep.AllowUserToAddRows = false;
             this.dgvResep.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvResep.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dgvResep.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvResep.AutoGenerateColumns = false;
             this.dgvResep.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvResep.BackgroundColor = System.Drawing.Color.White;
             this.dgvResep.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvResep.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvResep.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvResep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvResep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvResep.ColumnHeadersHeight = 50;
             this.dgvResep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvResep.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -165,14 +165,14 @@
             this.vc_kode_rx,
             this.dataGridViewTextBoxColumn1});
             this.dgvResep.DataSource = this.bs_view_resep;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvResep.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvResep.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvResep.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvResep.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvResep.EnableHeadersVisualStyles = false;
@@ -180,14 +180,14 @@
             this.dgvResep.Location = new System.Drawing.Point(0, 0);
             this.dgvResep.Name = "dgvResep";
             this.dgvResep.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvResep.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvResep.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvResep.RowHeadersVisible = false;
             this.dgvResep.RowTemplate.Height = 30;
             this.dgvResep.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -219,173 +219,6 @@
             this.dgvResep.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvResep_CellFormatting);
             this.dgvResep.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvResep_CellPainting);
             this.dgvResep.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvResep_RowPostPaint);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.flowLayoutPanel1.Controls.Add(this.guna2Button1);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 383);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(795, 56);
-            this.flowLayoutPanel1.TabIndex = 2;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.AutoRoundedCorners = true;
-            this.guna2Button1.BorderRadius = 20;
-            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(636, 3);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(156, 42);
-            this.guna2Button1.TabIndex = 0;
-            this.guna2Button1.Text = "Save";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(795, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(62, 439);
-            this.panel1.TabIndex = 2;
-            // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.guna2Panel3.Controls.Add(this.label2);
-            this.guna2Panel3.Controls.Add(this.guna2GradientButton1);
-            this.guna2Panel3.Controls.Add(this.label1);
-            this.guna2Panel3.Controls.Add(this.lblKodeRtx);
-            this.guna2Panel3.Controls.Add(this.txtCariObat);
-            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel3.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
-            this.guna2Panel3.Size = new System.Drawing.Size(857, 115);
-            this.guna2Panel3.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Indigo;
-            this.label2.Location = new System.Drawing.Point(20, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 16);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Nama Obat :";
-            // 
-            // guna2GradientButton1
-            // 
-            this.guna2GradientButton1.Animated = true;
-            this.guna2GradientButton1.AutoRoundedCorners = true;
-            this.guna2GradientButton1.BorderRadius = 15;
-            this.guna2GradientButton1.CheckedState.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.CustomImages.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Image = global::rse.app.desk.rx.lite.Properties.Resources.plus;
-            this.guna2GradientButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(492, 41);
-            this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Size = new System.Drawing.Size(191, 33);
-            this.guna2GradientButton1.TabIndex = 3;
-            this.guna2GradientButton1.Text = "Tambah Racikan";
-            this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Indigo;
-            this.label1.Location = new System.Drawing.Point(6, 86);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 16);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "No. Resep :";
-            // 
-            // lblKodeRtx
-            // 
-            this.lblKodeRtx.AutoSize = true;
-            this.lblKodeRtx.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKodeRtx.ForeColor = System.Drawing.Color.Indigo;
-            this.lblKodeRtx.Location = new System.Drawing.Point(93, 86);
-            this.lblKodeRtx.Name = "lblKodeRtx";
-            this.lblKodeRtx.Size = new System.Drawing.Size(13, 16);
-            this.lblKodeRtx.TabIndex = 1;
-            this.lblKodeRtx.Text = "-";
-            // 
-            // txtCariObat
-            // 
-            this.txtCariObat.Animated = true;
-            this.txtCariObat.AutoRoundedCorners = true;
-            this.txtCariObat.BorderRadius = 18;
-            this.txtCariObat.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCariObat.DefaultText = "";
-            this.txtCariObat.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCariObat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCariObat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCariObat.DisabledState.Parent = this.txtCariObat;
-            this.txtCariObat.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCariObat.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCariObat.FocusedState.Parent = this.txtCariObat;
-            this.txtCariObat.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCariObat.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCariObat.HoverState.Parent = this.txtCariObat;
-            this.txtCariObat.IconRight = global::rse.app.desk.rx.lite.Properties.Resources.prescription__3_;
-            this.txtCariObat.IconRightCursor = System.Windows.Forms.Cursors.No;
-            this.txtCariObat.IconRightSize = new System.Drawing.Size(30, 30);
-            this.txtCariObat.Location = new System.Drawing.Point(23, 36);
-            this.txtCariObat.Name = "txtCariObat";
-            this.txtCariObat.PasswordChar = '\0';
-            this.txtCariObat.PlaceholderForeColor = System.Drawing.Color.MediumPurple;
-            this.txtCariObat.PlaceholderText = "Cari Obat";
-            this.txtCariObat.SelectedText = "";
-            this.txtCariObat.ShadowDecoration.Parent = this.txtCariObat;
-            this.txtCariObat.Size = new System.Drawing.Size(438, 38);
-            this.txtCariObat.TabIndex = 0;
-            this.txtCariObat.TextChanged += new System.EventHandler(this.txtCariObat_TextChanged);
-            this.txtCariObat.Load += new System.EventHandler(this.txtCariObat_Load);
-            this.txtCariObat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCariObat_KeyDown);
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 64;
-            this.guna2Elipse1.TargetControl = this;
-            // 
-            // bs_view_resep
-            // 
-            this.bs_view_resep.DataMember = "view_resep";
-            this.bs_view_resep.DataSource = this.yakkumdb;
-            // 
-            // yakkumdb
-            // 
-            this.yakkumdb.DataSetName = "yakkumdb";
-            this.yakkumdb.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bsObat
-            // 
-            this.bsObat.DataMember = "view_rse_fa_obat";
-            this.bsObat.DataSource = this.yakkumdb;
-            // 
-            // view_rse_fa_obatTableAdapter
-            // 
-            this.view_rse_fa_obatTableAdapter.ClearBeforeFill = true;
-            // 
-            // view_resepTableAdapter
-            // 
-            this.view_resepTableAdapter.ClearBeforeFill = true;
             // 
             // in_no_urut
             // 
@@ -477,6 +310,175 @@
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Visible = false;
             // 
+            // bs_view_resep
+            // 
+            this.bs_view_resep.DataMember = "view_resep";
+            this.bs_view_resep.DataSource = this.yakkumdb;
+            // 
+            // yakkumdb
+            // 
+            this.yakkumdb.DataSetName = "yakkumdb";
+            this.yakkumdb.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button1);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 383);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(795, 56);
+            this.flowLayoutPanel1.TabIndex = 2;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.AutoRoundedCorners = true;
+            this.guna2Button1.BorderRadius = 20;
+            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Location = new System.Drawing.Point(636, 3);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(156, 42);
+            this.guna2Button1.TabIndex = 0;
+            this.guna2Button1.TabStop = false;
+            this.guna2Button1.Text = "Save";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(795, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(62, 439);
+            this.panel1.TabIndex = 2;
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.guna2Panel3.Controls.Add(this.label2);
+            this.guna2Panel3.Controls.Add(this.guna2GradientButton1);
+            this.guna2Panel3.Controls.Add(this.label1);
+            this.guna2Panel3.Controls.Add(this.lblKodeRtx);
+            this.guna2Panel3.Controls.Add(this.txtCariObat);
+            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel3.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
+            this.guna2Panel3.Size = new System.Drawing.Size(857, 115);
+            this.guna2Panel3.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Indigo;
+            this.label2.Location = new System.Drawing.Point(20, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 16);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Nama Obat :";
+            // 
+            // guna2GradientButton1
+            // 
+            this.guna2GradientButton1.Animated = true;
+            this.guna2GradientButton1.AutoRoundedCorners = true;
+            this.guna2GradientButton1.BorderRadius = 15;
+            this.guna2GradientButton1.CheckedState.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.CustomImages.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.Image = global::rse.app.desk.rx.lite.Properties.Resources.plus;
+            this.guna2GradientButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2GradientButton1.Location = new System.Drawing.Point(492, 41);
+            this.guna2GradientButton1.Name = "guna2GradientButton1";
+            this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.Size = new System.Drawing.Size(191, 33);
+            this.guna2GradientButton1.TabIndex = 3;
+            this.guna2GradientButton1.TabStop = false;
+            this.guna2GradientButton1.Text = "Tambah Racikan";
+            this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Indigo;
+            this.label1.Location = new System.Drawing.Point(6, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 16);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "No. Resep :";
+            // 
+            // lblKodeRtx
+            // 
+            this.lblKodeRtx.AutoSize = true;
+            this.lblKodeRtx.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKodeRtx.ForeColor = System.Drawing.Color.Indigo;
+            this.lblKodeRtx.Location = new System.Drawing.Point(93, 86);
+            this.lblKodeRtx.Name = "lblKodeRtx";
+            this.lblKodeRtx.Size = new System.Drawing.Size(13, 16);
+            this.lblKodeRtx.TabIndex = 1;
+            this.lblKodeRtx.Text = "-";
+            // 
+            // txtCariObat
+            // 
+            this.txtCariObat.Animated = true;
+            this.txtCariObat.AutoRoundedCorners = true;
+            this.txtCariObat.BorderRadius = 18;
+            this.txtCariObat.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCariObat.DefaultText = "";
+            this.txtCariObat.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCariObat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCariObat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCariObat.DisabledState.Parent = this.txtCariObat;
+            this.txtCariObat.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCariObat.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCariObat.FocusedState.Parent = this.txtCariObat;
+            this.txtCariObat.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCariObat.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCariObat.HoverState.Parent = this.txtCariObat;
+            this.txtCariObat.IconRight = global::rse.app.desk.rx.lite.Properties.Resources.prescription__3_;
+            this.txtCariObat.IconRightCursor = System.Windows.Forms.Cursors.No;
+            this.txtCariObat.IconRightSize = new System.Drawing.Size(30, 30);
+            this.txtCariObat.Location = new System.Drawing.Point(23, 36);
+            this.txtCariObat.Name = "txtCariObat";
+            this.txtCariObat.PasswordChar = '\0';
+            this.txtCariObat.PlaceholderForeColor = System.Drawing.Color.MediumPurple;
+            this.txtCariObat.PlaceholderText = "Cari Obat";
+            this.txtCariObat.SelectedText = "";
+            this.txtCariObat.ShadowDecoration.Parent = this.txtCariObat;
+            this.txtCariObat.Size = new System.Drawing.Size(438, 38);
+            this.txtCariObat.TabIndex = 0;
+            this.txtCariObat.TextChanged += new System.EventHandler(this.txtCariObat_TextChanged);
+            this.txtCariObat.Load += new System.EventHandler(this.txtCariObat_Load);
+            this.txtCariObat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCariObat_KeyDown);
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 64;
+            this.guna2Elipse1.TargetControl = this;
+            // 
+            // bsObat
+            // 
+            this.bsObat.DataMember = "view_rse_fa_obat";
+            this.bsObat.DataSource = this.yakkumdb;
+            // 
+            // view_rse_fa_obatTableAdapter
+            // 
+            this.view_rse_fa_obatTableAdapter.ClearBeforeFill = true;
+            // 
+            // view_resepTableAdapter
+            // 
+            this.view_resepTableAdapter.ClearBeforeFill = true;
+            // 
             // obat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -491,11 +493,11 @@
             this.panel2.ResumeLayout(false);
             this.paneldgv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_view_resep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_view_resep)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsObat)).EndInit();
             this.ResumeLayout(false);
 

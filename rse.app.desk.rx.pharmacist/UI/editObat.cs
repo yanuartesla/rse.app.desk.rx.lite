@@ -39,17 +39,21 @@ namespace rse.app.desk.rx.pharmacist.UI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+
+
             if(txtJumlah.Text == "")
             {
                 MessageBox.Show("Masukan Jumlah!!");
             }
             else {
+                float _jumlahobat = (float)Convert.ToDouble(txtJumlah.Text);
+                bool valid = float.TryParse(txtJumlah.Text.ToString(), out _jumlahobat);
+
                 var rd = new Dataset.yakkumdbTableAdapters.resep_detilTableAdapter();
-                rd.UpdateJumlah(Int32.Parse(txtJumlah.Text), _kodeobat);
+                rd.UpdateJumlah(Math.Round(_jumlahobat, 4), _kodeobat);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
-            
         }
     }
 }
