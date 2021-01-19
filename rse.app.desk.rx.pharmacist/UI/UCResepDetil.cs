@@ -84,68 +84,79 @@ namespace rse.app.desk.rx.pharmacist.UI
             ds2.ClearBeforeFill = true;
             ds2.Fill(yakkumdb.data_resep,_noresep);
 
-
-            this.rvResep.ZoomMode = ZoomMode.PageWidth;
-            this.rvResep.RefreshReport();
-
-            //if (InvokeRequired)
-            //{
-            //    // after we've done all the processing, 
-            //    this.Invoke(new MethodInvoker(delegate {
-            //        // load the control with the appropriate data'
-            //        this.rvResep.ZoomMode = ZoomMode.PageWidth;
-            //        this.rvResep.RefreshReport();
-            //    }));
-            //    return;
-            //}
-            
-
+            //this.rvResep.ZoomMode = ZoomMode.PageWidth;
+            //this.rvResep.RefreshReport();
             DataTable dt = ds.GetData(_noresep);
             foreach (DataRow r in dt.Rows)
             {
                 _sep = r["vc_no_sep"].ToString();
+                MessageBox.Show(_sep);
             }
+
+            if (InvokeRequired)
+            {
+                // after we've done all the processing, 
+                this.Invoke(new MethodInvoker(delegate
+                {
+                    // load the control with the appropriate data'
+                    this.rvResep.ZoomMode = ZoomMode.PageWidth;
+                    this.rvResep.RefreshReport();
+                }));
+                return;
+            }
+
+
+            
         }
 
         private void doSimpan()
         {
             var rh = new Dataset.yakkumdbTableAdapters.fa_rx_resep_hTableAdapter();
             //TODO : janganlupa uncomment
-            rh.UpdateResponTime(DateTime.Now, _noresep);
+            //rh.UpdateResponTime(DateTime.Now, _noresep);
             load_report();
             var _year = DateTime.Now.ToString("yyyy");
             var _month = DateTime.Now.ToString("MM");
             var _day = DateTime.Now.ToString("dd");
             var _datepath = _year + @"\" + _month + @"\" + _day;
             var _filename = _sep + "_resep.Pdf";
+            //string _path = @"\\\\192.168.10.222\Sharing Is Caring\ResepFarmasiSementara\" + _datepath + @"\" + _filename;
             string _path = @"\\192.168.10.11\Data SEP\Casemix RJ\FARMASI RJ\" + _datepath + @"\" + _filename;
 
             Functions.SavePDF.SavedPDF(rvResep, _path);
             PrintDialog pd = new PrintDialog();
             var result = pd.ShowDialog();
+            //UCHome uchome = new UCHome();
+            //uchome.Dock = DockStyle.Fill;
 
             if (result == DialogResult.Yes)
             {
-                this._numofcopies = pd._printcopy;
+                this._numofcopies = pd._printcopy;                                                                                                                                                   
                 printResep();
-                this.Controls.Clear();
+                //this.Controls.Clear();
+                //this.Controls.Add(uchome);
                 rh.UpdateStatusFinal(_noresep);
             }
             if (result == DialogResult.No)
             {
-                this.Controls.Clear();
+                //this.Controls.Clear();
+                //this.Controls.Add(uchome);
                 rh.UpdateStatusFinal(_noresep);
             }
             
         }
         private void btnSimpan_Click(object sender, EventArgs e)
         {
-            doSimpan();
-            //using (UI.LoadingWindow lw = new UI.LoadingWindow(doSimpan))
-            //{
-            //    lw.ShowDialog(this);
-            //}
-
+            //doSimpan();
+            using (UI.LoadingWindow lw = new UI.LoadingWindow(doSimpan))
+            {
+                lw.ShowDialog(this);
+            }
+            UCHome uchome = new UCHome();
+            uchome.Dock = DockStyle.Fill;
+            this.Controls.Clear();
+            this.Controls.Add(uchome);
+            MainForm.Refresh_list();
         }
 
         private void printResep()
@@ -209,11 +220,12 @@ namespace rse.app.desk.rx.pharmacist.UI
             report.DataSources.Add(_rds4);
             report.DataSources.Add(_rds5);
 
-            for(int q = 1;q<=_numofcopies;q++)
+
+            for (int q = 1; q <= _numofcopies; q++)
             {
                 PrintReport.PrintToPrinter(report, _numofcopies);
             }
-            
+
         }
         private void dgvResep_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -242,7 +254,6 @@ namespace rse.app.desk.rx.pharmacist.UI
                 return;
 
             //I suposed you want to handle the event for column at index 1
-            
 
             if (e.ColumnIndex == 7)
             {

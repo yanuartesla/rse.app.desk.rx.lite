@@ -10658,10 +10658,10 @@ namespace rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters {
                 "fa_rx_resep_h.vc_no_reg LEFT OUTER JOIN\r\n                         RMPasien ON RM" +
                 "KUNJUNG.VC_NO_RM = RMPasien.vc_no_rm\r\nWHERE        (YEAR(RMKUNJUNG.DT_TGL_REG) =" +
                 " YEAR(GETDATE())) AND (MONTH(RMKUNJUNG.DT_TGL_REG) = MONTH(GETDATE())) AND (DAY(" +
-                "RMKUNJUNG.DT_TGL_REG) = DAY(GETDATE())) AND (RMKUNJUNG.VC_K_PNG = \'3\') AND \r\n   " +
-                "                      (fa_rx_resep_h.int_k_status IS NULL) AND (RMKUNJUNG.VC_K_D" +
-                "OKTER = @kdokter) AND (RMKUNJUNG.VC_K_KLINIK = @kklinik)\r\nORDER BY RMKUNJUNG.IN_" +
-                "NO_URUT_DOKTER, RMKUNJUNG.DT_TGL_REG";
+                "RMKUNJUNG.DT_TGL_REG) = DAY(GETDATE())) AND (RMKUNJUNG.VC_K_INSTANSI = \'323\') AN" +
+                "D \r\n                         (fa_rx_resep_h.int_k_status IS NULL) AND (RMKUNJUNG" +
+                ".VC_K_DOKTER = @kdokter) AND (RMKUNJUNG.VC_K_KLINIK = @kklinik)\r\nORDER BY RMKUNJ" +
+                "UNG.IN_NO_URUT_DOKTER, RMKUNJUNG.DT_TGL_REG";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kdokter", global::System.Data.SqlDbType.VarChar, 4, global::System.Data.ParameterDirection.Input, 0, 0, "VC_K_DOKTER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kklinik", global::System.Data.SqlDbType.VarChar, 4, global::System.Data.ParameterDirection.Input, 0, 0, "VC_K_KLINIK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

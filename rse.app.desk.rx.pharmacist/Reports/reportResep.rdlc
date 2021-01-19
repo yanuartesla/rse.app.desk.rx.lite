@@ -1292,14 +1292,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="vc_no_peserta">
+                    <Textbox Name="vc_no_peserta_bpjs">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!vc_no_peserta.Value</Value>
+                              <Value>=Fields!vc_no_peserta_bpjs.Value</Value>
                               <Style>
                                 <FontFamily>Segoe UI</FontFamily>
                                 <FontSize>7pt</FontSize>
@@ -1309,7 +1309,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>vc_no_peserta</rd:DefaultName>
+                      <rd:DefaultName>vc_no_peserta_bpjs</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1398,14 +1398,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="vc_nama_Peserta">
+                    <Textbox Name="vc_nama_p">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!vc_nama_Peserta.Value</Value>
+                              <Value>=Fields!vc_nama_p.Value</Value>
                               <Style>
                                 <FontFamily>Segoe UI</FontFamily>
                                 <FontSize>7pt</FontSize>
@@ -1415,7 +1415,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>vc_nama_Peserta</rd:DefaultName>
+                      <rd:DefaultName>vc_nama_p</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2915,12 +2915,12 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.37854cm</Width>
+              <Width>5.17129cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>1.235cm</Height>
+              <Height>2.23216cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -2999,8 +2999,8 @@
         <DataSetName>dsPasien</DataSetName>
         <Top>8.27394cm</Top>
         <Left>11.07722cm</Left>
-        <Height>1.67625cm</Height>
-        <Width>4.37854cm</Width>
+        <Height>2.67341cm</Height>
+        <Width>5.17129cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -3553,9 +3553,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox56</rd:DefaultName>
           <Top>0.14112cm</Top>
-          <Left>14.36688cm</Left>
-          <Height>0.52944cm</Height>
-          <Width>5.33414cm</Width>
+          <Left>13.22917cm</Left>
+          <Height>0.56472cm</Height>
+          <Width>6.47185cm</Width>
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
@@ -3583,6 +3583,29 @@
                 <TextRun>
                   <Label>No. SEP</Label>
                   <Value>=First(Fields!vc_no_sep.Value, "dsPasien")</Value>
+                  <Style>
+                    <FontFamily>Segoe UI Semilight</FontFamily>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value> (</Value>
+                  <Style>
+                    <FontFamily>Segoe UI Semilight</FontFamily>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Label>tgl_sep</Label>
+                  <Value>=First(Fields!dt_tgl_sep.Value, "dsPasien")</Value>
+                  <Style>
+                    <FontFamily>Segoe UI Semilight</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <Format>dd/MM/yyyy</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>)</Value>
                   <Style>
                     <FontFamily>Segoe UI Semilight</FontFamily>
                     <FontSize>8pt</FontSize>
@@ -3617,10 +3640,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox55</rd:DefaultName>
-          <Top>0.74111cm</Top>
-          <Left>14.36688cm</Left>
-          <Height>0.87863cm</Height>
-          <Width>5.33414cm</Width>
+          <Top>0.77639cm</Top>
+          <Left>13.22917cm</Left>
+          <Height>0.84335cm</Height>
+          <Width>6.47185cm</Width>
           <ZIndex>4</ZIndex>
           <Style>
             <Border>
@@ -4077,6 +4100,14 @@
         <Field Name="vb_ttd">
           <DataField>vb_ttd</DataField>
           <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="vc_nama_p">
+          <DataField>vc_nama_p</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="vc_no_peserta_bpjs">
+          <DataField>vc_no_peserta_bpjs</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

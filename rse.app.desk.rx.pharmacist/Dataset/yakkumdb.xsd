@@ -129,7 +129,7 @@ WHERE        (vc_kode_rx_d = @kodeobat)</CommandText>
                     <CommandText>SELECT        fa_rx_resep_h.vc_kode_rx, fa_rx_resep_h.vc_no_reg, fa_rx_resep_h.vc_no_rm, BPJS_SEP.vc_no_sep, BPJS_SEP.dt_tgl_sep, BPJS_SEP.vc_kode_diagnosa_awal, BPJS_RefDiagnosis_Inasis.Description, 
                          BPJS_SEP.vc_catatan, BPJS_SEP.vc_kode_asal_rujukan, Bpjs_refppk.NMPPK, BPJS_SEP.vc_nama_Peserta, BPJS_SEP.vc_jenis_kelamin, BPJS_SEP.vc_no_peserta, BPJS_SEP.vc_nik, fa_rx_resep_h.vc_k_dokter, 
                          fa_rx_resep_h.vc_k_klinik, RMKLINIK.vc_N_KLINIK, SDMDOKTER.vc_nama_kry, fa_rx_resep_h.dt_order, fa_rx_resep_h.dt_respon, RMPasien.in_umurth, RMPasien.in_umurbl, RMPasien.in_umurhr, RMPasien.vc_alamat, 
-                         RMPasien.vc_kecamatan, RMPasien.vc_kota, RMPasien.dt_tgl_lhr, Scann_TTD_Dokter.vb_ttd
+                         RMPasien.vc_kecamatan, RMPasien.vc_kota, RMPasien.dt_tgl_lhr, Scann_TTD_Dokter.vb_ttd, RMPasien.vc_nama_p, RMPasien.vc_no_peserta_bpjs
 FROM            RMKLINIK INNER JOIN
                          fa_rx_resep_h ON RMKLINIK.vc_K_KLINIK = fa_rx_resep_h.vc_k_klinik INNER JOIN
                          SDMDOKTER ON fa_rx_resep_h.vc_k_dokter = SDMDOKTER.vc_nid INNER JOIN
@@ -175,6 +175,8 @@ WHERE        (fa_rx_resep_h.vc_kode_rx = @kresep)</CommandText>
               <Mapping SourceColumn="vc_kota" DataSetColumn="vc_kota" />
               <Mapping SourceColumn="dt_tgl_lhr" DataSetColumn="dt_tgl_lhr" />
               <Mapping SourceColumn="vb_ttd" DataSetColumn="vb_ttd" />
+              <Mapping SourceColumn="vc_nama_p" DataSetColumn="vc_nama_p" />
+              <Mapping SourceColumn="vc_no_peserta_bpjs" DataSetColumn="vc_no_peserta_bpjs" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -703,6 +705,20 @@ WHERE        (vc_kode_rx_d = @koderxdetil)</CommandText>
               </xs:element>
               <xs:element name="dt_tgl_lhr" msprop:Generator_ColumnVarNameInTable="columndt_tgl_lhr" msprop:Generator_ColumnPropNameInRow="dt_tgl_lhr" msprop:Generator_ColumnPropNameInTable="dt_tgl_lhrColumn" msprop:Generator_UserColumnName="dt_tgl_lhr" type="xs:dateTime" minOccurs="0" />
               <xs:element name="vb_ttd" msprop:Generator_ColumnVarNameInTable="columnvb_ttd" msprop:Generator_ColumnPropNameInRow="vb_ttd" msprop:Generator_ColumnPropNameInTable="vb_ttdColumn" msprop:Generator_UserColumnName="vb_ttd" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="vc_nama_p" msprop:Generator_ColumnVarNameInTable="columnvc_nama_p" msprop:Generator_ColumnPropNameInRow="vc_nama_p" msprop:Generator_ColumnPropNameInTable="vc_nama_pColumn" msprop:Generator_UserColumnName="vc_nama_p" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vc_no_peserta_bpjs" msprop:Generator_ColumnVarNameInTable="columnvc_no_peserta_bpjs" msprop:Generator_ColumnPropNameInRow="vc_no_peserta_bpjs" msprop:Generator_ColumnPropNameInTable="vc_no_peserta_bpjsColumn" msprop:Generator_UserColumnName="vc_no_peserta_bpjs" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

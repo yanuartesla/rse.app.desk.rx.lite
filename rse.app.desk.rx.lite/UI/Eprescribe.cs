@@ -177,13 +177,11 @@ namespace rse.app.desk.rx.lite
             if (File.Exists(@"C:\Program Files\HP Inc\Setup_Expertise_Casemix\latih1.exe"))
             {
                 Process.Start(@"C:\Program Files\HP Inc\Setup_Expertise_Casemix\latih1.exe");
-
-            }
+                            }
             else
             {
                 Process.Start(@"C:\Program Files (x86)\HP Inc\Setup_Expertise_Casemix\latih1.exe");
             }
-
 
             //Process proc = new Process();
             //ProcessStartInfo psi = new ProcessStartInfo("latih1.exe");
@@ -259,8 +257,15 @@ namespace rse.app.desk.rx.lite
             //ProcessStartInfo psi = new ProcessStartInfo(@"C:\Users\HP\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\HP Incrse.app.desk.rx.nurse.appref-ms");
             //psi.WindowStyle = ProcessWindowStyle.Maximized;
             //proc.StartInfo = psi;
-
             //proc.Start();
+        }
+
+        private void btnDiagnosa_Click(object sender, EventArgs e)
+        {
+            Diagnosis dg = new Diagnosis();
+            dg.Dock = DockStyle.Fill;
+            LoadPanel.Controls.Add(dg);
+            dg.Show();
         }
     }
 }

@@ -178,7 +178,7 @@ FROM            RMKUNJUNG LEFT OUTER JOIN
                          RMKLINIK ON RMKUNJUNG.VC_K_KLINIK = RMKLINIK.vc_K_KLINIK LEFT OUTER JOIN
                          fa_rx_resep_h ON RMKUNJUNG.VC_NO_REGJ = fa_rx_resep_h.vc_no_reg LEFT OUTER JOIN
                          RMPasien ON RMKUNJUNG.VC_NO_RM = RMPasien.vc_no_rm
-WHERE        (YEAR(RMKUNJUNG.DT_TGL_REG) = YEAR(GETDATE())) AND (MONTH(RMKUNJUNG.DT_TGL_REG) = MONTH(GETDATE())) AND (DAY(RMKUNJUNG.DT_TGL_REG) = DAY(GETDATE())) AND (RMKUNJUNG.VC_K_PNG = '3') AND 
+WHERE        (YEAR(RMKUNJUNG.DT_TGL_REG) = YEAR(GETDATE())) AND (MONTH(RMKUNJUNG.DT_TGL_REG) = MONTH(GETDATE())) AND (DAY(RMKUNJUNG.DT_TGL_REG) = DAY(GETDATE())) AND (RMKUNJUNG.VC_K_INSTANSI = '323') AND 
                          (fa_rx_resep_h.int_k_status IS NULL) AND (RMKUNJUNG.VC_K_DOKTER = @kdokter) AND (RMKUNJUNG.VC_K_KLINIK = @kklinik)
 ORDER BY RMKUNJUNG.IN_NO_URUT_DOKTER, RMKUNJUNG.DT_TGL_REG</CommandText>
                     <Parameters>
@@ -628,7 +628,7 @@ WHERE        (bt_aktif = 1) AND (vc_user = @user)</CommandText>
   <xs:element name="yakkumdb" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="yakkumdb" msprop:Generator_UserDSName="yakkumdb">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="RM_KUNJUNG" msprop:Generator_TableClassName="RM_KUNJUNGDataTable" msprop:Generator_TableVarName="tableRM_KUNJUNG" msprop:Generator_TablePropName="RM_KUNJUNG" msprop:Generator_RowDeletingName="RM_KUNJUNGRowDeleting" msprop:Generator_RowChangingName="RM_KUNJUNGRowChanging" msprop:Generator_RowEvHandlerName="RM_KUNJUNGRowChangeEventHandler" msprop:Generator_RowDeletedName="RM_KUNJUNGRowDeleted" msprop:Generator_UserTableName="RM_KUNJUNG" msprop:Generator_RowChangedName="RM_KUNJUNGRowChanged" msprop:Generator_RowEvArgName="RM_KUNJUNGRowChangeEvent" msprop:Generator_RowClassName="RM_KUNJUNGRow">
+        <xs:element name="RM_KUNJUNG" msprop:Generator_TableClassName="RM_KUNJUNGDataTable" msprop:Generator_TableVarName="tableRM_KUNJUNG" msprop:Generator_RowChangedName="RM_KUNJUNGRowChanged" msprop:Generator_TablePropName="RM_KUNJUNG" msprop:Generator_RowDeletingName="RM_KUNJUNGRowDeleting" msprop:Generator_RowChangingName="RM_KUNJUNGRowChanging" msprop:Generator_RowEvHandlerName="RM_KUNJUNGRowChangeEventHandler" msprop:Generator_RowDeletedName="RM_KUNJUNGRowDeleted" msprop:Generator_RowClassName="RM_KUNJUNGRow" msprop:Generator_UserTableName="RM_KUNJUNG" msprop:Generator_RowEvArgName="RM_KUNJUNGRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DT_TGL_REG" msprop:Generator_ColumnVarNameInTable="columnDT_TGL_REG" msprop:Generator_ColumnPropNameInRow="DT_TGL_REG" msprop:Generator_ColumnPropNameInTable="DT_TGL_REGColumn" msprop:Generator_UserColumnName="DT_TGL_REG" type="xs:dateTime" minOccurs="0" />
@@ -1317,7 +1317,7 @@ WHERE        (bt_aktif = 1) AND (vc_user = @user)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="view_rse_fa_obat" msprop:Generator_TableClassName="view_rse_fa_obatDataTable" msprop:Generator_TableVarName="tableview_rse_fa_obat" msprop:Generator_RowChangedName="view_rse_fa_obatRowChanged" msprop:Generator_TablePropName="view_rse_fa_obat" msprop:Generator_RowDeletingName="view_rse_fa_obatRowDeleting" msprop:Generator_RowChangingName="view_rse_fa_obatRowChanging" msprop:Generator_RowEvHandlerName="view_rse_fa_obatRowChangeEventHandler" msprop:Generator_RowDeletedName="view_rse_fa_obatRowDeleted" msprop:Generator_RowClassName="view_rse_fa_obatRow" msprop:Generator_UserTableName="view_rse_fa_obat" msprop:Generator_RowEvArgName="view_rse_fa_obatRowChangeEvent">
+        <xs:element name="view_rse_fa_obat" msprop:Generator_TableClassName="view_rse_fa_obatDataTable" msprop:Generator_TableVarName="tableview_rse_fa_obat" msprop:Generator_TablePropName="view_rse_fa_obat" msprop:Generator_RowDeletingName="view_rse_fa_obatRowDeleting" msprop:Generator_RowChangingName="view_rse_fa_obatRowChanging" msprop:Generator_RowEvHandlerName="view_rse_fa_obatRowChangeEventHandler" msprop:Generator_RowDeletedName="view_rse_fa_obatRowDeleted" msprop:Generator_UserTableName="view_rse_fa_obat" msprop:Generator_RowChangedName="view_rse_fa_obatRowChanged" msprop:Generator_RowEvArgName="view_rse_fa_obatRowChangeEvent" msprop:Generator_RowClassName="view_rse_fa_obatRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="retensi_per_kasus" msprop:Generator_ColumnVarNameInTable="columnretensi_per_kasus" msprop:Generator_ColumnPropNameInRow="retensi_per_kasus" msprop:Generator_ColumnPropNameInTable="retensi_per_kasusColumn" msprop:Generator_UserColumnName="retensi_per_kasus" type="xs:decimal" minOccurs="0" />
@@ -1418,7 +1418,7 @@ WHERE        (bt_aktif = 1) AND (vc_user = @user)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="resep_h" msprop:Generator_TableClassName="resep_hDataTable" msprop:Generator_TableVarName="tableresep_h" msprop:Generator_RowChangedName="resep_hRowChanged" msprop:Generator_TablePropName="resep_h" msprop:Generator_RowDeletingName="resep_hRowDeleting" msprop:Generator_RowChangingName="resep_hRowChanging" msprop:Generator_RowEvHandlerName="resep_hRowChangeEventHandler" msprop:Generator_RowDeletedName="resep_hRowDeleted" msprop:Generator_RowClassName="resep_hRow" msprop:Generator_UserTableName="resep_h" msprop:Generator_RowEvArgName="resep_hRowChangeEvent">
+        <xs:element name="resep_h" msprop:Generator_TableClassName="resep_hDataTable" msprop:Generator_TableVarName="tableresep_h" msprop:Generator_TablePropName="resep_h" msprop:Generator_RowDeletingName="resep_hRowDeleting" msprop:Generator_RowChangingName="resep_hRowChanging" msprop:Generator_RowEvHandlerName="resep_hRowChangeEventHandler" msprop:Generator_RowDeletedName="resep_hRowDeleted" msprop:Generator_UserTableName="resep_h" msprop:Generator_RowChangedName="resep_hRowChanged" msprop:Generator_RowEvArgName="resep_hRowChangeEvent" msprop:Generator_RowClassName="resep_hRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1471,7 +1471,7 @@ WHERE        (bt_aktif = 1) AND (vc_user = @user)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="fa_rx_resep_d" msprop:Generator_TableClassName="fa_rx_resep_dDataTable" msprop:Generator_TableVarName="tablefa_rx_resep_d" msprop:Generator_RowChangedName="fa_rx_resep_dRowChanged" msprop:Generator_TablePropName="fa_rx_resep_d" msprop:Generator_RowDeletingName="fa_rx_resep_dRowDeleting" msprop:Generator_RowChangingName="fa_rx_resep_dRowChanging" msprop:Generator_RowEvHandlerName="fa_rx_resep_dRowChangeEventHandler" msprop:Generator_RowDeletedName="fa_rx_resep_dRowDeleted" msprop:Generator_RowClassName="fa_rx_resep_dRow" msprop:Generator_UserTableName="fa_rx_resep_d" msprop:Generator_RowEvArgName="fa_rx_resep_dRowChangeEvent">
+        <xs:element name="fa_rx_resep_d" msprop:Generator_TableClassName="fa_rx_resep_dDataTable" msprop:Generator_TableVarName="tablefa_rx_resep_d" msprop:Generator_TablePropName="fa_rx_resep_d" msprop:Generator_RowDeletingName="fa_rx_resep_dRowDeleting" msprop:Generator_RowChangingName="fa_rx_resep_dRowChanging" msprop:Generator_RowEvHandlerName="fa_rx_resep_dRowChangeEventHandler" msprop:Generator_RowDeletedName="fa_rx_resep_dRowDeleted" msprop:Generator_UserTableName="fa_rx_resep_d" msprop:Generator_RowChangedName="fa_rx_resep_dRowChanged" msprop:Generator_RowEvArgName="fa_rx_resep_dRowChangeEvent" msprop:Generator_RowClassName="fa_rx_resep_dRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1575,7 +1575,7 @@ WHERE        (bt_aktif = 1) AND (vc_user = @user)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="view_resep" msprop:Generator_TableClassName="view_resepDataTable" msprop:Generator_TableVarName="tableview_resep" msprop:Generator_RowChangedName="view_resepRowChanged" msprop:Generator_TablePropName="view_resep" msprop:Generator_RowDeletingName="view_resepRowDeleting" msprop:Generator_RowChangingName="view_resepRowChanging" msprop:Generator_RowEvHandlerName="view_resepRowChangeEventHandler" msprop:Generator_RowDeletedName="view_resepRowDeleted" msprop:Generator_RowClassName="view_resepRow" msprop:Generator_UserTableName="view_resep" msprop:Generator_RowEvArgName="view_resepRowChangeEvent">
+        <xs:element name="view_resep" msprop:Generator_TableClassName="view_resepDataTable" msprop:Generator_TableVarName="tableview_resep" msprop:Generator_TablePropName="view_resep" msprop:Generator_RowDeletingName="view_resepRowDeleting" msprop:Generator_RowChangingName="view_resepRowChanging" msprop:Generator_RowEvHandlerName="view_resepRowChangeEventHandler" msprop:Generator_RowDeletedName="view_resepRowDeleted" msprop:Generator_UserTableName="view_resep" msprop:Generator_RowChangedName="view_resepRowChanged" msprop:Generator_RowEvArgName="view_resepRowChangeEvent" msprop:Generator_RowClassName="view_resepRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="vc_kode_rx" msprop:Generator_ColumnVarNameInTable="columnvc_kode_rx" msprop:Generator_ColumnPropNameInRow="vc_kode_rx" msprop:Generator_ColumnPropNameInTable="vc_kode_rxColumn" msprop:Generator_UserColumnName="vc_kode_rx" minOccurs="0">
@@ -1620,7 +1620,7 @@ WHERE        (bt_aktif = 1) AND (vc_user = @user)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="fa_rx_racikan" msprop:Generator_TableClassName="fa_rx_racikanDataTable" msprop:Generator_TableVarName="tablefa_rx_racikan" msprop:Generator_RowChangedName="fa_rx_racikanRowChanged" msprop:Generator_TablePropName="fa_rx_racikan" msprop:Generator_RowDeletingName="fa_rx_racikanRowDeleting" msprop:Generator_RowChangingName="fa_rx_racikanRowChanging" msprop:Generator_RowEvHandlerName="fa_rx_racikanRowChangeEventHandler" msprop:Generator_RowDeletedName="fa_rx_racikanRowDeleted" msprop:Generator_RowClassName="fa_rx_racikanRow" msprop:Generator_UserTableName="fa_rx_racikan" msprop:Generator_RowEvArgName="fa_rx_racikanRowChangeEvent">
+        <xs:element name="fa_rx_racikan" msprop:Generator_TableClassName="fa_rx_racikanDataTable" msprop:Generator_TableVarName="tablefa_rx_racikan" msprop:Generator_TablePropName="fa_rx_racikan" msprop:Generator_RowDeletingName="fa_rx_racikanRowDeleting" msprop:Generator_RowChangingName="fa_rx_racikanRowChanging" msprop:Generator_RowEvHandlerName="fa_rx_racikanRowChangeEventHandler" msprop:Generator_RowDeletedName="fa_rx_racikanRowDeleted" msprop:Generator_UserTableName="fa_rx_racikan" msprop:Generator_RowChangedName="fa_rx_racikanRowChanged" msprop:Generator_RowEvArgName="fa_rx_racikanRowChangeEvent" msprop:Generator_RowClassName="fa_rx_racikanRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1663,7 +1663,7 @@ WHERE        (bt_aktif = 1) AND (vc_user = @user)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="fa_rx_user" msprop:Generator_TableClassName="fa_rx_userDataTable" msprop:Generator_TableVarName="tablefa_rx_user" msprop:Generator_RowChangedName="fa_rx_userRowChanged" msprop:Generator_TablePropName="fa_rx_user" msprop:Generator_RowDeletingName="fa_rx_userRowDeleting" msprop:Generator_RowChangingName="fa_rx_userRowChanging" msprop:Generator_RowEvHandlerName="fa_rx_userRowChangeEventHandler" msprop:Generator_RowDeletedName="fa_rx_userRowDeleted" msprop:Generator_RowClassName="fa_rx_userRow" msprop:Generator_UserTableName="fa_rx_user" msprop:Generator_RowEvArgName="fa_rx_userRowChangeEvent">
+        <xs:element name="fa_rx_user" msprop:Generator_TableClassName="fa_rx_userDataTable" msprop:Generator_TableVarName="tablefa_rx_user" msprop:Generator_TablePropName="fa_rx_user" msprop:Generator_RowDeletingName="fa_rx_userRowDeleting" msprop:Generator_RowChangingName="fa_rx_userRowChanging" msprop:Generator_RowEvHandlerName="fa_rx_userRowChangeEventHandler" msprop:Generator_RowDeletedName="fa_rx_userRowDeleted" msprop:Generator_UserTableName="fa_rx_user" msprop:Generator_RowChangedName="fa_rx_userRowChanged" msprop:Generator_RowEvArgName="fa_rx_userRowChangeEvent" msprop:Generator_RowClassName="fa_rx_userRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="vc_user" msprop:Generator_ColumnVarNameInTable="columnvc_user" msprop:Generator_ColumnPropNameInRow="vc_user" msprop:Generator_ColumnPropNameInTable="vc_userColumn" msprop:Generator_UserColumnName="vc_user" minOccurs="0">

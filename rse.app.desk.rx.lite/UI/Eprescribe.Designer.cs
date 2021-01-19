@@ -630,6 +630,7 @@
             this.btnDiagnosa.Size = new System.Drawing.Size(215, 215);
             this.btnDiagnosa.TabIndex = 4;
             this.btnDiagnosa.UseTransparentBackground = true;
+            this.btnDiagnosa.Click += new System.EventHandler(this.btnDiagnosa_Click);
             // 
             // btnEresep
             // 

@@ -1497,6 +1497,10 @@ namespace rse.app.desk.rx.pharmacist.Dataset {
             
             private global::System.Data.DataColumn columnvb_ttd;
             
+            private global::System.Data.DataColumn columnvc_nama_p;
+            
+            private global::System.Data.DataColumn columnvc_no_peserta_bpjs;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public data_pasienDataTable() {
@@ -1756,6 +1760,22 @@ namespace rse.app.desk.rx.pharmacist.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn vc_nama_pColumn {
+                get {
+                    return this.columnvc_nama_p;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn vc_no_peserta_bpjsColumn {
+                get {
+                    return this.columnvc_no_peserta_bpjs;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1819,7 +1839,9 @@ namespace rse.app.desk.rx.pharmacist.Dataset {
                         string vc_kecamatan, 
                         string vc_kota, 
                         System.DateTime dt_tgl_lhr, 
-                        byte[] vb_ttd) {
+                        byte[] vb_ttd, 
+                        string vc_nama_p, 
+                        string vc_no_peserta_bpjs) {
                 data_pasienRow rowdata_pasienRow = ((data_pasienRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         vc_kode_rx,
@@ -1849,7 +1871,9 @@ namespace rse.app.desk.rx.pharmacist.Dataset {
                         vc_kecamatan,
                         vc_kota,
                         dt_tgl_lhr,
-                        vb_ttd};
+                        vb_ttd,
+                        vc_nama_p,
+                        vc_no_peserta_bpjs};
                 rowdata_pasienRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdata_pasienRow);
                 return rowdata_pasienRow;
@@ -1900,6 +1924,8 @@ namespace rse.app.desk.rx.pharmacist.Dataset {
                 this.columnvc_kota = base.Columns["vc_kota"];
                 this.columndt_tgl_lhr = base.Columns["dt_tgl_lhr"];
                 this.columnvb_ttd = base.Columns["vb_ttd"];
+                this.columnvc_nama_p = base.Columns["vc_nama_p"];
+                this.columnvc_no_peserta_bpjs = base.Columns["vc_no_peserta_bpjs"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1961,6 +1987,10 @@ namespace rse.app.desk.rx.pharmacist.Dataset {
                 base.Columns.Add(this.columndt_tgl_lhr);
                 this.columnvb_ttd = new global::System.Data.DataColumn("vb_ttd", typeof(byte[]), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnvb_ttd);
+                this.columnvc_nama_p = new global::System.Data.DataColumn("vc_nama_p", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvc_nama_p);
+                this.columnvc_no_peserta_bpjs = new global::System.Data.DataColumn("vc_no_peserta_bpjs", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvc_no_peserta_bpjs);
                 this.columnvc_kode_rx.MaxLength = 50;
                 this.columnvc_no_reg.MaxLength = 50;
                 this.columnvc_no_rm.MaxLength = 50;
@@ -1981,6 +2011,8 @@ namespace rse.app.desk.rx.pharmacist.Dataset {
                 this.columnvc_alamat.MaxLength = 100;
                 this.columnvc_kecamatan.MaxLength = 20;
                 this.columnvc_kota.MaxLength = 20;
+                this.columnvc_nama_p.MaxLength = 50;
+                this.columnvc_no_peserta_bpjs.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5016,6 +5048,38 @@ namespace rse.app.desk.rx.pharmacist.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string vc_nama_p {
+                get {
+                    try {
+                        return ((string)(this[this.tabledata_pasien.vc_nama_pColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'vc_nama_p\' in table \'data_pasien\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledata_pasien.vc_nama_pColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string vc_no_peserta_bpjs {
+                get {
+                    try {
+                        return ((string)(this[this.tabledata_pasien.vc_no_peserta_bpjsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'vc_no_peserta_bpjs\' in table \'data_pasien\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledata_pasien.vc_no_peserta_bpjsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isvc_kode_rxNull() {
                 return this.IsNull(this.tabledata_pasien.vc_kode_rxColumn);
             }
@@ -5348,6 +5412,30 @@ namespace rse.app.desk.rx.pharmacist.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setvb_ttdNull() {
                 this[this.tabledata_pasien.vb_ttdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isvc_nama_pNull() {
+                return this.IsNull(this.tabledata_pasien.vc_nama_pColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setvc_nama_pNull() {
+                this[this.tabledata_pasien.vc_nama_pColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isvc_no_peserta_bpjsNull() {
+                return this.IsNull(this.tabledata_pasien.vc_no_peserta_bpjsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setvc_no_peserta_bpjsNull() {
+                this[this.tabledata_pasien.vc_no_peserta_bpjsColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7439,6 +7527,8 @@ WHERE        (fa_rx_resep_d.vc_kode_rx = @koderx)";
             tableMapping.ColumnMappings.Add("vc_kota", "vc_kota");
             tableMapping.ColumnMappings.Add("dt_tgl_lhr", "dt_tgl_lhr");
             tableMapping.ColumnMappings.Add("vb_ttd", "vb_ttd");
+            tableMapping.ColumnMappings.Add("vc_nama_p", "vc_nama_p");
+            tableMapping.ColumnMappings.Add("vc_no_peserta_bpjs", "vc_no_peserta_bpjs");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -7464,17 +7554,18 @@ WHERE        (fa_rx_resep_d.vc_kode_rx = @koderx)";
                 ".vc_N_KLINIK, SDMDOKTER.vc_nama_kry, fa_rx_resep_h.dt_order, fa_rx_resep_h.dt_re" +
                 "spon, RMPasien.in_umurth, RMPasien.in_umurbl, RMPasien.in_umurhr, RMPasien.vc_al" +
                 "amat, \r\n                         RMPasien.vc_kecamatan, RMPasien.vc_kota, RMPasi" +
-                "en.dt_tgl_lhr, Scann_TTD_Dokter.vb_ttd\r\nFROM            RMKLINIK INNER JOIN\r\n   " +
-                "                      fa_rx_resep_h ON RMKLINIK.vc_K_KLINIK = fa_rx_resep_h.vc_k" +
-                "_klinik INNER JOIN\r\n                         SDMDOKTER ON fa_rx_resep_h.vc_k_dok" +
-                "ter = SDMDOKTER.vc_nid INNER JOIN\r\n                         RMPasien ON fa_rx_re" +
-                "sep_h.vc_no_rm = RMPasien.vc_no_rm LEFT OUTER JOIN\r\n                         Sca" +
-                "nn_TTD_Dokter ON fa_rx_resep_h.vc_k_dokter = Scann_TTD_Dokter.vc_nid_dokter LEFT" +
-                " OUTER JOIN\r\n                         BPJS_RefDiagnosis_Inasis RIGHT OUTER JOIN\r" +
-                "\n                         BPJS_SEP ON BPJS_RefDiagnosis_Inasis.Code = BPJS_SEP.v" +
-                "c_kode_diagnosa_awal LEFT OUTER JOIN\r\n                         Bpjs_refppk ON BP" +
-                "JS_SEP.vc_kode_asal_rujukan = Bpjs_refppk.KDPPK ON fa_rx_resep_h.vc_no_reg = BPJ" +
-                "S_SEP.vc_no_regj\r\nWHERE        (fa_rx_resep_h.vc_kode_rx = @kresep)";
+                "en.dt_tgl_lhr, Scann_TTD_Dokter.vb_ttd, RMPasien.vc_nama_p, RMPasien.vc_no_peser" +
+                "ta_bpjs\r\nFROM            RMKLINIK INNER JOIN\r\n                         fa_rx_res" +
+                "ep_h ON RMKLINIK.vc_K_KLINIK = fa_rx_resep_h.vc_k_klinik INNER JOIN\r\n           " +
+                "              SDMDOKTER ON fa_rx_resep_h.vc_k_dokter = SDMDOKTER.vc_nid INNER JO" +
+                "IN\r\n                         RMPasien ON fa_rx_resep_h.vc_no_rm = RMPasien.vc_no" +
+                "_rm LEFT OUTER JOIN\r\n                         Scann_TTD_Dokter ON fa_rx_resep_h." +
+                "vc_k_dokter = Scann_TTD_Dokter.vc_nid_dokter LEFT OUTER JOIN\r\n                  " +
+                "       BPJS_RefDiagnosis_Inasis RIGHT OUTER JOIN\r\n                         BPJS_" +
+                "SEP ON BPJS_RefDiagnosis_Inasis.Code = BPJS_SEP.vc_kode_diagnosa_awal LEFT OUTER" +
+                " JOIN\r\n                         Bpjs_refppk ON BPJS_SEP.vc_kode_asal_rujukan = B" +
+                "pjs_refppk.KDPPK ON fa_rx_resep_h.vc_no_reg = BPJS_SEP.vc_no_regj\r\nWHERE        " +
+                "(fa_rx_resep_h.vc_kode_rx = @kresep)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kresep", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kode_rx", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

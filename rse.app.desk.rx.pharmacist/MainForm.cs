@@ -6,11 +6,13 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Media;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using rse.app.desk.rx.pharmacist.UI;
+
 
 namespace rse.app.desk.rx.pharmacist
 {
@@ -58,13 +60,20 @@ namespace rse.app.desk.rx.pharmacist
             InitializeComponent();
             
         }
+        public static void Refresh_list()
+        {
+            //Timer.Refresh.star
+            MainForm mf = new MainForm();
+            mf.populateItems();
 
-        public void populateItems()
+        }
+        public  void populateItems()
         {
             //if (flowLayout.Controls.Count > 1)
             //{ playSimpleSound(); }
             //else
             //{
+            
             flowLayout.Controls.Clear();
             var ds = new Dataset.yakkumdbTableAdapters.resep_orderTableAdapter();
                 ds.Fill(yakkumdb.resep_order);

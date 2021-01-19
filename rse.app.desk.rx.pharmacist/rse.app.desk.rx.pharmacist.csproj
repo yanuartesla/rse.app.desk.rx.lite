@@ -27,7 +27,7 @@
     <PublisherName>RS Emanuel</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>24</ApplicationRevision>
+    <ApplicationRevision>32</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -157,6 +157,12 @@
     <Compile Include="UI\PrintDialog.Designer.cs">
       <DependentUpon>PrintDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UCHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCHome.Designer.cs">
+      <DependentUpon>UCHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UCResepDetil.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -189,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PrintDialog.resx">
       <DependentUpon>PrintDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCHome.resx">
+      <DependentUpon>UCHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UCResepDetil.resx">
       <DependentUpon>UCResepDetil.cs</DependentUpon>

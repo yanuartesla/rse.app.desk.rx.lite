@@ -802,7 +802,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vcnamaobatDataGridViewTextBoxColumn;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Dataset.yakkumdbTableAdapters.data_pasienTableAdapter data_pasienTableAdapter;
