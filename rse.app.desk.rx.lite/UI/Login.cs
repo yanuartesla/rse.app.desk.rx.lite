@@ -61,7 +61,6 @@ namespace rse.app.desk.rx.lite.UI
                             this.UserRole = roles.drgigi;
                             break;
                         default:
-
                             break;
                     }
                     //this.DialogResult = DialogResult.OK;
@@ -71,7 +70,6 @@ namespace rse.app.desk.rx.lite.UI
                     this.Hide();
                     Eprescribe ep = new Eprescribe(nid,UserRole);
                     ep.ShowDialog();
-                    
                 }
                 else
                 {

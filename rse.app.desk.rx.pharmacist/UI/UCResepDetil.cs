@@ -90,7 +90,7 @@ namespace rse.app.desk.rx.pharmacist.UI
             foreach (DataRow r in dt.Rows)
             {
                 _sep = r["vc_no_sep"].ToString();
-                MessageBox.Show(_sep);
+                //MessageBox.Show(_sep);
             }
 
             if (InvokeRequired)
