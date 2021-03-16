@@ -770,7 +770,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Eprescribe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Eprescribe";
+            this.Text = "45";
             this.Load += new System.EventHandler(this.Eprescribe_Load);
             ((System.ComponentModel.ISupportInitialize)(guna2DataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rMKUNJUNGBindingSource)).EndInit();

@@ -133,8 +133,17 @@
   <data name="efile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\efile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Diagnosis1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Diagnosis1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="20944575" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\20944575.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="prescription (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\prescription (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="20944575-[Converted]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\20944575-[Converted].jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="star" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,6 +196,9 @@
   <data name="prescription_logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\prescription_logo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="tinywomenwith-resep" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tinywomenwith-resep.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LOGO EMANUEL" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO EMANUEL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -202,7 +214,7 @@
   <data name="1404_cpy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1404_cpy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Diagnosis1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Diagnosis1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="13262" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\13262.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -73,9 +73,39 @@ namespace rse.app.desk.rx.lite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _13262 {
+            get {
+                object obj = ResourceManager.GetObject("13262", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1404_cpy {
             get {
                 object obj = ResourceManager.GetObject("1404_cpy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _20944575 {
+            get {
+                object obj = ResourceManager.GetObject("20944575", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _20944575__Converted_ {
+            get {
+                object obj = ResourceManager.GetObject("20944575-[Converted]", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -346,6 +376,16 @@ namespace rse.app.desk.rx.lite.Properties {
         internal static System.Drawing.Bitmap star__1_ {
             get {
                 object obj = ResourceManager.GetObject("star (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tinywomenwith_resep {
+            get {
+                object obj = ResourceManager.GetObject("tinywomenwith-resep", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

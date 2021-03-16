@@ -29,8 +29,8 @@
     <PublisherName>RSEmanuel</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>13</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -165,6 +165,18 @@
     <Compile Include="UI\Expertise.Designer.cs">
       <DependentUpon>Expertise.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Layout\CardPasien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Layout\CardPasien.Designer.cs">
+      <DependentUpon>CardPasien.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +231,12 @@
     </Compile>
     <EmbeddedResource Include="UI\Expertise.resx">
       <DependentUpon>Expertise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Layout\CardPasien.resx">
+      <DependentUpon>CardPasien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -317,6 +335,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="prescription.ico" />
+    <None Include="Resources\13262.png" />
+    <None Include="Resources\20944575-[Converted].jpg" />
+    <None Include="Resources\tinywomenwith-resep.jpg" />
+    <None Include="Resources\20944575.jpg" />
     <None Include="Resources\Diagnosis1.png" />
     <None Include="Resources\Diagnosis.png" />
     <None Include="Resources\bmhp.png" />

@@ -65,7 +65,7 @@ namespace rse.app.desk.rx.nurse
         private void uc_MouseCliked(object sender, EventArgs e)
         {
            // MessageBox.Show("test");
-
+            
             pnlContent.Controls.Clear();
             UserControl us = (UserControl)sender;
             var _filter = us.Tag.ToString();
