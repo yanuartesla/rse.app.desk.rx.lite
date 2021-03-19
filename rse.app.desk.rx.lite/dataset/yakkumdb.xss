@@ -13,7 +13,7 @@
     <Shape ID="DesignTable:view_resep" ZOrder="5" X="-21" Y="352" Height="248" Width="208" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
     <Shape ID="DesignTable:fa_rx_racikan" ZOrder="8" X="665" Y="371" Height="229" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
     <Shape ID="DesignTable:fa_rx_user" ZOrder="2" X="19" Y="770" Height="229" Width="204" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
-    <Shape ID="DesignTable:Pasien" ZOrder="1" X="672" Y="646" Height="324" Width="297" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:Pasien" ZOrder="1" X="672" Y="646" Height="343" Width="297" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:RMKLINIK" ZOrder="3" X="97" Y="605" Height="153" Width="204" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
   </Shapes>
   <Connectors />

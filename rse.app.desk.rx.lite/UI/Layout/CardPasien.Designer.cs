@@ -31,23 +31,19 @@ namespace rse.app.desk.rx.lite.UI.Layout
         {
             this.components = new System.ComponentModel.Container();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.pbJenisKelamin = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblNoRM = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblNama = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblUmur = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtPenanggung = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblNoAntrian = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblKaryawan = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pbJenisKelamin)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.TargetControl = this;
-            // 
-            // guna2AnimateWindow1
-            // 
-            this.guna2AnimateWindow1.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_ACTIVATE;
             // 
             // pbJenisKelamin
             // 
@@ -57,7 +53,7 @@ namespace rse.app.desk.rx.lite.UI.Layout
             this.pbJenisKelamin.Location = new System.Drawing.Point(0, 0);
             this.pbJenisKelamin.Name = "pbJenisKelamin";
             this.pbJenisKelamin.ShadowDecoration.Parent = this.pbJenisKelamin;
-            this.pbJenisKelamin.Size = new System.Drawing.Size(102, 85);
+            this.pbJenisKelamin.Size = new System.Drawing.Size(102, 76);
             this.pbJenisKelamin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbJenisKelamin.TabIndex = 0;
             this.pbJenisKelamin.TabStop = false;
@@ -81,9 +77,9 @@ namespace rse.app.desk.rx.lite.UI.Layout
             this.lblNama.BackColor = System.Drawing.Color.Transparent;
             this.lblNama.Enabled = false;
             this.lblNama.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNama.Location = new System.Drawing.Point(108, 25);
+            this.lblNama.Location = new System.Drawing.Point(108, 28);
             this.lblNama.Name = "lblNama";
-            this.lblNama.Size = new System.Drawing.Size(231, 22);
+            this.lblNama.Size = new System.Drawing.Size(246, 22);
             this.lblNama.TabIndex = 2;
             this.lblNama.Text = "Nama Pasien";
             // 
@@ -105,7 +101,7 @@ namespace rse.app.desk.rx.lite.UI.Layout
             this.txtPenanggung.BackColor = System.Drawing.Color.Transparent;
             this.txtPenanggung.Enabled = false;
             this.txtPenanggung.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPenanggung.Location = new System.Drawing.Point(275, 61);
+            this.txtPenanggung.Location = new System.Drawing.Point(270, 53);
             this.txtPenanggung.Name = "txtPenanggung";
             this.txtPenanggung.Size = new System.Drawing.Size(157, 19);
             this.txtPenanggung.TabIndex = 4;
@@ -116,18 +112,35 @@ namespace rse.app.desk.rx.lite.UI.Layout
             // 
             this.lblNoAntrian.AutoSize = false;
             this.lblNoAntrian.BackColor = System.Drawing.Color.Transparent;
+            this.lblNoAntrian.Enabled = false;
             this.lblNoAntrian.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoAntrian.Location = new System.Drawing.Point(360, 25);
+            this.lblNoAntrian.Location = new System.Drawing.Point(356, 25);
             this.lblNoAntrian.Name = "lblNoAntrian";
             this.lblNoAntrian.Size = new System.Drawing.Size(72, 30);
             this.lblNoAntrian.TabIndex = 5;
             this.lblNoAntrian.Text = "XX888";
             this.lblNoAntrian.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // lblKaryawan
+            // 
+            this.lblKaryawan.AutoSize = false;
+            this.lblKaryawan.AutoSizeHeightOnly = true;
+            this.lblKaryawan.BackColor = System.Drawing.Color.Transparent;
+            this.lblKaryawan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblKaryawan.Enabled = false;
+            this.lblKaryawan.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKaryawan.Location = new System.Drawing.Point(318, 4);
+            this.lblKaryawan.Name = "lblKaryawan";
+            this.lblKaryawan.Size = new System.Drawing.Size(107, 23);
+            this.lblKaryawan.TabIndex = 6;
+            this.lblKaryawan.Text = "Karyawan";
+            this.lblKaryawan.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // CardPasien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.SeaShell;
+            this.Controls.Add(this.lblKaryawan);
             this.Controls.Add(this.lblNoAntrian);
             this.Controls.Add(this.txtPenanggung);
             this.Controls.Add(this.lblUmur);
@@ -135,7 +148,7 @@ namespace rse.app.desk.rx.lite.UI.Layout
             this.Controls.Add(this.lblNoRM);
             this.Controls.Add(this.pbJenisKelamin);
             this.Name = "CardPasien";
-            this.Size = new System.Drawing.Size(435, 85);
+            this.Size = new System.Drawing.Size(435, 76);
             this.MouseEnter += new System.EventHandler(this.CardPasien_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.CardPasien_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.pbJenisKelamin)).EndInit();
@@ -146,12 +159,12 @@ namespace rse.app.desk.rx.lite.UI.Layout
         #endregion
 
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNoRM;
         private Guna.UI2.WinForms.Guna2PictureBox pbJenisKelamin;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNama;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblUmur;
         private Guna.UI2.WinForms.Guna2HtmlLabel txtPenanggung;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNoAntrian;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblKaryawan;
     }
 }

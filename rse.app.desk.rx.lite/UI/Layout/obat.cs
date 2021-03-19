@@ -5,13 +5,13 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using static rse.app.desk.rx.lite.UI.Login;
+//using static rse.app.desk.rx.lite.UI.Login;
 
 namespace rse.app.desk.rx.lite.UI
 {
     public partial class obat : UserControl
     {
-        private roles _currentroles { get; set; }
+        //private roles _currentroles { get; set; }
         public string _kodeobat { get; set; }
         public int _kodefornas { get; set; }
         public string _noreg { get; set; }
@@ -19,16 +19,17 @@ namespace rse.app.desk.rx.lite.UI
         public string[] _listobat { get; set; }
         public string[] _listobatdetil { get; set; }
 
+        public Label lblRtx { get { return lblKodeRtx; } }
+
         AutoCompleteStringCollection namesCollection =
         new AutoCompleteStringCollection();
-        public obat(string noreg, string kdokter, int kfornas,roles _roles)
+        public obat(string noreg, string kdokter, int kfornas)
         {
             InitializeComponent();
             _kodefornas = kfornas;
             _noreg = noreg;
             _kdokter = kdokter;
-            _currentroles = _roles;
-
+            //_currentroles = _roles;
         }
 
         private void txtCariObat_Load(object sender, EventArgs e)
@@ -78,13 +79,12 @@ namespace rse.app.desk.rx.lite.UI
             dgvResep.Update();
             dgvResep.Refresh();
 
-
         }
 
 
         private void txtCariObat_KeyDown(object sender, KeyEventArgs e)
         {
-
+            // TODO : Cek Retensi dari Sini
             if (e.KeyCode == Keys.Enter)
             {
                 List<string> daftarobat = new List<string>();
@@ -112,7 +112,6 @@ namespace rse.app.desk.rx.lite.UI
                 //{ MessageBox.Show("Obat Sudah Berada di Resep, Edit untuk melakukan perubahan."); }
                 else
                 {
-
                     var _maxno = (int)_resepdetail.ScalarQueryMaxNoUrutResep(lblKodeRtx.Text) + 1;
                     //MessageBox.Show(_maxno.ToString());
                     _kodeobat = txtCariObat.Text;
@@ -190,7 +189,7 @@ namespace rse.app.desk.rx.lite.UI
             if (e.ColumnIndex == 6)
             {
                 MessageBox.Show("Mohon Maaf fungsi ini sedang dalam pengembangan..");
-                //Edit Event
+                // TODO : Edit Event
                 //var kdrxd = this.dgvResep[8, e.RowIndex].Value.ToString();
                 //var kdrx = this.dgvResep[9, e.RowIndex].Value.ToString();
                 //var nourut = Int32.Parse(this.dgvResep[10, e.RowIndex].Value.ToString());
@@ -258,8 +257,8 @@ namespace rse.app.desk.rx.lite.UI
             }
 
             MessageBox.Show("Resep Berhasil di Simpan");
-            Eprescribe ep = new Eprescribe(_kdokter,_currentroles);
-            ep.Show();
+            //Eprescribe ep = new Eprescribe(_kdokter,_currentroles);
+            //ep.Show();
         }
 
         private void dgvResep_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)

@@ -21,7 +21,6 @@ namespace rse.app.desk.rx.lite
         private void Eprescribe_Load(object sender, EventArgs e)
         {
             logincheck();
-            // TODO: This line of code loads data into the 'yakkumdb.RM_KUNJUNG' table. You can move, or remove it, as needed.
             this.rM_KUNJUNGTableAdapter.FillByKlinik(this.yakkumdb.RM_KUNJUNG,_nid,_nid.Substring(0,2)+"00");
             switch (txtJnsK.Text)
             {
@@ -86,7 +85,8 @@ namespace rse.app.desk.rx.lite
                 "DRAFT"
                 );
 
-            obat myuc = new obat(_noreg, _kdokter, _kdfornas, _curentRoles);
+            // obat myuc = new obat(_noreg, _kdokter, _kdfornas, _curentRoles);
+            obat myuc = new obat(_noreg, _kdokter, _kdfornas);
             myuc.Dock = DockStyle.Fill;
             LoadPanel.Controls.Add(myuc);
             myuc.Show();
@@ -220,7 +220,8 @@ namespace rse.app.desk.rx.lite
                 "DRAFT"
                 );
 
-            obat myuc = new obat(_noreg, _kdokter, _kdfornas,_curentRoles);
+            //obat myuc = new obat(_noreg, _kdokter, _kdfornas,_curentRoles);
+            obat myuc = new obat(_noreg, _kdokter, _kdfornas);
             myuc.Dock = DockStyle.Fill;
             LoadPanel.Controls.Add(myuc);
             myuc.Show();

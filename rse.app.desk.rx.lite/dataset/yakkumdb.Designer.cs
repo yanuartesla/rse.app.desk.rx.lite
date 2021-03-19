@@ -5097,6 +5097,12 @@ namespace rse.app.desk.rx.lite.dataset {
             
             private global::System.Data.DataColumn columnNO_ANTRIAN;
             
+            private global::System.Data.DataColumn columnvc_alamat;
+            
+            private global::System.Data.DataColumn columnKota;
+            
+            private global::System.Data.DataColumn columnumur;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PasienDataTable() {
@@ -5252,6 +5258,30 @@ namespace rse.app.desk.rx.lite.dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn vc_alamatColumn {
+                get {
+                    return this.columnvc_alamat;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn KotaColumn {
+                get {
+                    return this.columnKota;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn umurColumn {
+                get {
+                    return this.columnumur;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5287,7 +5317,25 @@ namespace rse.app.desk.rx.lite.dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PasienRow AddPasienRow(System.DateTime DT_TGL_REG, string VC_NO_RM, string vc_nama_p, string vc_jenis_k, int in_umurth, string VC_K_KLINIK, string VC_K_DOKTER, int IN_NO_URUT, int IN_NO_URUT_DOKTER, string VC_K_PNG, string VC_K_INSTANSI, string vc_n_png, string VC_NO_REGJ, bool bt_kary, string NO_ANTRIAN) {
+            public PasienRow AddPasienRow(
+                        System.DateTime DT_TGL_REG, 
+                        string VC_NO_RM, 
+                        string vc_nama_p, 
+                        string vc_jenis_k, 
+                        int in_umurth, 
+                        string VC_K_KLINIK, 
+                        string VC_K_DOKTER, 
+                        int IN_NO_URUT, 
+                        int IN_NO_URUT_DOKTER, 
+                        string VC_K_PNG, 
+                        string VC_K_INSTANSI, 
+                        string vc_n_png, 
+                        string VC_NO_REGJ, 
+                        bool bt_kary, 
+                        string NO_ANTRIAN, 
+                        string vc_alamat, 
+                        string Kota, 
+                        string umur) {
                 PasienRow rowPasienRow = ((PasienRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         DT_TGL_REG,
@@ -5304,7 +5352,10 @@ namespace rse.app.desk.rx.lite.dataset {
                         vc_n_png,
                         VC_NO_REGJ,
                         bt_kary,
-                        NO_ANTRIAN};
+                        NO_ANTRIAN,
+                        vc_alamat,
+                        Kota,
+                        umur};
                 rowPasienRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPasienRow);
                 return rowPasienRow;
@@ -5342,6 +5393,9 @@ namespace rse.app.desk.rx.lite.dataset {
                 this.columnVC_NO_REGJ = base.Columns["VC_NO_REGJ"];
                 this.columnbt_kary = base.Columns["bt_kary"];
                 this.columnNO_ANTRIAN = base.Columns["NO_ANTRIAN"];
+                this.columnvc_alamat = base.Columns["vc_alamat"];
+                this.columnKota = base.Columns["Kota"];
+                this.columnumur = base.Columns["umur"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5377,6 +5431,12 @@ namespace rse.app.desk.rx.lite.dataset {
                 base.Columns.Add(this.columnbt_kary);
                 this.columnNO_ANTRIAN = new global::System.Data.DataColumn("NO_ANTRIAN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNO_ANTRIAN);
+                this.columnvc_alamat = new global::System.Data.DataColumn("vc_alamat", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvc_alamat);
+                this.columnKota = new global::System.Data.DataColumn("Kota", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKota);
+                this.columnumur = new global::System.Data.DataColumn("umur", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnumur);
                 this.columnVC_NO_RM.MaxLength = 8;
                 this.columnvc_nama_p.MaxLength = 50;
                 this.columnvc_jenis_k.MaxLength = 1;
@@ -5388,6 +5448,11 @@ namespace rse.app.desk.rx.lite.dataset {
                 this.columnVC_NO_REGJ.MaxLength = 13;
                 this.columnNO_ANTRIAN.ReadOnly = true;
                 this.columnNO_ANTRIAN.MaxLength = 4000;
+                this.columnvc_alamat.MaxLength = 100;
+                this.columnKota.ReadOnly = true;
+                this.columnKota.MaxLength = 41;
+                this.columnumur.ReadOnly = true;
+                this.columnumur.MaxLength = 36;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11190,6 +11255,54 @@ namespace rse.app.desk.rx.lite.dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string vc_alamat {
+                get {
+                    try {
+                        return ((string)(this[this.tablePasien.vc_alamatColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'vc_alamat\' in table \'Pasien\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePasien.vc_alamatColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Kota {
+                get {
+                    try {
+                        return ((string)(this[this.tablePasien.KotaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Kota\' in table \'Pasien\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePasien.KotaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string umur {
+                get {
+                    try {
+                        return ((string)(this[this.tablePasien.umurColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'umur\' in table \'Pasien\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePasien.umurColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsDT_TGL_REGNull() {
                 return this.IsNull(this.tablePasien.DT_TGL_REGColumn);
             }
@@ -11366,6 +11479,42 @@ namespace rse.app.desk.rx.lite.dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetNO_ANTRIANNull() {
                 this[this.tablePasien.NO_ANTRIANColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isvc_alamatNull() {
+                return this.IsNull(this.tablePasien.vc_alamatColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setvc_alamatNull() {
+                this[this.tablePasien.vc_alamatColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsKotaNull() {
+                return this.IsNull(this.tablePasien.KotaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetKotaNull() {
+                this[this.tablePasien.KotaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsumurNull() {
+                return this.IsNull(this.tablePasien.umurColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetumurNull() {
+                this[this.tablePasien.umurColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -14434,6 +14583,9 @@ WHERE        (fa_rx_user.bt_aktif = 1) AND (fa_rx_user.vc_nid = @nid)";
             tableMapping.ColumnMappings.Add("VC_NO_REGJ", "VC_NO_REGJ");
             tableMapping.ColumnMappings.Add("bt_kary", "bt_kary");
             tableMapping.ColumnMappings.Add("NO_ANTRIAN", "NO_ANTRIAN");
+            tableMapping.ColumnMappings.Add("vc_alamat", "vc_alamat");
+            tableMapping.ColumnMappings.Add("Kota", "Kota");
+            tableMapping.ColumnMappings.Add("umur", "umur");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -14447,11 +14599,12 @@ WHERE        (fa_rx_user.bt_aktif = 1) AND (fa_rx_user.vc_nid = @nid)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        RMKUNJUNG.DT_TGL_REG, RMKUNJUNG.VC_NO_RM, RMPasien.vc_nama_p, RMPasien.vc_jenis_k, RMPasien.in_umurth, RMKUNJUNG.VC_K_KLINIK, RMKUNJUNG.VC_K_DOKTER, RMKUNJUNG.IN_NO_URUT, 
-                         RMKUNJUNG.IN_NO_URUT_DOKTER, RMKUNJUNG.VC_K_PNG, RMKUNJUNG.VC_K_INSTANSI, PubPng.vc_n_png, RMKUNJUNG.VC_NO_REGJ, RMPasien.bt_kary, View_Antrian_RM2020.NO_ANTRIAN
+                         RMKUNJUNG.IN_NO_URUT_DOKTER, RMKUNJUNG.VC_K_PNG, RMKUNJUNG.VC_K_INSTANSI, PubPng.vc_n_png, RMKUNJUNG.VC_NO_REGJ, RMPasien.bt_kary, View_Antrian_RM2020.NO_ANTRIAN, RMPasien.vc_alamat, 
+                         RMPasien.vc_kota + ' ' + RMPasien.vc_kecamatan AS Kota, CONVERT(varchar, RMPasien.in_umurth) + ' tahun' AS umur
 FROM            RMPasien INNER JOIN
                          RMKUNJUNG ON RMPasien.vc_no_rm = RMKUNJUNG.VC_NO_RM INNER JOIN
                          PubPng ON RMKUNJUNG.VC_K_INSTANSI = PubPng.vc_k_png INNER JOIN
@@ -14461,7 +14614,7 @@ ORDER BY RMKUNJUNG.IN_NO_URUT, RMKUNJUNG.IN_NO_URUT_DOKTER";
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"SELECT        RMKUNJUNG.DT_TGL_REG, RMKUNJUNG.VC_NO_RM, RMPasien.vc_nama_p, RMPasien.vc_jenis_k, RMPasien.in_umurth, RMKUNJUNG.VC_K_KLINIK, RMKUNJUNG.VC_K_DOKTER, RMKUNJUNG.IN_NO_URUT, 
-                         RMKUNJUNG.IN_NO_URUT_DOKTER, RMKUNJUNG.VC_K_PNG, RMKUNJUNG.VC_K_INSTANSI, RMKUNJUNG.VC_NO_REG, PubPng.vc_n_png, RMPasien.bt_kary, View_Antrian_RM2020.NO_ANTRIAN
+                         RMKUNJUNG.IN_NO_URUT_DOKTER, RMKUNJUNG.VC_K_PNG, RMKUNJUNG.VC_K_INSTANSI, PubPng.vc_n_png, RMPasien.bt_kary, View_Antrian_RM2020.NO_ANTRIAN, RMKUNJUNG.VC_NO_REGJ
 FROM            RMPasien INNER JOIN
                          RMKUNJUNG ON RMPasien.vc_no_rm = RMKUNJUNG.VC_NO_RM INNER JOIN
                          PubPng ON RMKUNJUNG.VC_K_INSTANSI = PubPng.vc_k_png INNER JOIN
@@ -14472,6 +14625,19 @@ ORDER BY RMKUNJUNG.IN_NO_URUT, RMKUNJUNG.IN_NO_URUT_DOKTER";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kdokter", global::System.Data.SqlDbType.VarChar, 4, global::System.Data.ParameterDirection.Input, 0, 0, "VC_K_DOKTER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kklinik", global::System.Data.SqlDbType.VarChar, 4, global::System.Data.ParameterDirection.Input, 0, 0, "VC_K_KLINIK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT        RMKUNJUNG.DT_TGL_REG, RMKUNJUNG.VC_NO_RM, RMPasien.vc_nama_p, RMPasien.vc_jenis_k, RMPasien.in_umurth, RMKUNJUNG.VC_K_KLINIK, RMKUNJUNG.VC_K_DOKTER, RMKUNJUNG.IN_NO_URUT, 
+                         RMKUNJUNG.IN_NO_URUT_DOKTER, RMKUNJUNG.VC_K_PNG, RMKUNJUNG.VC_K_INSTANSI, PubPng.vc_n_png, RMKUNJUNG.VC_NO_REGJ, RMPasien.bt_kary, View_Antrian_RM2020.NO_ANTRIAN, RMPasien.vc_alamat, 
+                         RMPasien.vc_kota + ' ' + RMPasien.vc_kecamatan AS Kota, CONVERT(varchar, RMPasien.in_umurth) + ' tahun' AS umur
+FROM            RMPasien INNER JOIN
+                         RMKUNJUNG ON RMPasien.vc_no_rm = RMKUNJUNG.VC_NO_RM INNER JOIN
+                         PubPng ON RMKUNJUNG.VC_K_INSTANSI = PubPng.vc_k_png INNER JOIN
+                         View_Antrian_RM2020 ON RMKUNJUNG.VC_NO_REGJ = View_Antrian_RM2020.VC_NO_REGJ
+WHERE        (RMKUNJUNG.VC_NO_REGJ = @noreg)
+ORDER BY RMKUNJUNG.IN_NO_URUT, RMKUNJUNG.IN_NO_URUT_DOKTER";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@noreg", global::System.Data.SqlDbType.VarChar, 13, global::System.Data.ParameterDirection.Input, 0, 0, "VC_NO_REGJ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14540,6 +14706,42 @@ ORDER BY RMKUNJUNG.IN_NO_URUT, RMKUNJUNG.IN_NO_URUT_DOKTER";
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(kklinik));
+            }
+            yakkumdb.PasienDataTable dataTable = new yakkumdb.PasienDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByNoreg(yakkumdb.PasienDataTable dataTable, string noreg) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((noreg == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(noreg));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual yakkumdb.PasienDataTable GetDataByNoreg(string noreg) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((noreg == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(noreg));
             }
             yakkumdb.PasienDataTable dataTable = new yakkumdb.PasienDataTable();
             this.Adapter.Fill(dataTable);

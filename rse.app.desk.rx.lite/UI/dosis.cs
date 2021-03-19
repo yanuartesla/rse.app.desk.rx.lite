@@ -40,9 +40,6 @@ namespace rse.app.desk.rx.lite.UI
         private void dosis_Load(object sender, EventArgs e)
         {
            
-            // TODO: This line of code loads data into the 'yakkumdb.view_rse_fa_obat' table. You can move, or remove it, as needed.
-            this.view_rse_fa_obatTableAdapter.Fill(this.yakkumdb.view_rse_fa_obat);
-            // TODO: This line of code loads data into the 'yakkumdb.view_rse_fa_obat' table. You can move, or remove it, as needed.
             this.view_rse_fa_obatTableAdapter.FillByNamaObat(this.yakkumdb.view_rse_fa_obat, _nmobat);
             
             dataset.yakkumdbTableAdapters.view_rse_fa_obatTableAdapter da = new dataset.yakkumdbTableAdapters.view_rse_fa_obatTableAdapter();
@@ -62,7 +59,6 @@ namespace rse.app.desk.rx.lite.UI
             bsObat.Filter = "vc_namaobat = '" + Obat.Text + "'";
             retensi.Text = "Retriksi : " + retensi.Text + " / kasus";
 
-            // TODO: This line of code loads data into the 'yakkumdb.fa_rx_resep_d' table. You can move, or remove it, as needed.
             this.fa_rx_resep_dTableAdapter.FillByKrxD(this.yakkumdb.fa_rx_resep_d, _norx + _kobat);
 
 

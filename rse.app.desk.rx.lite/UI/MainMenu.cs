@@ -12,14 +12,13 @@ namespace rse.app.desk.rx.lite.UI
 {
     public partial class MainMenu : Form
     {
-        public Panel MainLoadPanel { get; set; }
         public string _nidDokter { get; set; }
         public string _kodeKlinik { get; set; }
         public MainMenu()
         {
             InitializeComponent();
-            MainLoadPanel = this.LoadPanelChild;
             _nidDokter = "0201";
+            
         }
         
         private void btnClose_Click(object sender, EventArgs e)
@@ -40,22 +39,23 @@ namespace rse.app.desk.rx.lite.UI
             cmbKlinik.DataSource = bsKlinik;
             cmbKlinik.DisplayMember = "vc_N_KLINIK";
             cmbKlinik.ValueMember = "vc_K_KLINIK";
-            
+
+            _kodeKlinik = cmbKlinik.SelectedValue.ToString();
             LoadHome();
 
         }
 
         private void LoadHome()
         {
-            BackgroudLoadPanel.SuspendLayout();
-            Home myFrm = new Home(cmbKlinik.SelectedValue.ToString(), _nidDokter);
+            //BackgroudLoadPanel.SuspendLayout();
+            Home myFrm = new Home(_kodeKlinik, _nidDokter);
             myFrm.Dock = DockStyle.Fill;
             myFrm.TopLevel = false;
             myFrm.AutoScroll = true;
             myFrm.FormBorderStyle = FormBorderStyle.None;
             LoadPanelChild.Controls.Add(myFrm);
             myFrm.Show();
-            BackgroudLoadPanel.ResumeLayout();
+            //BackgroudLoadPanel.ResumeLayout();
         }
 
 

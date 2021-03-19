@@ -23,6 +23,7 @@ namespace rse.app.desk.rx.lite.UI.Layout
         private string _jk;
         private string _penanggung;
         private string _noantrian;
+        private Boolean _btkary;
 
 
         [Category("Custom Prop")]
@@ -79,6 +80,22 @@ namespace rse.app.desk.rx.lite.UI.Layout
             set { _noantrian = value; lblNoAntrian.Text = value; }
         }
 
+        [Category("Custom Prop")]
+        public bool btKaryawan
+        {
+            get { return _btkary; }
+            set { _btkary = value; switch (_btkary)
+                {
+                    case true:
+                        lblKaryawan.Visible = true;
+                        break;
+                    
+                    default:
+                        lblKaryawan.Visible = false;
+                        break;
+                }
+            }
+        }
         private void CardPasien_MouseEnter(object sender, EventArgs e)
         {
             BackColor = Color.Bisque;

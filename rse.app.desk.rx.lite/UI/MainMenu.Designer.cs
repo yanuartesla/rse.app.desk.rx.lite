@@ -30,9 +30,9 @@ namespace rse.app.desk.rx.lite.UI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.NavBarpanel = new Guna.UI2.WinForms.Guna2Panel();
@@ -59,8 +59,8 @@ namespace rse.app.desk.rx.lite.UI
             this.LoadPanelChild = new Guna.UI2.WinForms.Guna2Panel();
             this.HeaderPanel = new System.Windows.Forms.Panel();
             this.cmbKlinik = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.bsKlinik = new System.Windows.Forms.BindingSource(this.components);
             this.txtNamaDokter = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.bsKlinik = new System.Windows.Forms.BindingSource(this.components);
             this.btnClose = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
@@ -178,22 +178,22 @@ namespace rse.app.desk.rx.lite.UI
             // 
             this.dgvHistoryResep.AllowUserToAddRows = false;
             this.dgvHistoryResep.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(179)))), ((int)(((byte)(241)))));
-            this.dgvHistoryResep.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(179)))), ((int)(((byte)(241)))));
+            this.dgvHistoryResep.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHistoryResep.AutoGenerateColumns = false;
             this.dgvHistoryResep.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHistoryResep.BackgroundColor = System.Drawing.Color.White;
             this.dgvHistoryResep.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvHistoryResep.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvHistoryResep.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(0)))), ((int)(((byte)(211)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHistoryResep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(0)))), ((int)(((byte)(211)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistoryResep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHistoryResep.ColumnHeadersHeight = 21;
             this.dgvHistoryResep.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -201,14 +201,14 @@ namespace rse.app.desk.rx.lite.UI
             this.vcstatusDataGridViewTextBoxColumn,
             this.btlockDataGridViewCheckBoxColumn});
             this.dgvHistoryResep.DataSource = this.resephBindingSource;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(204)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(85)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHistoryResep.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(204)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(85)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHistoryResep.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvHistoryResep.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHistoryResep.EnableHeadersVisualStyles = false;
             this.dgvHistoryResep.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(179)))), ((int)(((byte)(241)))));
@@ -414,11 +414,6 @@ namespace rse.app.desk.rx.lite.UI
             this.cmbKlinik.Size = new System.Drawing.Size(257, 36);
             this.cmbKlinik.TabIndex = 2;
             // 
-            // bsKlinik
-            // 
-            this.bsKlinik.DataMember = "RMKLINIK";
-            this.bsKlinik.DataSource = this.yakkumdb;
-            // 
             // txtNamaDokter
             // 
             this.txtNamaDokter.AutoSize = false;
@@ -431,8 +426,13 @@ namespace rse.app.desk.rx.lite.UI
             this.txtNamaDokter.Name = "txtNamaDokter";
             this.txtNamaDokter.Size = new System.Drawing.Size(882, 52);
             this.txtNamaDokter.TabIndex = 1;
-            this.txtNamaDokter.Text = "dr. X";
+            this.txtNamaDokter.Text = "Loading . . .";
             this.txtNamaDokter.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // bsKlinik
+            // 
+            this.bsKlinik.DataMember = "RMKLINIK";
+            this.bsKlinik.DataSource = this.yakkumdb;
             // 
             // btnClose
             // 

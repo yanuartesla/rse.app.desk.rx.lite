@@ -113,7 +113,7 @@ namespace rse.app.desk.rx.pharmacist.UI
         {
             var rh = new Dataset.yakkumdbTableAdapters.fa_rx_resep_hTableAdapter();
             //TODO : janganlupa uncomment
-            //rh.UpdateResponTime(DateTime.Now, _noresep);
+            rh.UpdateResponTime(DateTime.Now, _noresep);
             load_report();
             var _year = DateTime.Now.ToString("yyyy");
             var _month = DateTime.Now.ToString("MM");

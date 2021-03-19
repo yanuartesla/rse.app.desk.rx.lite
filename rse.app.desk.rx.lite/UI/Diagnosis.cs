@@ -16,5 +16,6 @@ namespace rse.app.desk.rx.lite.UI
         {
             InitializeComponent();
         }
+      
     }
 }

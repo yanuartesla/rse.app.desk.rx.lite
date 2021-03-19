@@ -14,7 +14,7 @@ namespace rse.app.desk.rx.lite
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UI.MainMenu());
+            Application.Run(new UI.Home("0200","0201"));
         }
     }
 }
