@@ -30,9 +30,9 @@ namespace rse.app.desk.rx.lite.UI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.NavBarpanel = new Guna.UI2.WinForms.Guna2Panel();
@@ -49,6 +49,7 @@ namespace rse.app.desk.rx.lite.UI
             this.resephBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.yakkumdb = new rse.app.desk.rx.lite.dataset.yakkumdb();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -57,6 +58,9 @@ namespace rse.app.desk.rx.lite.UI
             this.LoadPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.LoadPanelChild = new Guna.UI2.WinForms.Guna2Panel();
             this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.cmbKlinik = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.bsKlinik = new System.Windows.Forms.BindingSource(this.components);
+            this.txtNamaDokter = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnClose = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
@@ -64,6 +68,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.resep_hTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.resep_hTableAdapter();
+            this.rMKLINIKTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.RMKLINIKTableAdapter();
             this.NavBarpanel.SuspendLayout();
             this.HistoryResepPanel.SuspendLayout();
             this.HistoryResepChildPanel.SuspendLayout();
@@ -74,6 +79,7 @@ namespace rse.app.desk.rx.lite.UI
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.LoadPanel.SuspendLayout();
             this.HeaderPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsKlinik)).BeginInit();
             this.BackgroudLoadPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -172,22 +178,22 @@ namespace rse.app.desk.rx.lite.UI
             // 
             this.dgvHistoryResep.AllowUserToAddRows = false;
             this.dgvHistoryResep.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(179)))), ((int)(((byte)(241)))));
-            this.dgvHistoryResep.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(179)))), ((int)(((byte)(241)))));
+            this.dgvHistoryResep.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvHistoryResep.AutoGenerateColumns = false;
             this.dgvHistoryResep.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHistoryResep.BackgroundColor = System.Drawing.Color.White;
             this.dgvHistoryResep.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvHistoryResep.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvHistoryResep.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(0)))), ((int)(((byte)(211)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHistoryResep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(0)))), ((int)(((byte)(211)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistoryResep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvHistoryResep.ColumnHeadersHeight = 21;
             this.dgvHistoryResep.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -195,24 +201,24 @@ namespace rse.app.desk.rx.lite.UI
             this.vcstatusDataGridViewTextBoxColumn,
             this.btlockDataGridViewCheckBoxColumn});
             this.dgvHistoryResep.DataSource = this.resephBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(204)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(85)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHistoryResep.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(204)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(85)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHistoryResep.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvHistoryResep.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHistoryResep.EnableHeadersVisualStyles = false;
             this.dgvHistoryResep.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(179)))), ((int)(((byte)(241)))));
-            this.dgvHistoryResep.Location = new System.Drawing.Point(5, 47);
+            this.dgvHistoryResep.Location = new System.Drawing.Point(5, 55);
             this.dgvHistoryResep.Name = "dgvHistoryResep";
             this.dgvHistoryResep.ReadOnly = true;
             this.dgvHistoryResep.RowHeadersVisible = false;
             this.dgvHistoryResep.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvHistoryResep.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHistoryResep.Size = new System.Drawing.Size(265, 348);
+            this.dgvHistoryResep.Size = new System.Drawing.Size(265, 340);
             this.dgvHistoryResep.TabIndex = 1;
             this.dgvHistoryResep.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Turquoise;
             this.dgvHistoryResep.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(179)))), ((int)(((byte)(241)))));
@@ -280,20 +286,32 @@ namespace rse.app.desk.rx.lite.UI
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel6);
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel5);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(5, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(265, 47);
+            this.guna2Panel1.Size = new System.Drawing.Size(265, 55);
             this.guna2Panel1.TabIndex = 2;
+            // 
+            // guna2HtmlLabel6
+            // 
+            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(94, 31);
+            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(67, 21);
+            this.guna2HtmlLabel6.TabIndex = 18;
+            this.guna2HtmlLabel6.Text = "dilayani";
             // 
             // guna2HtmlLabel5
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(64, 16);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(61, 3);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(142, 25);
             this.guna2HtmlLabel5.TabIndex = 17;
@@ -357,13 +375,15 @@ namespace rse.app.desk.rx.lite.UI
             this.LoadPanelChild.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LoadPanelChild.Location = new System.Drawing.Point(0, 52);
             this.LoadPanelChild.Name = "LoadPanelChild";
-            this.LoadPanelChild.Padding = new System.Windows.Forms.Padding(10, 15, 10, 10);
+            this.LoadPanelChild.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
             this.LoadPanelChild.ShadowDecoration.Parent = this.LoadPanelChild;
             this.LoadPanelChild.Size = new System.Drawing.Size(960, 648);
             this.LoadPanelChild.TabIndex = 2;
             // 
             // HeaderPanel
             // 
+            this.HeaderPanel.Controls.Add(this.cmbKlinik);
+            this.HeaderPanel.Controls.Add(this.txtNamaDokter);
             this.HeaderPanel.Controls.Add(this.btnClose);
             this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.HeaderPanel.Location = new System.Drawing.Point(0, 0);
@@ -371,6 +391,48 @@ namespace rse.app.desk.rx.lite.UI
             this.HeaderPanel.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.HeaderPanel.Size = new System.Drawing.Size(960, 52);
             this.HeaderPanel.TabIndex = 1;
+            // 
+            // cmbKlinik
+            // 
+            this.cmbKlinik.Animated = true;
+            this.cmbKlinik.AutoRoundedCorners = true;
+            this.cmbKlinik.BackColor = System.Drawing.Color.Transparent;
+            this.cmbKlinik.BorderRadius = 17;
+            this.cmbKlinik.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbKlinik.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbKlinik.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbKlinik.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbKlinik.FocusedState.Parent = this.cmbKlinik;
+            this.cmbKlinik.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.cmbKlinik.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbKlinik.HoverState.Parent = this.cmbKlinik;
+            this.cmbKlinik.ItemHeight = 30;
+            this.cmbKlinik.ItemsAppearance.Parent = this.cmbKlinik;
+            this.cmbKlinik.Location = new System.Drawing.Point(18, 9);
+            this.cmbKlinik.Name = "cmbKlinik";
+            this.cmbKlinik.ShadowDecoration.Parent = this.cmbKlinik;
+            this.cmbKlinik.Size = new System.Drawing.Size(257, 36);
+            this.cmbKlinik.TabIndex = 2;
+            // 
+            // bsKlinik
+            // 
+            this.bsKlinik.DataMember = "RMKLINIK";
+            this.bsKlinik.DataSource = this.yakkumdb;
+            // 
+            // txtNamaDokter
+            // 
+            this.txtNamaDokter.AutoSize = false;
+            this.txtNamaDokter.BackColor = System.Drawing.Color.Transparent;
+            this.txtNamaDokter.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsKlinik, "vc_nama_kry", true));
+            this.txtNamaDokter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNamaDokter.Enabled = false;
+            this.txtNamaDokter.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNamaDokter.Location = new System.Drawing.Point(0, 0);
+            this.txtNamaDokter.Name = "txtNamaDokter";
+            this.txtNamaDokter.Size = new System.Drawing.Size(882, 52);
+            this.txtNamaDokter.TabIndex = 1;
+            this.txtNamaDokter.Text = "dr. X";
+            this.txtNamaDokter.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnClose
             // 
@@ -383,12 +445,12 @@ namespace rse.app.desk.rx.lite.UI
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.ImageRotate = 0F;
             this.btnClose.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnClose.Location = new System.Drawing.Point(907, 0);
+            this.btnClose.Location = new System.Drawing.Point(882, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.PressedState.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.PressedState.Image")));
             this.btnClose.PressedState.ImageSize = new System.Drawing.Size(32, 32);
             this.btnClose.PressedState.Parent = this.btnClose;
-            this.btnClose.Size = new System.Drawing.Size(43, 52);
+            this.btnClose.Size = new System.Drawing.Size(68, 52);
             this.btnClose.TabIndex = 0;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -427,6 +489,10 @@ namespace rse.app.desk.rx.lite.UI
             // 
             this.resep_hTableAdapter.ClearBeforeFill = true;
             // 
+            // rMKLINIKTableAdapter
+            // 
+            this.rMKLINIKTableAdapter.ClearBeforeFill = true;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -455,6 +521,7 @@ namespace rse.app.desk.rx.lite.UI
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.LoadPanel.ResumeLayout(false);
             this.HeaderPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bsKlinik)).EndInit();
             this.BackgroudLoadPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -492,5 +559,10 @@ namespace rse.app.desk.rx.lite.UI
         private System.Windows.Forms.DataGridViewCheckBoxColumn btlockDataGridViewCheckBoxColumn;
         private System.Windows.Forms.Panel HeaderPanel;
         public Guna.UI2.WinForms.Guna2Panel LoadPanelChild;
+        private Guna.UI2.WinForms.Guna2HtmlLabel txtNamaDokter;
+        private System.Windows.Forms.BindingSource bsKlinik;
+        private dataset.yakkumdbTableAdapters.RMKLINIKTableAdapter rMKLINIKTableAdapter;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbKlinik;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
     }
 }

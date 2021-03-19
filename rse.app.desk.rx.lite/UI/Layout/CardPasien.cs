@@ -21,6 +21,8 @@ namespace rse.app.desk.rx.lite.UI.Layout
         private string _nama;
         private string _umur;
         private string _jk;
+        private string _penanggung;
+        private string _noantrian;
 
 
         [Category("Custom Prop")]
@@ -63,6 +65,20 @@ namespace rse.app.desk.rx.lite.UI.Layout
             }
         }
 
+        [Category("Custom Prop")]
+        public string Penanggung
+        {
+            get { return _penanggung; }
+            set { _penanggung = value; txtPenanggung.Text = value; }
+        }
+
+        [Category("Custom Prop")]
+        public string NoAntrian
+        {
+            get { return _noantrian; }
+            set { _noantrian = value; lblNoAntrian.Text = value; }
+        }
+
         private void CardPasien_MouseEnter(object sender, EventArgs e)
         {
             BackColor = Color.Bisque;
@@ -72,5 +88,7 @@ namespace rse.app.desk.rx.lite.UI.Layout
         {
             BackColor = Color.SeaShell;
         }
+
+        
     }
 }
