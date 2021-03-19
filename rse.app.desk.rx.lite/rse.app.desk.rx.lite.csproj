@@ -133,6 +133,12 @@
       <DependentUpon>yakkumdb.xsd</DependentUpon>
     </Compile>
     <Compile Include="Function\SimpleAES.cs" />
+    <Compile Include="UI\AddData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AddData.Designer.cs">
+      <DependentUpon>AddData.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Diagnosis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,10 +195,10 @@
     <Compile Include="UI\MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\obat.cs">
+    <Compile Include="UI\Layout\obat.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\obat.Designer.cs">
+    <Compile Include="UI\Layout\obat.Designer.cs">
       <DependentUpon>obat.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Pilihan.cs">
@@ -207,6 +213,9 @@
     <Compile Include="UI\Racikan.Designer.cs">
       <DependentUpon>Racikan.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\AddData.resx">
+      <DependentUpon>AddData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Diagnosis.resx">
       <DependentUpon>Diagnosis.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,7 +253,7 @@
     <EmbeddedResource Include="UI\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\obat.resx">
+    <EmbeddedResource Include="UI\Layout\obat.resx">
       <DependentUpon>obat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Pilihan.resx">
