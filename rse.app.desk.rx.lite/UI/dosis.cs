@@ -110,15 +110,12 @@ namespace rse.app.desk.rx.lite.UI
                     lblSatuan.Text,
                     Obat.Text,
                     cmbSatuanDosis.Text
-
                     );
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
 
         }
-
-
 
         private void favCheckBox_CheckedChanged(object sender, EventArgs e)
         {

@@ -53,13 +53,13 @@ namespace rse.app.desk.rx.lite.UI.Layout
                 switch (_jk)
                 {
                     case "L":
-                        pbJenisKelamin.Image = Properties.Resources.pharmacist_male;
+                        pbJenisKelamin.Image = Properties.Resources.pharmacist_male_128;
                         break;
                     case "P":
-                        pbJenisKelamin.Image = Properties.Resources.pharmacist_female;
+                        pbJenisKelamin.Image = Properties.Resources.pharmacist_female_128;
                         break;
                     default:
-                        pbJenisKelamin.Image = Properties.Resources.image_search;
+                        //pbJenisKelamin.Image = Properties.Resources.image_search;
                         break;
                 }
 

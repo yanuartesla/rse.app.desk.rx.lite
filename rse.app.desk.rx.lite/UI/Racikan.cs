@@ -165,7 +165,6 @@ namespace rse.app.desk.rx.lite.UI
                            dgvRacik.Rows[i].Cells[3].Value.ToString()
                         );
 
-
                     }
 
                 }

@@ -124,6 +124,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dataset\rmdb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rmdb.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dataset\yakkumdb.cs">
       <DependentUpon>yakkumdb.xsd</DependentUpon>
     </Compile>
@@ -132,7 +137,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>yakkumdb.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Function\MultiLineAutoCompleteTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Function\SearchContainTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Function\SimpleAES.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UI\AddData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +193,12 @@
     <Compile Include="UI\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Layout\CardHistoriPasien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Layout\CardHistoriPasien.Designer.cs">
+      <DependentUpon>CardHistoriPasien.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Layout\CardPasien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -207,11 +229,23 @@
     <Compile Include="UI\Pilihan.Designer.cs">
       <DependentUpon>Pilihan.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Pin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Pin.Designer.cs">
+      <DependentUpon>Pin.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Racikan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Racikan.Designer.cs">
       <DependentUpon>Racikan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Template.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Template.Designer.cs">
+      <DependentUpon>Template.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="UI\AddData.resx">
       <DependentUpon>AddData.cs</DependentUpon>
@@ -230,19 +264,17 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="UI\Expertise.resx">
       <DependentUpon>Expertise.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Layout\CardHistoriPasien.resx">
+      <DependentUpon>CardHistoriPasien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Layout\CardPasien.resx">
       <DependentUpon>CardPasien.cs</DependentUpon>
@@ -259,9 +291,26 @@
     <EmbeddedResource Include="UI\Pilihan.resx">
       <DependentUpon>Pilihan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Pin.resx">
+      <DependentUpon>Pin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Racikan.resx">
       <DependentUpon>Racikan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Template.resx">
+      <DependentUpon>Template.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="dataset\rmdb.xsc">
+      <DependentUpon>rmdb.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\rmdb.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>rmdb.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dataset\rmdb.xss">
+      <DependentUpon>rmdb.xsd</DependentUpon>
+    </None>
     <None Include="dataset\yakkumdb.xsc">
       <DependentUpon>yakkumdb.xsd</DependentUpon>
     </None>
@@ -344,6 +393,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="prescription.ico" />
+    <None Include="Resources\pharmacist_female_128.png" />
+    <None Include="Resources\pharmacist_male_128.png" />
+    <None Include="Resources\pharmacist_female_64.png" />
+    <None Include="Resources\pharmacist_male_64.png" />
+    <None Include="Resources\close %281%29.png" />
+    <None Include="Resources\x-mark %283%29.png" />
+    <None Include="Resources\add-file.png" />
     <None Include="Resources\13262.png" />
     <None Include="Resources\20944575-[Converted].jpg" />
     <None Include="Resources\tinywomenwith-resep.jpg" />

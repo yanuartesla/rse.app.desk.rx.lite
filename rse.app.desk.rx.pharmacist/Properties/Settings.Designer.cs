@@ -12,7 +12,7 @@ namespace rse.app.desk.rx.pharmacist.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.5.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,22 +26,22 @@ namespace rse.app.desk.rx.pharmacist.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.10.1;Initial Catalog=yakkumdatabase;Persist Security Info=Tru" +
-            "e;User ID=sa;Password=z@q12wsx")]
-        public string yakkumdatabaseConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.10.1;Initial Catalog=rm;Persist Security Info=True;User ID=sa" +
+            ";Password=z@q12wsx")]
+        public string rmConnectionString {
             get {
-                return ((string)(this["yakkumdatabaseConnectionString"]));
+                return ((string)(this["rmConnectionString"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.10.1;Initial Catalog=rm;Persist Security Info=True;User ID=sa" +
-            ";Password=z@q12wsx")]
-        public string rmConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.10.41;Initial Catalog=yakkumdatabase;Persist Security Info=Tr" +
+            "ue;User ID=sa;Password=z@q12wsx")]
+        public string yakkumdatabaseConnectionString {
             get {
-                return ((string)(this["rmConnectionString"]));
+                return ((string)(this["yakkumdatabaseConnectionString"]));
             }
         }
     }

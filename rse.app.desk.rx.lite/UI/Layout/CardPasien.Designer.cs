@@ -31,32 +31,19 @@ namespace rse.app.desk.rx.lite.UI.Layout
         {
             this.components = new System.ComponentModel.Container();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.pbJenisKelamin = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblNoRM = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblNama = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblUmur = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtPenanggung = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblNoAntrian = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblKaryawan = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pbJenisKelamin = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbJenisKelamin)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.TargetControl = this;
-            // 
-            // pbJenisKelamin
-            // 
-            this.pbJenisKelamin.BackColor = System.Drawing.Color.RosyBrown;
-            this.pbJenisKelamin.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pbJenisKelamin.Image = global::rse.app.desk.rx.lite.Properties.Resources.pharmacist_female;
-            this.pbJenisKelamin.Location = new System.Drawing.Point(0, 0);
-            this.pbJenisKelamin.Name = "pbJenisKelamin";
-            this.pbJenisKelamin.ShadowDecoration.Parent = this.pbJenisKelamin;
-            this.pbJenisKelamin.Size = new System.Drawing.Size(102, 76);
-            this.pbJenisKelamin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbJenisKelamin.TabIndex = 0;
-            this.pbJenisKelamin.TabStop = false;
             // 
             // lblNoRM
             // 
@@ -101,9 +88,9 @@ namespace rse.app.desk.rx.lite.UI.Layout
             this.txtPenanggung.BackColor = System.Drawing.Color.Transparent;
             this.txtPenanggung.Enabled = false;
             this.txtPenanggung.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPenanggung.Location = new System.Drawing.Point(270, 53);
+            this.txtPenanggung.Location = new System.Drawing.Point(168, 53);
             this.txtPenanggung.Name = "txtPenanggung";
-            this.txtPenanggung.Size = new System.Drawing.Size(157, 19);
+            this.txtPenanggung.Size = new System.Drawing.Size(259, 19);
             this.txtPenanggung.TabIndex = 4;
             this.txtPenanggung.Text = "Penanggung";
             this.txtPenanggung.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -114,7 +101,7 @@ namespace rse.app.desk.rx.lite.UI.Layout
             this.lblNoAntrian.BackColor = System.Drawing.Color.Transparent;
             this.lblNoAntrian.Enabled = false;
             this.lblNoAntrian.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoAntrian.Location = new System.Drawing.Point(356, 25);
+            this.lblNoAntrian.Location = new System.Drawing.Point(356, 22);
             this.lblNoAntrian.Name = "lblNoAntrian";
             this.lblNoAntrian.Size = new System.Drawing.Size(72, 30);
             this.lblNoAntrian.TabIndex = 5;
@@ -131,10 +118,23 @@ namespace rse.app.desk.rx.lite.UI.Layout
             this.lblKaryawan.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKaryawan.Location = new System.Drawing.Point(318, 4);
             this.lblKaryawan.Name = "lblKaryawan";
-            this.lblKaryawan.Size = new System.Drawing.Size(107, 23);
+            this.lblKaryawan.Size = new System.Drawing.Size(107, 24);
             this.lblKaryawan.TabIndex = 6;
             this.lblKaryawan.Text = "Karyawan";
             this.lblKaryawan.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pbJenisKelamin
+            // 
+            this.pbJenisKelamin.BackColor = System.Drawing.Color.RosyBrown;
+            this.pbJenisKelamin.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pbJenisKelamin.Image = global::rse.app.desk.rx.lite.Properties.Resources.pharmacist_female_128;
+            this.pbJenisKelamin.Location = new System.Drawing.Point(0, 0);
+            this.pbJenisKelamin.Name = "pbJenisKelamin";
+            this.pbJenisKelamin.ShadowDecoration.Parent = this.pbJenisKelamin;
+            this.pbJenisKelamin.Size = new System.Drawing.Size(102, 76);
+            this.pbJenisKelamin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbJenisKelamin.TabIndex = 0;
+            this.pbJenisKelamin.TabStop = false;
             // 
             // CardPasien
             // 

@@ -61,7 +61,6 @@ namespace rse.app.desk.rx.lite.UI
             this.bsPasien = new System.Windows.Forms.BindingSource(this.components);
             this.rMKLINIKTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.RMKLINIKTableAdapter();
             this.fa_rx_userTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.fa_rx_userTableAdapter();
-            this.fa_rx_racikanTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.fa_rx_racikanTableAdapter();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -427,10 +426,6 @@ namespace rse.app.desk.rx.lite.UI
             // 
             this.fa_rx_userTableAdapter.ClearBeforeFill = true;
             // 
-            // fa_rx_racikanTableAdapter
-            // 
-            this.fa_rx_racikanTableAdapter.ClearBeforeFill = true;
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -498,6 +493,5 @@ namespace rse.app.desk.rx.lite.UI
         private System.Windows.Forms.BindingSource bsUser;
         private dataset.yakkumdbTableAdapters.RMKLINIKTableAdapter rMKLINIKTableAdapter;
         private dataset.yakkumdbTableAdapters.fa_rx_userTableAdapter fa_rx_userTableAdapter;
-        private dataset.yakkumdbTableAdapters.fa_rx_racikanTableAdapter fa_rx_racikanTableAdapter;
     }
 }

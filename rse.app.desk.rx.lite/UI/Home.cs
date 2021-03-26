@@ -16,11 +16,13 @@ namespace rse.app.desk.rx.lite.UI
 {
     public partial class Home : Form
     {
-        private MainMenu _mainMenu = new MainMenu();
+        //private MainMenu _mainMenu = new MainMenu();
         public string _kodeDokter { get; set; }
         public string _kodeKlinik { get; set; }
-        //private roles _currentroles { get; set; }
 
+
+        //private roles _currentroles { get; set; }
+        
         public Home(string KodeKlinik, string KodeDokter)
         {
             InitializeComponent();
@@ -70,6 +72,7 @@ namespace rse.app.desk.rx.lite.UI
         {
             UserControl us = (UserControl)sender;
             var _filter = us.Tag.ToString();
+            
 
             AddData ef = new AddData(_filter,_kodeKlinik,_kodeDokter) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.Controls.Clear();
@@ -81,7 +84,7 @@ namespace rse.app.desk.rx.lite.UI
         private void Home_Load(object sender, EventArgs e)
         {
             this.fa_rx_userTableAdapter.FillByNid(this.yakkumdb.fa_rx_user,_kodeDokter);
-            this.rMKLINIKTableAdapter.Fill(this.yakkumdb.RMKLINIK);
+            //this.rMKLINIKTableAdapter.Fill(this.yakkumdb.RMKLINIK);
 
             populatePasien();
         }
@@ -111,24 +114,24 @@ namespace rse.app.desk.rx.lite.UI
             //populatePasien();
         }
 
-        private void SetLoading(bool displayLoader)
-        {
-            if (displayLoader)
-            {
-                this.Invoke((MethodInvoker)delegate
-                {
-                    //picLoader.Visible = true;
-                    this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-                });
-            }
-            else
-            {
-                this.Invoke((MethodInvoker)delegate
-                {
-                   // picLoader.Visible = false;
-                    this.Cursor = System.Windows.Forms.Cursors.Default;
-                });
-            }
-        }
+        //private void SetLoading(bool displayLoader)
+        //{
+        //    if (displayLoader)
+        //    {
+        //        this.Invoke((MethodInvoker)delegate
+        //        {
+        //            //picLoader.Visible = true;
+        //            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+        //        });
+        //    }
+        //    else
+        //    {
+        //        this.Invoke((MethodInvoker)delegate
+        //        {
+        //           // picLoader.Visible = false;
+        //            this.Cursor = System.Windows.Forms.Cursors.Default;
+        //        });
+        //    }
+        //}
     }
 }

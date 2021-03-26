@@ -4,6 +4,7 @@ using System.Windows.Forms;
 
 namespace rse.app.desk.rx.lite
 {
+    
     static class Program
     {
         /// <summary>
@@ -12,9 +13,12 @@ namespace rse.app.desk.rx.lite
         [STAThread]
         static void Main()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UI.Home("0200","0201"));
+            //Application.Run(new UI.Home("0200","0201"));
+            Application.Run(new UI.Login());
+            //Application.Run(new UI.MainMenu("0201"));
         }
     }
 }

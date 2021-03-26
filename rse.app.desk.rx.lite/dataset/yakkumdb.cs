@@ -4,6 +4,10 @@
 
     partial class yakkumdb
     {
+        partial class fa_rx_templateDataTable
+        {
+        }
+
         partial class PasienDataTable
         {
         }

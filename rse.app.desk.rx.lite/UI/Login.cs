@@ -1,5 +1,8 @@
 ﻿using rse.app.desk.rx.lite.Fungtion;
 using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace rse.app.desk.rx.lite.UI
@@ -18,6 +21,7 @@ namespace rse.app.desk.rx.lite.UI
             InitializeComponent();
             this.txtPass.KeyDown += txtPass_KeyDown;
             this.txtUser.KeyDown += txtUser_KeyDown;
+            loadUser();
         }
         public roles UserRole { get; set; }
 
@@ -27,13 +31,43 @@ namespace rse.app.desk.rx.lite.UI
             Application.Exit();
         }
 
+        private void loadUser()
+        {
+            List<string> _user = new List<string>();
+            SqlDataReader dReader;
+            SqlConnection conn = new SqlConnection();
+
+            conn.ConnectionString = rse.app.desk.rx.lite.Properties.Settings.Default.yakkumdatabaseConnectionString;
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText =
+            "Select  d.vc_nama_kry from [yakkumdatabase].[dbo].[fa_rx_user] u , [yakkumdatabase].[dbo].SDMDOKTER d where d.vc_nid = u.vc_nid";
+
+            conn.Open();
+            dReader = cmd.ExecuteReader();
+            if (dReader.HasRows == true)
+            {
+                while (dReader.Read())
+                    _user.Add(dReader["vc_nama_kry"].ToString());
+            }
+            else
+            {
+                MessageBox.Show("Data not found");
+            }
+
+            dReader.Close();
+            conn.Close();
+
+            txtUserSearch.Values = _user.ToArray();
+        }
         private void DoLogin()
         {
             SimpleAES enc = new SimpleAES();
             dataset.yakkumdbTableAdapters.fa_rx_userTableAdapter ta = new dataset.yakkumdbTableAdapters.fa_rx_userTableAdapter();
             dataset.yakkumdb.fa_rx_userDataTable dt = new dataset.yakkumdb.fa_rx_userDataTable();
 
-            var rv = ta.FillByUser(dt, this.txtUser.Text);
+            var rv = ta.FillByNama(dt, this.txtUserSearch.Text);
             //string passwd = ta.GetPasswd(this.textBoxUser.Text);
             if (dt.Rows.Count == 0)
             {
@@ -68,8 +102,10 @@ namespace rse.app.desk.rx.lite.UI
                     //_usernik = nik;
                     //this.userNIK = nik;
                     this.Hide();
-                    Eprescribe ep = new Eprescribe(nid,UserRole);
-                    ep.ShowDialog();
+                    //Eprescribe ep = new Eprescribe(nid,UserRole);
+                    //ep.ShowDialog();
+                    MainMenu mm = new MainMenu(nid);
+                    mm.ShowDialog();
                 }
                 else
                 {
@@ -109,6 +145,38 @@ namespace rse.app.desk.rx.lite.UI
         {
             SimpleAES enc = new SimpleAES();
             txtdecrpit.Text = enc.DecryptString(txtpassstring.Text);
+        }
+
+        private void txtUserSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.txtPass.Clear();
+                this.txtPass.Focus();
+            }
+        }
+
+        private void cbSaveLogin_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbSaveLogin.Checked)
+            {
+                //MessageBox.Show(this.txtUserSearch.Text);
+                Properties.Settings.Default.strUser = this.txtUserSearch.Text;
+                Properties.Settings.Default.Save();
+                Properties.Settings.Default.strPass = this.txtPass.Text;
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            this.txtUserSearch.Text = Properties.Settings.Default.strUser;
+            this.txtPass.Text = Properties.Settings.Default.strPass;
+        }
+
+        private void txtUserSearch_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtUserSearch.Clear();
         }
     }
 }
