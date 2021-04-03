@@ -34,7 +34,7 @@ namespace rse.app.desk.rx.lite.UI
 
         private void txtCariObat_Load(object sender, EventArgs e)
         {
-
+            LoadTemplateRacikan();
             this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep, lblKodeRtx.Text);
             bs_view_resep.Filter = "vc_kode_rx = '" + lblKodeRtx.Text + "'";
 
@@ -52,6 +52,7 @@ namespace rse.app.desk.rx.lite.UI
                " or vc_namaobat like '%corset%'" +
                 "or vc_namaobat like '%Neck Collar%'" +
                " or vc_namaobat like '%kruk%'" +
+               " or vc_namaobat like '%JARUM HUMULIN UNGU%'" +
             " order by [vc_namaobat] asc";
             conn.Open();
             dReader = cmd.ExecuteReader();
@@ -128,16 +129,7 @@ namespace rse.app.desk.rx.lite.UI
 
             }
         }
-        private void txtCariObat_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
+     
         private void dgvResep_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -268,5 +260,27 @@ namespace rse.app.desk.rx.lite.UI
                 e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
             }
         }
+
+        private void LoadTemplateRacikan()
+        {
+            var dh = new dataset.yakkumdbTableAdapters.fa_rx_template_racikanTableAdapter();
+            dh.FillByDist(yakkumdb.fa_rx_template_racikan, "0106");
+            DataTable dt = dh.GetDataByDist("0106");
+
+            foreach (DataRow r in dt.Rows)
+            {
+                //MessageBox.Show(r["nama_template"].ToString());
+                Guna.UI2.WinForms.Guna2Button button = new Guna.UI2.WinForms.Guna2Button();
+                button.Tag = r["nama_template"].ToString();
+                button.Text = r["nama_template"].ToString();
+                button.AutoRoundedCorners = true;
+                button.AutoSize = true;
+                flptemRacikan.Controls.Add(button);
+                //button.Click += button_MouseCliked;
+            }
+
+        }
+
+        
     }
 }

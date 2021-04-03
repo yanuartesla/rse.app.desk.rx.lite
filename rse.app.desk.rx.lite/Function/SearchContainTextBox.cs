@@ -25,6 +25,7 @@ namespace rse.app.desk.rx.lite.Function
             _listBox = new ListBox();
             KeyDown += this_KeyDown;
             KeyUp += this_KeyUp;
+            _listBox.MouseClick += this_MouseDown;
         }
 
         private void ShowListBox()
@@ -54,6 +55,22 @@ namespace rse.app.desk.rx.lite.Function
             UpdateListBox();
         }
 
+        private void this_MouseDown(object sender, MouseEventArgs e)
+        {
+            switch (e.Button)
+            {
+                case MouseButtons.Left:
+                    if (_listBox.Visible)
+                    {
+                        Text = Text.Remove(_prevBreak == 0 ? 0 : _prevBreak + 1, _prevBreak == 0 ? _wordLen + 1 : _wordLen);
+                        Text = Text.Insert(_prevBreak == 0 ? 0 : _prevBreak + 1, _listBox.SelectedItem.ToString());
+                        ResetListBox();
+                        _formerValue = Text;
+                        Select(Text.Length, 0);
+                    }
+                    break;
+            }
+        }
         private void this_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)

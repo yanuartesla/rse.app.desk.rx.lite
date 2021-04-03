@@ -393,6 +393,8 @@ namespace rse.app.desk.rx.lite.dataset {
             
             private global::System.Data.DataColumn columnPenatalaksana;
             
+            private global::System.Data.DataColumn columnbb;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public RJ_cpptDataTable() {
@@ -604,6 +606,14 @@ namespace rse.app.desk.rx.lite.dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn bbColumn {
+                get {
+                    return this.columnbb;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -660,7 +670,8 @@ namespace rse.app.desk.rx.lite.dataset {
                         System.DateTime Tanggal, 
                         string Subyektif, 
                         string Obyektif, 
-                        string Penatalaksana) {
+                        string Penatalaksana, 
+                        string bb) {
                 RJ_cpptRow rowRJ_cpptRow = ((RJ_cpptRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -684,7 +695,8 @@ namespace rse.app.desk.rx.lite.dataset {
                         Tanggal,
                         Subyektif,
                         Obyektif,
-                        Penatalaksana};
+                        Penatalaksana,
+                        bb};
                 rowRJ_cpptRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRJ_cpptRow);
                 return rowRJ_cpptRow;
@@ -729,6 +741,7 @@ namespace rse.app.desk.rx.lite.dataset {
                 this.columnSubyektif = base.Columns["Subyektif"];
                 this.columnObyektif = base.Columns["Obyektif"];
                 this.columnPenatalaksana = base.Columns["Penatalaksana"];
+                this.columnbb = base.Columns["bb"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -778,6 +791,8 @@ namespace rse.app.desk.rx.lite.dataset {
                 base.Columns.Add(this.columnObyektif);
                 this.columnPenatalaksana = new global::System.Data.DataColumn("Penatalaksana", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPenatalaksana);
+                this.columnbb = new global::System.Data.DataColumn("bb", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbb);
                 this.columnid.AutoIncrement = true;
                 this.columnid.AutoIncrementSeed = -1;
                 this.columnid.AutoIncrementStep = -1;
@@ -805,6 +820,7 @@ namespace rse.app.desk.rx.lite.dataset {
                 this.columnObyektif.MaxLength = 2147483647;
                 this.columnPenatalaksana.ReadOnly = true;
                 this.columnPenatalaksana.MaxLength = 62;
+                this.columnbb.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1963,6 +1979,22 @@ namespace rse.app.desk.rx.lite.dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string bb {
+                get {
+                    try {
+                        return ((string)(this[this.tableRJ_cppt.bbColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'bb\' in table \'RJ_cppt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRJ_cppt.bbColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isno_regjNull() {
                 return this.IsNull(this.tableRJ_cppt.no_regjColumn);
             }
@@ -2211,6 +2243,18 @@ namespace rse.app.desk.rx.lite.dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPenatalaksanaNull() {
                 this[this.tableRJ_cppt.PenatalaksanaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsbbNull() {
+                return this.IsNull(this.tableRJ_cppt.bbColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetbbNull() {
+                this[this.tableRJ_cppt.bbColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2823,10 +2867,11 @@ namespace rse.app.desk.rx.lite.dataset.rmdbTableAdapters {
             tableMapping.ColumnMappings.Add("Subyektif", "Subyektif");
             tableMapping.ColumnMappings.Add("Obyektif", "Obyektif");
             tableMapping.ColumnMappings.Add("Penatalaksana", "Penatalaksana");
+            tableMapping.ColumnMappings.Add("bb", "bb");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [RJ_cppt] ([no_regj], [nik], [no_rm], [tgl_pelayanan], [jam], [klinik], [dokter], [tensi], [nadi], [suhu], [pernapasan], [saturasi], [riwayat_penyakit], [keluhan], [catatan], [petugas], [profesi]) VALUES (@no_regj, @nik, @no_rm, @tgl_pelayanan, @jam, @klinik, @dokter, @tensi, @nadi, @suhu, @pernapasan, @saturasi, @riwayat_penyakit, @keluhan, @catatan, @petugas, @profesi)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [RJ_cppt] ([no_regj], [nik], [no_rm], [tgl_pelayanan], [jam], [klinik], [dokter], [tensi], [nadi], [suhu], [pernapasan], [saturasi], [riwayat_penyakit], [keluhan], [catatan], [petugas], [profesi], [bb]) VALUES (@no_regj, @nik, @no_rm, @tgl_pelayanan, @jam, @klinik, @dokter, @tensi, @nadi, @suhu, @pernapasan, @saturasi, @riwayat_penyakit, @keluhan, @catatan, @petugas, @profesi, @bb)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@no_regj", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "no_regj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nik", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2845,6 +2890,7 @@ namespace rse.app.desk.rx.lite.dataset.rmdbTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@catatan", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "catatan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@petugas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "petugas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@profesi", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "profesi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bb", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bb", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2857,59 +2903,60 @@ namespace rse.app.desk.rx.lite.dataset.rmdbTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        id, no_regj, nik, no_rm, tgl_pelayanan, jam, klinik, dokter, tensi, nadi, suhu, pernapasan, saturasi, riwayat_penyakit, keluhan, catatan, petugas, profesi, 
-Cast(tgl_pelayanan as datetime) + cast(jam as datetime) AS Tanggal
-	, 'Keluhan : ' + CHAR(13) + CHAR(10) +cast(keluhan as varchar(max)) AS Subyektif
-	, 'Tensi : ' + tensi + ' mmHg'+CHAR(13) + CHAR(10) 
-	+ 'Nadi : ' + nadi +' x/mnt' +CHAR(13) + CHAR(10) 
-	+ 'Suhu : ' + suhu + char(176)+'C'+CHAR(13)  + CHAR(10) 
-	+ 'Pernapasan : ' + pernapasan +' x/mnt'+CHAR(13) + CHAR(10) 
-	+ 'Saturasi : ' + saturasi +' %'+CHAR(13) + CHAR(10) 
-	+ 'Riwayat Penyakit : ' + Cast(riwayat_penyakit as varchar(Max))
-	AS Obyektif
-	, [profesi] + +CHAR(13) + CHAR(10) + petugas as Penatalaksana
+            this._commandCollection[0].CommandText = @"SELECT        id, no_regj, nik, no_rm, tgl_pelayanan, jam, klinik, dokter, tensi, nadi, suhu, pernapasan, saturasi, riwayat_penyakit, keluhan, catatan, petugas, profesi, CAST(tgl_pelayanan AS datetime) + CAST(jam AS datetime) AS Tanggal, 
+                         'Keluhan : ' + CHAR(13) + CHAR(10) + CAST(keluhan AS varchar(MAX)) AS Subyektif, 'Tensi : ' + tensi + ' mmHg' + CHAR(13) + CHAR(10) + 'Nadi : ' + nadi + ' x/mnt' + CHAR(13) + CHAR(10) + 'Berat Badan : ' + bb + ' kg' + CHAR(13) 
+                         + CHAR(10) + 'Suhu : ' + suhu + CHAR(176) + 'C' + CHAR(13) + CHAR(10) + 'Pernapasan : ' + pernapasan + ' x/mnt' + CHAR(13) + CHAR(10) + 'Saturasi : ' + saturasi + ' %' + CHAR(13) + CHAR(10) 
+                         + 'Riwayat Penyakit : ' + CAST(riwayat_penyakit AS varchar(MAX)) AS Obyektif, profesi + + CHAR(13) + CHAR(10) + petugas AS Penatalaksana, bb
 FROM            RJ_cppt
-WHERE        (no_regj = @no_regj)
+WHERE        (no_regj = @noreg)
 ORDER BY tgl_pelayanan DESC, jam DESC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@no_regj", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "no_regj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@noreg", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "no_regj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"INSERT INTO [RJ_cppt] ([no_regj], [nik], [no_rm], [tgl_pelayanan], [jam], [klinik], [dokter], [tensi], [nadi], [suhu], [pernapasan], [saturasi], [riwayat_penyakit], [keluhan], [catatan], [petugas], [profesi]) VALUES (@no_regj, @nik, @no_rm, @tgl_pelayanan, @jam, @klinik, @dokter, @tensi, @nadi, @suhu, @pernapasan, @saturasi, @riwayat_penyakit, @keluhan, @catatan, @petugas, @profesi)";
+            this._commandCollection[1].CommandText = @"SELECT TOP (1) 'Tensi : ' + tensi + ' mmHg' + CHAR(13) + CHAR(10) + 'Nadi : ' + nadi + ' x/mnt' + CHAR(13) + CHAR(10) + 'Berat Badan : ' + bb + ' kg' + CHAR(13) + CHAR(10) + 'Suhu : ' + suhu + CHAR(176) + 'C' + CHAR(13) + CHAR(10) + 'Pernapasan : ' + pernapasan + ' x/mnt' + CHAR(13) + CHAR(10) + 'Saturasi : ' + saturasi + ' %' + CHAR(13) + CHAR(10) + 'Riwayat Penyakit : ' + CAST(riwayat_penyakit AS varchar(MAX)) AS Obyektif, profesi + + CHAR(13) + CHAR(10) + petugas AS Penatalaksana, 'Keluhan : ' + CHAR(13) + CHAR(10) + CAST(keluhan AS varchar(MAX)) AS Subyektif, CAST(tgl_pelayanan AS datetime) + CAST(jam AS datetime) AS Tanggal, bb, catatan, dokter, id, jam, keluhan, klinik, nadi, nik, no_regj, no_rm, pernapasan, petugas, profesi, riwayat_penyakit, saturasi, suhu, tensi, tgl_pelayanan FROM RJ_cppt WHERE (no_regj = @noreg) AND (profesi = 'DOKTER') ORDER BY id DESC, tgl_pelayanan DESC, jam DESC";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@no_regj", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "no_regj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nik", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@no_rm", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "no_rm", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tgl_pelayanan", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "tgl_pelayanan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@jam", global::System.Data.SqlDbType.Time, 5, global::System.Data.ParameterDirection.Input, 0, 0, "jam", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@klinik", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "klinik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dokter", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "dokter", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tensi", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "tensi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nadi", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "nadi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@suhu", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "suhu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pernapasan", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "pernapasan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@saturasi", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "saturasi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@riwayat_penyakit", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "riwayat_penyakit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@keluhan", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "keluhan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@catatan", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "catatan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@petugas", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "petugas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@profesi", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "profesi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@noreg", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "no_regj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"INSERT INTO RJ_cppt
+                         (no_regj, nik, no_rm, tgl_pelayanan, jam, klinik, dokter, tensi, nadi, suhu, pernapasan, saturasi, riwayat_penyakit, keluhan, catatan, petugas, profesi, bb)
+VALUES        (@no_regj,@nik,@no_rm,@tgl_pelayanan,@jam,@klinik,@dokter,@tensi,@nadi,@suhu,@pernapasan,@saturasi,@riwayat_penyakit,@keluhan,@catatan,@petugas,@profesi,@bb)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@no_regj", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "no_regj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nik", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@no_rm", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "no_rm", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tgl_pelayanan", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "tgl_pelayanan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@jam", global::System.Data.SqlDbType.Time, 5, global::System.Data.ParameterDirection.Input, 0, 0, "jam", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@klinik", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "klinik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dokter", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "dokter", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tensi", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "tensi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nadi", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "nadi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@suhu", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "suhu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pernapasan", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "pernapasan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@saturasi", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "saturasi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@riwayat_penyakit", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "riwayat_penyakit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@keluhan", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "keluhan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@catatan", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "catatan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@petugas", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "petugas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@profesi", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "profesi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bb", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "bb", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(rmdb.RJ_cpptDataTable dataTable, string no_regj) {
+        public virtual int Fill(rmdb.RJ_cpptDataTable dataTable, string noreg) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((no_regj == null)) {
+            if ((noreg == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(no_regj));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(noreg));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2922,13 +2969,49 @@ ORDER BY tgl_pelayanan DESC, jam DESC";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual rmdb.RJ_cpptDataTable GetData(string no_regj) {
+        public virtual rmdb.RJ_cpptDataTable GetData(string noreg) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((no_regj == null)) {
+            if ((noreg == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(no_regj));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(noreg));
+            }
+            rmdb.RJ_cpptDataTable dataTable = new rmdb.RJ_cpptDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByTop1Dokter(rmdb.RJ_cpptDataTable dataTable, string noreg) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((noreg == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(noreg));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual rmdb.RJ_cpptDataTable GetDataByTop1Dokter(string noreg) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((noreg == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(noreg));
             }
             rmdb.RJ_cpptDataTable dataTable = new rmdb.RJ_cpptDataTable();
             this.Adapter.Fill(dataTable);
@@ -2985,7 +3068,8 @@ ORDER BY tgl_pelayanan DESC, jam DESC";
                     string keluhan, 
                     string catatan, 
                     string petugas, 
-                    string profesi) {
+                    string profesi, 
+                    string bb) {
             if ((no_regj == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -3088,6 +3172,12 @@ ORDER BY tgl_pelayanan DESC, jam DESC";
             else {
                 this.Adapter.InsertCommand.Parameters[16].Value = ((string)(profesi));
             }
+            if ((bb == null)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(bb));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3125,8 +3215,9 @@ ORDER BY tgl_pelayanan DESC, jam DESC";
                     string keluhan, 
                     string catatan, 
                     string petugas, 
-                    string profesi) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+                    string profesi, 
+                    string bb) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((no_regj == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -3228,6 +3319,12 @@ ORDER BY tgl_pelayanan DESC, jam DESC";
             }
             else {
                 command.Parameters[16].Value = ((string)(profesi));
+            }
+            if ((bb == null)) {
+                command.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[17].Value = ((string)(bb));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

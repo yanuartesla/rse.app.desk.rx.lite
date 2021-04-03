@@ -61,6 +61,8 @@ namespace rse.app.desk.rx.lite.UI
             this.bsPasien = new System.Windows.Forms.BindingSource(this.components);
             this.rMKLINIKTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.RMKLINIKTableAdapter();
             this.fa_rx_userTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.fa_rx_userTableAdapter();
+            this.pasienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pasienTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.PasienTableAdapter();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -76,6 +78,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel3.SuspendLayout();
             this.SearchPasienPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsPasien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pasienBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -385,7 +388,7 @@ namespace rse.app.desk.rx.lite.UI
             this.txtCariPasien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCariPasien.Name = "txtCariPasien";
             this.txtCariPasien.PasswordChar = '\0';
-            this.txtCariPasien.PlaceholderText = "Cari Nama atau No. RM Pasien";
+            this.txtCariPasien.PlaceholderText = "Cari Nama atau No. RM Pasien (Pencarian sudah dapat di gunakan)";
             this.txtCariPasien.SelectedText = "";
             this.txtCariPasien.ShadowDecoration.Parent = this.txtCariPasien;
             this.txtCariPasien.Size = new System.Drawing.Size(892, 40);
@@ -426,6 +429,15 @@ namespace rse.app.desk.rx.lite.UI
             // 
             this.fa_rx_userTableAdapter.ClearBeforeFill = true;
             // 
+            // pasienBindingSource
+            // 
+            this.pasienBindingSource.DataMember = "Pasien";
+            this.pasienBindingSource.DataSource = this.bsPasien;
+            // 
+            // pasienTableAdapter
+            // 
+            this.pasienTableAdapter.ClearBeforeFill = true;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -456,6 +468,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel3.PerformLayout();
             this.SearchPasienPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bsPasien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pasienBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -493,5 +506,7 @@ namespace rse.app.desk.rx.lite.UI
         private System.Windows.Forms.BindingSource bsUser;
         private dataset.yakkumdbTableAdapters.RMKLINIKTableAdapter rMKLINIKTableAdapter;
         private dataset.yakkumdbTableAdapters.fa_rx_userTableAdapter fa_rx_userTableAdapter;
+        private System.Windows.Forms.BindingSource pasienBindingSource;
+        private dataset.yakkumdbTableAdapters.PasienTableAdapter pasienTableAdapter;
     }
 }

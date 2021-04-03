@@ -96,7 +96,7 @@ namespace rse.app.desk.rx.lite.UI
             this.NavBarpanel.Location = new System.Drawing.Point(0, 0);
             this.NavBarpanel.Name = "NavBarpanel";
             this.NavBarpanel.ShadowDecoration.Parent = this.NavBarpanel;
-            this.NavBarpanel.Size = new System.Drawing.Size(264, 720);
+            this.NavBarpanel.Size = new System.Drawing.Size(265, 720);
             this.NavBarpanel.TabIndex = 0;
             // 
             // guna2HtmlLabel1
@@ -118,7 +118,7 @@ namespace rse.app.desk.rx.lite.UI
             this.HistoryResepPanel.Location = new System.Drawing.Point(0, 220);
             this.HistoryResepPanel.Name = "HistoryResepPanel";
             this.HistoryResepPanel.Padding = new System.Windows.Forms.Padding(15, 50, 10, 50);
-            this.HistoryResepPanel.Size = new System.Drawing.Size(264, 500);
+            this.HistoryResepPanel.Size = new System.Drawing.Size(265, 500);
             this.HistoryResepPanel.TabIndex = 16;
             // 
             // guna2HtmlLabel4
@@ -142,7 +142,7 @@ namespace rse.app.desk.rx.lite.UI
             this.HistoryResepChildPanel.Name = "HistoryResepChildPanel";
             this.HistoryResepChildPanel.Padding = new System.Windows.Forms.Padding(5, 0, 5, 5);
             this.HistoryResepChildPanel.ShadowDecoration.Parent = this.HistoryResepChildPanel;
-            this.HistoryResepChildPanel.Size = new System.Drawing.Size(239, 400);
+            this.HistoryResepChildPanel.Size = new System.Drawing.Size(240, 400);
             this.HistoryResepChildPanel.TabIndex = 16;
             // 
             // flpHistoriPasien
@@ -153,7 +153,7 @@ namespace rse.app.desk.rx.lite.UI
             this.flpHistoriPasien.Location = new System.Drawing.Point(5, 55);
             this.flpHistoriPasien.Name = "flpHistoriPasien";
             this.flpHistoriPasien.Padding = new System.Windows.Forms.Padding(5);
-            this.flpHistoriPasien.Size = new System.Drawing.Size(229, 340);
+            this.flpHistoriPasien.Size = new System.Drawing.Size(230, 340);
             this.flpHistoriPasien.TabIndex = 3;
             this.flpHistoriPasien.MouseEnter += new System.EventHandler(this.flpHistoriPasien_MouseEnter);
             this.flpHistoriPasien.MouseLeave += new System.EventHandler(this.flpHistoriPasien_MouseLeave);
@@ -177,7 +177,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel1.Location = new System.Drawing.Point(5, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(229, 55);
+            this.guna2Panel1.Size = new System.Drawing.Size(230, 55);
             this.guna2Panel1.TabIndex = 2;
             // 
             // guna2HtmlLabel6
@@ -219,11 +219,11 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(162, 191);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(172, 192);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(84, 23);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(61, 23);
             this.guna2HtmlLabel3.TabIndex = 13;
-            this.guna2HtmlLabel3.Text = "Full Version";
+            this.guna2HtmlLabel3.Text = "e - CPPT";
             // 
             // guna2HtmlLabel2
             // 
@@ -250,7 +250,7 @@ namespace rse.app.desk.rx.lite.UI
             this.LoadPanel.Location = new System.Drawing.Point(10, 10);
             this.LoadPanel.Name = "LoadPanel";
             this.LoadPanel.ShadowDecoration.Parent = this.LoadPanel;
-            this.LoadPanel.Size = new System.Drawing.Size(996, 700);
+            this.LoadPanel.Size = new System.Drawing.Size(995, 700);
             this.LoadPanel.TabIndex = 0;
             // 
             // LoadPanelChild
@@ -262,7 +262,7 @@ namespace rse.app.desk.rx.lite.UI
             this.LoadPanelChild.Name = "LoadPanelChild";
             this.LoadPanelChild.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
             this.LoadPanelChild.ShadowDecoration.Parent = this.LoadPanelChild;
-            this.LoadPanelChild.Size = new System.Drawing.Size(996, 648);
+            this.LoadPanelChild.Size = new System.Drawing.Size(995, 648);
             this.LoadPanelChild.TabIndex = 2;
             this.LoadPanelChild.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.LoadPanelChild_ControlAdded);
             // 
@@ -275,7 +275,7 @@ namespace rse.app.desk.rx.lite.UI
             this.HeaderPanel.Location = new System.Drawing.Point(0, 0);
             this.HeaderPanel.Name = "HeaderPanel";
             this.HeaderPanel.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.HeaderPanel.Size = new System.Drawing.Size(996, 52);
+            this.HeaderPanel.Size = new System.Drawing.Size(995, 52);
             this.HeaderPanel.TabIndex = 1;
             // 
             // cmbKlinik
@@ -291,7 +291,7 @@ namespace rse.app.desk.rx.lite.UI
             this.cmbKlinik.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbKlinik.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbKlinik.FocusedState.Parent = this.cmbKlinik;
-            this.cmbKlinik.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.cmbKlinik.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbKlinik.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbKlinik.HoverState.Parent = this.cmbKlinik;
             this.cmbKlinik.ItemHeight = 30;
@@ -323,7 +323,7 @@ namespace rse.app.desk.rx.lite.UI
             this.txtNamaDokter.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNamaDokter.Location = new System.Drawing.Point(0, 0);
             this.txtNamaDokter.Name = "txtNamaDokter";
-            this.txtNamaDokter.Size = new System.Drawing.Size(918, 52);
+            this.txtNamaDokter.Size = new System.Drawing.Size(917, 52);
             this.txtNamaDokter.TabIndex = 1;
             this.txtNamaDokter.Text = "Loading . . .";
             this.txtNamaDokter.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -339,7 +339,7 @@ namespace rse.app.desk.rx.lite.UI
             this.btnClose.Image = global::rse.app.desk.rx.lite.Properties.Resources.x_mark__3_;
             this.btnClose.ImageRotate = 0F;
             this.btnClose.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnClose.Location = new System.Drawing.Point(918, 0);
+            this.btnClose.Location = new System.Drawing.Point(917, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.PressedState.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.PressedState.Image")));
             this.btnClose.PressedState.ImageSize = new System.Drawing.Size(32, 32);
@@ -362,11 +362,11 @@ namespace rse.app.desk.rx.lite.UI
             // 
             this.BackgroudLoadPanel.Controls.Add(this.LoadPanel);
             this.BackgroudLoadPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BackgroudLoadPanel.Location = new System.Drawing.Point(264, 0);
+            this.BackgroudLoadPanel.Location = new System.Drawing.Point(265, 0);
             this.BackgroudLoadPanel.Name = "BackgroudLoadPanel";
             this.BackgroudLoadPanel.Padding = new System.Windows.Forms.Padding(10);
             this.BackgroudLoadPanel.ShadowDecoration.Parent = this.BackgroudLoadPanel;
-            this.BackgroudLoadPanel.Size = new System.Drawing.Size(1016, 720);
+            this.BackgroudLoadPanel.Size = new System.Drawing.Size(1015, 720);
             this.BackgroudLoadPanel.TabIndex = 1;
             // 
             // guna2Elipse2
@@ -458,7 +458,6 @@ namespace rse.app.desk.rx.lite.UI
         private Guna.UI2.WinForms.Guna2ComboBox cmbKlinik;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private System.Windows.Forms.FlowLayoutPanel flpHistoriPasien;
-        private Layout.CardHistoriPasien cardHistoriPasien1;
         private System.Windows.Forms.BindingSource bsKlinik;
         private dataset.yakkumdbTableAdapters.RMKLINIKTableAdapter rMKLINIKTableAdapter;
         private System.Windows.Forms.BindingSource bsResepH;

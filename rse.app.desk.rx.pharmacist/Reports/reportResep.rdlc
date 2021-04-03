@@ -894,6 +894,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -904,6 +905,24 @@
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!no_urut_racikan.Value</Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontSize>7pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <Color>#333333</Color>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>. </Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontSize>7pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <Color>#333333</Color>
+                              </Style>
+                            </TextRun>
                             <TextRun>
                               <Value>=Fields!nama_obat_racikan.Value</Value>
                               <Style>
@@ -1169,11 +1188,7 @@
                       <KeepWithGroup>After</KeepWithGroup>
                     </TablixMember>
                     <TablixMember>
-                      <Group Name="nama_obat_racikan">
-                        <GroupExpressions>
-                          <GroupExpression>=Fields!nama_obat_racikan.Value</GroupExpression>
-                        </GroupExpressions>
-                      </Group>
+                      <Group Name="nama_obat_racikan" />
                       <SortExpressions>
                         <SortExpression>
                           <Value>=Fields!no_urut_racikan.Value</Value>
@@ -1292,14 +1307,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="vc_no_peserta_bpjs">
+                    <Textbox Name="vc_no_peserta">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!vc_no_peserta_bpjs.Value</Value>
+                              <Value>=Fields!vc_no_peserta.Value</Value>
                               <Style>
                                 <FontFamily>Segoe UI</FontFamily>
                                 <FontSize>7pt</FontSize>
@@ -1309,7 +1324,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>vc_no_peserta_bpjs</rd:DefaultName>
+                      <rd:DefaultName>vc_no_peserta</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2175,6 +2190,28 @@
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
+                            <TextRun>
+                              <Value>tgl berlaku rujukan: </Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontSize>7pt</FontSize>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>=Fields!dt_tgl_rujukan.Value</Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontSize>7pt</FontSize>
+                                <Format>dd-MM-yyyy</Format>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value> . catatan : </Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontSize>7pt</FontSize>
+                              </Style>
+                            </TextRun>
                             <TextRun>
                               <Value>=Fields!vc_catatan.Value</Value>
                               <Style>
@@ -3712,9 +3749,45 @@
           <rd:DefaultName>Textbox138</rd:DefaultName>
           <Top>0.11452cm</Top>
           <Left>8.67834cm</Left>
-          <Height>1.32883cm</Height>
+          <Height>0.85258cm</Height>
           <Width>3.9952cm</Width>
           <ZIndex>5</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox139">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Label>Penanggung</Label>
+                  <Value>=First(Fields!vc_n_png.Value, "dsPasien")</Value>
+                  <Style>
+                    <FontFamily>Segoe UI Light</FontFamily>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox138</rd:DefaultName>
+          <Top>1.10821cm</Top>
+          <Left>7.1173cm</Left>
+          <Height>0.50272cm</Height>
+          <Width>5.93548cm</Width>
+          <ZIndex>6</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -4107,6 +4180,14 @@
         </Field>
         <Field Name="vc_no_peserta_bpjs">
           <DataField>vc_no_peserta_bpjs</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="dt_tgl_rujukan">
+          <DataField>dt_tgl_rujukan</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="vc_n_png">
+          <DataField>vc_n_png</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

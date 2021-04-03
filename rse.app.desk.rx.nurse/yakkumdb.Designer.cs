@@ -3072,10 +3072,11 @@ namespace rse.app.desk.rx.nurse.yakkumdbTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT DISTINCT 
-                         fa_rx_resep_h.vc_kode_rx, fa_rx_resep_h.vc_no_rm, fa_rx_resep_h.int_k_status, BPJS_RSE_mapping_poli.vc_kode_poli_bpjs, BPJS_SEP.vc_nama_Peserta, BPJS_SEP.vc_no_sep, fa_rx_resep_h.vc_k_klinik, 
-                         SDMDOKTER.vc_nama_kry AS dokter, SDMDOKTER.vc_nid
+                         fa_rx_resep_h.vc_kode_rx, fa_rx_resep_h.vc_no_rm, fa_rx_resep_h.int_k_status, BPJS_RSE_mapping_poli.vc_kode_poli_bpjs, BPJS_SEP.vc_no_sep, fa_rx_resep_h.vc_k_klinik, SDMDOKTER.vc_nama_kry AS dokter, 
+                         SDMDOKTER.vc_nid, RMPasien.vc_nama_p AS vc_nama_Peserta
 FROM            fa_rx_resep_h INNER JOIN
-                         SDMDOKTER ON fa_rx_resep_h.vc_k_dokter = SDMDOKTER.vc_nid LEFT OUTER JOIN
+                         SDMDOKTER ON fa_rx_resep_h.vc_k_dokter = SDMDOKTER.vc_nid INNER JOIN
+                         RMPasien ON fa_rx_resep_h.vc_no_rm = RMPasien.vc_no_rm LEFT OUTER JOIN
                          BPJS_SEP ON fa_rx_resep_h.vc_no_reg = BPJS_SEP.vc_no_regj LEFT OUTER JOIN
                          BPJS_RSE_mapping_poli ON fa_rx_resep_h.vc_k_klinik = BPJS_RSE_mapping_poli.vc_kode_poli_rs
 WHERE        (fa_rx_resep_h.int_k_status = 2) AND (fa_rx_resep_h.vc_k_klinik = @kklinik)";

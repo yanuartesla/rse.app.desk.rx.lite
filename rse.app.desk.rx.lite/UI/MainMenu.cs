@@ -69,7 +69,7 @@ namespace rse.app.desk.rx.lite.UI
             {
                 var uc = new CardHistoriPasien
                 {
-                    Tag = r["vc_no_reg"].ToString(),
+                    Tag = r["vc_no_reg"].ToString()+r["int_k_status"].ToString(),
                     NoRM = r["vc_no_rm"].ToString(),
                     Nama = r["vc_nama_p"].ToString(),
                     Status = r["vc_status"].ToString() 
@@ -83,12 +83,29 @@ namespace rse.app.desk.rx.lite.UI
                 else
                 {
                     flpHistoriPasien.Controls.Add(uc);
-                    //uc.Click += uc_MouseCliked;
+                    uc.Click += uc_MouseCliked;
                 }
             }
             flpHistoriPasien.ResumeLayout();
         }
-
+        private void uc_MouseCliked(object sender, EventArgs e)
+        {
+            UserControl us = (UserControl)sender;
+            var _filter = us.Tag.ToString();
+            if (_filter.Substring(13) == "4")
+            {
+                MessageBox.Show("Resep Sudah di Finalisasi oleh Farmasi, Jika ada perubahan resep mohon konfirmasi ke farmasi");
+            }
+            else
+            {
+                
+                AddData ef = new AddData(_filter.Substring(0, 13), _kodeKlinik, _nidDokter) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                LoadPanelChild.Controls.Clear();
+                LoadPanelChild.Controls.Add(ef);
+                ef.Show();
+            }
+            
+        }
         private void LoadPanelChild_ControlAdded(object sender, ControlEventArgs e)
         {
             pupolateResep();

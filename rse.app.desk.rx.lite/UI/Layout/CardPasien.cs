@@ -42,7 +42,7 @@ namespace rse.app.desk.rx.lite.UI.Layout
         public string Umur
         {
             get { return _umur; }
-            set { _umur = value; lblUmur.Text = value; }
+            set { _umur = value; lblUmur.Text = value ; }
         }
 
         [Category("Custom Prop")]
@@ -96,6 +96,8 @@ namespace rse.app.desk.rx.lite.UI.Layout
                 }
             }
         }
+
+
         private void CardPasien_MouseEnter(object sender, EventArgs e)
         {
             BackColor = Color.Bisque;

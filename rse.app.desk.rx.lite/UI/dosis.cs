@@ -154,8 +154,8 @@ namespace rse.app.desk.rx.lite.UI
                 MessageBox.Show("Masukan Jumlah Obat");
                 return false;
             }
-            else if (cmbSatuanDosis.Text == "")
-            { MessageBox.Show("Masukan Satuan Dosis"); return false; }
+            //else if (cmbSatuanDosis.Text == "")
+            //{ MessageBox.Show("Masukan Satuan Dosis"); return false; }
             else
             {
                 var _jml = Int32.Parse(txtJumlah.Text);

@@ -4,6 +4,10 @@
 
     partial class yakkumdb
     {
+        partial class RMKLINIKDataTable
+        {
+        }
+
         partial class fa_rx_templateDataTable
         {
         }
@@ -20,6 +24,10 @@
 
 namespace rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters
 {
+    partial class fa_rx_template_racikanTableAdapter
+    {
+    }
+
     partial class fa_rx_resep_dTableAdapter
     {
     }

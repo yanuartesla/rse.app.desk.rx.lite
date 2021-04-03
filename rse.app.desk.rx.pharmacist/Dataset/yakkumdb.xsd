@@ -129,11 +129,13 @@ WHERE        (vc_kode_rx_d = @kodeobat)</CommandText>
                     <CommandText>SELECT        fa_rx_resep_h.vc_kode_rx, fa_rx_resep_h.vc_no_reg, fa_rx_resep_h.vc_no_rm, BPJS_SEP.vc_no_sep, BPJS_SEP.dt_tgl_sep, BPJS_SEP.vc_kode_diagnosa_awal, BPJS_RefDiagnosis_Inasis.Description, 
                          BPJS_SEP.vc_catatan, BPJS_SEP.vc_kode_asal_rujukan, Bpjs_refppk.NMPPK, BPJS_SEP.vc_nama_Peserta, BPJS_SEP.vc_jenis_kelamin, BPJS_SEP.vc_no_peserta, BPJS_SEP.vc_nik, fa_rx_resep_h.vc_k_dokter, 
                          fa_rx_resep_h.vc_k_klinik, RMKLINIK.vc_N_KLINIK, SDMDOKTER.vc_nama_kry, fa_rx_resep_h.dt_order, fa_rx_resep_h.dt_respon, RMPasien.in_umurth, RMPasien.in_umurbl, RMPasien.in_umurhr, RMPasien.vc_alamat, 
-                         RMPasien.vc_kecamatan, RMPasien.vc_kota, RMPasien.dt_tgl_lhr, Scann_TTD_Dokter.vb_ttd, RMPasien.vc_nama_p, RMPasien.vc_no_peserta_bpjs
+                         RMPasien.vc_kecamatan, RMPasien.vc_kota, RMPasien.dt_tgl_lhr, Scann_TTD_Dokter.vb_ttd, RMPasien.vc_nama_p, RMPasien.vc_no_peserta_bpjs, BPJS_SEP.dt_tgl_rujukan, PubPng.vc_n_png
 FROM            RMKLINIK INNER JOIN
                          fa_rx_resep_h ON RMKLINIK.vc_K_KLINIK = fa_rx_resep_h.vc_k_klinik INNER JOIN
                          SDMDOKTER ON fa_rx_resep_h.vc_k_dokter = SDMDOKTER.vc_nid INNER JOIN
-                         RMPasien ON fa_rx_resep_h.vc_no_rm = RMPasien.vc_no_rm LEFT OUTER JOIN
+                         RMPasien ON fa_rx_resep_h.vc_no_rm = RMPasien.vc_no_rm INNER JOIN
+                         RMKUNJUNG ON fa_rx_resep_h.vc_no_reg = RMKUNJUNG.VC_NO_REGJ INNER JOIN
+                         PubPng ON RMKUNJUNG.VC_K_INSTANSI = PubPng.vc_k_png LEFT OUTER JOIN
                          Scann_TTD_Dokter ON fa_rx_resep_h.vc_k_dokter = Scann_TTD_Dokter.vc_nid_dokter LEFT OUTER JOIN
                          BPJS_RefDiagnosis_Inasis RIGHT OUTER JOIN
                          BPJS_SEP ON BPJS_RefDiagnosis_Inasis.Code = BPJS_SEP.vc_kode_diagnosa_awal LEFT OUTER JOIN
@@ -177,6 +179,8 @@ WHERE        (fa_rx_resep_h.vc_kode_rx = @kresep)</CommandText>
               <Mapping SourceColumn="vb_ttd" DataSetColumn="vb_ttd" />
               <Mapping SourceColumn="vc_nama_p" DataSetColumn="vc_nama_p" />
               <Mapping SourceColumn="vc_no_peserta_bpjs" DataSetColumn="vc_no_peserta_bpjs" />
+              <Mapping SourceColumn="dt_tgl_rujukan" DataSetColumn="dt_tgl_rujukan" />
+              <Mapping SourceColumn="vc_n_png" DataSetColumn="vc_n_png" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -373,7 +377,7 @@ WHERE        (vc_kode_rx_d = @koderxdetil)</CommandText>
   <xs:element name="yakkumdb" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="yakkumdb" msprop:Generator_UserDSName="yakkumdb">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="resep_order" msprop:Generator_TableClassName="resep_orderDataTable" msprop:Generator_TableVarName="tableresep_order" msprop:Generator_RowChangedName="resep_orderRowChanged" msprop:Generator_TablePropName="resep_order" msprop:Generator_RowDeletingName="resep_orderRowDeleting" msprop:Generator_RowChangingName="resep_orderRowChanging" msprop:Generator_RowEvHandlerName="resep_orderRowChangeEventHandler" msprop:Generator_RowDeletedName="resep_orderRowDeleted" msprop:Generator_RowClassName="resep_orderRow" msprop:Generator_UserTableName="resep_order" msprop:Generator_RowEvArgName="resep_orderRowChangeEvent">
+        <xs:element name="resep_order" msprop:Generator_TableClassName="resep_orderDataTable" msprop:Generator_TableVarName="tableresep_order" msprop:Generator_TablePropName="resep_order" msprop:Generator_RowDeletingName="resep_orderRowDeleting" msprop:Generator_RowChangingName="resep_orderRowChanging" msprop:Generator_RowEvHandlerName="resep_orderRowChangeEventHandler" msprop:Generator_RowDeletedName="resep_orderRowDeleted" msprop:Generator_UserTableName="resep_order" msprop:Generator_RowChangedName="resep_orderRowChanged" msprop:Generator_RowEvArgName="resep_orderRowChangeEvent" msprop:Generator_RowClassName="resep_orderRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="vc_kode_rx" msprop:Generator_ColumnVarNameInTable="columnvc_kode_rx" msprop:Generator_ColumnPropNameInRow="vc_kode_rx" msprop:Generator_ColumnPropNameInTable="vc_kode_rxColumn" msprop:Generator_UserColumnName="vc_kode_rx" minOccurs="0">
@@ -450,7 +454,7 @@ WHERE        (vc_kode_rx_d = @koderxdetil)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="resep_detil" msprop:Generator_TableClassName="resep_detilDataTable" msprop:Generator_TableVarName="tableresep_detil" msprop:Generator_RowChangedName="resep_detilRowChanged" msprop:Generator_TablePropName="resep_detil" msprop:Generator_RowDeletingName="resep_detilRowDeleting" msprop:Generator_RowChangingName="resep_detilRowChanging" msprop:Generator_RowEvHandlerName="resep_detilRowChangeEventHandler" msprop:Generator_RowDeletedName="resep_detilRowDeleted" msprop:Generator_RowClassName="resep_detilRow" msprop:Generator_UserTableName="resep_detil" msprop:Generator_RowEvArgName="resep_detilRowChangeEvent">
+        <xs:element name="resep_detil" msprop:Generator_TableClassName="resep_detilDataTable" msprop:Generator_TableVarName="tableresep_detil" msprop:Generator_TablePropName="resep_detil" msprop:Generator_RowDeletingName="resep_detilRowDeleting" msprop:Generator_RowChangingName="resep_detilRowChanging" msprop:Generator_RowEvHandlerName="resep_detilRowChangeEventHandler" msprop:Generator_RowDeletedName="resep_detilRowDeleted" msprop:Generator_UserTableName="resep_detil" msprop:Generator_RowChangedName="resep_detilRowChanged" msprop:Generator_RowEvArgName="resep_detilRowChangeEvent" msprop:Generator_RowClassName="resep_detilRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -554,7 +558,7 @@ WHERE        (vc_kode_rx_d = @koderxdetil)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="data_pasien" msprop:Generator_TableClassName="data_pasienDataTable" msprop:Generator_TableVarName="tabledata_pasien" msprop:Generator_RowChangedName="data_pasienRowChanged" msprop:Generator_TablePropName="data_pasien" msprop:Generator_RowDeletingName="data_pasienRowDeleting" msprop:Generator_RowChangingName="data_pasienRowChanging" msprop:Generator_RowEvHandlerName="data_pasienRowChangeEventHandler" msprop:Generator_RowDeletedName="data_pasienRowDeleted" msprop:Generator_RowClassName="data_pasienRow" msprop:Generator_UserTableName="data_pasien" msprop:Generator_RowEvArgName="data_pasienRowChangeEvent">
+        <xs:element name="data_pasien" msprop:Generator_TableClassName="data_pasienDataTable" msprop:Generator_TableVarName="tabledata_pasien" msprop:Generator_TablePropName="data_pasien" msprop:Generator_RowDeletingName="data_pasienRowDeleting" msprop:Generator_RowChangingName="data_pasienRowChanging" msprop:Generator_RowEvHandlerName="data_pasienRowChangeEventHandler" msprop:Generator_RowDeletedName="data_pasienRowDeleted" msprop:Generator_UserTableName="data_pasien" msprop:Generator_RowChangedName="data_pasienRowChanged" msprop:Generator_RowEvArgName="data_pasienRowChangeEvent" msprop:Generator_RowClassName="data_pasienRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="vc_kode_rx" msprop:Generator_ColumnVarNameInTable="columnvc_kode_rx" msprop:Generator_ColumnPropNameInRow="vc_kode_rx" msprop:Generator_ColumnPropNameInTable="vc_kode_rxColumn" msprop:Generator_UserColumnName="vc_kode_rx" minOccurs="0">
@@ -719,10 +723,18 @@ WHERE        (vc_kode_rx_d = @koderxdetil)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="dt_tgl_rujukan" msprop:Generator_ColumnVarNameInTable="columndt_tgl_rujukan" msprop:Generator_ColumnPropNameInRow="dt_tgl_rujukan" msprop:Generator_ColumnPropNameInTable="dt_tgl_rujukanColumn" msprop:Generator_UserColumnName="dt_tgl_rujukan" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="vc_n_png" msprop:Generator_ColumnVarNameInTable="columnvc_n_png" msprop:Generator_ColumnPropNameInRow="vc_n_png" msprop:Generator_ColumnPropNameInTable="vc_n_pngColumn" msprop:Generator_UserColumnName="vc_n_png" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="data_resep" msprop:Generator_TableClassName="data_resepDataTable" msprop:Generator_TableVarName="tabledata_resep" msprop:Generator_RowChangedName="data_resepRowChanged" msprop:Generator_TablePropName="data_resep" msprop:Generator_RowDeletingName="data_resepRowDeleting" msprop:Generator_RowChangingName="data_resepRowChanging" msprop:Generator_RowEvHandlerName="data_resepRowChangeEventHandler" msprop:Generator_RowDeletedName="data_resepRowDeleted" msprop:Generator_RowClassName="data_resepRow" msprop:Generator_UserTableName="data_resep" msprop:Generator_RowEvArgName="data_resepRowChangeEvent">
+        <xs:element name="data_resep" msprop:Generator_TableClassName="data_resepDataTable" msprop:Generator_TableVarName="tabledata_resep" msprop:Generator_TablePropName="data_resep" msprop:Generator_RowDeletingName="data_resepRowDeleting" msprop:Generator_RowChangingName="data_resepRowChanging" msprop:Generator_RowEvHandlerName="data_resepRowChangeEventHandler" msprop:Generator_RowDeletedName="data_resepRowDeleted" msprop:Generator_UserTableName="data_resep" msprop:Generator_RowChangedName="data_resepRowChanged" msprop:Generator_RowEvArgName="data_resepRowChangeEvent" msprop:Generator_RowClassName="data_resepRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="vc_kode_rx" msprop:Generator_ColumnVarNameInTable="columnvc_kode_rx" msprop:Generator_ColumnPropNameInRow="vc_kode_rx" msprop:Generator_ColumnPropNameInTable="vc_kode_rxColumn" msprop:Generator_UserColumnName="vc_kode_rx" minOccurs="0">
@@ -853,7 +865,7 @@ WHERE        (vc_kode_rx_d = @koderxdetil)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="fa_rx_resep_h" msprop:Generator_TableClassName="fa_rx_resep_hDataTable" msprop:Generator_TableVarName="tablefa_rx_resep_h" msprop:Generator_TablePropName="fa_rx_resep_h" msprop:Generator_RowDeletingName="fa_rx_resep_hRowDeleting" msprop:Generator_RowChangingName="fa_rx_resep_hRowChanging" msprop:Generator_RowEvHandlerName="fa_rx_resep_hRowChangeEventHandler" msprop:Generator_RowDeletedName="fa_rx_resep_hRowDeleted" msprop:Generator_UserTableName="fa_rx_resep_h" msprop:Generator_RowChangedName="fa_rx_resep_hRowChanged" msprop:Generator_RowEvArgName="fa_rx_resep_hRowChangeEvent" msprop:Generator_RowClassName="fa_rx_resep_hRow">
+        <xs:element name="fa_rx_resep_h" msprop:Generator_TableClassName="fa_rx_resep_hDataTable" msprop:Generator_TableVarName="tablefa_rx_resep_h" msprop:Generator_RowChangedName="fa_rx_resep_hRowChanged" msprop:Generator_TablePropName="fa_rx_resep_h" msprop:Generator_RowDeletingName="fa_rx_resep_hRowDeleting" msprop:Generator_RowChangingName="fa_rx_resep_hRowChanging" msprop:Generator_RowEvHandlerName="fa_rx_resep_hRowChangeEventHandler" msprop:Generator_RowDeletedName="fa_rx_resep_hRowDeleted" msprop:Generator_RowClassName="fa_rx_resep_hRow" msprop:Generator_UserTableName="fa_rx_resep_h" msprop:Generator_RowEvArgName="fa_rx_resep_hRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -906,7 +918,7 @@ WHERE        (vc_kode_rx_d = @koderxdetil)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="fa_rx_tindakan" msprop:Generator_TableClassName="fa_rx_tindakanDataTable" msprop:Generator_TableVarName="tablefa_rx_tindakan" msprop:Generator_TablePropName="fa_rx_tindakan" msprop:Generator_RowDeletingName="fa_rx_tindakanRowDeleting" msprop:Generator_RowChangingName="fa_rx_tindakanRowChanging" msprop:Generator_RowEvHandlerName="fa_rx_tindakanRowChangeEventHandler" msprop:Generator_RowDeletedName="fa_rx_tindakanRowDeleted" msprop:Generator_UserTableName="fa_rx_tindakan" msprop:Generator_RowChangedName="fa_rx_tindakanRowChanged" msprop:Generator_RowEvArgName="fa_rx_tindakanRowChangeEvent" msprop:Generator_RowClassName="fa_rx_tindakanRow">
+        <xs:element name="fa_rx_tindakan" msprop:Generator_TableClassName="fa_rx_tindakanDataTable" msprop:Generator_TableVarName="tablefa_rx_tindakan" msprop:Generator_RowChangedName="fa_rx_tindakanRowChanged" msprop:Generator_TablePropName="fa_rx_tindakan" msprop:Generator_RowDeletingName="fa_rx_tindakanRowDeleting" msprop:Generator_RowChangingName="fa_rx_tindakanRowChanging" msprop:Generator_RowEvHandlerName="fa_rx_tindakanRowChangeEventHandler" msprop:Generator_RowDeletedName="fa_rx_tindakanRowDeleted" msprop:Generator_RowClassName="fa_rx_tindakanRow" msprop:Generator_UserTableName="fa_rx_tindakan" msprop:Generator_RowEvArgName="fa_rx_tindakanRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="vc_no_resep" msprop:Generator_ColumnVarNameInTable="columnvc_no_resep" msprop:Generator_ColumnPropNameInRow="vc_no_resep" msprop:Generator_ColumnPropNameInTable="vc_no_resepColumn" msprop:Generator_UserColumnName="vc_no_resep" minOccurs="0">
@@ -926,7 +938,7 @@ WHERE        (vc_kode_rx_d = @koderxdetil)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="fa_rx_racikan" msprop:Generator_TableClassName="fa_rx_racikanDataTable" msprop:Generator_TableVarName="tablefa_rx_racikan" msprop:Generator_RowChangedName="fa_rx_racikanRowChanged" msprop:Generator_TablePropName="fa_rx_racikan" msprop:Generator_RowDeletingName="fa_rx_racikanRowDeleting" msprop:Generator_RowChangingName="fa_rx_racikanRowChanging" msprop:Generator_RowEvHandlerName="fa_rx_racikanRowChangeEventHandler" msprop:Generator_RowDeletedName="fa_rx_racikanRowDeleted" msprop:Generator_RowClassName="fa_rx_racikanRow" msprop:Generator_UserTableName="fa_rx_racikan" msprop:Generator_RowEvArgName="fa_rx_racikanRowChangeEvent">
+        <xs:element name="fa_rx_racikan" msprop:Generator_TableClassName="fa_rx_racikanDataTable" msprop:Generator_TableVarName="tablefa_rx_racikan" msprop:Generator_TablePropName="fa_rx_racikan" msprop:Generator_RowDeletingName="fa_rx_racikanRowDeleting" msprop:Generator_RowChangingName="fa_rx_racikanRowChanging" msprop:Generator_RowEvHandlerName="fa_rx_racikanRowChangeEventHandler" msprop:Generator_RowDeletedName="fa_rx_racikanRowDeleted" msprop:Generator_UserTableName="fa_rx_racikan" msprop:Generator_RowChangedName="fa_rx_racikanRowChanged" msprop:Generator_RowEvArgName="fa_rx_racikanRowChangeEvent" msprop:Generator_RowClassName="fa_rx_racikanRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="in_no_urut" msprop:Generator_ColumnVarNameInTable="columnin_no_urut" msprop:Generator_ColumnPropNameInRow="in_no_urut" msprop:Generator_ColumnPropNameInTable="in_no_urutColumn" msprop:Generator_UserColumnName="in_no_urut" type="xs:int" minOccurs="0" />

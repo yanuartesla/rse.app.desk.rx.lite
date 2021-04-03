@@ -57,6 +57,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlDokter = new Guna.UI2.WinForms.Guna2Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtBB = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSuhu = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel29 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel28 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -67,7 +68,6 @@ namespace rse.app.desk.rx.lite.UI
             this.rtbRiwayatPenyakit = new System.Windows.Forms.RichTextBox();
             this.txtTensi = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel26 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.numBB = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.guna2HtmlLabel19 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel18 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel17 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -107,6 +107,7 @@ namespace rse.app.desk.rx.lite.UI
             this.catatanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCopy = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.bb = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsCPPT = new System.Windows.Forms.BindingSource(this.components);
             this.rmdb = new rse.app.desk.rx.lite.dataset.rmdb();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -180,7 +181,6 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel2.SuspendLayout();
             this.pnlDokter.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numBB)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.guna2Panel10.SuspendLayout();
@@ -369,15 +369,16 @@ namespace rse.app.desk.rx.lite.UI
             this.pnlDokter.Controls.Add(this.groupBox2);
             this.pnlDokter.Controls.Add(this.groupBox1);
             this.pnlDokter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDokter.Location = new System.Drawing.Point(0, 196);
+            this.pnlDokter.Location = new System.Drawing.Point(0, 165);
             this.pnlDokter.Name = "pnlDokter";
             this.pnlDokter.Padding = new System.Windows.Forms.Padding(5);
             this.pnlDokter.ShadowDecoration.Parent = this.pnlDokter;
-            this.pnlDokter.Size = new System.Drawing.Size(888, 276);
+            this.pnlDokter.Size = new System.Drawing.Size(888, 307);
             this.pnlDokter.TabIndex = 5;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtBB);
             this.groupBox3.Controls.Add(this.txtSuhu);
             this.groupBox3.Controls.Add(this.guna2HtmlLabel29);
             this.groupBox3.Controls.Add(this.guna2HtmlLabel28);
@@ -388,7 +389,6 @@ namespace rse.app.desk.rx.lite.UI
             this.groupBox3.Controls.Add(this.rtbRiwayatPenyakit);
             this.groupBox3.Controls.Add(this.txtTensi);
             this.groupBox3.Controls.Add(this.guna2HtmlLabel26);
-            this.groupBox3.Controls.Add(this.numBB);
             this.groupBox3.Controls.Add(this.guna2HtmlLabel19);
             this.groupBox3.Controls.Add(this.guna2HtmlLabel18);
             this.groupBox3.Controls.Add(this.guna2HtmlLabel17);
@@ -400,12 +400,36 @@ namespace rse.app.desk.rx.lite.UI
             this.groupBox3.Controls.Add(this.guna2HtmlLabel11);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(5, 92);
+            this.groupBox3.Location = new System.Drawing.Point(5, 63);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(878, 115);
+            this.groupBox3.Size = new System.Drawing.Size(878, 139);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Objektif";
+            // 
+            // txtBB
+            // 
+            this.txtBB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBB.DefaultText = "";
+            this.txtBB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtBB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtBB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBB.DisabledState.Parent = this.txtBB;
+            this.txtBB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBB.FocusedState.Parent = this.txtBB;
+            this.txtBB.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtBB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBB.HoverState.Parent = this.txtBB;
+            this.txtBB.Location = new System.Drawing.Point(124, 76);
+            this.txtBB.Name = "txtBB";
+            this.txtBB.PasswordChar = '\0';
+            this.txtBB.PlaceholderText = "BB";
+            this.txtBB.SelectedText = "";
+            this.txtBB.ShadowDecoration.Parent = this.txtBB;
+            this.txtBB.Size = new System.Drawing.Size(66, 25);
+            this.txtBB.TabIndex = 27;
+            this.txtBB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtSuhu
             // 
@@ -573,33 +597,6 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2HtmlLabel26.TabIndex = 17;
             this.guna2HtmlLabel26.Text = "Riwayat Penyakit :";
             // 
-            // numBB
-            // 
-            this.numBB.BackColor = System.Drawing.Color.Transparent;
-            this.numBB.BorderRadius = 6;
-            this.numBB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.numBB.DecimalPlaces = 1;
-            this.numBB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.numBB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.numBB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.numBB.DisabledState.Parent = this.numBB;
-            this.numBB.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.numBB.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
-            this.numBB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.numBB.FocusedState.Parent = this.numBB;
-            this.numBB.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.numBB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.numBB.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.numBB.Location = new System.Drawing.Point(125, 78);
-            this.numBB.Name = "numBB";
-            this.numBB.ShadowDecoration.Parent = this.numBB;
-            this.numBB.Size = new System.Drawing.Size(66, 25);
-            this.numBB.TabIndex = 16;
-            // 
             // guna2HtmlLabel19
             // 
             this.guna2HtmlLabel19.BackColor = System.Drawing.Color.Transparent;
@@ -686,12 +683,12 @@ namespace rse.app.desk.rx.lite.UI
             this.groupBox2.Controls.Add(this.rtbCatatan);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(5, 207);
+            this.groupBox2.Location = new System.Drawing.Point(5, 202);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(878, 64);
+            this.groupBox2.Size = new System.Drawing.Size(878, 100);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Catatan Khusus";
+            this.groupBox2.Text = "Pemeriksaan Fisik";
             // 
             // rtbCatatan
             // 
@@ -700,9 +697,9 @@ namespace rse.app.desk.rx.lite.UI
             this.rtbCatatan.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.rtbCatatan.Location = new System.Drawing.Point(3, 19);
             this.rtbCatatan.Name = "rtbCatatan";
-            this.rtbCatatan.Size = new System.Drawing.Size(872, 42);
+            this.rtbCatatan.Size = new System.Drawing.Size(872, 78);
             this.rtbCatatan.TabIndex = 0;
-            this.rtbCatatan.Text = "Alergi Obat :";
+            this.rtbCatatan.Text = "";
             // 
             // groupBox1
             // 
@@ -712,7 +709,7 @@ namespace rse.app.desk.rx.lite.UI
             this.groupBox1.Location = new System.Drawing.Point(5, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 3, 5, 5);
-            this.groupBox1.Size = new System.Drawing.Size(878, 87);
+            this.groupBox1.Size = new System.Drawing.Size(878, 58);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Subyektif";
@@ -725,7 +722,7 @@ namespace rse.app.desk.rx.lite.UI
             this.rtbSubyektif.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.rtbSubyektif.Location = new System.Drawing.Point(5, 21);
             this.rtbSubyektif.Name = "rtbSubyektif";
-            this.rtbSubyektif.Size = new System.Drawing.Size(868, 61);
+            this.rtbSubyektif.Size = new System.Drawing.Size(868, 32);
             this.rtbSubyektif.TabIndex = 0;
             this.rtbSubyektif.Text = "Keluhan : ";
             // 
@@ -733,7 +730,7 @@ namespace rse.app.desk.rx.lite.UI
             // 
             this.guna2Panel10.Controls.Add(this.guna2HtmlLabel10);
             this.guna2Panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel10.Location = new System.Drawing.Point(0, 169);
+            this.guna2Panel10.Location = new System.Drawing.Point(0, 138);
             this.guna2Panel10.Name = "guna2Panel10";
             this.guna2Panel10.ShadowDecoration.Parent = this.guna2Panel10;
             this.guna2Panel10.Size = new System.Drawing.Size(888, 27);
@@ -759,7 +756,7 @@ namespace rse.app.desk.rx.lite.UI
             this.pnlPerawat.Location = new System.Drawing.Point(0, 0);
             this.pnlPerawat.Name = "pnlPerawat";
             this.pnlPerawat.ShadowDecoration.Parent = this.pnlPerawat;
-            this.pnlPerawat.Size = new System.Drawing.Size(888, 169);
+            this.pnlPerawat.Size = new System.Drawing.Size(888, 138);
             this.pnlPerawat.TabIndex = 0;
             // 
             // dgvCPPTPerawat
@@ -806,7 +803,8 @@ namespace rse.app.desk.rx.lite.UI
             this.keluhanDataGridViewTextBoxColumn,
             this.catatanDataGridViewTextBoxColumn,
             this.idDataGridViewTextBoxColumn,
-            this.btnCopy});
+            this.btnCopy,
+            this.bb});
             this.dgvCPPTPerawat.DataSource = this.bsCPPT;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
@@ -827,7 +825,7 @@ namespace rse.app.desk.rx.lite.UI
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCPPTPerawat.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCPPTPerawat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCPPTPerawat.Size = new System.Drawing.Size(888, 169);
+            this.dgvCPPTPerawat.Size = new System.Drawing.Size(888, 138);
             this.dgvCPPTPerawat.TabIndex = 0;
             this.dgvCPPTPerawat.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvCPPTPerawat.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -1037,6 +1035,14 @@ namespace rse.app.desk.rx.lite.UI
             this.btnCopy.Text = "Copy CPPT";
             this.btnCopy.ToolTipText = "Copy untuk Mentransfer SOAP ke Inputan Dokter";
             this.btnCopy.UseColumnTextForButtonValue = true;
+            // 
+            // bb
+            // 
+            this.bb.DataPropertyName = "bb";
+            this.bb.HeaderText = "bb";
+            this.bb.Name = "bb";
+            this.bb.ReadOnly = true;
+            this.bb.Visible = false;
             // 
             // bsCPPT
             // 
@@ -1387,9 +1393,9 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2HtmlLabel9.ForeColor = System.Drawing.Color.DimGray;
             this.guna2HtmlLabel9.Location = new System.Drawing.Point(0, 0);
             this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            this.guna2HtmlLabel9.Size = new System.Drawing.Size(244, 27);
+            this.guna2HtmlLabel9.Size = new System.Drawing.Size(301, 27);
             this.guna2HtmlLabel9.TabIndex = 2;
-            this.guna2HtmlLabel9.Text = "Prosedur / Tindakan Medis";
+            this.guna2HtmlLabel9.Text = "Plan / Prosedur / Tindakan Medis";
             // 
             // guna2Panel5
             // 
@@ -1924,7 +1930,6 @@ namespace rse.app.desk.rx.lite.UI
             this.pnlDokter.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numBB)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.guna2Panel10.ResumeLayout(false);
@@ -2029,7 +2034,6 @@ namespace rse.app.desk.rx.lite.UI
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel19;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel18;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel17;
-        private Guna.UI2.WinForms.Guna2NumericUpDown numBB;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
         private Guna.UI2.WinForms.Guna2DataGridView dgvProcedure;
         private Function.MultiLineAutoCompleteTextBox txtCariProsedur;
@@ -2064,6 +2068,16 @@ namespace rse.app.desk.rx.lite.UI
         private Guna.UI2.WinForms.Guna2Button btnTemplate;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI2.WinForms.Guna2TextBox txtSuhu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn no;
+        private System.Windows.Forms.DataGridViewTextBoxColumn icdcode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn code_desc;
+        private System.Windows.Forms.DataGridViewButtonColumn btnPrimary;
+        private System.Windows.Forms.DataGridViewButtonColumn btnDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desc;
+        private System.Windows.Forms.DataGridViewButtonColumn btnDel;
+        private Guna.UI2.WinForms.Guna2TextBox txtBB;
         private System.Windows.Forms.DataGridViewTextBoxColumn tanggalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn subyektifDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn obyektifDataGridViewTextBoxColumn;
@@ -2086,14 +2100,6 @@ namespace rse.app.desk.rx.lite.UI
         private System.Windows.Forms.DataGridViewTextBoxColumn catatanDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn btnCopy;
-        private System.Windows.Forms.DataGridViewTextBoxColumn no;
-        private System.Windows.Forms.DataGridViewTextBoxColumn icdcode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn code_desc;
-        private System.Windows.Forms.DataGridViewButtonColumn btnPrimary;
-        private System.Windows.Forms.DataGridViewButtonColumn btnDelete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn code;
-        private System.Windows.Forms.DataGridViewTextBoxColumn desc;
-        private System.Windows.Forms.DataGridViewButtonColumn btnDel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bb;
     }
 }

@@ -140,10 +140,10 @@ namespace rse.app.desk.rx.lite.UI
             {
                 MessageBox.Show("Masukkan Jumlah Racikan");
             }
-            if(cmbSatuanDosis.SelectedIndex == -1)
-            {
-                MessageBox.Show("Pilih Satuan Dosis");
-            }
+            //if(cmbSatuanDosis.SelectedIndex == -1)
+            //{
+            //    MessageBox.Show("Pilih Satuan Dosis");
+            //}
             else
             {
                 var dt = new dataset.yakkumdbTableAdapters.fa_rx_racikanTableAdapter();

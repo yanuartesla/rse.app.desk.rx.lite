@@ -32,7 +32,6 @@ namespace rse.app.desk.rx.lite.UI
             _noreg = NoReg;
             _kodeKlinik = KodeKlinik;
             _kodedokter = KodeDokter;
-            
      
         }
 
@@ -44,6 +43,8 @@ namespace rse.app.desk.rx.lite.UI
             this.pasienTableAdapter.FillByNoreg(this.yakkumdb.Pasien,_noreg);
 
             this.rJ_cpptTableAdapter.Fill(this.rmdb.RJ_cppt, _noreg);
+
+            
             //TODO : ganti fornas variable
             DataRow dr = this.pasienTableAdapter.GetDataByNoreg( _noreg).Rows[0];
             string png = dr["VC_K_INSTANSI"].ToString();
@@ -64,21 +65,41 @@ namespace rse.app.desk.rx.lite.UI
             tbResepBody.Controls.Add(_obat);
 
             _koderesep = "RX" + _noreg + _kodedokter;
-
+            
             LoadICD10();
             LoadICD9();
             LoadTemplate();
-            
+            //loadData();
+        }
+        private void loadData()
+        {
+            var dh = new dataset.rmdbTableAdapters.RJ_cpptTableAdapter();
+            dh.FillByTop1Dokter(rmdb.RJ_cppt,_noreg);
+            DataTable dt = dh.GetDataByTop1Dokter(_noreg);
+            foreach (DataRow r in dt.Rows)
+            {
+                rtbSubyektif.Text = r["Subyektif"].ToString();
+                txtTensi.Text = r["tensi"].ToString();
+                txtSuhu.Text = r["suhu"].ToString();
+                txtBB.Text = r["bb"].ToString();
+                txtNadi.Text = r["nadi"].ToString();
+                txtPernapasan.Text = r["pernapasan"].ToString();
+                txtSaturasi.Text = r["saturasi"].ToString();
+                rtbRiwayatPenyakit.Text = r["riwayat_penyakit"].ToString();
+                rtbCatatan.Text = r["catatan"].ToString();
+            }
         }
         private void LoadTemplate()
         {
-            Guna.UI2.WinForms.Guna2Button button = new Guna.UI2.WinForms.Guna2Button();
+            //Guna.UI2.WinForms.Guna2Button button = new Guna.UI2.WinForms.Guna2Button();
             var dh = new dataset.yakkumdbTableAdapters.fa_rx_templateTableAdapter();
             dh.FillByDistinct(yakkumdb.fa_rx_template);
             DataTable dt = dh.GetDataByDistinct();
 
             foreach (DataRow r in dt.Rows)
             {
+                //MessageBox.Show(r["nama_template"].ToString());
+                Guna.UI2.WinForms.Guna2Button button = new Guna.UI2.WinForms.Guna2Button();
                 button.Tag = r["nama_template"].ToString();
                 button.Text = r["nama_template"].ToString();
                 button.AutoRoundedCorners = true;
@@ -97,8 +118,6 @@ namespace rse.app.desk.rx.lite.UI
             dh.FillByNamaJEnis(yakkumdb.fa_rx_template,_filter, "Diagnosa");
             DataTable dt = dh.GetDataByNamaJenis(_filter, "Diagnosa");
 
-            
-
             foreach (DataRow r in dt.Rows)
             {
                 DataGridViewRow row = (DataGridViewRow)dgvDiagnosa.Rows[0].Clone();
@@ -109,8 +128,6 @@ namespace rse.app.desk.rx.lite.UI
 
             dh.FillByNamaJEnis(yakkumdb.fa_rx_template, _filter, "Prosedur");
             DataTable dt2 = dh.GetDataByNamaJenis(_filter, "Prosedur");
-
-           
 
             foreach (DataRow r in dt2.Rows)
             {
@@ -285,9 +302,10 @@ namespace rse.app.desk.rx.lite.UI
                 txtSaturasi.Text,
                 rtbRiwayatPenyakit.Text,
                 rtbSubyektif.Text,
-                rtbCatatan.Text + "BB :" + numBB.ToString(),
+                rtbCatatan.Text ,
                 _kodedokter,
-                "Dokter"
+                "Dokter",
+                txtBB.Text
 
                 ) ;
         }
@@ -315,7 +333,6 @@ namespace rse.app.desk.rx.lite.UI
             tabData.SelectedIndex =
             (tabData.SelectedIndex - 1) % tabData.TabCount;
         }
-
 
         private void txtCariDiagnosa_KeyDown(object sender, KeyEventArgs e)
         {
@@ -412,7 +429,8 @@ namespace rse.app.desk.rx.lite.UI
                 rtbSubyektif.Text = this.dgvCPPTPerawat[dp["subyektifDataGridViewTextBoxColumn"].Index, e.RowIndex].Value.ToString();
                 txtTensi.Text = this.dgvCPPTPerawat[dp["tensiDataGridViewTextBoxColumn"].Index, e.RowIndex].Value.ToString(); 
                 txtSuhu.Text = this.dgvCPPTPerawat[dp["suhuDataGridViewTextBoxColumn"].Index, e.RowIndex].Value.ToString(); 
-                txtNadi.Text = this.dgvCPPTPerawat[dp["nadiDataGridViewTextBoxColumn"].Index, e.RowIndex].Value.ToString(); 
+                txtNadi.Text = this.dgvCPPTPerawat[dp["nadiDataGridViewTextBoxColumn"].Index, e.RowIndex].Value.ToString();
+                txtBB.Text = this.dgvCPPTPerawat[dp["bb"].Index, e.RowIndex].Value.ToString();
                 txtPernapasan.Text = this.dgvCPPTPerawat[dp["pernapasanDataGridViewTextBoxColumn"].Index, e.RowIndex].Value.ToString(); 
                 txtSaturasi.Text = this.dgvCPPTPerawat[dp["saturasiDataGridViewTextBoxColumn"].Index, e.RowIndex].Value.ToString(); 
                 rtbRiwayatPenyakit.Text = this.dgvCPPTPerawat[dp["riwayatpenyakitDataGridViewTextBoxColumn"].Index, e.RowIndex].Value.ToString(); 
@@ -500,6 +518,7 @@ namespace rse.app.desk.rx.lite.UI
         {
             Template tmp = new Template();
             tmp.Show();
+            LoadTemplate();
         }
     }
 }

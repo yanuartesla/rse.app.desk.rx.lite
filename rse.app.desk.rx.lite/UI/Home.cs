@@ -43,7 +43,7 @@ namespace rse.app.desk.rx.lite.UI
                 var uc = new CardPasien
                 {
                     //Tag = r["vc_nid"].ToString() + r["vc_kode_rx"].ToString(),
-                    Tag = r["VC_NO_REGJ"].ToString(),
+                    Tag = r["VC_NO_REGJ"].ToString()+ r["vc_nama_p"].ToString()+ r["VC_NO_RM"].ToString(),
                     NoRM = r["VC_NO_RM"].ToString(),
                     Nama = r["vc_nama_p"].ToString(),
                     Umur = r["in_umurth"].ToString() + " tahun",
@@ -51,6 +51,7 @@ namespace rse.app.desk.rx.lite.UI
                     Penanggung = r["vc_n_png"].ToString(),
                     NoAntrian = r["NO_ANTRIAN"].ToString(),
                     btKaryawan = (Boolean)r["bt_kary"],
+                    
                 };
 
                 if (flpPasien.Controls.Count < 0)
@@ -63,6 +64,7 @@ namespace rse.app.desk.rx.lite.UI
                     
                     flpPasien.Controls.Add(uc);
                     uc.Click += uc_MouseCliked;
+                    
                 }
             }
             flpPasien.ResumeLayout();
@@ -71,18 +73,18 @@ namespace rse.app.desk.rx.lite.UI
         private void uc_MouseCliked(object sender, EventArgs e)
         {
             UserControl us = (UserControl)sender;
-            var _filter = us.Tag.ToString();
-            
+            var _filter = us.Tag.ToString().Substring(0,13);
 
             AddData ef = new AddData(_filter,_kodeKlinik,_kodeDokter) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.Controls.Clear();
             this.Controls.Add(ef);
             ef.Show();
 
-
         }
         private void Home_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'yakkumdb.Pasien' table. You can move, or remove it, as needed.
+            this.pasienTableAdapter.Fill(this.yakkumdb.Pasien);
             this.fa_rx_userTableAdapter.FillByNid(this.yakkumdb.fa_rx_user,_kodeDokter);
             //this.rMKLINIKTableAdapter.Fill(this.yakkumdb.RMKLINIK);
 
@@ -96,22 +98,44 @@ namespace rse.app.desk.rx.lite.UI
 
         private void txtCariPasien_TextChanged(object sender, EventArgs e)
         {
-            //bsPasien.Filter = "vc_nama_p like '%" + txtCariPasien.Text + "%' or vc_no_rm like '%" + txtCariPasien.Text + "%'";
-            //foreach (CardPasien uc in flpPasien.Controls)
-            //{
-            //    MessageBox.Show(txtCariPasien.Text);
-            //    if (!uc.Text.Contains(txtCariPasien.Text) )//&& !uc.Description.Contains(textBox.Text))
-            //    {
-            //        //uc.Visibility = Visibility.Collapsed;
-            //       // MessageBox.Show(txtCariPasien.Text);
-            //    }
-            //    else
-            //    {
-            //        //Set Visible if it DOES match
-            //       // uc.Visibility = Visibility.Visible;
-            //    }
-            //}
-            //populatePasien();
+            if(txtCariPasien.Text.Length <1)
+            {
+                populatePasien();
+            }
+            if (txtCariPasien.Text.Length >1)
+            {
+                //var i = 0;
+                //var b = "Normal";
+                foreach (Control c in flpPasien.Controls)
+                {
+                    
+
+                    if (!c.Tag.ToString().ToLower().Contains(txtCariPasien.Text))
+                    {
+                        flpPasien.Controls.Remove(c);
+                    }
+
+
+                    //MessageBox.Show("i : " + i.ToString());
+                    //if (!uc.NoRM.Contains(txtCariPasien.Text) && !uc.Nama.Contains(txtCariPasien.Text))
+                    //{
+                    //    //b = "ketemu : ";
+                    //    //MessageBox.Show(b + i.ToString());
+                    //    // uc.Visibility = Visibility.Collapsed;
+                    //    uc.Dispose();
+                    //}
+                    //else
+                    //{
+                    //    //b = "ga ketemu !";
+                    //    //MessageBox.Show(b);
+                    //    //Set Visible if it DOES match
+                    //    //uc.Visibility = Visibility.Visible;
+
+                    //}
+                    //i++;
+                }
+            }
+            
         }
 
         //private void SetLoading(bool displayLoader)
