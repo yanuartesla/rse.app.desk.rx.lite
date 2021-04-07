@@ -105,8 +105,6 @@ namespace rse.app.desk.rx.pharmacist.UI
                 return;
             }
 
-
-            
         }
 
         private void doSimpan()
@@ -183,6 +181,9 @@ namespace rse.app.desk.rx.pharmacist.UI
             ds5.ClearBeforeFill = true;
             ds5.Fill(yakkumdb.fa_rx_tindakan, _noresep);
 
+            var ds6 = new Dataset.yakkumdbTableAdapters.fa_rx_prosedurTableAdapter();
+            ds6.ClearBeforeFill = true;
+            ds6.Fill(yakkumdb.fa_rx_prosedur, _noreg);
             //this.rvResep.LocalReport.DataSources.Clear();
 
             ReportDataSource _rds = new ReportDataSource();
@@ -206,6 +207,10 @@ namespace rse.app.desk.rx.pharmacist.UI
             ReportDataSource _rds5 = new ReportDataSource();
             _rds5.Name = "dsTindakanPer";
             _rds5.Value = ds5.GetData(_noresep);
+
+            ReportDataSource _rds6 = new ReportDataSource();
+            _rds6.Name = "dsProcedure";
+            _rds6.Value = ds6.GetData(_noresep);
             //this.rvResep.ZoomMode = ZoomMode.PageWidth;
             //this.rvResep.RefreshReport();
 
@@ -219,7 +224,6 @@ namespace rse.app.desk.rx.pharmacist.UI
             report.DataSources.Add(_rds3);
             report.DataSources.Add(_rds4);
             report.DataSources.Add(_rds5);
-
 
             for (int q = 1; q <= _numofcopies; q++)
             {
@@ -265,7 +269,6 @@ namespace rse.app.desk.rx.pharmacist.UI
                     this.resep_detilTableAdapter.FillByNoResep(yakkumdb.resep_detil, _noresep);
                     dgvResep.Update();
                     dgvResep.Refresh();
-                    
                 }
                 // MessageBox.Show("edited! " + val);
             }

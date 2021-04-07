@@ -101,7 +101,6 @@ namespace rse.app.desk.rx.lite.Function
                         break;
                     }
 
-
             }
         }
 

@@ -19,8 +19,9 @@ namespace rse.app.desk.rx.lite.UI
         private string _kracik { get; set; }
         private string _kdokter { get; set; }
         private int _nourut { get; set; }
+        private bool _template { get; set; }
 
-        public Racikan(int kodefornas, string namaracikan, string koderxd, string koderx, string kracik, string kdokter, int nourut)
+        public Racikan(int kodefornas, string namaracikan, string koderxd, string koderx, string kracik, string kdokter, int nourut, bool temp)
         {
             InitializeComponent();
             _kodefornas = kodefornas;
@@ -31,6 +32,8 @@ namespace rse.app.desk.rx.lite.UI
             _kracik = kracik;
             _nourut = nourut;
             _kdokter = kdokter;
+            _template = temp;
+            load_Template();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -58,7 +61,6 @@ namespace rse.app.desk.rx.lite.UI
             {
                 while (dReader.Read())
                     namesCollection.Add(dReader["vc_namaobat"].ToString());
-
             }
             else
             {
@@ -73,6 +75,7 @@ namespace rse.app.desk.rx.lite.UI
             txtNamaObat.AutoCompleteCustomSource = namesCollection;
         }
 
+        
         private void txtNamaObat_TextChanged(object sender, EventArgs e)
         {
             // viewrsefaobatBindingSource.Filter = "[vc_namaobat] = '" + txtNamaObat.Text + "'";
@@ -82,6 +85,7 @@ namespace rse.app.desk.rx.lite.UI
         {
             // TODO: This line of code loads data into the 'yakkumdb.view_rse_fa_obat' table. You can move, or remove it, as needed.
             this.view_rse_fa_obatTableAdapter.Fill(this.yakkumdb.view_rse_fa_obat);
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -136,6 +140,7 @@ namespace rse.app.desk.rx.lite.UI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            
             if(txtJumlah.Text == "")
             {
                 MessageBox.Show("Masukkan Jumlah Racikan");
@@ -222,8 +227,8 @@ namespace rse.app.desk.rx.lite.UI
                 MessageBox.Show("Masukan Jumlah Obat");
                 return false;
             }
-            else if (cmbSatuanDosis.Text == "")
-            { MessageBox.Show("Masukan Satuan Dosis"); return false; }
+            //else if (cmbSatuanDosis.Text == "")
+            //{ MessageBox.Show("Masukan Satuan Dosis"); return false; }
             else if (cmbSatuan.Text == "")
             { MessageBox.Show("Masukan Satuan Jumlah Obat"); return false; }
             else
@@ -231,5 +236,37 @@ namespace rse.app.desk.rx.lite.UI
                 return true;
             }
         }
+
+
+        private void load_Template()
+        {
+            //MessageBox.Show("Show");
+            if (_template == true)
+            {
+               // MessageBox.Show(_namaracikan.Substring(0, _namaracikan.Length - 3) + "0106");
+                var dh = new dataset.yakkumdbTableAdapters.fa_rx_template_racikanTableAdapter();
+                dh.FillByTempDokter(yakkumdb.fa_rx_template_racikan, _namaracikan.Substring(0, _namaracikan.Length - 3).TrimStart(), _kdokter);
+                DataTable dt = dh.GetDataByTempDokter(_namaracikan.Substring(0, _namaracikan.Length - 3).TrimStart(), _kdokter);
+
+                foreach (DataRow r in dt.Rows)
+                {
+                    //MessageBox.Show(r["nama_obat"].ToString());
+
+                    DataGridViewRow row = (DataGridViewRow)dgvRacik.Rows[0].Clone();
+                    row.Cells[1].Value = r["nama_obat"].ToString();
+                    row.Cells[2].Value = r["dosis"].ToString();
+                    row.Cells[3].Value = r["satuan"].ToString();
+                    row.Cells[5].Value = r["kode_obat"].ToString();
+                   
+                    dgvRacik.Rows.Add(row);
+                }
+
+                
+            }
+            else {
+                // MessageBox.Show("TEst");
+                }
+        }
+        
     }
 }

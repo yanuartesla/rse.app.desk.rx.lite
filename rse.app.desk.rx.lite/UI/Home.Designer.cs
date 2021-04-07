@@ -378,7 +378,6 @@ namespace rse.app.desk.rx.lite.UI
             this.txtCariPasien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtCariPasien.DisabledState.Parent = this.txtCariPasien;
             this.txtCariPasien.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCariPasien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCariPasien.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCariPasien.FocusedState.Parent = this.txtCariPasien;
             this.txtCariPasien.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);

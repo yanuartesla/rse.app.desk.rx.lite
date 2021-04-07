@@ -222,8 +222,9 @@ namespace rse.app.desk.rx.lite.UI
 
             var nu = dh.ScalarQueryMaxNoUrutResep(lblKodeRtx.Text).ToString();
             var nurs = int.Parse(nu) + 1;
+            var temp = false;
             // MessageBox.Show(nurs.ToString());
-            Racikan rc = new Racikan(_kodefornas, _namaracikan, _koderacikan, lblKodeRtx.Text, cs.ToString(), _kdokter, nurs);
+            Racikan rc = new Racikan(_kodefornas, _namaracikan, _koderacikan, lblKodeRtx.Text, cs.ToString(), _kdokter, nurs,temp);
             var result = rc.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -264,23 +265,58 @@ namespace rse.app.desk.rx.lite.UI
         private void LoadTemplateRacikan()
         {
             var dh = new dataset.yakkumdbTableAdapters.fa_rx_template_racikanTableAdapter();
-            dh.FillByDist(yakkumdb.fa_rx_template_racikan, "0106");
-            DataTable dt = dh.GetDataByDist("0106");
+            dh.FillByDist(yakkumdb.fa_rx_template_racikan, _kdokter);
+            DataTable dt = dh.GetDataByDist(_kdokter);
 
             foreach (DataRow r in dt.Rows)
             {
                 //MessageBox.Show(r["nama_template"].ToString());
                 Guna.UI2.WinForms.Guna2Button button = new Guna.UI2.WinForms.Guna2Button();
-                button.Tag = r["nama_template"].ToString();
+                button.Tag = r["nid_dokter"].ToString()+ r["nama_template"].ToString();
                 button.Text = r["nama_template"].ToString();
                 button.AutoRoundedCorners = true;
                 button.AutoSize = true;
                 flptemRacikan.Controls.Add(button);
-                //button.Click += button_MouseCliked;
+                button.Click += button_MouseCliked;
             }
 
         }
 
-        
+        private void button_MouseCliked(object sender, EventArgs e)
+        {
+
+            Guna.UI2.WinForms.Guna2Button us = (Guna.UI2.WinForms.Guna2Button)sender;
+            var _filter = us.Tag.ToString();
+
+
+            var dh = new dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
+            dh.Fill(yakkumdb.fa_rx_resep_d);
+            var sc = dh.ScalarQueryNoRacikan(lblKodeRtx.Text).ToString();
+            var cs = Int32.Parse(sc) + 1;
+            var _koderacikan = "RC" + _noreg + _kdokter + cs.ToString("00000");
+            var _namaracikan = _filter.ToString().Substring(4) +" " + cs.ToString("00");
+
+            var nu = dh.ScalarQueryMaxNoUrutResep(lblKodeRtx.Text).ToString();
+            var nurs = int.Parse(nu) + 1;
+
+            bool temp = true;
+
+            Racikan rc = new Racikan(_kodefornas, _namaracikan, _koderacikan, lblKodeRtx.Text, cs.ToString(), _kdokter, nurs,temp);
+            var result = rc.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep, lblKodeRtx.Text);
+                bs_view_resep.Filter = "vc_kode_rx = '" + lblKodeRtx.Text + "'";
+                dgvResep.Update();
+                dgvResep.Refresh();
+            }
+
+            //this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep, lblKodeRtx.Text);
+            //    bs_view_resep.Filter = "vc_kode_rx = '" + lblKodeRtx.Text + "'";
+            //    dgvResep.Update();
+            //    dgvResep.Refresh();
+        }
+
+
     }
 }

@@ -243,10 +243,33 @@ namespace rse.app.desk.rx.lite.UI
 
             insertCPPT();
             insertDiagnosa();
-            
+            insertProcedure();
+
             MessageBox.Show("Resep Berhasil di Simpan");
             LoadHome();
-           
+            
+        }
+        private void insertProcedure()
+        {
+            var dt = new dataset.yakkumdbTableAdapters.fa_rx_prosedurTableAdapter();
+            for (int i = 0; i < dgvProcedure.RowCount - 1; i++)
+            {
+                if (!dgvProcedure.Rows[i].Cells[1].Value.Equals(null))
+                {
+
+                }
+                else 
+                {
+                      dt.InsertQuery(
+                     _noreg,
+                     dgvProcedure.Rows[i].Cells[1].Value.ToString(),
+                     dgvProcedure.Rows[i].Cells[2].Value.ToString(),
+                     Int32.Parse(dgvProcedure.Rows[i].Cells[0].Value.ToString()),
+                     DateTime.Now
+                     );
+                }
+                
+            }
         }
         private void insertDiagnosa()
         {
