@@ -79,7 +79,6 @@ namespace rse.app.desk.rx.lite.UI
             bs_view_resep.Filter = "vc_kode_rx = '" + lblKodeRtx.Text + "'";
             dgvResep.Update();
             dgvResep.Refresh();
-
         }
 
 
@@ -116,7 +115,7 @@ namespace rse.app.desk.rx.lite.UI
                     var _maxno = (int)_resepdetail.ScalarQueryMaxNoUrutResep(lblKodeRtx.Text) + 1;
                     //MessageBox.Show(_maxno.ToString());
                     _kodeobat = txtCariObat.Text;
-                    dosis ds = new dosis(_kodeobat, lblKodeRtx.Text, _kdokter, _maxno);
+                    dosis ds = new dosis(_kodeobat, lblKodeRtx.Text, _kdokter, _maxno,_kodefornas);
                     var result = ds.ShowDialog();
                     if (result == DialogResult.OK)
                     {
@@ -264,9 +263,16 @@ namespace rse.app.desk.rx.lite.UI
 
         private void LoadTemplateRacikan()
         {
+           // MessageBox.Show(_kodefornas.ToString());
+            var _kodetmpracikan = 0;
+            if (_kodefornas == 0)
+            {
+                _kodetmpracikan = 1;
+            }
+            else { _kodetmpracikan = 3; }
             var dh = new dataset.yakkumdbTableAdapters.fa_rx_template_racikanTableAdapter();
-            dh.FillByDist(yakkumdb.fa_rx_template_racikan, _kdokter);
-            DataTable dt = dh.GetDataByDist(_kdokter);
+            dh.FillByDist(yakkumdb.fa_rx_template_racikan, _kdokter, _kodetmpracikan);
+            DataTable dt = dh.GetDataByDist(_kdokter, _kodetmpracikan);
 
             foreach (DataRow r in dt.Rows)
             {
@@ -301,7 +307,9 @@ namespace rse.app.desk.rx.lite.UI
 
             bool temp = true;
 
-            Racikan rc = new Racikan(_kodefornas, _namaracikan, _koderacikan, lblKodeRtx.Text, cs.ToString(), _kdokter, nurs,temp);
+            //Racikan rc = new Racikan(_kodefornas, _namaracikan, _koderacikan, lblKodeRtx.Text, cs.ToString(), _kdokter, nurs,temp);
+            Racikan rc = new Racikan(1, _namaracikan, _koderacikan, lblKodeRtx.Text, cs.ToString(), _kdokter, nurs, temp);
+
             var result = rc.ShowDialog();
             if (result == DialogResult.OK)
             {

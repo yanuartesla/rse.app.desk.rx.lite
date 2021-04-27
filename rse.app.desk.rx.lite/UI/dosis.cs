@@ -26,8 +26,9 @@ namespace rse.app.desk.rx.lite.UI
         private string _kdokter { get; set; }
         private decimal _jmliter { get; set; }
         private int _nourut { get; set; }
+        private int _kfornas { get; set; }
 
-        public dosis(string namaobat, string norx, string kodedokter, int nourut)
+        public dosis(string namaobat, string norx, string kodedokter, int nourut, int kodefornas)
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 64, 64));
@@ -35,6 +36,7 @@ namespace rse.app.desk.rx.lite.UI
             _norx = norx;
             _kdokter = kodedokter;
             _nourut = nourut;
+            _kfornas = kodefornas;
         }
 
         private void dosis_Load(object sender, EventArgs e)
@@ -47,8 +49,28 @@ namespace rse.app.desk.rx.lite.UI
             DataTable dt = da.GetDataByNamaObat(_nmobat);
             foreach (DataRow r in dt.Rows)
             {
-                _retriksi = r.Field<decimal>(0);
-                _kobat = r.Field<string>(3);
+                switch (_kfornas)
+                {
+                    case 0:
+                        _retriksi = 999;
+                        _kobat = r.Field<string>(3);
+                        break;
+                    case 3:
+                        _retriksi = r.Field<decimal>(0);
+                        _kobat = r.Field<string>(3);
+                        break;
+                }
+   
+                //if (_kfornas == 0)
+                //{
+                //    _retriksi = 999;
+                //    _kobat = r.Field<string>(3);
+                //}
+                //else if (_kfornas == 3)
+                //{
+                //    _retriksi = r.Field<decimal>(0);
+                //    _kobat = r.Field<string>(3);
+                //}
 
                 if (_retriksi == 999)
                 {
@@ -61,14 +83,12 @@ namespace rse.app.desk.rx.lite.UI
 
             this.fa_rx_resep_dTableAdapter.FillByKrxD(this.yakkumdb.fa_rx_resep_d, _norx + _kobat);
 
-
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
 
         private void guna2CustomCheckBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -88,6 +108,11 @@ namespace rse.app.desk.rx.lite.UI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (txtJumlah.Text == "")
+            {
+                MessageBox.Show("Masukan Jumlah Obat");
+                //return false;
+            }
             if (checkretriksi() == true)
             {
 
@@ -114,7 +139,6 @@ namespace rse.app.desk.rx.lite.UI
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
-
         }
 
         private void favCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -142,18 +166,17 @@ namespace rse.app.desk.rx.lite.UI
             {
                 e.Handled = true;
             }
-
         }
 
         private Boolean checkretriksi()
         {
 
-
             if (txtJumlah.Text == "")
             {
-                MessageBox.Show("Masukan Jumlah Obat");
+                //MessageBox.Show("Masukan Jumlah Obat");
                 return false;
             }
+
             //else if (cmbSatuanDosis.Text == "")
             //{ MessageBox.Show("Masukan Satuan Dosis"); return false; }
             else

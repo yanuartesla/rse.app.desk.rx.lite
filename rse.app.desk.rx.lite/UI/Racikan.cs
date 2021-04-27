@@ -157,7 +157,7 @@ namespace rse.app.desk.rx.lite.UI
 
                     if (dgvRacik.Rows[i].Cells[1].Value.Equals(null))
                     {
-
+                        MessageBox.Show("Masukan Obat Racikan");
                     }
                     else
                     {
@@ -237,7 +237,6 @@ namespace rse.app.desk.rx.lite.UI
             }
         }
 
-
         private void load_Template()
         {
             //MessageBox.Show("Show");
@@ -245,13 +244,13 @@ namespace rse.app.desk.rx.lite.UI
             {
                // MessageBox.Show(_namaracikan.Substring(0, _namaracikan.Length - 3) + "0106");
                 var dh = new dataset.yakkumdbTableAdapters.fa_rx_template_racikanTableAdapter();
-                dh.FillByTempDokter(yakkumdb.fa_rx_template_racikan, _namaracikan.Substring(0, _namaracikan.Length - 3).TrimStart(), _kdokter);
-                DataTable dt = dh.GetDataByTempDokter(_namaracikan.Substring(0, _namaracikan.Length - 3).TrimStart(), _kdokter);
+                dh.FillByTempDokter(yakkumdb.fa_rx_template_racikan, _namaracikan.Substring(0, _namaracikan.Length - 3).TrimStart(), _kdokter, _kodefornas);
+                DataTable dt = dh.GetDataByTempDokter(_namaracikan.Substring(0, _namaracikan.Length - 3).TrimStart(), _kdokter, _kodefornas);
 
                 foreach (DataRow r in dt.Rows)
                 {
                     //MessageBox.Show(r["nama_obat"].ToString());
-
+                    
                     DataGridViewRow row = (DataGridViewRow)dgvRacik.Rows[0].Clone();
                     row.Cells[1].Value = r["nama_obat"].ToString();
                     row.Cells[2].Value = r["dosis"].ToString();
@@ -260,7 +259,6 @@ namespace rse.app.desk.rx.lite.UI
                    
                     dgvRacik.Rows.Add(row);
                 }
-
                 
             }
             else {

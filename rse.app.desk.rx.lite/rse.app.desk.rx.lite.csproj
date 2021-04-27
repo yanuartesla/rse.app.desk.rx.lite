@@ -29,7 +29,7 @@
     <PublisherName>RSEmanuel</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>9</ApplicationRevision>
     <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -206,11 +206,23 @@
     <Compile Include="UI\Layout\CardHistoriPasien.Designer.cs">
       <DependentUpon>CardHistoriPasien.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Layout\CardHistoryResep.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Layout\CardHistoryResep.Designer.cs">
+      <DependentUpon>CardHistoryResep.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Layout\CardPasien.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\Layout\CardPasien.Designer.cs">
       <DependentUpon>CardPasien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Layout\CardResep.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Layout\CardResep.Designer.cs">
+      <DependentUpon>CardResep.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Login.cs">
       <SubType>Form</SubType>
@@ -254,6 +266,9 @@
     <Compile Include="UI\Template.Designer.cs">
       <DependentUpon>Template.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Function\SearchContainTextBox.resx">
+      <DependentUpon>SearchContainTextBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\AddData.resx">
       <DependentUpon>AddData.cs</DependentUpon>
     </EmbeddedResource>
@@ -283,8 +298,14 @@
     <EmbeddedResource Include="UI\Layout\CardHistoriPasien.resx">
       <DependentUpon>CardHistoriPasien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Layout\CardHistoryResep.resx">
+      <DependentUpon>CardHistoryResep.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Layout\CardPasien.resx">
       <DependentUpon>CardPasien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Layout\CardResep.resx">
+      <DependentUpon>CardResep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

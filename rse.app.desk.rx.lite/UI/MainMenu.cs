@@ -37,7 +37,7 @@ namespace rse.app.desk.rx.lite.UI
             // TODO: This line of code loads data into the 'yakkumdb.RMKLINIK' table. You can move, or remove it, as needed.
             this.rMKLINIKTableAdapter.FillByNID(this.yakkumdb.RMKLINIK,_nidDokter);
 
-
+            //MessageBox.Show(cmbKlinik.SelectedValue.ToString());
             _kodeKlinik =  cmbKlinik.SelectedValue.ToString();
 
             LoadHome();
@@ -124,6 +124,32 @@ namespace rse.app.desk.rx.lite.UI
         private void flpHistoriPasien_MouseLeave(object sender, EventArgs e)
         {
             timer1.Start();
+        }
+
+        private void cmbKlinik_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbKlinik.SelectedIndex != -1)
+            {
+                cmbKlinik.Text = cmbKlinik.SelectedValue.ToString();
+
+                _kodeKlinik = cmbKlinik.SelectedValue.ToString();
+                LoadPanelChild.Controls.Clear();
+                LoadHome();
+                //MessageBox.Show(cmbKlinik.SelectedValue.ToString());
+
+
+
+                // If we also wanted to get the displayed text we could use
+                // the SelectedItem item property:
+                // string s = ((USState)ListBox1.SelectedItem).LongName;
+            }
+
+        }
+
+        private void cmbKlinik_SelectedValueChanged(object sender, EventArgs e)
+        {
+           
+            
         }
     }
 }

@@ -67,6 +67,11 @@
             this.bsObat = new System.Windows.Forms.BindingSource(this.components);
             this.view_rse_fa_obatTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.view_rse_fa_obatTableAdapter();
             this.view_resepTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.view_resepTableAdapter();
+            this.pnlHistori = new Guna.UI2.WinForms.Guna2Panel();
+            this.flpHistoriResep = new System.Windows.Forms.FlowLayoutPanel();
+            this.cardHistoryResep1 = new rse.app.desk.rx.lite.UI.Layout.CardHistoryResep();
+            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -80,6 +85,9 @@
             this.guna2Panel5.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsObat)).BeginInit();
+            this.pnlHistori.SuspendLayout();
+            this.flpHistoriResep.SuspendLayout();
+            this.guna2Panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel2
@@ -87,10 +95,10 @@
             this.guna2Panel2.Controls.Add(this.guna2Panel4);
             this.guna2Panel2.Controls.Add(this.guna2Panel3);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel2.Location = new System.Drawing.Point(15, 15);
+            this.guna2Panel2.Location = new System.Drawing.Point(244, 15);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
-            this.guna2Panel2.Size = new System.Drawing.Size(805, 495);
+            this.guna2Panel2.Size = new System.Drawing.Size(733, 495);
             this.guna2Panel2.TabIndex = 2;
             // 
             // guna2Panel4
@@ -100,7 +108,7 @@
             this.guna2Panel4.Location = new System.Drawing.Point(0, 74);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
-            this.guna2Panel4.Size = new System.Drawing.Size(805, 421);
+            this.guna2Panel4.Size = new System.Drawing.Size(733, 421);
             this.guna2Panel4.TabIndex = 2;
             // 
             // panel2
@@ -110,7 +118,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(805, 421);
+            this.panel2.Size = new System.Drawing.Size(733, 421);
             this.panel2.TabIndex = 3;
             // 
             // paneldgv
@@ -121,7 +129,7 @@
             this.paneldgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.paneldgv.Location = new System.Drawing.Point(0, 0);
             this.paneldgv.Name = "paneldgv";
-            this.paneldgv.Size = new System.Drawing.Size(805, 421);
+            this.paneldgv.Size = new System.Drawing.Size(733, 421);
             this.paneldgv.TabIndex = 3;
             // 
             // dgvResep
@@ -185,7 +193,7 @@
             this.dgvResep.RowHeadersVisible = false;
             this.dgvResep.RowTemplate.Height = 30;
             this.dgvResep.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvResep.Size = new System.Drawing.Size(661, 421);
+            this.dgvResep.Size = new System.Drawing.Size(589, 421);
             this.dgvResep.TabIndex = 1;
             this.dgvResep.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvResep.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -319,7 +327,7 @@
             this.guna2Panel6.Controls.Add(this.flptemRacikan);
             this.guna2Panel6.Controls.Add(this.guna2GradientPanel1);
             this.guna2Panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Panel6.Location = new System.Drawing.Point(661, 0);
+            this.guna2Panel6.Location = new System.Drawing.Point(589, 0);
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.ShadowDecoration.Parent = this.guna2Panel6;
             this.guna2Panel6.Size = new System.Drawing.Size(144, 421);
@@ -364,7 +372,7 @@
             this.guna2Panel3.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
-            this.guna2Panel3.Size = new System.Drawing.Size(805, 74);
+            this.guna2Panel3.Size = new System.Drawing.Size(733, 74);
             this.guna2Panel3.TabIndex = 1;
             // 
             // guna2Panel5
@@ -376,7 +384,7 @@
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Padding = new System.Windows.Forms.Padding(10);
             this.guna2Panel5.ShadowDecoration.Parent = this.guna2Panel5;
-            this.guna2Panel5.Size = new System.Drawing.Size(805, 49);
+            this.guna2Panel5.Size = new System.Drawing.Size(733, 49);
             this.guna2Panel5.TabIndex = 6;
             // 
             // txtCariObat
@@ -407,7 +415,7 @@
             this.txtCariObat.PlaceholderText = "Cari Obat";
             this.txtCariObat.SelectedText = "";
             this.txtCariObat.ShadowDecoration.Parent = this.txtCariObat;
-            this.txtCariObat.Size = new System.Drawing.Size(661, 29);
+            this.txtCariObat.Size = new System.Drawing.Size(589, 29);
             this.txtCariObat.TabIndex = 0;
             this.txtCariObat.Load += new System.EventHandler(this.txtCariObat_Load);
             this.txtCariObat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCariObat_KeyDown);
@@ -425,7 +433,7 @@
             this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
             this.guna2GradientButton1.Image = global::rse.app.desk.rx.lite.Properties.Resources.plus;
             this.guna2GradientButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(671, 10);
+            this.guna2GradientButton1.Location = new System.Drawing.Point(599, 10);
             this.guna2GradientButton1.Name = "guna2GradientButton1";
             this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
             this.guna2GradientButton1.Size = new System.Drawing.Size(124, 29);
@@ -444,7 +452,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(805, 25);
+            this.guna2Panel1.Size = new System.Drawing.Size(733, 25);
             this.guna2Panel1.TabIndex = 5;
             // 
             // label2
@@ -497,15 +505,69 @@
             // 
             this.view_resepTableAdapter.ClearBeforeFill = true;
             // 
+            // pnlHistori
+            // 
+            this.pnlHistori.Controls.Add(this.flpHistoriResep);
+            this.pnlHistori.Controls.Add(this.guna2Panel7);
+            this.pnlHistori.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlHistori.Location = new System.Drawing.Point(15, 15);
+            this.pnlHistori.Name = "pnlHistori";
+            this.pnlHistori.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlHistori.ShadowDecoration.Parent = this.pnlHistori;
+            this.pnlHistori.Size = new System.Drawing.Size(229, 495);
+            this.pnlHistori.TabIndex = 3;
+            this.pnlHistori.Visible = false;
+            // 
+            // flpHistoriResep
+            // 
+            this.flpHistoriResep.AutoSize = true;
+            this.flpHistoriResep.Controls.Add(this.cardHistoryResep1);
+            this.flpHistoriResep.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpHistoriResep.Location = new System.Drawing.Point(5, 47);
+            this.flpHistoriResep.Name = "flpHistoriResep";
+            this.flpHistoriResep.Size = new System.Drawing.Size(219, 443);
+            this.flpHistoriResep.TabIndex = 1;
+            // 
+            // cardHistoryResep1
+            // 
+            this.cardHistoryResep1.BackColor = System.Drawing.Color.Linen;
+            this.cardHistoryResep1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cardHistoryResep1.Location = new System.Drawing.Point(3, 3);
+            this.cardHistoryResep1.Name = "cardHistoryResep1";
+            this.cardHistoryResep1.Size = new System.Drawing.Size(221, 250);
+            this.cardHistoryResep1.TabIndex = 0;
+            // 
+            // guna2Panel7
+            // 
+            this.guna2Panel7.Controls.Add(this.label3);
+            this.guna2Panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel7.Location = new System.Drawing.Point(5, 5);
+            this.guna2Panel7.Name = "guna2Panel7";
+            this.guna2Panel7.ShadowDecoration.Parent = this.guna2Panel7;
+            this.guna2Panel7.Size = new System.Drawing.Size(219, 42);
+            this.guna2Panel7.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Indigo;
+            this.label3.Location = new System.Drawing.Point(44, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(132, 23);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "History Resep";
+            // 
             // obat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.guna2Panel2);
+            this.Controls.Add(this.pnlHistori);
             this.Name = "obat";
             this.Padding = new System.Windows.Forms.Padding(15);
-            this.Size = new System.Drawing.Size(835, 525);
+            this.Size = new System.Drawing.Size(992, 525);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -521,6 +583,11 @@
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsObat)).EndInit();
+            this.pnlHistori.ResumeLayout(false);
+            this.pnlHistori.PerformLayout();
+            this.flpHistoriResep.ResumeLayout(false);
+            this.guna2Panel7.ResumeLayout(false);
+            this.guna2Panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -561,5 +628,10 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private System.Windows.Forms.FlowLayoutPanel flptemRacikan;
+        private Guna.UI2.WinForms.Guna2Panel pnlHistori;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
+        private System.Windows.Forms.FlowLayoutPanel flpHistoriResep;
+        private System.Windows.Forms.Label label3;
+        private Layout.CardHistoryResep cardHistoryResep1;
     }
 }

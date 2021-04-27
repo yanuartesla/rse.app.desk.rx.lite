@@ -34,6 +34,7 @@
             this.yakkumdb = new rse.app.desk.rx.lite.dataset.yakkumdb();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.txtdd2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.bsRxD = new System.Windows.Forms.BindingSource(this.components);
             this.txtdd1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblSatuan = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,13 +54,12 @@
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.view_rse_fa_obatTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.view_rse_fa_obatTableAdapter();
-            this.bsRxD = new System.Windows.Forms.BindingSource(this.components);
             this.fa_rx_resep_dTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bsObat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).BeginInit();
             this.guna2ShadowPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numiter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRxD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numiter)).BeginInit();
             this.SuspendLayout();
             // 
             // Obat
@@ -143,6 +143,11 @@
             this.txtdd2.ShadowDecoration.Parent = this.txtdd2;
             this.txtdd2.Size = new System.Drawing.Size(81, 36);
             this.txtdd2.TabIndex = 20;
+            // 
+            // bsRxD
+            // 
+            this.bsRxD.DataMember = "fa_rx_resep_d";
+            this.bsRxD.DataSource = this.yakkumdb;
             // 
             // txtdd1
             // 
@@ -460,6 +465,7 @@
             // 
             // guna2AnimateWindow1
             // 
+            this.guna2AnimateWindow1.Interval = 200;
             this.guna2AnimateWindow1.TargetForm = this;
             // 
             // guna2DragControl1
@@ -472,11 +478,6 @@
             // view_rse_fa_obatTableAdapter
             // 
             this.view_rse_fa_obatTableAdapter.ClearBeforeFill = true;
-            // 
-            // bsRxD
-            // 
-            this.bsRxD.DataMember = "fa_rx_resep_d";
-            this.bsRxD.DataSource = this.yakkumdb;
             // 
             // fa_rx_resep_dTableAdapter
             // 
@@ -501,8 +502,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).EndInit();
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numiter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRxD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numiter)).EndInit();
             this.ResumeLayout(false);
 
         }

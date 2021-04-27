@@ -10,10 +10,11 @@ namespace rse.app.desk.rx.pharmacist.Functions
 {
     class SavePDF
     {
-        public static void SavedPDF(ReportViewer viewer, string savePath)
+
+        public static void SavedPDF(LocalReport viewer, string savePath)
 
         {
-            byte[] Bytes = viewer.LocalReport.Render(format: "PDF", deviceInfo: "");
+            byte[] Bytes = viewer.Render(format: "PDF", deviceInfo: "");
 
             Directory.CreateDirectory(Path.GetDirectoryName(savePath));
 
@@ -22,5 +23,21 @@ namespace rse.app.desk.rx.pharmacist.Functions
                 stream.Write(Bytes, 0, Bytes.Length);
             }
         }
+
+
+
+
+        //public static void SavedPDF(ReportViewer viewer, string savePath)
+
+        //{
+        //    byte[] Bytes = viewer.LocalReport.Render(format: "PDF", deviceInfo: "");
+
+        //    Directory.CreateDirectory(Path.GetDirectoryName(savePath));
+
+        //    using (FileStream stream = new FileStream(savePath, FileMode.Create))
+        //    {
+        //        stream.Write(Bytes, 0, Bytes.Length);
+        //    }
+        //}
     }
 }

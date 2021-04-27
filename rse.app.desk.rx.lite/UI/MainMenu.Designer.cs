@@ -250,7 +250,7 @@ namespace rse.app.desk.rx.lite.UI
             this.LoadPanel.Location = new System.Drawing.Point(10, 10);
             this.LoadPanel.Name = "LoadPanel";
             this.LoadPanel.ShadowDecoration.Parent = this.LoadPanel;
-            this.LoadPanel.Size = new System.Drawing.Size(995, 700);
+            this.LoadPanel.Size = new System.Drawing.Size(1063, 700);
             this.LoadPanel.TabIndex = 0;
             // 
             // LoadPanelChild
@@ -262,7 +262,7 @@ namespace rse.app.desk.rx.lite.UI
             this.LoadPanelChild.Name = "LoadPanelChild";
             this.LoadPanelChild.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
             this.LoadPanelChild.ShadowDecoration.Parent = this.LoadPanelChild;
-            this.LoadPanelChild.Size = new System.Drawing.Size(995, 648);
+            this.LoadPanelChild.Size = new System.Drawing.Size(1063, 648);
             this.LoadPanelChild.TabIndex = 2;
             this.LoadPanelChild.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.LoadPanelChild_ControlAdded);
             // 
@@ -275,7 +275,7 @@ namespace rse.app.desk.rx.lite.UI
             this.HeaderPanel.Location = new System.Drawing.Point(0, 0);
             this.HeaderPanel.Name = "HeaderPanel";
             this.HeaderPanel.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.HeaderPanel.Size = new System.Drawing.Size(995, 52);
+            this.HeaderPanel.Size = new System.Drawing.Size(1063, 52);
             this.HeaderPanel.TabIndex = 1;
             // 
             // cmbKlinik
@@ -302,6 +302,8 @@ namespace rse.app.desk.rx.lite.UI
             this.cmbKlinik.Size = new System.Drawing.Size(257, 36);
             this.cmbKlinik.TabIndex = 2;
             this.cmbKlinik.ValueMember = "vc_K_KLINIK";
+            this.cmbKlinik.SelectedIndexChanged += new System.EventHandler(this.cmbKlinik_SelectedIndexChanged);
+            this.cmbKlinik.SelectedValueChanged += new System.EventHandler(this.cmbKlinik_SelectedValueChanged);
             // 
             // bsKlinik
             // 
@@ -323,7 +325,7 @@ namespace rse.app.desk.rx.lite.UI
             this.txtNamaDokter.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNamaDokter.Location = new System.Drawing.Point(0, 0);
             this.txtNamaDokter.Name = "txtNamaDokter";
-            this.txtNamaDokter.Size = new System.Drawing.Size(917, 52);
+            this.txtNamaDokter.Size = new System.Drawing.Size(985, 52);
             this.txtNamaDokter.TabIndex = 1;
             this.txtNamaDokter.Text = "Loading . . .";
             this.txtNamaDokter.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -339,7 +341,7 @@ namespace rse.app.desk.rx.lite.UI
             this.btnClose.Image = global::rse.app.desk.rx.lite.Properties.Resources.x_mark__3_;
             this.btnClose.ImageRotate = 0F;
             this.btnClose.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnClose.Location = new System.Drawing.Point(917, 0);
+            this.btnClose.Location = new System.Drawing.Point(985, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.PressedState.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.PressedState.Image")));
             this.btnClose.PressedState.ImageSize = new System.Drawing.Size(32, 32);
@@ -366,7 +368,7 @@ namespace rse.app.desk.rx.lite.UI
             this.BackgroudLoadPanel.Name = "BackgroudLoadPanel";
             this.BackgroudLoadPanel.Padding = new System.Windows.Forms.Padding(10);
             this.BackgroudLoadPanel.ShadowDecoration.Parent = this.BackgroudLoadPanel;
-            this.BackgroudLoadPanel.Size = new System.Drawing.Size(1015, 720);
+            this.BackgroudLoadPanel.Size = new System.Drawing.Size(1083, 720);
             this.BackgroudLoadPanel.TabIndex = 1;
             // 
             // guna2Elipse2
@@ -402,7 +404,7 @@ namespace rse.app.desk.rx.lite.UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Indigo;
-            this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.ClientSize = new System.Drawing.Size(1348, 720);
             this.Controls.Add(this.BackgroudLoadPanel);
             this.Controls.Add(this.NavBarpanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

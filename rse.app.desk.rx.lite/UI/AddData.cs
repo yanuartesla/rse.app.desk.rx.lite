@@ -256,18 +256,16 @@ namespace rse.app.desk.rx.lite.UI
             {
                 if (!dgvProcedure.Rows[i].Cells[1].Value.Equals(null))
                 {
-
+                    MessageBox.Show(dgvProcedure.Rows[i].Cells[1].Value.ToString());
+                    dt.InsertQuery(
+                   _noreg,
+                   dgvProcedure.Rows[i].Cells[1].Value.ToString(),
+                   dgvProcedure.Rows[i].Cells[2].Value.ToString(),
+                   Int32.Parse(dgvProcedure.Rows[i].Cells[0].Value.ToString()),
+                   DateTime.Now
+                   );
                 }
-                else 
-                {
-                      dt.InsertQuery(
-                     _noreg,
-                     dgvProcedure.Rows[i].Cells[1].Value.ToString(),
-                     dgvProcedure.Rows[i].Cells[2].Value.ToString(),
-                     Int32.Parse(dgvProcedure.Rows[i].Cells[0].Value.ToString()),
-                     DateTime.Now
-                     );
-                }
+                
                 
             }
         }
@@ -370,7 +368,6 @@ namespace rse.app.desk.rx.lite.UI
                 {
                     foreach (DataRow r in dt.Rows)
                     {
-
                         row.Cells[1].Value = r["vc_codes"].ToString();
                         row.Cells[2].Value = r["vc_desc_title"].ToString();
 

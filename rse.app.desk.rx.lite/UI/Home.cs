@@ -19,6 +19,7 @@ namespace rse.app.desk.rx.lite.UI
         //private MainMenu _mainMenu = new MainMenu();
         public string _kodeDokter { get; set; }
         public string _kodeKlinik { get; set; }
+        public int _jmlpasien { get; set; }
 
 
         //private roles _currentroles { get; set; }
@@ -31,8 +32,17 @@ namespace rse.app.desk.rx.lite.UI
             
         }
 
+        private void getJmlPasien()
+        {
+            var ds = new PasienTableAdapter();
+            _jmlpasien = Int32.Parse( ds.ScalarQueryJMLPasien(_kodeKlinik, _kodeDokter ).ToString());
+            
+        }
         private void populatePasien()
         {
+            getJmlPasien();
+            lblJMLPasien.Text = _jmlpasien.ToString();
+
             flpPasien.SuspendLayout();
             flpPasien.Controls.Clear();
             var ds = new PasienTableAdapter();
@@ -98,42 +108,19 @@ namespace rse.app.desk.rx.lite.UI
 
         private void txtCariPasien_TextChanged(object sender, EventArgs e)
         {
-            if(txtCariPasien.Text.Length <1)
-            {
-                populatePasien();
-            }
-            if (txtCariPasien.Text.Length >1)
-            {
-                //var i = 0;
-                //var b = "Normal";
                 foreach (Control c in flpPasien.Controls)
                 {
                     
 
                     if (!c.Tag.ToString().ToLower().Contains(txtCariPasien.Text))
                     {
-                        flpPasien.Controls.Remove(c);
+                        c.Hide();
+                        //flpPasien.Controls.Remove(c);
                     }
-
-
-                    //MessageBox.Show("i : " + i.ToString());
-                    //if (!uc.NoRM.Contains(txtCariPasien.Text) && !uc.Nama.Contains(txtCariPasien.Text))
-                    //{
-                    //    //b = "ketemu : ";
-                    //    //MessageBox.Show(b + i.ToString());
-                    //    // uc.Visibility = Visibility.Collapsed;
-                    //    uc.Dispose();
-                    //}
-                    //else
-                    //{
-                    //    //b = "ga ketemu !";
-                    //    //MessageBox.Show(b);
-                    //    //Set Visible if it DOES match
-                    //    //uc.Visibility = Visibility.Visible;
-
-                    //}
-                    //i++;
-                }
+                    else
+                    {
+                        c.Show();
+                    }
             }
             
         }

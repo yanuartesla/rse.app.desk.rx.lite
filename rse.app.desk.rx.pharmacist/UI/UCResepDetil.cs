@@ -112,16 +112,16 @@ namespace rse.app.desk.rx.pharmacist.UI
             var rh = new Dataset.yakkumdbTableAdapters.fa_rx_resep_hTableAdapter();
             //TODO : janganlupa uncomment
             rh.UpdateResponTime(DateTime.Now, _noresep);
-            load_report();
-            var _year = DateTime.Now.ToString("yyyy");
-            var _month = DateTime.Now.ToString("MM");
-            var _day = DateTime.Now.ToString("dd");
-            var _datepath = _year + @"\" + _month + @"\" + _day;
-            var _filename = _sep + "_resep.Pdf";
-            //string _path = @"\\\\192.168.10.222\Sharing Is Caring\ResepFarmasiSementara\" + _datepath + @"\" + _filename;
-            string _path = @"\\192.168.10.11\Data SEP\Casemix RJ\FARMASI RJ\" + _datepath + @"\" + _filename;
+            //load_report();
+            //var _year = DateTime.Now.ToString("yyyy");
+            //var _month = DateTime.Now.ToString("MM");
+            //var _day = DateTime.Now.ToString("dd");
+            //var _datepath = _year + @"\" + _month + @"\" + _day;
+            //var _filename = _sep + "_resep.Pdf";
+            ////string _path = @"\\192.168.2.222\Sharing Is Caring\ResepFarmasiSementara\" + _datepath + @"\" + _filename;
+            //string _path = @"\\192.168.10.11\Data SEP\Casemix RJ\FARMASI RJ\" + _datepath + @"\" + _filename;
 
-            Functions.SavePDF.SavedPDF(rvResep, _path);
+            //Functions.SavePDF.SavedPDF(rvResep, _path);
             PrintDialog pd = new PrintDialog();
             var result = pd.ShowDialog();
             //UCHome uchome = new UCHome();
@@ -210,7 +210,7 @@ namespace rse.app.desk.rx.pharmacist.UI
 
             ReportDataSource _rds6 = new ReportDataSource();
             _rds6.Name = "dsProcedure";
-            _rds6.Value = ds6.GetData(_noresep);
+            _rds6.Value = ds6.GetData(_noreg);
             //this.rvResep.ZoomMode = ZoomMode.PageWidth;
             //this.rvResep.RefreshReport();
 
@@ -224,11 +224,23 @@ namespace rse.app.desk.rx.pharmacist.UI
             report.DataSources.Add(_rds3);
             report.DataSources.Add(_rds4);
             report.DataSources.Add(_rds5);
+            report.DataSources.Add(_rds6);
 
             for (int q = 1; q <= _numofcopies; q++)
             {
                 PrintReport.PrintToPrinter(report, _numofcopies);
             }
+
+
+            var _year = DateTime.Now.ToString("yyyy");
+            var _month = DateTime.Now.ToString("MM");
+            var _day = DateTime.Now.ToString("dd");
+            var _datepath = _year + @"\" + _month + @"\" + _day;
+            var _filename = _sep + "_resep.Pdf";
+            //string _path = @"\\192.168.2.222\Sharing Is Caring\ResepFarmasiSementara\" + _datepath + @"\" + _filename;
+            string _path = @"\\192.168.10.11\Data SEP\Casemix RJ\FARMASI RJ\" + _datepath + @"\" + _filename;
+
+            Functions.SavePDF.SavedPDF(report, _path);
 
         }
         private void dgvResep_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
