@@ -86,10 +86,10 @@ namespace rse.app.desk.rx.lite
                 );
 
             // obat myuc = new obat(_noreg, _kdokter, _kdfornas, _curentRoles);
-            obat myuc = new obat(_noreg, _kdokter, _kdfornas);
-            myuc.Dock = DockStyle.Fill;
-            LoadPanel.Controls.Add(myuc);
-            myuc.Show();
+           // obat myuc = new obat(_noreg, _kdokter, _kdfornas, vc_no_rm);
+            //myuc.Dock = DockStyle.Fill;
+            //LoadPanel.Controls.Add(myuc);
+            //myuc.Show();
 
         }
 
@@ -221,10 +221,10 @@ namespace rse.app.desk.rx.lite
                 );
 
             //obat myuc = new obat(_noreg, _kdokter, _kdfornas,_curentRoles);
-            obat myuc = new obat(_noreg, _kdokter, _kdfornas);
-            myuc.Dock = DockStyle.Fill;
-            LoadPanel.Controls.Add(myuc);
-            myuc.Show();
+            //obat myuc = new obat(_noreg, _kdokter, _kdfornas);
+            //myuc.Dock = DockStyle.Fill;
+            //LoadPanel.Controls.Add(myuc);
+            //myuc.Show();
         }
 
         private void btnExpertise_Click(object sender, EventArgs e)

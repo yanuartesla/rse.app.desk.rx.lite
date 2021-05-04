@@ -1,4 +1,6 @@
-﻿using System;
+﻿using rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters;
+using rse.app.desk.rx.lite.UI.Layout;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -16,6 +18,7 @@ namespace rse.app.desk.rx.lite.UI
         public int _kodefornas { get; set; }
         public string _noreg { get; set; }
         public string _kdokter { get; set; }
+        public string _norm { get; set; }
         public string[] _listobat { get; set; }
         public string[] _listobatdetil { get; set; }
 
@@ -23,12 +26,13 @@ namespace rse.app.desk.rx.lite.UI
 
         AutoCompleteStringCollection namesCollection =
         new AutoCompleteStringCollection();
-        public obat(string noreg, string kdokter, int kfornas)
+        public obat(string noreg, string kdokter, int kfornas, string norm)
         {
             InitializeComponent();
             _kodefornas = kfornas;
             _noreg = noreg;
             _kdokter = kdokter;
+            _norm = norm;
             //_currentroles = _roles;
         }
 
@@ -79,6 +83,8 @@ namespace rse.app.desk.rx.lite.UI
             bs_view_resep.Filter = "vc_kode_rx = '" + lblKodeRtx.Text + "'";
             dgvResep.Update();
             dgvResep.Refresh();
+
+            populateHistoryResep();
         }
 
 
@@ -325,6 +331,62 @@ namespace rse.app.desk.rx.lite.UI
             //    dgvResep.Refresh();
         }
 
+        private void flpHistoriResep_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
+
+        private void populateHistoryResep()
+        {
+            flpHistoriResep.SuspendLayout();
+            flpHistoriResep.Controls.Clear();
+            var ds = new RM_KUNJUNGTableAdapter();
+            //DataTable dt = ds.GetDataByNoRM(_norm, _noreg);
+            DataTable dt = ds.GetDataByNoRM("00022634", "2012281200015");
+            foreach (DataRow r in dt.Rows)
+            {
+                var uc = new CardHistoryResep
+                {
+                    //Tag = r["vc_nid"].ToString() + r["vc_kode_rx"].ToString(),
+                    Tag = r["vc_kode_rx"].ToString() ,
+                    TGLReg = (DateTime)r["DT_TGL_REG"],
+                    NamaDokter = r["nama_dokter"].ToString(),
+                    Klinik = r["vc_N_KLINIK"].ToString() ,
+                    Penanggung = r["vc_n_png"].ToString(),
+                    NoREG = r["VC_NO_REGJ"].ToString(),
+                    NoRSP = r["vc_kode_rx"].ToString()
+
+                };
+
+                if (flpHistoriResep.Controls.Count < 0)
+                {
+                    flpHistoriResep.Controls.Clear();
+                }
+
+                else
+                {
+                    flpHistoriResep.Controls.Add(uc);
+
+                    uc.CpyButtonClick += uc_cpyResepClik;
+                    //uc.Click += uc_MouseCliked;
+                }
+            }
+            flpHistoriResep.ResumeLayout();
+
+        }
+
+        private void uc_cpyResepClik(object sender, EventArgs e)
+        {
+            Guna.UI2.WinForms.Guna2Button us = (Guna.UI2.WinForms.Guna2Button)sender;
+            var _cpyNoResep = us.Tag.ToString();
+
+
+            MessageBox.Show(_cpyNoResep);
+            //AddData ef = new AddData(_filter, _kodeKlinik, _kodeDokter) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            //this.Controls.Clear();
+            //this.Controls.Add(ef);
+            //ef.Show();
+
+        }
     }
 }

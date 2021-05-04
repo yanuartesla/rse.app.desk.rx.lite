@@ -44,7 +44,10 @@ namespace rse.app.desk.rx.lite.UI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.pnlDataPasien = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnHistoryCPPT = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.bsPasien = new System.Windows.Forms.BindingSource(this.components);
+            this.yakkumdb = new rse.app.desk.rx.lite.dataset.yakkumdb();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -104,8 +107,8 @@ namespace rse.app.desk.rx.lite.UI
             this.keluhanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.catatanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCopy = new System.Windows.Forms.DataGridViewButtonColumn();
             this.bb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCopy = new System.Windows.Forms.DataGridViewButtonColumn();
             this.bsCPPT = new System.Windows.Forms.BindingSource(this.components);
             this.rmdb = new rse.app.desk.rx.lite.dataset.rmdb();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -123,6 +126,7 @@ namespace rse.app.desk.rx.lite.UI
             this.desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDel = new System.Windows.Forms.DataGridViewButtonColumn();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtCariProsedur = new rse.app.desk.rx.lite.Function.MultiLineAutoCompleteTextBox();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel23 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel24 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -136,6 +140,7 @@ namespace rse.app.desk.rx.lite.UI
             this.code_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnPrimary = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.txtCariDiagnosa = new rse.app.desk.rx.lite.Function.MultiLineAutoCompleteTextBox();
             this.tabPanelTop = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel22 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel21 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -163,16 +168,14 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.rJ_cpptTableAdapter = new rse.app.desk.rx.lite.dataset.rmdbTableAdapters.RJ_cpptTableAdapter();
-            this.txtCariProsedur = new rse.app.desk.rx.lite.Function.MultiLineAutoCompleteTextBox();
-            this.txtCariDiagnosa = new rse.app.desk.rx.lite.Function.MultiLineAutoCompleteTextBox();
-            this.bsPasien = new System.Windows.Forms.BindingSource(this.components);
-            this.yakkumdb = new rse.app.desk.rx.lite.dataset.yakkumdb();
             this.farxdiagnosaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pasienTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.PasienTableAdapter();
             this.fa_rx_userTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.fa_rx_userTableAdapter();
             this.fa_rx_racikanTableAdapter1 = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.fa_rx_racikanTableAdapter();
             this.fa_rx_diagnosaTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.fa_rx_diagnosaTableAdapter();
             this.pnlDataPasien.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPasien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.tabData.SuspendLayout();
             this.tabCPPT.SuspendLayout();
@@ -207,8 +210,6 @@ namespace rse.app.desk.rx.lite.UI
             this.tbResepHeader.SuspendLayout();
             this.tbResepBottom.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPasien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.farxdiagnosaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -224,6 +225,7 @@ namespace rse.app.desk.rx.lite.UI
             this.pnlDataPasien.AutoRoundedCorners = true;
             this.pnlDataPasien.BackColor = System.Drawing.Color.SeaShell;
             this.pnlDataPasien.BorderRadius = 29;
+            this.pnlDataPasien.Controls.Add(this.btnHistoryCPPT);
             this.pnlDataPasien.Controls.Add(this.guna2HtmlLabel1);
             this.pnlDataPasien.Controls.Add(this.guna2HtmlLabel5);
             this.pnlDataPasien.Controls.Add(this.guna2HtmlLabel4);
@@ -237,6 +239,26 @@ namespace rse.app.desk.rx.lite.UI
             this.pnlDataPasien.Size = new System.Drawing.Size(910, 61);
             this.pnlDataPasien.TabIndex = 0;
             // 
+            // btnHistoryCPPT
+            // 
+            this.btnHistoryCPPT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHistoryCPPT.AutoRoundedCorners = true;
+            this.btnHistoryCPPT.BorderRadius = 15;
+            this.btnHistoryCPPT.CheckedState.Parent = this.btnHistoryCPPT;
+            this.btnHistoryCPPT.CustomImages.Parent = this.btnHistoryCPPT;
+            this.btnHistoryCPPT.FillColor = System.Drawing.Color.Teal;
+            this.btnHistoryCPPT.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHistoryCPPT.ForeColor = System.Drawing.Color.White;
+            this.btnHistoryCPPT.HoverState.Parent = this.btnHistoryCPPT;
+            this.btnHistoryCPPT.IndicateFocus = true;
+            this.btnHistoryCPPT.Location = new System.Drawing.Point(762, 27);
+            this.btnHistoryCPPT.Name = "btnHistoryCPPT";
+            this.btnHistoryCPPT.ShadowDecoration.Parent = this.btnHistoryCPPT;
+            this.btnHistoryCPPT.Size = new System.Drawing.Size(148, 32);
+            this.btnHistoryCPPT.TabIndex = 6;
+            this.btnHistoryCPPT.Text = "History CPPT";
+            this.btnHistoryCPPT.Click += new System.EventHandler(this.btnHistoryCPPT_Click);
+            // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.AutoSize = false;
@@ -248,6 +270,16 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(252, 18);
             this.guna2HtmlLabel1.TabIndex = 1;
             this.guna2HtmlLabel1.Text = "Nama";
+            // 
+            // bsPasien
+            // 
+            this.bsPasien.DataMember = "Pasien";
+            this.bsPasien.DataSource = this.yakkumdb;
+            // 
+            // yakkumdb
+            // 
+            this.yakkumdb.DataSetName = "yakkumdb";
+            this.yakkumdb.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // guna2HtmlLabel5
             // 
@@ -734,7 +766,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2HtmlLabel10.ForeColor = System.Drawing.Color.DimGray;
             this.guna2HtmlLabel10.Location = new System.Drawing.Point(0, 0);
             this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            this.guna2HtmlLabel10.Size = new System.Drawing.Size(98, 23);
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(98, 27);
             this.guna2HtmlLabel10.TabIndex = 0;
             this.guna2HtmlLabel10.Text = "CPPT Dokter";
             this.guna2HtmlLabel10.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1009,6 +1041,14 @@ namespace rse.app.desk.rx.lite.UI
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Visible = false;
             // 
+            // bb
+            // 
+            this.bb.DataPropertyName = "bb";
+            this.bb.HeaderText = "bb";
+            this.bb.Name = "bb";
+            this.bb.ReadOnly = true;
+            this.bb.Visible = false;
+            // 
             // btnCopy
             // 
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -1025,14 +1065,6 @@ namespace rse.app.desk.rx.lite.UI
             this.btnCopy.Text = "Copy CPPT";
             this.btnCopy.ToolTipText = "Copy untuk Mentransfer SOAP ke Inputan Dokter";
             this.btnCopy.UseColumnTextForButtonValue = true;
-            // 
-            // bb
-            // 
-            this.bb.DataPropertyName = "bb";
-            this.bb.HeaderText = "bb";
-            this.bb.Name = "bb";
-            this.bb.ReadOnly = true;
-            this.bb.Visible = false;
             // 
             // bsCPPT
             // 
@@ -1113,7 +1145,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.DimGray;
             this.guna2HtmlLabel6.Location = new System.Drawing.Point(0, 0);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(108, 23);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(108, 31);
             this.guna2HtmlLabel6.TabIndex = 0;
             this.guna2HtmlLabel6.Text = "CPPT Perawat";
             this.guna2HtmlLabel6.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1274,6 +1306,34 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel7.ShadowDecoration.Parent = this.guna2Panel7;
             this.guna2Panel7.Size = new System.Drawing.Size(697, 40);
             this.guna2Panel7.TabIndex = 4;
+            // 
+            // txtCariProsedur
+            // 
+            this.txtCariProsedur.AutoRoundedCorners = true;
+            this.txtCariProsedur.BorderRadius = 14;
+            this.txtCariProsedur.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCariProsedur.DefaultText = "";
+            this.txtCariProsedur.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCariProsedur.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCariProsedur.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCariProsedur.DisabledState.Parent = this.txtCariProsedur;
+            this.txtCariProsedur.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCariProsedur.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtCariProsedur.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCariProsedur.FocusedState.Parent = this.txtCariProsedur;
+            this.txtCariProsedur.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCariProsedur.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCariProsedur.HoverState.Parent = this.txtCariProsedur;
+            this.txtCariProsedur.Location = new System.Drawing.Point(5, 5);
+            this.txtCariProsedur.Name = "txtCariProsedur";
+            this.txtCariProsedur.PasswordChar = '\0';
+            this.txtCariProsedur.PlaceholderText = "Cari Prosedur / Tindakan Medis";
+            this.txtCariProsedur.SelectedText = "";
+            this.txtCariProsedur.ShadowDecoration.Parent = this.txtCariProsedur;
+            this.txtCariProsedur.Size = new System.Drawing.Size(687, 30);
+            this.txtCariProsedur.TabIndex = 0;
+            this.txtCariProsedur.Values = null;
+            this.txtCariProsedur.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCariProsedur_KeyDown);
             // 
             // guna2Panel6
             // 
@@ -1477,6 +1537,34 @@ namespace rse.app.desk.rx.lite.UI
             this.btnDelete.HeaderText = "Delete";
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ReadOnly = true;
+            // 
+            // txtCariDiagnosa
+            // 
+            this.txtCariDiagnosa.AutoRoundedCorners = true;
+            this.txtCariDiagnosa.BorderRadius = 14;
+            this.txtCariDiagnosa.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCariDiagnosa.DefaultText = "";
+            this.txtCariDiagnosa.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCariDiagnosa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCariDiagnosa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCariDiagnosa.DisabledState.Parent = this.txtCariDiagnosa;
+            this.txtCariDiagnosa.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCariDiagnosa.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtCariDiagnosa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCariDiagnosa.FocusedState.Parent = this.txtCariDiagnosa;
+            this.txtCariDiagnosa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCariDiagnosa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCariDiagnosa.HoverState.Parent = this.txtCariDiagnosa;
+            this.txtCariDiagnosa.Location = new System.Drawing.Point(10, 10);
+            this.txtCariDiagnosa.Name = "txtCariDiagnosa";
+            this.txtCariDiagnosa.PasswordChar = '\0';
+            this.txtCariDiagnosa.PlaceholderText = "Cari Diagnosa";
+            this.txtCariDiagnosa.SelectedText = "";
+            this.txtCariDiagnosa.ShadowDecoration.Parent = this.txtCariDiagnosa;
+            this.txtCariDiagnosa.Size = new System.Drawing.Size(697, 30);
+            this.txtCariDiagnosa.TabIndex = 0;
+            this.txtCariDiagnosa.Values = null;
+            this.txtCariDiagnosa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCariDiagnosa_KeyDown);
             // 
             // tabPanelTop
             // 
@@ -1820,72 +1908,6 @@ namespace rse.app.desk.rx.lite.UI
             // 
             this.rJ_cpptTableAdapter.ClearBeforeFill = true;
             // 
-            // txtCariProsedur
-            // 
-            this.txtCariProsedur.AutoRoundedCorners = true;
-            this.txtCariProsedur.BorderRadius = 14;
-            this.txtCariProsedur.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCariProsedur.DefaultText = "";
-            this.txtCariProsedur.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCariProsedur.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCariProsedur.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCariProsedur.DisabledState.Parent = this.txtCariProsedur;
-            this.txtCariProsedur.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCariProsedur.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtCariProsedur.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCariProsedur.FocusedState.Parent = this.txtCariProsedur;
-            this.txtCariProsedur.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCariProsedur.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCariProsedur.HoverState.Parent = this.txtCariProsedur;
-            this.txtCariProsedur.Location = new System.Drawing.Point(5, 5);
-            this.txtCariProsedur.Name = "txtCariProsedur";
-            this.txtCariProsedur.PasswordChar = '\0';
-            this.txtCariProsedur.PlaceholderText = "Cari Prosedur / Tindakan Medis";
-            this.txtCariProsedur.SelectedText = "";
-            this.txtCariProsedur.ShadowDecoration.Parent = this.txtCariProsedur;
-            this.txtCariProsedur.Size = new System.Drawing.Size(687, 30);
-            this.txtCariProsedur.TabIndex = 0;
-            this.txtCariProsedur.Values = null;
-            this.txtCariProsedur.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCariProsedur_KeyDown);
-            // 
-            // txtCariDiagnosa
-            // 
-            this.txtCariDiagnosa.AutoRoundedCorners = true;
-            this.txtCariDiagnosa.BorderRadius = 14;
-            this.txtCariDiagnosa.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCariDiagnosa.DefaultText = "";
-            this.txtCariDiagnosa.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCariDiagnosa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCariDiagnosa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCariDiagnosa.DisabledState.Parent = this.txtCariDiagnosa;
-            this.txtCariDiagnosa.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCariDiagnosa.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtCariDiagnosa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCariDiagnosa.FocusedState.Parent = this.txtCariDiagnosa;
-            this.txtCariDiagnosa.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCariDiagnosa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCariDiagnosa.HoverState.Parent = this.txtCariDiagnosa;
-            this.txtCariDiagnosa.Location = new System.Drawing.Point(10, 10);
-            this.txtCariDiagnosa.Name = "txtCariDiagnosa";
-            this.txtCariDiagnosa.PasswordChar = '\0';
-            this.txtCariDiagnosa.PlaceholderText = "Cari Diagnosa";
-            this.txtCariDiagnosa.SelectedText = "";
-            this.txtCariDiagnosa.ShadowDecoration.Parent = this.txtCariDiagnosa;
-            this.txtCariDiagnosa.Size = new System.Drawing.Size(697, 30);
-            this.txtCariDiagnosa.TabIndex = 0;
-            this.txtCariDiagnosa.Values = null;
-            this.txtCariDiagnosa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCariDiagnosa_KeyDown);
-            // 
-            // bsPasien
-            // 
-            this.bsPasien.DataMember = "Pasien";
-            this.bsPasien.DataSource = this.yakkumdb;
-            // 
-            // yakkumdb
-            // 
-            this.yakkumdb.DataSetName = "yakkumdb";
-            this.yakkumdb.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // farxdiagnosaBindingSource
             // 
             this.farxdiagnosaBindingSource.DataMember = "fa_rx_diagnosa";
@@ -1921,6 +1943,8 @@ namespace rse.app.desk.rx.lite.UI
             this.Load += new System.EventHandler(this.AddData_Load);
             this.pnlDataPasien.ResumeLayout(false);
             this.pnlDataPasien.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPasien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.tabData.ResumeLayout(false);
             this.tabCPPT.ResumeLayout(false);
@@ -1962,8 +1986,6 @@ namespace rse.app.desk.rx.lite.UI
             this.tbResepHeader.PerformLayout();
             this.tbResepBottom.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bsPasien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.farxdiagnosaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -2101,5 +2123,6 @@ namespace rse.app.desk.rx.lite.UI
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn btnCopy;
         private System.Windows.Forms.DataGridViewTextBoxColumn bb;
+        private Guna.UI2.WinForms.Guna2Button btnHistoryCPPT;
     }
 }

@@ -23,8 +23,9 @@ namespace rse.app.desk.rx.lite.UI
 
         public string _koderesep { get; set; }
         public string _nik { get; set; }
+        public string _norm { get; set; }
 
-        
+
 
         public AddData(string NoReg, string KodeKlinik, string KodeDokter)
         {
@@ -49,6 +50,7 @@ namespace rse.app.desk.rx.lite.UI
             DataRow dr = this.pasienTableAdapter.GetDataByNoreg( _noreg).Rows[0];
             string png = dr["VC_K_INSTANSI"].ToString();
             var stkary = (Boolean)dr["bt_kary"];
+            _norm = dr["VC_NO_RM"].ToString();
             switch(png)
             {
                 case "323":
@@ -60,7 +62,7 @@ namespace rse.app.desk.rx.lite.UI
                     break;
             }
 
-            obat _obat = new obat(_noreg, _kodedokter, _kodeFornas);
+            obat _obat = new obat(_noreg, _kodedokter, _kodeFornas, _norm);
             _obat.Dock = DockStyle.Fill;
             tbResepBody.Controls.Add(_obat);
 
@@ -256,8 +258,8 @@ namespace rse.app.desk.rx.lite.UI
             {
                 if (!dgvProcedure.Rows[i].Cells[1].Value.Equals(null))
                 {
-                    MessageBox.Show(dgvProcedure.Rows[i].Cells[1].Value.ToString());
-                    dt.InsertQuery(
+                    //MessageBox.Show(dgvProcedure.Rows[i].Cells[1].Value.ToString());
+                   dt.InsertQuery(
                    _noreg,
                    dgvProcedure.Rows[i].Cells[1].Value.ToString(),
                    dgvProcedure.Rows[i].Cells[2].Value.ToString(),
@@ -265,7 +267,6 @@ namespace rse.app.desk.rx.lite.UI
                    DateTime.Now
                    );
                 }
-                
                 
             }
         }
@@ -327,7 +328,6 @@ namespace rse.app.desk.rx.lite.UI
                 _kodedokter,
                 "Dokter",
                 txtBB.Text
-
                 ) ;
         }
         private void UpsertResep()
@@ -370,7 +370,6 @@ namespace rse.app.desk.rx.lite.UI
                     {
                         row.Cells[1].Value = r["vc_codes"].ToString();
                         row.Cells[2].Value = r["vc_desc_title"].ToString();
-
                     }
                 }
                 else 
@@ -528,7 +527,6 @@ namespace rse.app.desk.rx.lite.UI
             
             if (e.ColumnIndex == this.dgvProcedure.Columns["btnDel"].Index)
             {
-
                 this.dgvProcedure.Rows.Remove(dgvProcedure.Rows[e.RowIndex]);
             }
 
@@ -539,6 +537,12 @@ namespace rse.app.desk.rx.lite.UI
             Template tmp = new Template();
             tmp.Show();
             LoadTemplate();
+        }
+
+        private void btnHistoryCPPT_Click(object sender, EventArgs e)
+        {
+            HistoryCPPT hcppt = new HistoryCPPT(_norm);
+            hcppt.Show();
         }
     }
 }

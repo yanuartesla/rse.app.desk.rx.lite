@@ -3079,7 +3079,7 @@ FROM            fa_rx_resep_h INNER JOIN
                          RMPasien ON fa_rx_resep_h.vc_no_rm = RMPasien.vc_no_rm LEFT OUTER JOIN
                          BPJS_SEP ON fa_rx_resep_h.vc_no_reg = BPJS_SEP.vc_no_regj LEFT OUTER JOIN
                          BPJS_RSE_mapping_poli ON fa_rx_resep_h.vc_k_klinik = BPJS_RSE_mapping_poli.vc_kode_poli_rs
-WHERE        (fa_rx_resep_h.int_k_status = 2) AND (fa_rx_resep_h.vc_k_klinik = @kklinik)";
+WHERE        (fa_rx_resep_h.int_k_status = 2) AND (fa_rx_resep_h.vc_k_klinik = @kklinik) AND (CONVERT(date, fa_rx_resep_h.dt_order) = CONVERT(date, GETDATE()))";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kklinik", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_k_klinik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();

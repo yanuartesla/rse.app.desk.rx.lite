@@ -59,6 +59,10 @@ namespace rse.app.desk.rx.lite.UI
                         _retriksi = r.Field<decimal>(0);
                         _kobat = r.Field<string>(3);
                         break;
+                    case 2:
+                        _retriksi = r.Field<decimal>(0);
+                        _kobat = r.Field<string>(3);
+                        break;
                 }
    
                 //if (_kfornas == 0)

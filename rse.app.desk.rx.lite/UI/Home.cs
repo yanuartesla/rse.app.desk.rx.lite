@@ -20,8 +20,6 @@ namespace rse.app.desk.rx.lite.UI
         public string _kodeDokter { get; set; }
         public string _kodeKlinik { get; set; }
         public int _jmlpasien { get; set; }
-
-
         //private roles _currentroles { get; set; }
         
         public Home(string KodeKlinik, string KodeDokter)
@@ -29,24 +27,22 @@ namespace rse.app.desk.rx.lite.UI
             InitializeComponent();
             _kodeDokter = KodeDokter;
             _kodeKlinik = KodeKlinik;
-            
         }
 
         private void getJmlPasien()
         {
             var ds = new PasienTableAdapter();
-            _jmlpasien = Int32.Parse( ds.ScalarQueryJMLPasien(_kodeKlinik, _kodeDokter ).ToString());
-            
+            if(ds.ScalarQueryJMLPasien(_kodeKlinik, _kodeDokter) != null)
+            {
+                _jmlpasien = Int32.Parse(ds.ScalarQueryJMLPasien(_kodeKlinik, _kodeDokter).ToString());
+            }
         }
         private void populatePasien()
         {
-            getJmlPasien();
-            lblJMLPasien.Text = _jmlpasien.ToString();
-
             flpPasien.SuspendLayout();
             flpPasien.Controls.Clear();
             var ds = new PasienTableAdapter();
-            ds.FillByDokter(yakkumdb.Pasien, _kodeDokter,_kodeKlinik );
+            //ds.FillByDokter(yakkumdb.Pasien, _kodeDokter,_kodeKlinik );
             DataTable dt = ds.GetDataByDokter(_kodeDokter, _kodeKlinik);
             foreach (DataRow r in dt.Rows)
             {
@@ -61,7 +57,6 @@ namespace rse.app.desk.rx.lite.UI
                     Penanggung = r["vc_n_png"].ToString(),
                     NoAntrian = r["NO_ANTRIAN"].ToString(),
                     btKaryawan = (Boolean)r["bt_kary"],
-                    
                 };
 
                 if (flpPasien.Controls.Count < 0)
@@ -71,13 +66,17 @@ namespace rse.app.desk.rx.lite.UI
 
                 else
                 {
-                    
                     flpPasien.Controls.Add(uc);
                     uc.Click += uc_MouseCliked;
-                    
                 }
             }
             flpPasien.ResumeLayout();
+
+            getJmlPasien();
+            lblJMLPasien.Text = _jmlpasien.ToString();
+            lblPxMenunggu.Text = flpPasien.Controls.Count.ToString();
+            var _pxdilayani = _jmlpasien - flpPasien.Controls.Count;
+            lblPxDilayani.Text = _pxdilayani.ToString();
         }
 
         private void uc_MouseCliked(object sender, EventArgs e)
@@ -94,11 +93,11 @@ namespace rse.app.desk.rx.lite.UI
         private void Home_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'yakkumdb.Pasien' table. You can move, or remove it, as needed.
-            this.pasienTableAdapter.Fill(this.yakkumdb.Pasien);
+            //this.pasienTableAdapter.Fill(this.yakkumdb.Pasien);
             this.fa_rx_userTableAdapter.FillByNid(this.yakkumdb.fa_rx_user,_kodeDokter);
             //this.rMKLINIKTableAdapter.Fill(this.yakkumdb.RMKLINIK);
-
             populatePasien();
+            
         }
 
         private void guna2HtmlLabel10_Click(object sender, EventArgs e)
@@ -110,8 +109,6 @@ namespace rse.app.desk.rx.lite.UI
         {
                 foreach (Control c in flpPasien.Controls)
                 {
-                    
-
                     if (!c.Tag.ToString().ToLower().Contains(txtCariPasien.Text))
                     {
                         c.Hide();

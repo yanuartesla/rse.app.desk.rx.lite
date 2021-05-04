@@ -42,8 +42,8 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblPxMenunggu = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblPxDilayani = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtNamaDokter = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -214,8 +214,8 @@ namespace rse.app.desk.rx.lite.UI
             // guna2Panel7
             // 
             this.guna2Panel7.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.guna2Panel7.Controls.Add(this.guna2HtmlLabel10);
-            this.guna2Panel7.Controls.Add(this.guna2HtmlLabel9);
+            this.guna2Panel7.Controls.Add(this.lblPxMenunggu);
+            this.guna2Panel7.Controls.Add(this.lblPxDilayani);
             this.guna2Panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel7.Location = new System.Drawing.Point(15, 28);
             this.guna2Panel7.Name = "guna2Panel7";
@@ -223,34 +223,34 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel7.Size = new System.Drawing.Size(202, 57);
             this.guna2Panel7.TabIndex = 1;
             // 
-            // guna2HtmlLabel10
+            // lblPxMenunggu
             // 
-            this.guna2HtmlLabel10.AutoSize = false;
-            this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel10.ForeColor = System.Drawing.Color.Orange;
-            this.guna2HtmlLabel10.Location = new System.Drawing.Point(89, 0);
-            this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            this.guna2HtmlLabel10.Size = new System.Drawing.Size(113, 57);
-            this.guna2HtmlLabel10.TabIndex = 1;
-            this.guna2HtmlLabel10.Text = "2";
-            this.guna2HtmlLabel10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.guna2HtmlLabel10.Click += new System.EventHandler(this.guna2HtmlLabel10_Click);
+            this.lblPxMenunggu.AutoSize = false;
+            this.lblPxMenunggu.BackColor = System.Drawing.Color.Transparent;
+            this.lblPxMenunggu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblPxMenunggu.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPxMenunggu.ForeColor = System.Drawing.Color.Orange;
+            this.lblPxMenunggu.Location = new System.Drawing.Point(89, 0);
+            this.lblPxMenunggu.Name = "lblPxMenunggu";
+            this.lblPxMenunggu.Size = new System.Drawing.Size(113, 57);
+            this.lblPxMenunggu.TabIndex = 1;
+            this.lblPxMenunggu.Text = "2";
+            this.lblPxMenunggu.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPxMenunggu.Click += new System.EventHandler(this.guna2HtmlLabel10_Click);
             // 
-            // guna2HtmlLabel9
+            // lblPxDilayani
             // 
-            this.guna2HtmlLabel9.AutoSize = false;
-            this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel9.ForeColor = System.Drawing.Color.Indigo;
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(0, 0);
-            this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            this.guna2HtmlLabel9.Size = new System.Drawing.Size(91, 57);
-            this.guna2HtmlLabel9.TabIndex = 0;
-            this.guna2HtmlLabel9.Text = "8";
-            this.guna2HtmlLabel9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPxDilayani.AutoSize = false;
+            this.lblPxDilayani.BackColor = System.Drawing.Color.Transparent;
+            this.lblPxDilayani.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblPxDilayani.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPxDilayani.ForeColor = System.Drawing.Color.Indigo;
+            this.lblPxDilayani.Location = new System.Drawing.Point(0, 0);
+            this.lblPxDilayani.Name = "lblPxDilayani";
+            this.lblPxDilayani.Size = new System.Drawing.Size(91, 57);
+            this.lblPxDilayani.TabIndex = 0;
+            this.lblPxDilayani.Text = "8";
+            this.lblPxDilayani.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2HtmlLabel3
             // 
@@ -498,8 +498,8 @@ namespace rse.app.desk.rx.lite.UI
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblPxDilayani;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblPxMenunggu;
         private System.Windows.Forms.BindingSource bsPasien;
         private dataset.yakkumdb yakkumdb;
         private System.Windows.Forms.BindingSource bsUser;

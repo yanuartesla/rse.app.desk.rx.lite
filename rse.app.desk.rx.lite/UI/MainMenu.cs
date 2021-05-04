@@ -84,6 +84,7 @@ namespace rse.app.desk.rx.lite.UI
                 {
                     flpHistoriPasien.Controls.Add(uc);
                     uc.Click += uc_MouseCliked;
+                    
                 }
             }
             flpHistoriPasien.ResumeLayout();
