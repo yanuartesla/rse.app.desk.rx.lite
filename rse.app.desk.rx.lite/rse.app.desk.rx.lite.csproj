@@ -86,8 +86,8 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Guna.UI2, Version=2.0.1.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Guna.UI2.WinForms.2.0.1.1\lib\net40\Guna.UI2.dll</HintPath>
+    <Reference Include="Guna.UI2, Version=2.0.1.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.1.4\lib\net40\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="protobuf-net, Version=3.0.0.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
       <HintPath>..\packages\protobuf-net.3.0.52\lib\net461\protobuf-net.dll</HintPath>
@@ -432,6 +432,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="prescription.ico" />
+    <None Include="Resources\clock.png" />
     <None Include="Resources\pharmacist_female_128.png" />
     <None Include="Resources\pharmacist_male_128.png" />
     <None Include="Resources\pharmacist_female_64.png" />

@@ -34,6 +34,7 @@ namespace rse.app.desk.rx.lite.UI
             _kdokter = kdokter;
             _norm = norm;
             //_currentroles = _roles;
+            pnlHistori.Width = 0;
         }
 
         private void txtCariObat_Load(object sender, EventArgs e)
@@ -207,7 +208,8 @@ namespace rse.app.desk.rx.lite.UI
             {
                 // Deleted event
                 var val = this.dgvResep[8, e.RowIndex].Value.ToString();
-                rxd.DeleteObat(val);
+                var no_urut = Int32.Parse(this.dgvResep[10, e.RowIndex].Value.ToString());
+                rxd.DeleteObat(val,no_urut);
 
                 this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep, lblKodeRtx.Text);
                 dgvResep.Update();
@@ -351,8 +353,8 @@ namespace rse.app.desk.rx.lite.UI
                     Penanggung = r["vc_n_png"].ToString(),
                     NoREG = r["VC_NO_REGJ"].ToString(),
                     NoRSP = r["vc_kode_rx"].ToString(),
-                    //Data = Treedata(r["VC_NO_REGJ"].ToString())
-                    Data = Treedata("2104070700016")
+                    Data = Treedata(r["VC_NO_REGJ"].ToString())
+                    //Data = Treedata("2104070700016")
                 };
 
                 if (flpHistoriResep.Controls.Count < 0)
@@ -449,6 +451,8 @@ namespace rse.app.desk.rx.lite.UI
             bs_view_resep.Filter = "vc_kode_rx = '" + lblKodeRtx.Text + "'";
             dgvResep.Update();
             dgvResep.Refresh();
+
+            hrclose();
             //AddData ef = new AddData(_filter, _kodeKlinik, _kodeDokter) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             //this.Controls.Clear();
             //this.Controls.Add(ef);
@@ -472,12 +476,12 @@ namespace rse.app.desk.rx.lite.UI
             foreach (DataRow r in ds.Rows)
             {
                 // Rows
-                MessageBox.Show(r["golongan_obat"].ToString());
+                //MessageBox.Show(r["golongan_obat"].ToString());
                 dt.Rows.Add(Int32.Parse(r["kd_golongan"].ToString()), r["golongan_obat"].ToString());
                 DataTable ds2 = dh.GetData(noreg, r["kd_golongan"].ToString());//r["kd_golongan"].ToString()
                 foreach (DataRow d in ds2.Rows)
                 {
-                    MessageBox.Show(d["vc_nama_obat"].ToString() + d["bt_racikan"].ToString());
+                    //MessageBox.Show(d["vc_nama_obat"].ToString() + d["bt_racikan"].ToString());
                     dt.Rows.Add(
                         Int32.Parse(d["in_no_urut"].ToString() + d["vc_kode_obat"].ToString()),
                         d["num_jml"].ToString() + " " + d["vc_satuan"].ToString() + " | " +d["vc_nama_obat"].ToString(), 
@@ -490,7 +494,7 @@ namespace rse.app.desk.rx.lite.UI
                         DataTable tt = th.GetDataByKodeRD(d["vc_kode_rx_d"].ToString());
                         foreach (DataRow t in tt.Rows)
                         {
-                            MessageBox.Show(t["vc_nama_obat"].ToString());
+                            //MessageBox.Show(t["vc_nama_obat"].ToString());
                             dt.Rows.Add(
                                 Int32.Parse(t["in_no_urut"].ToString() + t["vc_k_obat"].ToString()),
                                 t["vc_dosis"].ToString() + " " + t["vc_satuan"].ToString()+" | "+t["vc_nama_obat"].ToString(), 
@@ -502,5 +506,48 @@ namespace rse.app.desk.rx.lite.UI
             return (dt);
         }
 
+        private Boolean _hresepstate { get; set; }
+        public void hropen ()
+        {
+            if (_hresepstate == true)
+            { }
+            else
+            {
+                _hresepstate = true;
+                pnlHistori.Visible = false;
+                pnlHistori.Width = 470;
+                guna2Transition1.ShowSync(pnlHistori);
+                flpHistoriResep.Focus();
+            }
+            
+        }
+        public void hrclose()
+        {
+            if (_hresepstate == false)
+            { }
+            else
+            {
+                _hresepstate = false;
+                pnlHistori.Visible = false;
+                pnlHistori.Width = 0;
+                
+            }
+
+        }
+
+        private void pnlhresepShow_MouseHover(object sender, EventArgs e)
+        {
+            hropen();
+        }
+
+        private void dgvResep_MouseHover(object sender, EventArgs e)
+        {
+            hrclose();
+        }
+
+        private void btnHideHistory_Click(object sender, EventArgs e)
+        {
+            hrclose();
+        }
     }
 }

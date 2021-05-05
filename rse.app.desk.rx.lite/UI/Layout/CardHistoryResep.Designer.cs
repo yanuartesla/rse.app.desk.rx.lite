@@ -40,6 +40,8 @@ namespace rse.app.desk.rx.lite.UI.Layout
             this.lblNoREG = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnCopyRsp = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
@@ -49,17 +51,20 @@ namespace rse.app.desk.rx.lite.UI.Layout
             this.treeView1.BackColor = System.Drawing.Color.Linen;
             this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.Enabled = false;
             this.treeView1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.treeView1.Indent = 10;
             this.treeView1.ItemHeight = 14;
-            this.treeView1.Location = new System.Drawing.Point(0, 48);
+            this.treeView1.Location = new System.Drawing.Point(0, 54);
             this.treeView1.Name = "treeView1";
             this.treeView1.ShowPlusMinus = false;
-            this.treeView1.Size = new System.Drawing.Size(382, 158);
+            this.treeView1.Size = new System.Drawing.Size(396, 152);
             this.treeView1.TabIndex = 0;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Controls.Add(this.guna2Separator3);
             this.guna2Panel1.Controls.Add(this.lblPenanggung);
             this.guna2Panel1.Controls.Add(this.lblKlinik);
             this.guna2Panel1.Controls.Add(this.lblNamaDokter);
@@ -69,16 +74,16 @@ namespace rse.app.desk.rx.lite.UI.Layout
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(382, 48);
+            this.guna2Panel1.Size = new System.Drawing.Size(396, 54);
             this.guna2Panel1.TabIndex = 1;
             // 
             // lblPenanggung
             // 
             this.lblPenanggung.AutoSize = false;
             this.lblPenanggung.BackColor = System.Drawing.Color.Transparent;
-            this.lblPenanggung.Location = new System.Drawing.Point(248, 24);
+            this.lblPenanggung.Location = new System.Drawing.Point(216, 24);
             this.lblPenanggung.Name = "lblPenanggung";
-            this.lblPenanggung.Size = new System.Drawing.Size(126, 15);
+            this.lblPenanggung.Size = new System.Drawing.Size(172, 24);
             this.lblPenanggung.TabIndex = 3;
             this.lblPenanggung.Text = "Penanggung";
             this.lblPenanggung.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -89,7 +94,7 @@ namespace rse.app.desk.rx.lite.UI.Layout
             this.lblKlinik.BackColor = System.Drawing.Color.Transparent;
             this.lblKlinik.Location = new System.Drawing.Point(202, 6);
             this.lblKlinik.Name = "lblKlinik";
-            this.lblKlinik.Size = new System.Drawing.Size(172, 15);
+            this.lblKlinik.Size = new System.Drawing.Size(186, 19);
             this.lblKlinik.TabIndex = 2;
             this.lblKlinik.Text = "Klinik";
             this.lblKlinik.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -123,7 +128,7 @@ namespace rse.app.desk.rx.lite.UI.Layout
             this.guna2Panel2.Location = new System.Drawing.Point(0, 206);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
-            this.guna2Panel2.Size = new System.Drawing.Size(382, 32);
+            this.guna2Panel2.Size = new System.Drawing.Size(396, 32);
             this.guna2Panel2.TabIndex = 2;
             // 
             // lblNoREG
@@ -146,7 +151,7 @@ namespace rse.app.desk.rx.lite.UI.Layout
             this.btnCopyRsp.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCopyRsp.ForeColor = System.Drawing.Color.White;
             this.btnCopyRsp.HoverState.Parent = this.btnCopyRsp;
-            this.btnCopyRsp.Location = new System.Drawing.Point(299, 3);
+            this.btnCopyRsp.Location = new System.Drawing.Point(313, 3);
             this.btnCopyRsp.Name = "btnCopyRsp";
             this.btnCopyRsp.ShadowDecoration.Parent = this.btnCopyRsp;
             this.btnCopyRsp.Size = new System.Drawing.Size(75, 25);
@@ -157,16 +162,31 @@ namespace rse.app.desk.rx.lite.UI.Layout
             // 
             this.guna2Elipse1.TargetControl = this;
             // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.Location = new System.Drawing.Point(8, 197);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(380, 10);
+            this.guna2Separator1.TabIndex = 2;
+            // 
+            // guna2Separator3
+            // 
+            this.guna2Separator3.Location = new System.Drawing.Point(8, 41);
+            this.guna2Separator3.Name = "guna2Separator3";
+            this.guna2Separator3.Size = new System.Drawing.Size(380, 10);
+            this.guna2Separator3.TabIndex = 3;
+            // 
             // CardHistoryResep
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Linen;
+            this.Controls.Add(this.guna2Separator1);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "CardHistoryResep";
-            this.Size = new System.Drawing.Size(382, 238);
+            this.Size = new System.Drawing.Size(396, 238);
             this.Load += new System.EventHandler(this.CardHistoryResep_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
@@ -187,5 +207,7 @@ namespace rse.app.desk.rx.lite.UI.Layout
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNamaDokter;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNoREG;
         public System.Windows.Forms.TreeView treeView1;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator3;
     }
 }

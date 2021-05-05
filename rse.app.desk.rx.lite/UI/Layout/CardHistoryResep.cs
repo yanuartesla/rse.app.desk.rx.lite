@@ -241,6 +241,10 @@ namespace rse.app.desk.rx.lite.UI.Layout
         //    }
         #endregion
 
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
     }
     #region Dumyydatabase
     ////Dummy data manager

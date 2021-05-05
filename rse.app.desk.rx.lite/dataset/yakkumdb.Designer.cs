@@ -16799,7 +16799,7 @@ FROM            RMKUNJUNG INNER JOIN
                          SDMDOKTER ON RMKUNJUNG.VC_K_DOKTER = SDMDOKTER.vc_nid LEFT OUTER JOIN
                          RMKLINIK ON RMKUNJUNG.VC_K_KLINIK = RMKLINIK.vc_K_KLINIK
 WHERE        (RMKUNJUNG.VC_NO_RM = @norm) AND (NOT (RMKUNJUNG.VC_NO_REGJ IN (@noreg)))
-ORDER BY RMKUNJUNG.IN_NO_URUT_DOKTER DESC, RMKUNJUNG.DT_TGL_REG DESC";
+ORDER BY RMKUNJUNG.DT_TGL_REG DESC, RMKUNJUNG.IN_NO_URUT_DOKTER DESC";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@norm", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "NO_RM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@noreg", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -17938,9 +17938,11 @@ FROM            fa_rx_resep_d LEFT OUTER JOIN
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM fa_rx_resep_d\r\nWHERE        (vc_kode_rx_d = @koderxd)";
+            this._commandCollection[1].CommandText = "DELETE FROM fa_rx_resep_d\r\nWHERE        (vc_kode_rx_d = @koderxd) AND (in_no_urut" +
+                " = @nourut)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@koderxd", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "vc_kode_rx_d", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nourut", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "in_no_urut", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = @"SELECT        fa_rx_resep_d.id, fa_rx_resep_d.vc_kode_rx, fa_rx_resep_d.vc_kode_rx_d, fa_rx_resep_d.in_no_urut, fa_rx_resep_d.vc_kode_obat, fa_rx_resep_d.vc_kode_racikan, fa_rx_resep_d.bt_racikan, fa_rx_resep_d.nvc_dd1, 
@@ -18145,13 +18147,19 @@ VALUES        (@vc_kode_rx,@vc_kode_rx_d,@vc_kode_obat,@vc_kode_racikan,@bt_raci
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteObat(string koderxd) {
+        public virtual int DeleteObat(string koderxd, global::System.Nullable<int> nourut) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((koderxd == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 command.Parameters[0].Value = ((string)(koderxd));
+            }
+            if ((nourut.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(nourut.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

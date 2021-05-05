@@ -160,20 +160,14 @@
   <data name="pharmacist_male_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pharmacist_male_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Diagnosis" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Diagnosis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="023-search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\023-search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="image_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="prescription_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\prescription_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Asset 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Asset 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Asset 1@4x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Asset 1@4x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,8 +178,17 @@
   <data name="expertise" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\expertise.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pharmacist_male" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pharmacist_male.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1404_cpy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1404_cpy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pharmacist_female_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pharmacist_female_128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bmhp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bmhp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,8 +208,11 @@
   <data name="prescription (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\prescription (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Asset 1@4x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Asset 1@4x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Asset 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Asset 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pharmacist_male_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pharmacist_male_128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tinywomenwith-resep" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tinywomenwith-resep.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,19 +229,16 @@
   <data name="prescription (3)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\prescription (3)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pharmacist_male" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pharmacist_male.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="023-search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\023-search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1404_cpy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1404_cpy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Diagnosis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Diagnosis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pharmacist_male_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pharmacist_male_128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pharmacist_female_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pharmacist_female_128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="clock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
