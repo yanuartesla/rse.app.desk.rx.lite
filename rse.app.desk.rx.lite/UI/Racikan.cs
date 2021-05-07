@@ -119,7 +119,6 @@ namespace rse.app.desk.rx.lite.UI
             using (SolidBrush b = new SolidBrush(((DataGridView)sender).RowHeadersDefaultCellStyle.ForeColor))
             {
                 e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
-
             }
         }
 
@@ -169,7 +168,6 @@ namespace rse.app.desk.rx.lite.UI
                            dgvRacik.Rows[i].Cells[2].Value.ToString(),
                            dgvRacik.Rows[i].Cells[3].Value.ToString()
                         );
-
                     }
 
                 }
@@ -259,7 +257,6 @@ namespace rse.app.desk.rx.lite.UI
                    
                     dgvRacik.Rows.Add(row);
                 }
-                
             }
             else {
                 // MessageBox.Show("TEst");

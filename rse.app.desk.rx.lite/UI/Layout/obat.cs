@@ -325,10 +325,6 @@ namespace rse.app.desk.rx.lite.UI
                 dgvResep.Refresh();
             }
 
-            //this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep, lblKodeRtx.Text);
-            //    bs_view_resep.Filter = "vc_kode_rx = '" + lblKodeRtx.Text + "'";
-            //    dgvResep.Update();
-            //    dgvResep.Refresh();
         }
 
         private void flpHistoriResep_Paint(object sender, PaintEventArgs e)
@@ -341,8 +337,8 @@ namespace rse.app.desk.rx.lite.UI
             flpHistoriResep.SuspendLayout();
             flpHistoriResep.Controls.Clear();
             var ds = new RM_KUNJUNGTableAdapter();
-            //DataTable dt = ds.GetDataByNoRM(_norm, _noreg);
-            DataTable dt = ds.GetDataByNoRM("00022634", "2012281200015");
+            DataTable dt = ds.GetDataByNoRM(_norm, _noreg);
+           // DataTable dt = ds.GetDataByNoRM("00022634", "2012281200015");
             foreach (DataRow r in dt.Rows)
             {
                 var uc = new CardHistoryResep
@@ -354,8 +350,9 @@ namespace rse.app.desk.rx.lite.UI
                     Klinik = r["vc_N_KLINIK"].ToString() ,
                     Penanggung = r["vc_n_png"].ToString(),
                     NoREG = r["VC_NO_REGJ"].ToString(),
-                    NoRSP = r["vc_kode_rx"].ToString()
-
+                    NoRSP = r["vc_kode_rx"].ToString(),
+                    //Data = Treedata(r["VC_NO_REGJ"].ToString())
+                    Data = Treedata("2104070700016")
                 };
 
                 if (flpHistoriResep.Controls.Count < 0)
@@ -365,9 +362,10 @@ namespace rse.app.desk.rx.lite.UI
 
                 else
                 {
-                    flpHistoriResep.Controls.Add(uc);
-
+                    //uc.InitializeTree();
+                    uc.LoadTreeData();
                     uc.CpyButtonClick += uc_cpyResepClik;
+                    flpHistoriResep.Controls.Add(uc);
                     //uc.Click += uc_MouseCliked;
                 }
             }
@@ -379,14 +377,130 @@ namespace rse.app.desk.rx.lite.UI
         {
             Guna.UI2.WinForms.Guna2Button us = (Guna.UI2.WinForms.Guna2Button)sender;
             var _cpyNoResep = us.Tag.ToString();
+            
 
+            //MessageBox.Show(_cpyNoResep);
+            var dh = new dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
+            var dt = new dataset.yakkumdbTableAdapters.fa_rx_racikanTableAdapter();
+            DataTable ds = dh.GetDataByKodeRXonlyRX(_cpyNoResep);
+            foreach (DataRow r in ds.Rows)
+            {
+                var nu = (int)dh.ScalarQueryMaxNoUrutResep(lblKodeRtx.Text) +1;
+                var sc = (int)dh.ScalarQueryNoRacikan(lblKodeRtx.Text) + 1;
+                var _koderacikan = "RC" + _noreg + _kdokter + sc.ToString("00000");
 
-            MessageBox.Show(_cpyNoResep);
+                if ((Boolean)r["bt_racikan"] == true)
+                {
+                    dh.InsertQuery
+                    (lblKodeRtx.Text,
+                    _koderacikan,
+                    "999999",
+                    sc.ToString(),
+                    true,
+                     r["vc_signalain"].ToString(),
+                    (Boolean)r["bt_iter"],
+                    (Decimal)r["num_jmliter"],
+                    (Boolean)r["bt_fav"],
+                    (Decimal)r["num_jml"],
+                    _kdokter,
+                    nu,
+                    r["nvc_dd1"].ToString(),
+                    r["nvc_dd2"].ToString(),
+                    r["vc_satuan"].ToString(),
+                    r["vc_nama_obat"].ToString(),
+                    r["vc_satuan_dosis"].ToString()
+
+                    );
+                    DataTable tt = dt.GetDataByKodeRD(_koderacikan);
+                    foreach (DataRow t in tt.Rows)
+                    {
+                        dt.InsertQuery(
+                          _koderacikan,
+                          (int)t["in_no_urut"],
+                          t["vc_k_obat"].ToString(),
+                          t["vc_nama_obat"].ToString(),
+                          t["vc_dosis"].ToString(),
+                          t["vc_satuan"].ToString()
+                       );
+                    }
+                }
+                dh.InsertQuery
+                    (lblKodeRtx.Text,
+                    lblKodeRtx.Text + r["vc_kode_obat"].ToString(),
+                    r["vc_kode_obat"].ToString(),
+                    "",
+                    false,
+                    r["vc_signalain"].ToString(),
+                    (Boolean)r["bt_iter"],
+                    (Decimal)r["num_jmliter"],
+                    (Boolean)r["bt_fav"],
+                    (Decimal)r["num_jml"],
+                    _kdokter,
+                    nu,
+                    r["nvc_dd1"].ToString(),
+                    r["nvc_dd2"].ToString(),
+                    r["vc_satuan"].ToString(),
+                    r["vc_nama_obat"].ToString(),
+                    r["vc_satuan_dosis"].ToString()
+                    );
+            }
+
+            this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep, lblKodeRtx.Text);
+            bs_view_resep.Filter = "vc_kode_rx = '" + lblKodeRtx.Text + "'";
+            dgvResep.Update();
+            dgvResep.Refresh();
             //AddData ef = new AddData(_filter, _kodeKlinik, _kodeDokter) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             //this.Controls.Clear();
             //this.Controls.Add(ef);
             //ef.Show();
-
         }
+
+        public static DataTable Treedata(string noreg)
+        {
+            var dt = new DataTable();
+            dt.Columns.Add("EQUID", typeof(int));
+            dt.Columns.Add("DESEQU", typeof(string));
+            var parentColumn = dt.Columns.Add("PEQUID", typeof(int));
+
+            //Data Resep
+            var dh = new dataset.yakkumdbTableAdapters.resep_detilTableAdapter();
+            var th = new dataset.yakkumdbTableAdapters.fa_rx_racikanTableAdapter();
+
+            // TODO : Cari cara get variable dari luar class
+            //MessageBox.Show(noreg);
+            DataTable ds = dh.GetDataByGolongan(noreg);
+            foreach (DataRow r in ds.Rows)
+            {
+                // Rows
+                MessageBox.Show(r["golongan_obat"].ToString());
+                dt.Rows.Add(Int32.Parse(r["kd_golongan"].ToString()), r["golongan_obat"].ToString());
+                DataTable ds2 = dh.GetData(noreg, r["kd_golongan"].ToString());//r["kd_golongan"].ToString()
+                foreach (DataRow d in ds2.Rows)
+                {
+                    MessageBox.Show(d["vc_nama_obat"].ToString() + d["bt_racikan"].ToString());
+                    dt.Rows.Add(
+                        Int32.Parse(d["in_no_urut"].ToString() + d["vc_kode_obat"].ToString()),
+                        d["num_jml"].ToString() + " " + d["vc_satuan"].ToString() + " | " +d["vc_nama_obat"].ToString(), 
+                        Int32.Parse(d["kd_golongan"].ToString())
+                        );
+
+                    if ((Boolean)d["bt_racikan"] == true)
+                    //if ( d["bt_racikan"].ToString() == "1")
+                    {
+                        DataTable tt = th.GetDataByKodeRD(d["vc_kode_rx_d"].ToString());
+                        foreach (DataRow t in tt.Rows)
+                        {
+                            MessageBox.Show(t["vc_nama_obat"].ToString());
+                            dt.Rows.Add(
+                                Int32.Parse(t["in_no_urut"].ToString() + t["vc_k_obat"].ToString()),
+                                t["vc_dosis"].ToString() + " " + t["vc_satuan"].ToString()+" | "+t["vc_nama_obat"].ToString(), 
+                                Int32.Parse(d["in_no_urut"].ToString() + d["vc_kode_obat"].ToString()));
+                        }
+                    }
+                }
+            }
+            return (dt);
+        }
+
     }
 }
