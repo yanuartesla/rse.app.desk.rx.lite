@@ -84,10 +84,19 @@ namespace rse.app.desk.rx.lite.UI
             UserControl us = (UserControl)sender;
             var _filter = us.Tag.ToString().Substring(0,13);
 
-            AddData ef = new AddData(_filter,_kodeKlinik,_kodeDokter) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.Controls.Clear();
-            this.Controls.Add(ef);
-            ef.Show();
+            if (!MainMenu.Instance.PnlContainer.Controls.ContainsKey("AddData"))
+            {
+                AddData ef = new AddData(_filter,_kodeKlinik,_kodeDokter) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                MainMenu.Instance.PnlContainer.Controls.Clear();
+                MainMenu.Instance.PnlContainer.Controls.Add(ef);
+                ef.Show();
+            }
+
+
+            //AddData ef = new AddData(_filter,_kodeKlinik,_kodeDokter) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            //this.Controls.Clear();
+            //this.Controls.Add(ef);
+            //ef.Show();
 
         }
         private void Home_Load(object sender, EventArgs e)

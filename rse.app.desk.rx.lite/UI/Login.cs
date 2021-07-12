@@ -25,7 +25,6 @@ namespace rse.app.desk.rx.lite.UI
         }
         public roles UserRole { get; set; }
 
-
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -55,7 +54,6 @@ namespace rse.app.desk.rx.lite.UI
             {
                 MessageBox.Show("Data not found");
             }
-
             dReader.Close();
             conn.Close();
 

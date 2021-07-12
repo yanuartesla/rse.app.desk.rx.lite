@@ -15,16 +15,33 @@ namespace rse.app.desk.rx.lite.UI
     public partial class MainMenu : Form
     {
         public static MainMenu main;
-        public string _nidDokter { get; set; }
+        public static string _nidDokter { get; set; }
         public string _kodeKlinik { get; set; }
 
-        
+       
         public MainMenu(string niddokter)
         {
             InitializeComponent();
             _nidDokter = niddokter;
             main = this;
             
+        }
+
+        public static MainMenu Instance
+        {
+            get
+            {
+                if (main == null)
+                {
+                    main = new MainMenu(_nidDokter);
+                }
+                return main;
+            }
+        }
+        public Panel PnlContainer
+        {
+            get { return LoadPanelChild; }
+            set { LoadPanelChild = (Guna.UI2.WinForms.Guna2Panel)value; }
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -84,7 +101,6 @@ namespace rse.app.desk.rx.lite.UI
                 {
                     flpHistoriPasien.Controls.Add(uc);
                     uc.Click += uc_MouseCliked;
-                    
                 }
             }
             flpHistoriPasien.ResumeLayout();
@@ -119,12 +135,12 @@ namespace rse.app.desk.rx.lite.UI
 
         private void flpHistoriPasien_MouseEnter(object sender, EventArgs e)
         {
-            timer1.Stop();
+            //timer1.Stop();
         }
 
         private void flpHistoriPasien_MouseLeave(object sender, EventArgs e)
         {
-            timer1.Start();
+            //timer1.Start();
         }
 
         private void cmbKlinik_SelectedIndexChanged(object sender, EventArgs e)
@@ -137,9 +153,6 @@ namespace rse.app.desk.rx.lite.UI
                 LoadPanelChild.Controls.Clear();
                 LoadHome();
                 //MessageBox.Show(cmbKlinik.SelectedValue.ToString());
-
-
-
                 // If we also wanted to get the displayed text we could use
                 // the SelectedItem item property:
                 // string s = ((USState)ListBox1.SelectedItem).LongName;

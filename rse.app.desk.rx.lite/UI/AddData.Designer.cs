@@ -30,18 +30,18 @@ namespace rse.app.desk.rx.lite.UI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.pnlDataPasien = new Guna.UI2.WinForms.Guna2Panel();
             this.btnHistoryCPPT = new Guna.UI2.WinForms.Guna2Button();
@@ -117,7 +117,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tabDiagnosa = new System.Windows.Forms.TabPage();
-            this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnlDiagnosa = new Guna.UI2.WinForms.Guna2Panel();
             this.tabPanelBody = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.dgvProcedure = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -126,7 +126,6 @@ namespace rse.app.desk.rx.lite.UI
             this.desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDel = new System.Windows.Forms.DataGridViewButtonColumn();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-            this.txtCariProsedur = new rse.app.desk.rx.lite.Function.MultiLineAutoCompleteTextBox();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel23 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel24 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -140,7 +139,6 @@ namespace rse.app.desk.rx.lite.UI
             this.code_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnPrimary = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.txtCariDiagnosa = new rse.app.desk.rx.lite.Function.MultiLineAutoCompleteTextBox();
             this.tabPanelTop = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel22 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel21 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -160,7 +158,9 @@ namespace rse.app.desk.rx.lite.UI
             this.tabResep = new System.Windows.Forms.TabPage();
             this.tbResepBody = new Guna.UI2.WinForms.Guna2Panel();
             this.tbResepHeader = new Guna.UI2.WinForms.Guna2Panel();
+            this.numIterResep = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.cbIterResep = new Guna.UI2.WinForms.Guna2CheckBox();
             this.tbResepBottom = new Guna.UI2.WinForms.Guna2Panel();
             this.btnBackResep = new Guna.UI2.WinForms.Guna2Button();
             this.btnFinish = new Guna.UI2.WinForms.Guna2Button();
@@ -173,6 +173,12 @@ namespace rse.app.desk.rx.lite.UI
             this.fa_rx_userTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.fa_rx_userTableAdapter();
             this.fa_rx_racikanTableAdapter1 = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.fa_rx_racikanTableAdapter();
             this.fa_rx_diagnosaTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.fa_rx_diagnosaTableAdapter();
+            this.pnlHistoryDiagnosa = new Guna.UI2.WinForms.Guna2Panel();
+            this.flpHsDiagnosa = new System.Windows.Forms.FlowLayoutPanel();
+            this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txtCariProsedur = new rse.app.desk.rx.lite.Function.MultiLineAutoCompleteTextBox();
+            this.txtCariDiagnosa = new rse.app.desk.rx.lite.Function.MultiLineAutoCompleteTextBox();
             this.pnlDataPasien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsPasien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).BeginInit();
@@ -192,7 +198,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.tabDiagnosa.SuspendLayout();
-            this.guna2Panel9.SuspendLayout();
+            this.pnlDiagnosa.SuspendLayout();
             this.tabPanelBody.SuspendLayout();
             this.guna2Panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcedure)).BeginInit();
@@ -208,9 +214,12 @@ namespace rse.app.desk.rx.lite.UI
             this.tabPanelBottom.SuspendLayout();
             this.tabResep.SuspendLayout();
             this.tbResepHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numIterResep)).BeginInit();
             this.tbResepBottom.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.farxdiagnosaBindingSource)).BeginInit();
+            this.pnlHistoryDiagnosa.SuspendLayout();
+            this.guna2Panel13.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -236,7 +245,7 @@ namespace rse.app.desk.rx.lite.UI
             this.pnlDataPasien.Location = new System.Drawing.Point(10, 0);
             this.pnlDataPasien.Name = "pnlDataPasien";
             this.pnlDataPasien.ShadowDecoration.Parent = this.pnlDataPasien;
-            this.pnlDataPasien.Size = new System.Drawing.Size(910, 61);
+            this.pnlDataPasien.Size = new System.Drawing.Size(1039, 61);
             this.pnlDataPasien.TabIndex = 0;
             // 
             // btnHistoryCPPT
@@ -251,7 +260,7 @@ namespace rse.app.desk.rx.lite.UI
             this.btnHistoryCPPT.ForeColor = System.Drawing.Color.White;
             this.btnHistoryCPPT.HoverState.Parent = this.btnHistoryCPPT;
             this.btnHistoryCPPT.IndicateFocus = true;
-            this.btnHistoryCPPT.Location = new System.Drawing.Point(762, 27);
+            this.btnHistoryCPPT.Location = new System.Drawing.Point(891, 27);
             this.btnHistoryCPPT.Name = "btnHistoryCPPT";
             this.btnHistoryCPPT.ShadowDecoration.Parent = this.btnHistoryCPPT;
             this.btnHistoryCPPT.Size = new System.Drawing.Size(148, 32);
@@ -355,7 +364,7 @@ namespace rse.app.desk.rx.lite.UI
             this.tabData.Multiline = true;
             this.tabData.Name = "tabData";
             this.tabData.SelectedIndex = 0;
-            this.tabData.Size = new System.Drawing.Size(930, 547);
+            this.tabData.Size = new System.Drawing.Size(1059, 547);
             this.tabData.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabData.TabIndex = 1;
             // 
@@ -369,7 +378,7 @@ namespace rse.app.desk.rx.lite.UI
             this.tabCPPT.Location = new System.Drawing.Point(4, 4);
             this.tabCPPT.Name = "tabCPPT";
             this.tabCPPT.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCPPT.Size = new System.Drawing.Size(894, 539);
+            this.tabCPPT.Size = new System.Drawing.Size(1023, 539);
             this.tabCPPT.TabIndex = 0;
             this.tabCPPT.Text = "CPPT";
             // 
@@ -382,7 +391,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel2.Location = new System.Drawing.Point(3, 34);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
-            this.guna2Panel2.Size = new System.Drawing.Size(888, 472);
+            this.guna2Panel2.Size = new System.Drawing.Size(1017, 472);
             this.guna2Panel2.TabIndex = 5;
             // 
             // pnlDokter
@@ -395,7 +404,7 @@ namespace rse.app.desk.rx.lite.UI
             this.pnlDokter.Name = "pnlDokter";
             this.pnlDokter.Padding = new System.Windows.Forms.Padding(5);
             this.pnlDokter.ShadowDecoration.Parent = this.pnlDokter;
-            this.pnlDokter.Size = new System.Drawing.Size(888, 307);
+            this.pnlDokter.Size = new System.Drawing.Size(1017, 307);
             this.pnlDokter.TabIndex = 5;
             // 
             // groupBox3
@@ -424,7 +433,7 @@ namespace rse.app.desk.rx.lite.UI
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(5, 63);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(878, 139);
+            this.groupBox3.Size = new System.Drawing.Size(1007, 139);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Objektif";
@@ -707,7 +716,7 @@ namespace rse.app.desk.rx.lite.UI
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(5, 202);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(878, 100);
+            this.groupBox2.Size = new System.Drawing.Size(1007, 100);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pemeriksaan Fisik";
@@ -719,7 +728,7 @@ namespace rse.app.desk.rx.lite.UI
             this.rtbCatatan.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.rtbCatatan.Location = new System.Drawing.Point(3, 19);
             this.rtbCatatan.Name = "rtbCatatan";
-            this.rtbCatatan.Size = new System.Drawing.Size(872, 78);
+            this.rtbCatatan.Size = new System.Drawing.Size(1001, 78);
             this.rtbCatatan.TabIndex = 0;
             this.rtbCatatan.Text = "";
             // 
@@ -731,7 +740,7 @@ namespace rse.app.desk.rx.lite.UI
             this.groupBox1.Location = new System.Drawing.Point(5, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 3, 5, 5);
-            this.groupBox1.Size = new System.Drawing.Size(878, 58);
+            this.groupBox1.Size = new System.Drawing.Size(1007, 58);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Subyektif";
@@ -744,7 +753,7 @@ namespace rse.app.desk.rx.lite.UI
             this.rtbSubyektif.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.rtbSubyektif.Location = new System.Drawing.Point(5, 21);
             this.rtbSubyektif.Name = "rtbSubyektif";
-            this.rtbSubyektif.Size = new System.Drawing.Size(868, 32);
+            this.rtbSubyektif.Size = new System.Drawing.Size(997, 32);
             this.rtbSubyektif.TabIndex = 0;
             this.rtbSubyektif.Text = "Keluhan : ";
             // 
@@ -755,7 +764,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel10.Location = new System.Drawing.Point(0, 138);
             this.guna2Panel10.Name = "guna2Panel10";
             this.guna2Panel10.ShadowDecoration.Parent = this.guna2Panel10;
-            this.guna2Panel10.Size = new System.Drawing.Size(888, 27);
+            this.guna2Panel10.Size = new System.Drawing.Size(1017, 27);
             this.guna2Panel10.TabIndex = 4;
             // 
             // guna2HtmlLabel10
@@ -766,7 +775,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2HtmlLabel10.ForeColor = System.Drawing.Color.DimGray;
             this.guna2HtmlLabel10.Location = new System.Drawing.Point(0, 0);
             this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            this.guna2HtmlLabel10.Size = new System.Drawing.Size(98, 27);
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(98, 23);
             this.guna2HtmlLabel10.TabIndex = 0;
             this.guna2HtmlLabel10.Text = "CPPT Dokter";
             this.guna2HtmlLabel10.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -778,15 +787,15 @@ namespace rse.app.desk.rx.lite.UI
             this.pnlPerawat.Location = new System.Drawing.Point(0, 0);
             this.pnlPerawat.Name = "pnlPerawat";
             this.pnlPerawat.ShadowDecoration.Parent = this.pnlPerawat;
-            this.pnlPerawat.Size = new System.Drawing.Size(888, 138);
+            this.pnlPerawat.Size = new System.Drawing.Size(1017, 138);
             this.pnlPerawat.TabIndex = 0;
             // 
             // dgvCPPTPerawat
             // 
             this.dgvCPPTPerawat.AllowUserToAddRows = false;
             this.dgvCPPTPerawat.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvCPPTPerawat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle49.BackColor = System.Drawing.Color.White;
+            this.dgvCPPTPerawat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle49;
             this.dgvCPPTPerawat.AutoGenerateColumns = false;
             this.dgvCPPTPerawat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCPPTPerawat.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
@@ -794,14 +803,14 @@ namespace rse.app.desk.rx.lite.UI
             this.dgvCPPTPerawat.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCPPTPerawat.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvCPPTPerawat.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCPPTPerawat.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle50.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle50.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle50.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCPPTPerawat.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle50;
             this.dgvCPPTPerawat.ColumnHeadersHeight = 20;
             this.dgvCPPTPerawat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tanggalDataGridViewTextBoxColumn,
@@ -828,14 +837,14 @@ namespace rse.app.desk.rx.lite.UI
             this.bb,
             this.btnCopy});
             this.dgvCPPTPerawat.DataSource = this.bsCPPT;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCPPTPerawat.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle52.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle52.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle52.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle52.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle52.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCPPTPerawat.DefaultCellStyle = dataGridViewCellStyle52;
             this.dgvCPPTPerawat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCPPTPerawat.EnableHeadersVisualStyles = false;
             this.dgvCPPTPerawat.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -843,11 +852,11 @@ namespace rse.app.desk.rx.lite.UI
             this.dgvCPPTPerawat.Name = "dgvCPPTPerawat";
             this.dgvCPPTPerawat.ReadOnly = true;
             this.dgvCPPTPerawat.RowHeadersVisible = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCPPTPerawat.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle53.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCPPTPerawat.RowsDefaultCellStyle = dataGridViewCellStyle53;
             this.dgvCPPTPerawat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCPPTPerawat.Size = new System.Drawing.Size(888, 138);
+            this.dgvCPPTPerawat.Size = new System.Drawing.Size(1017, 138);
             this.dgvCPPTPerawat.TabIndex = 0;
             this.dgvCPPTPerawat.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvCPPTPerawat.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -1051,11 +1060,11 @@ namespace rse.app.desk.rx.lite.UI
             // 
             // btnCopy
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnCopy.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle51.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle51.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle51.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnCopy.DefaultCellStyle = dataGridViewCellStyle51;
             this.btnCopy.FillWeight = 19.30062F;
             this.btnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCopy.HeaderText = "Copy";
@@ -1084,7 +1093,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel3.Location = new System.Drawing.Point(3, 506);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
-            this.guna2Panel3.Size = new System.Drawing.Size(888, 30);
+            this.guna2Panel3.Size = new System.Drawing.Size(1017, 30);
             this.guna2Panel3.TabIndex = 4;
             // 
             // btCancel
@@ -1099,7 +1108,7 @@ namespace rse.app.desk.rx.lite.UI
             this.btCancel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btCancel.ForeColor = System.Drawing.Color.White;
             this.btCancel.HoverState.Parent = this.btCancel;
-            this.btCancel.Location = new System.Drawing.Point(664, 0);
+            this.btCancel.Location = new System.Drawing.Point(793, 0);
             this.btCancel.Name = "btCancel";
             this.btCancel.ShadowDecoration.Parent = this.btCancel;
             this.btCancel.Size = new System.Drawing.Size(112, 30);
@@ -1119,7 +1128,7 @@ namespace rse.app.desk.rx.lite.UI
             this.btnAnamNext.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnAnamNext.ForeColor = System.Drawing.Color.White;
             this.btnAnamNext.HoverState.Parent = this.btnAnamNext;
-            this.btnAnamNext.Location = new System.Drawing.Point(776, 0);
+            this.btnAnamNext.Location = new System.Drawing.Point(905, 0);
             this.btnAnamNext.Name = "btnAnamNext";
             this.btnAnamNext.ShadowDecoration.Parent = this.btnAnamNext;
             this.btnAnamNext.Size = new System.Drawing.Size(112, 30);
@@ -1134,7 +1143,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel4.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
-            this.guna2Panel4.Size = new System.Drawing.Size(888, 31);
+            this.guna2Panel4.Size = new System.Drawing.Size(1017, 31);
             this.guna2Panel4.TabIndex = 3;
             // 
             // guna2HtmlLabel6
@@ -1145,7 +1154,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.DimGray;
             this.guna2HtmlLabel6.Location = new System.Drawing.Point(0, 0);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(108, 31);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(108, 23);
             this.guna2HtmlLabel6.TabIndex = 0;
             this.guna2HtmlLabel6.Text = "CPPT Perawat";
             this.guna2HtmlLabel6.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1153,27 +1162,28 @@ namespace rse.app.desk.rx.lite.UI
             // tabDiagnosa
             // 
             this.tabDiagnosa.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tabDiagnosa.Controls.Add(this.guna2Panel9);
+            this.tabDiagnosa.Controls.Add(this.pnlDiagnosa);
+            this.tabDiagnosa.Controls.Add(this.pnlHistoryDiagnosa);
             this.tabDiagnosa.Controls.Add(this.pnlTemplate);
             this.tabDiagnosa.Controls.Add(this.tabPanelBottom);
             this.tabDiagnosa.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabDiagnosa.Location = new System.Drawing.Point(4, 4);
             this.tabDiagnosa.Name = "tabDiagnosa";
             this.tabDiagnosa.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDiagnosa.Size = new System.Drawing.Size(894, 539);
+            this.tabDiagnosa.Size = new System.Drawing.Size(1023, 539);
             this.tabDiagnosa.TabIndex = 1;
             this.tabDiagnosa.Text = "Diagnosa";
             // 
-            // guna2Panel9
+            // pnlDiagnosa
             // 
-            this.guna2Panel9.Controls.Add(this.tabPanelBody);
-            this.guna2Panel9.Controls.Add(this.tabPanelTop);
-            this.guna2Panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel9.Location = new System.Drawing.Point(174, 3);
-            this.guna2Panel9.Name = "guna2Panel9";
-            this.guna2Panel9.ShadowDecoration.Parent = this.guna2Panel9;
-            this.guna2Panel9.Size = new System.Drawing.Size(717, 503);
-            this.guna2Panel9.TabIndex = 6;
+            this.pnlDiagnosa.Controls.Add(this.tabPanelBody);
+            this.pnlDiagnosa.Controls.Add(this.tabPanelTop);
+            this.pnlDiagnosa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDiagnosa.Location = new System.Drawing.Point(267, 3);
+            this.pnlDiagnosa.Name = "pnlDiagnosa";
+            this.pnlDiagnosa.ShadowDecoration.Parent = this.pnlDiagnosa;
+            this.pnlDiagnosa.Size = new System.Drawing.Size(753, 503);
+            this.pnlDiagnosa.TabIndex = 6;
             // 
             // tabPanelBody
             // 
@@ -1187,7 +1197,7 @@ namespace rse.app.desk.rx.lite.UI
             this.tabPanelBody.Name = "tabPanelBody";
             this.tabPanelBody.Padding = new System.Windows.Forms.Padding(10);
             this.tabPanelBody.ShadowDecoration.Parent = this.tabPanelBody;
-            this.tabPanelBody.Size = new System.Drawing.Size(717, 476);
+            this.tabPanelBody.Size = new System.Drawing.Size(753, 476);
             this.tabPanelBody.TabIndex = 2;
             // 
             // guna2Panel8
@@ -1198,26 +1208,26 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel8.Name = "guna2Panel8";
             this.guna2Panel8.Padding = new System.Windows.Forms.Padding(5);
             this.guna2Panel8.ShadowDecoration.Parent = this.guna2Panel8;
-            this.guna2Panel8.Size = new System.Drawing.Size(697, 113);
+            this.guna2Panel8.Size = new System.Drawing.Size(733, 113);
             this.guna2Panel8.TabIndex = 5;
             // 
             // dgvProcedure
             // 
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.dgvProcedure.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle54.BackColor = System.Drawing.Color.White;
+            this.dgvProcedure.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle54;
             this.dgvProcedure.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProcedure.BackgroundColor = System.Drawing.Color.White;
             this.dgvProcedure.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProcedure.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvProcedure.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProcedure.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle55.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle55.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProcedure.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle55;
             this.dgvProcedure.ColumnHeadersHeight = 25;
             this.dgvProcedure.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvProcedure.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1225,14 +1235,14 @@ namespace rse.app.desk.rx.lite.UI
             this.code,
             this.desc,
             this.btnDel});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProcedure.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle56.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle56.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle56.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProcedure.DefaultCellStyle = dataGridViewCellStyle56;
             this.dgvProcedure.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProcedure.EnableHeadersVisualStyles = false;
             this.dgvProcedure.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -1241,7 +1251,7 @@ namespace rse.app.desk.rx.lite.UI
             this.dgvProcedure.ReadOnly = true;
             this.dgvProcedure.RowHeadersVisible = false;
             this.dgvProcedure.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProcedure.Size = new System.Drawing.Size(687, 103);
+            this.dgvProcedure.Size = new System.Drawing.Size(723, 103);
             this.dgvProcedure.TabIndex = 0;
             this.dgvProcedure.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvProcedure.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -1304,36 +1314,8 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel7.Name = "guna2Panel7";
             this.guna2Panel7.Padding = new System.Windows.Forms.Padding(5);
             this.guna2Panel7.ShadowDecoration.Parent = this.guna2Panel7;
-            this.guna2Panel7.Size = new System.Drawing.Size(697, 40);
+            this.guna2Panel7.Size = new System.Drawing.Size(733, 40);
             this.guna2Panel7.TabIndex = 4;
-            // 
-            // txtCariProsedur
-            // 
-            this.txtCariProsedur.AutoRoundedCorners = true;
-            this.txtCariProsedur.BorderRadius = 14;
-            this.txtCariProsedur.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCariProsedur.DefaultText = "";
-            this.txtCariProsedur.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCariProsedur.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCariProsedur.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCariProsedur.DisabledState.Parent = this.txtCariProsedur;
-            this.txtCariProsedur.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCariProsedur.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtCariProsedur.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCariProsedur.FocusedState.Parent = this.txtCariProsedur;
-            this.txtCariProsedur.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCariProsedur.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCariProsedur.HoverState.Parent = this.txtCariProsedur;
-            this.txtCariProsedur.Location = new System.Drawing.Point(5, 5);
-            this.txtCariProsedur.Name = "txtCariProsedur";
-            this.txtCariProsedur.PasswordChar = '\0';
-            this.txtCariProsedur.PlaceholderText = "Cari Prosedur / Tindakan Medis";
-            this.txtCariProsedur.SelectedText = "";
-            this.txtCariProsedur.ShadowDecoration.Parent = this.txtCariProsedur;
-            this.txtCariProsedur.Size = new System.Drawing.Size(687, 30);
-            this.txtCariProsedur.TabIndex = 0;
-            this.txtCariProsedur.Values = null;
-            this.txtCariProsedur.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCariProsedur_KeyDown);
             // 
             // guna2Panel6
             // 
@@ -1346,7 +1328,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel6.Location = new System.Drawing.Point(10, 285);
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.ShadowDecoration.Parent = this.guna2Panel6;
-            this.guna2Panel6.Size = new System.Drawing.Size(697, 28);
+            this.guna2Panel6.Size = new System.Drawing.Size(733, 28);
             this.guna2Panel6.TabIndex = 3;
             // 
             // guna2HtmlLabel23
@@ -1427,26 +1409,26 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.guna2Panel5.ShadowDecoration.Parent = this.guna2Panel5;
-            this.guna2Panel5.Size = new System.Drawing.Size(697, 245);
+            this.guna2Panel5.Size = new System.Drawing.Size(733, 245);
             this.guna2Panel5.TabIndex = 2;
             // 
             // dgvDiagnosa
             // 
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(196)))), ((int)(((byte)(233)))));
-            this.dgvDiagnosa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle57.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(196)))), ((int)(((byte)(233)))));
+            this.dgvDiagnosa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle57;
             this.dgvDiagnosa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDiagnosa.BackgroundColor = System.Drawing.Color.White;
             this.dgvDiagnosa.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDiagnosa.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvDiagnosa.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(58)))), ((int)(((byte)(183)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDiagnosa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle58.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(58)))), ((int)(((byte)(183)))));
+            dataGridViewCellStyle58.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle58.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle58.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle58.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDiagnosa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle58;
             this.dgvDiagnosa.ColumnHeadersHeight = 25;
             this.dgvDiagnosa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDiagnosa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1455,14 +1437,14 @@ namespace rse.app.desk.rx.lite.UI
             this.code_desc,
             this.btnPrimary,
             this.btnDelete});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(215)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(123)))), ((int)(((byte)(207)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDiagnosa.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle60.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(215)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle60.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle60.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle60.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(123)))), ((int)(((byte)(207)))));
+            dataGridViewCellStyle60.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle60.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDiagnosa.DefaultCellStyle = dataGridViewCellStyle60;
             this.dgvDiagnosa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDiagnosa.EnableHeadersVisualStyles = false;
             this.dgvDiagnosa.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(193)))), ((int)(((byte)(232)))));
@@ -1471,7 +1453,7 @@ namespace rse.app.desk.rx.lite.UI
             this.dgvDiagnosa.ReadOnly = true;
             this.dgvDiagnosa.RowHeadersVisible = false;
             this.dgvDiagnosa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDiagnosa.Size = new System.Drawing.Size(697, 225);
+            this.dgvDiagnosa.Size = new System.Drawing.Size(733, 225);
             this.dgvDiagnosa.TabIndex = 1;
             this.dgvDiagnosa.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.DeepPurple;
             this.dgvDiagnosa.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(196)))), ((int)(((byte)(233)))));
@@ -1515,9 +1497,9 @@ namespace rse.app.desk.rx.lite.UI
             // 
             // code_desc
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.code_desc.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.code_desc.DefaultCellStyle = dataGridViewCellStyle59;
             this.code_desc.HeaderText = "Description";
             this.code_desc.Name = "code_desc";
             this.code_desc.ReadOnly = true;
@@ -1530,41 +1512,15 @@ namespace rse.app.desk.rx.lite.UI
             this.btnPrimary.ReadOnly = true;
             this.btnPrimary.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.btnPrimary.Text = "Set Primary";
+            this.btnPrimary.Visible = false;
             // 
             // btnDelete
             // 
             this.btnDelete.FillWeight = 15F;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.HeaderText = "Delete";
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ReadOnly = true;
-            // 
-            // txtCariDiagnosa
-            // 
-            this.txtCariDiagnosa.AutoRoundedCorners = true;
-            this.txtCariDiagnosa.BorderRadius = 14;
-            this.txtCariDiagnosa.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCariDiagnosa.DefaultText = "";
-            this.txtCariDiagnosa.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCariDiagnosa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCariDiagnosa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCariDiagnosa.DisabledState.Parent = this.txtCariDiagnosa;
-            this.txtCariDiagnosa.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCariDiagnosa.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtCariDiagnosa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCariDiagnosa.FocusedState.Parent = this.txtCariDiagnosa;
-            this.txtCariDiagnosa.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCariDiagnosa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCariDiagnosa.HoverState.Parent = this.txtCariDiagnosa;
-            this.txtCariDiagnosa.Location = new System.Drawing.Point(10, 10);
-            this.txtCariDiagnosa.Name = "txtCariDiagnosa";
-            this.txtCariDiagnosa.PasswordChar = '\0';
-            this.txtCariDiagnosa.PlaceholderText = "Cari Diagnosa";
-            this.txtCariDiagnosa.SelectedText = "";
-            this.txtCariDiagnosa.ShadowDecoration.Parent = this.txtCariDiagnosa;
-            this.txtCariDiagnosa.Size = new System.Drawing.Size(697, 30);
-            this.txtCariDiagnosa.TabIndex = 0;
-            this.txtCariDiagnosa.Values = null;
-            this.txtCariDiagnosa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCariDiagnosa_KeyDown);
             // 
             // tabPanelTop
             // 
@@ -1579,7 +1535,7 @@ namespace rse.app.desk.rx.lite.UI
             this.tabPanelTop.Name = "tabPanelTop";
             this.tabPanelTop.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.tabPanelTop.ShadowDecoration.Parent = this.tabPanelTop;
-            this.tabPanelTop.Size = new System.Drawing.Size(717, 27);
+            this.tabPanelTop.Size = new System.Drawing.Size(753, 27);
             this.tabPanelTop.TabIndex = 0;
             // 
             // guna2HtmlLabel22
@@ -1659,8 +1615,9 @@ namespace rse.app.desk.rx.lite.UI
             this.pnlTemplate.Location = new System.Drawing.Point(3, 3);
             this.pnlTemplate.Name = "pnlTemplate";
             this.pnlTemplate.ShadowDecoration.Parent = this.pnlTemplate;
-            this.pnlTemplate.Size = new System.Drawing.Size(171, 503);
+            this.pnlTemplate.Size = new System.Drawing.Size(64, 503);
             this.pnlTemplate.TabIndex = 7;
+            this.pnlTemplate.Visible = false;
             // 
             // guna2ShadowPanel1
             // 
@@ -1673,7 +1630,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(171, 503);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(64, 503);
             this.guna2ShadowPanel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -1682,7 +1639,7 @@ namespace rse.app.desk.rx.lite.UI
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 49);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(171, 407);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(64, 407);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // guna2Panel12
@@ -1694,7 +1651,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel12.Name = "guna2Panel12";
             this.guna2Panel12.Padding = new System.Windows.Forms.Padding(10, 5, 10, 10);
             this.guna2Panel12.ShadowDecoration.Parent = this.guna2Panel12;
-            this.guna2Panel12.Size = new System.Drawing.Size(171, 47);
+            this.guna2Panel12.Size = new System.Drawing.Size(64, 47);
             this.guna2Panel12.TabIndex = 1;
             // 
             // btnTemplate
@@ -1710,7 +1667,7 @@ namespace rse.app.desk.rx.lite.UI
             this.btnTemplate.Location = new System.Drawing.Point(10, 5);
             this.btnTemplate.Name = "btnTemplate";
             this.btnTemplate.ShadowDecoration.Parent = this.btnTemplate;
-            this.btnTemplate.Size = new System.Drawing.Size(151, 32);
+            this.btnTemplate.Size = new System.Drawing.Size(44, 32);
             this.btnTemplate.TabIndex = 0;
             this.btnTemplate.Text = "Add Template";
             this.btnTemplate.Click += new System.EventHandler(this.btnTemplate_Click);
@@ -1722,7 +1679,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel11.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel11.Name = "guna2Panel11";
             this.guna2Panel11.ShadowDecoration.Parent = this.guna2Panel11;
-            this.guna2Panel11.Size = new System.Drawing.Size(171, 49);
+            this.guna2Panel11.Size = new System.Drawing.Size(64, 49);
             this.guna2Panel11.TabIndex = 0;
             // 
             // guna2HtmlLabel30
@@ -1744,7 +1701,7 @@ namespace rse.app.desk.rx.lite.UI
             this.tabPanelBottom.Location = new System.Drawing.Point(3, 506);
             this.tabPanelBottom.Name = "tabPanelBottom";
             this.tabPanelBottom.ShadowDecoration.Parent = this.tabPanelBottom;
-            this.tabPanelBottom.Size = new System.Drawing.Size(888, 30);
+            this.tabPanelBottom.Size = new System.Drawing.Size(1017, 30);
             this.tabPanelBottom.TabIndex = 1;
             // 
             // btnBack
@@ -1759,7 +1716,7 @@ namespace rse.app.desk.rx.lite.UI
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnBack.ForeColor = System.Drawing.Color.White;
             this.btnBack.HoverState.Parent = this.btnBack;
-            this.btnBack.Location = new System.Drawing.Point(664, 0);
+            this.btnBack.Location = new System.Drawing.Point(793, 0);
             this.btnBack.Name = "btnBack";
             this.btnBack.ShadowDecoration.Parent = this.btnBack;
             this.btnBack.Size = new System.Drawing.Size(112, 30);
@@ -1780,7 +1737,7 @@ namespace rse.app.desk.rx.lite.UI
             this.btnNext.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnNext.ForeColor = System.Drawing.Color.White;
             this.btnNext.HoverState.Parent = this.btnNext;
-            this.btnNext.Location = new System.Drawing.Point(776, 0);
+            this.btnNext.Location = new System.Drawing.Point(905, 0);
             this.btnNext.Name = "btnNext";
             this.btnNext.ShadowDecoration.Parent = this.btnNext;
             this.btnNext.Size = new System.Drawing.Size(112, 30);
@@ -1797,7 +1754,7 @@ namespace rse.app.desk.rx.lite.UI
             this.tabResep.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabResep.Location = new System.Drawing.Point(4, 4);
             this.tabResep.Name = "tabResep";
-            this.tabResep.Size = new System.Drawing.Size(894, 539);
+            this.tabResep.Size = new System.Drawing.Size(1023, 539);
             this.tabResep.TabIndex = 2;
             this.tabResep.Text = "Resep";
             // 
@@ -1805,21 +1762,58 @@ namespace rse.app.desk.rx.lite.UI
             // 
             this.tbResepBody.AutoScroll = true;
             this.tbResepBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbResepBody.Location = new System.Drawing.Point(0, 27);
+            this.tbResepBody.Location = new System.Drawing.Point(0, 42);
             this.tbResepBody.Name = "tbResepBody";
             this.tbResepBody.ShadowDecoration.Parent = this.tbResepBody;
-            this.tbResepBody.Size = new System.Drawing.Size(894, 482);
+            this.tbResepBody.Size = new System.Drawing.Size(1023, 467);
             this.tbResepBody.TabIndex = 4;
             // 
             // tbResepHeader
             // 
+            this.tbResepHeader.Controls.Add(this.numIterResep);
             this.tbResepHeader.Controls.Add(this.guna2HtmlLabel8);
+            this.tbResepHeader.Controls.Add(this.cbIterResep);
             this.tbResepHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.tbResepHeader.Location = new System.Drawing.Point(0, 0);
             this.tbResepHeader.Name = "tbResepHeader";
             this.tbResepHeader.ShadowDecoration.Parent = this.tbResepHeader;
-            this.tbResepHeader.Size = new System.Drawing.Size(894, 27);
+            this.tbResepHeader.Size = new System.Drawing.Size(1023, 42);
             this.tbResepHeader.TabIndex = 3;
+            // 
+            // numIterResep
+            // 
+            this.numIterResep.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.numIterResep.AutoRoundedCorners = true;
+            this.numIterResep.BackColor = System.Drawing.Color.Transparent;
+            this.numIterResep.BorderRadius = 15;
+            this.numIterResep.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.numIterResep.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.numIterResep.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.numIterResep.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.numIterResep.DisabledState.Parent = this.numIterResep;
+            this.numIterResep.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.numIterResep.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.numIterResep.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.numIterResep.FocusedState.Parent = this.numIterResep;
+            this.numIterResep.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.numIterResep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.numIterResep.Location = new System.Drawing.Point(843, 5);
+            this.numIterResep.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numIterResep.Name = "numIterResep";
+            this.numIterResep.ShadowDecoration.Parent = this.numIterResep;
+            this.numIterResep.Size = new System.Drawing.Size(62, 32);
+            this.numIterResep.TabIndex = 3;
+            this.numIterResep.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(106)))), ((int)(((byte)(115)))));
+            this.numIterResep.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numIterResep.Visible = false;
             // 
             // guna2HtmlLabel8
             // 
@@ -1832,6 +1826,26 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2HtmlLabel8.TabIndex = 1;
             this.guna2HtmlLabel8.Text = "Resep";
             // 
+            // cbIterResep
+            // 
+            this.cbIterResep.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbIterResep.AutoSize = true;
+            this.cbIterResep.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbIterResep.CheckedState.BorderRadius = 0;
+            this.cbIterResep.CheckedState.BorderThickness = 0;
+            this.cbIterResep.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbIterResep.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.cbIterResep.Location = new System.Drawing.Point(911, 11);
+            this.cbIterResep.Name = "cbIterResep";
+            this.cbIterResep.Size = new System.Drawing.Size(104, 25);
+            this.cbIterResep.TabIndex = 2;
+            this.cbIterResep.Text = "Iter Resep";
+            this.cbIterResep.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(106)))), ((int)(((byte)(115)))));
+            this.cbIterResep.UncheckedState.BorderRadius = 0;
+            this.cbIterResep.UncheckedState.BorderThickness = 0;
+            this.cbIterResep.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(106)))), ((int)(((byte)(115)))));
+            this.cbIterResep.CheckedChanged += new System.EventHandler(this.cbIterResep_CheckedChanged);
+            // 
             // tbResepBottom
             // 
             this.tbResepBottom.Controls.Add(this.btnBackResep);
@@ -1840,7 +1854,7 @@ namespace rse.app.desk.rx.lite.UI
             this.tbResepBottom.Location = new System.Drawing.Point(0, 509);
             this.tbResepBottom.Name = "tbResepBottom";
             this.tbResepBottom.ShadowDecoration.Parent = this.tbResepBottom;
-            this.tbResepBottom.Size = new System.Drawing.Size(894, 30);
+            this.tbResepBottom.Size = new System.Drawing.Size(1023, 30);
             this.tbResepBottom.TabIndex = 2;
             // 
             // btnBackResep
@@ -1855,7 +1869,7 @@ namespace rse.app.desk.rx.lite.UI
             this.btnBackResep.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnBackResep.ForeColor = System.Drawing.Color.White;
             this.btnBackResep.HoverState.Parent = this.btnBackResep;
-            this.btnBackResep.Location = new System.Drawing.Point(670, 0);
+            this.btnBackResep.Location = new System.Drawing.Point(799, 0);
             this.btnBackResep.Name = "btnBackResep";
             this.btnBackResep.ShadowDecoration.Parent = this.btnBackResep;
             this.btnBackResep.Size = new System.Drawing.Size(112, 30);
@@ -1875,7 +1889,7 @@ namespace rse.app.desk.rx.lite.UI
             this.btnFinish.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnFinish.ForeColor = System.Drawing.Color.White;
             this.btnFinish.HoverState.Parent = this.btnFinish;
-            this.btnFinish.Location = new System.Drawing.Point(782, 0);
+            this.btnFinish.Location = new System.Drawing.Point(911, 0);
             this.btnFinish.Name = "btnFinish";
             this.btnFinish.ShadowDecoration.Parent = this.btnFinish;
             this.btnFinish.Size = new System.Drawing.Size(112, 30);
@@ -1901,7 +1915,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Padding = new System.Windows.Forms.Padding(10, 0, 10, 5);
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(930, 66);
+            this.guna2Panel1.Size = new System.Drawing.Size(1059, 66);
             this.guna2Panel1.TabIndex = 1;
             // 
             // rJ_cpptTableAdapter
@@ -1929,11 +1943,110 @@ namespace rse.app.desk.rx.lite.UI
             // 
             this.fa_rx_diagnosaTableAdapter.ClearBeforeFill = true;
             // 
+            // pnlHistoryDiagnosa
+            // 
+            this.pnlHistoryDiagnosa.BorderRadius = 12;
+            this.pnlHistoryDiagnosa.BorderThickness = 1;
+            this.pnlHistoryDiagnosa.Controls.Add(this.guna2Panel13);
+            this.pnlHistoryDiagnosa.Controls.Add(this.flpHsDiagnosa);
+            this.pnlHistoryDiagnosa.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlHistoryDiagnosa.Location = new System.Drawing.Point(67, 3);
+            this.pnlHistoryDiagnosa.Name = "pnlHistoryDiagnosa";
+            this.pnlHistoryDiagnosa.ShadowDecoration.Parent = this.pnlHistoryDiagnosa;
+            this.pnlHistoryDiagnosa.Size = new System.Drawing.Size(200, 503);
+            this.pnlHistoryDiagnosa.TabIndex = 8;
+            this.pnlHistoryDiagnosa.Visible = false;
+            // 
+            // flpHsDiagnosa
+            // 
+            this.flpHsDiagnosa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpHsDiagnosa.Location = new System.Drawing.Point(0, 0);
+            this.flpHsDiagnosa.Name = "flpHsDiagnosa";
+            this.flpHsDiagnosa.Size = new System.Drawing.Size(200, 503);
+            this.flpHsDiagnosa.TabIndex = 0;
+            // 
+            // guna2Panel13
+            // 
+            this.guna2Panel13.Controls.Add(this.guna2HtmlLabel2);
+            this.guna2Panel13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel13.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel13.Name = "guna2Panel13";
+            this.guna2Panel13.ShadowDecoration.Parent = this.guna2Panel13;
+            this.guna2Panel13.Size = new System.Drawing.Size(200, 27);
+            this.guna2Panel13.TabIndex = 1;
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(27, 1);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(127, 23);
+            this.guna2HtmlLabel2.TabIndex = 0;
+            this.guna2HtmlLabel2.Text = "History Diagnosa";
+            // 
+            // txtCariProsedur
+            // 
+            this.txtCariProsedur.AutoRoundedCorners = true;
+            this.txtCariProsedur.BorderRadius = 14;
+            this.txtCariProsedur.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCariProsedur.DefaultText = "";
+            this.txtCariProsedur.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCariProsedur.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCariProsedur.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCariProsedur.DisabledState.Parent = this.txtCariProsedur;
+            this.txtCariProsedur.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCariProsedur.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtCariProsedur.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCariProsedur.FocusedState.Parent = this.txtCariProsedur;
+            this.txtCariProsedur.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCariProsedur.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCariProsedur.HoverState.Parent = this.txtCariProsedur;
+            this.txtCariProsedur.Location = new System.Drawing.Point(5, 5);
+            this.txtCariProsedur.Name = "txtCariProsedur";
+            this.txtCariProsedur.PasswordChar = '\0';
+            this.txtCariProsedur.PlaceholderText = "Cari Prosedur / Tindakan Medis";
+            this.txtCariProsedur.SelectedText = "";
+            this.txtCariProsedur.ShadowDecoration.Parent = this.txtCariProsedur;
+            this.txtCariProsedur.Size = new System.Drawing.Size(723, 30);
+            this.txtCariProsedur.TabIndex = 0;
+            this.txtCariProsedur.Values = null;
+            this.txtCariProsedur.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCariProsedur_KeyDown);
+            // 
+            // txtCariDiagnosa
+            // 
+            this.txtCariDiagnosa.AutoRoundedCorners = true;
+            this.txtCariDiagnosa.BorderRadius = 14;
+            this.txtCariDiagnosa.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCariDiagnosa.DefaultText = "";
+            this.txtCariDiagnosa.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCariDiagnosa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCariDiagnosa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCariDiagnosa.DisabledState.Parent = this.txtCariDiagnosa;
+            this.txtCariDiagnosa.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCariDiagnosa.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtCariDiagnosa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCariDiagnosa.FocusedState.Parent = this.txtCariDiagnosa;
+            this.txtCariDiagnosa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCariDiagnosa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCariDiagnosa.HoverState.Parent = this.txtCariDiagnosa;
+            this.txtCariDiagnosa.Location = new System.Drawing.Point(10, 10);
+            this.txtCariDiagnosa.Name = "txtCariDiagnosa";
+            this.txtCariDiagnosa.PasswordChar = '\0';
+            this.txtCariDiagnosa.PlaceholderText = "Cari Diagnosa";
+            this.txtCariDiagnosa.SelectedText = "";
+            this.txtCariDiagnosa.ShadowDecoration.Parent = this.txtCariDiagnosa;
+            this.txtCariDiagnosa.Size = new System.Drawing.Size(733, 30);
+            this.txtCariDiagnosa.TabIndex = 0;
+            this.txtCariDiagnosa.Values = null;
+            this.txtCariDiagnosa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCariDiagnosa_KeyDown);
+            // 
             // AddData
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(940, 623);
+            this.ClientSize = new System.Drawing.Size(1069, 623);
             this.Controls.Add(this.tabData);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1964,7 +2077,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
             this.tabDiagnosa.ResumeLayout(false);
-            this.guna2Panel9.ResumeLayout(false);
+            this.pnlDiagnosa.ResumeLayout(false);
             this.tabPanelBody.ResumeLayout(false);
             this.guna2Panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcedure)).EndInit();
@@ -1984,9 +2097,13 @@ namespace rse.app.desk.rx.lite.UI
             this.tabResep.ResumeLayout(false);
             this.tbResepHeader.ResumeLayout(false);
             this.tbResepHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numIterResep)).EndInit();
             this.tbResepBottom.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.farxdiagnosaBindingSource)).EndInit();
+            this.pnlHistoryDiagnosa.ResumeLayout(false);
+            this.guna2Panel13.ResumeLayout(false);
+            this.guna2Panel13.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2056,7 +2173,7 @@ namespace rse.app.desk.rx.lite.UI
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel19;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel18;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel17;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
+        private Guna.UI2.WinForms.Guna2Panel pnlDiagnosa;
         private Guna.UI2.WinForms.Guna2DataGridView dgvProcedure;
         private Function.MultiLineAutoCompleteTextBox txtCariProsedur;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
@@ -2090,11 +2207,6 @@ namespace rse.app.desk.rx.lite.UI
         private Guna.UI2.WinForms.Guna2Button btnTemplate;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI2.WinForms.Guna2TextBox txtSuhu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn no;
-        private System.Windows.Forms.DataGridViewTextBoxColumn icdcode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn code_desc;
-        private System.Windows.Forms.DataGridViewButtonColumn btnPrimary;
-        private System.Windows.Forms.DataGridViewButtonColumn btnDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomor;
         private System.Windows.Forms.DataGridViewTextBoxColumn code;
         private System.Windows.Forms.DataGridViewTextBoxColumn desc;
@@ -2124,5 +2236,16 @@ namespace rse.app.desk.rx.lite.UI
         private System.Windows.Forms.DataGridViewButtonColumn btnCopy;
         private System.Windows.Forms.DataGridViewTextBoxColumn bb;
         private Guna.UI2.WinForms.Guna2Button btnHistoryCPPT;
+        private Guna.UI2.WinForms.Guna2CheckBox cbIterResep;
+        private Guna.UI2.WinForms.Guna2NumericUpDown numIterResep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn no;
+        private System.Windows.Forms.DataGridViewTextBoxColumn icdcode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn code_desc;
+        private System.Windows.Forms.DataGridViewButtonColumn btnPrimary;
+        private System.Windows.Forms.DataGridViewButtonColumn btnDelete;
+        private Guna.UI2.WinForms.Guna2Panel pnlHistoryDiagnosa;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel13;
+        private System.Windows.Forms.FlowLayoutPanel flpHsDiagnosa;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
     }
 }

@@ -13,8 +13,10 @@
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        fa_rx_resep_h.vc_kode_rx, fa_rx_resep_h.vc_no_reg, fa_rx_resep_h.vc_no_rm, RMPasien.vc_nama_p, RMPasien.vc_jenis_k, CONVERT(varchar, RMPasien.dt_tgl_lhr, 6) AS tgllahir, CAST(RMPasien.in_umurth AS varchar) 
-                         + ' tahun' AS umur, UPPER(RMPasien.vc_alamat + ',' + RMPasien.vc_kecamatan) AS alamat, RTRIM(RMKLINIK.vc_N_KLINIK) AS nama_klinik, fa_rx_resep_h.int_k_status, fa_rx_resep_h.vc_status
-FROM            fa_rx_resep_h LEFT OUTER JOIN
+                         + ' tahun' AS umur, UPPER(RMPasien.vc_alamat + ',' + RMPasien.vc_kecamatan) AS alamat, RTRIM(RMKLINIK.vc_N_KLINIK) AS nama_klinik, fa_rx_resep_h.int_k_status, fa_rx_resep_h.vc_status, 
+                         RMKUNJUNG.VC_K_INSTANSI
+FROM            fa_rx_resep_h INNER JOIN
+                         RMKUNJUNG ON fa_rx_resep_h.vc_no_reg = RMKUNJUNG.VC_NO_REGJ LEFT OUTER JOIN
                          RMPasien ON fa_rx_resep_h.vc_no_rm = RMPasien.vc_no_rm LEFT OUTER JOIN
                          RMKLINIK ON fa_rx_resep_h.vc_k_klinik = RMKLINIK.vc_K_KLINIK
 WHERE        (fa_rx_resep_h.int_k_status = 3)</CommandText>
@@ -35,6 +37,7 @@ WHERE        (fa_rx_resep_h.int_k_status = 3)</CommandText>
               <Mapping SourceColumn="nama_klinik" DataSetColumn="nama_klinik" />
               <Mapping SourceColumn="int_k_status" DataSetColumn="int_k_status" />
               <Mapping SourceColumn="vc_status" DataSetColumn="vc_status" />
+              <Mapping SourceColumn="VC_K_INSTANSI" DataSetColumn="VC_K_INSTANSI" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -191,16 +194,17 @@ WHERE        (fa_rx_resep_h.vc_kode_rx = @kresep)</CommandText>
               <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        dbo.fa_rx_resep_h.vc_kode_rx, dbo.fa_rx_resep_h.vc_no_reg, dbo.fa_rx_resep_h.vc_no_rm, dbo.fa_rx_resep_d.vc_kode_rx_d, dbo.fa_rx_resep_d.in_no_urut, dbo.fa_rx_resep_d.vc_kode_obat, 
-                         dbo.fa_rx_resep_d.vc_nama_obat, dbo.fa_rx_resep_d.num_jml, dbo.fa_rx_resep_d.vc_signalain, dbo.fa_rx_resep_d.num_jmliter, dbo.fa_rx_racikan.in_no_urut AS no_urut_racikan, 
-                         dbo.fa_rx_racikan.vc_k_obat AS k_obat_racikan, dbo.fa_rx_racikan.vc_nama_obat AS nama_obat_racikan, dbo.fa_rx_racikan.vc_dosis AS dosis_racikan, dbo.fa_rx_racikan.vc_satuan AS satuan_racikan, 
-                         CASE WHEN dbo.fa_rx_resep_d.vc_kode_obat = 999999 THEN ' OBAT RACIKAN' ELSE dbo.view_rse_fa_obat.nama_golongan END AS golongan_obat, dbo.view_rse_fa_obat.jenis, dbo.view_rse_fa_obat.vc_golongan, 
-                         dbo.fa_rx_resep_d.vc_satuan, dbo.fa_rx_resep_h.dt_order, dbo.fa_rx_resep_h.dt_respon, dbo.fa_rx_resep_d.nvc_dd1, dbo.fa_rx_resep_d.nvc_dd2
-FROM            dbo.view_rse_fa_obat RIGHT OUTER JOIN
-                         dbo.fa_rx_resep_d ON dbo.view_rse_fa_obat.vc_kodeobat = dbo.fa_rx_resep_d.vc_kode_obat LEFT OUTER JOIN
-                         dbo.fa_rx_racikan ON dbo.fa_rx_resep_d.vc_kode_rx_d = dbo.fa_rx_racikan.vc_kode_rx_d FULL OUTER JOIN
-                         dbo.fa_rx_resep_h ON dbo.fa_rx_resep_d.vc_kode_rx = dbo.fa_rx_resep_h.vc_kode_rx
-WHERE        (dbo.fa_rx_resep_h.vc_kode_rx =@kresep)</CommandText>
+                    <CommandText>SELECT        fa_rx_resep_h.vc_kode_rx, fa_rx_resep_h.vc_no_reg, fa_rx_resep_h.vc_no_rm, fa_rx_resep_d.vc_kode_rx_d, fa_rx_resep_d.in_no_urut, fa_rx_resep_d.vc_kode_obat, fa_rx_resep_d.vc_nama_obat, fa_rx_resep_d.num_jml, 
+                         fa_rx_resep_d.vc_signalain, fa_rx_resep_d.num_jmliter, fa_rx_racikan.in_no_urut AS no_urut_racikan, fa_rx_racikan.vc_k_obat AS k_obat_racikan, fa_rx_racikan.vc_nama_obat AS nama_obat_racikan, 
+                         fa_rx_racikan.vc_dosis AS dosis_racikan, fa_rx_racikan.vc_satuan AS satuan_racikan, 
+                         CASE WHEN dbo.fa_rx_resep_d.vc_kode_obat = 999999 THEN ' OBAT RACIKAN' ELSE dbo.view_rse_fa_obat.nama_golongan END AS golongan_obat, view_rse_fa_obat.jenis, view_rse_fa_obat.vc_golongan, 
+                         fa_rx_resep_d.vc_satuan, fa_rx_resep_h.dt_order, fa_rx_resep_h.dt_respon, fa_rx_resep_d.nvc_dd1, fa_rx_resep_d.nvc_dd2, fa_rx_resep_h.bt_iter, fa_rx_resep_h.in_jml_iter, fa_rx_resep_h.bt_tanpaobat, 
+                         fa_rx_resep_h.vc_catatan
+FROM            view_rse_fa_obat RIGHT OUTER JOIN
+                         fa_rx_resep_d ON view_rse_fa_obat.vc_kodeobat = fa_rx_resep_d.vc_kode_obat LEFT OUTER JOIN
+                         fa_rx_racikan ON fa_rx_resep_d.vc_kode_rx_d = fa_rx_racikan.vc_kode_rx_d FULL OUTER JOIN
+                         fa_rx_resep_h ON fa_rx_resep_d.vc_kode_rx = fa_rx_resep_h.vc_kode_rx
+WHERE        (fa_rx_resep_h.vc_kode_rx = @kresep)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="kresep" ColumnName="vc_kode_rx" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_h" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@kresep" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="vc_kode_rx" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -216,7 +220,6 @@ WHERE        (dbo.fa_rx_resep_h.vc_kode_rx =@kresep)</CommandText>
               <Mapping SourceColumn="in_no_urut" DataSetColumn="in_no_urut" />
               <Mapping SourceColumn="vc_kode_obat" DataSetColumn="vc_kode_obat" />
               <Mapping SourceColumn="vc_nama_obat" DataSetColumn="vc_nama_obat" />
-              <Mapping SourceColumn="num_jml" DataSetColumn="num_jml" />
               <Mapping SourceColumn="vc_signalain" DataSetColumn="vc_signalain" />
               <Mapping SourceColumn="num_jmliter" DataSetColumn="num_jmliter" />
               <Mapping SourceColumn="no_urut_racikan" DataSetColumn="no_urut_racikan" />
@@ -232,6 +235,11 @@ WHERE        (dbo.fa_rx_resep_h.vc_kode_rx =@kresep)</CommandText>
               <Mapping SourceColumn="dt_respon" DataSetColumn="dt_respon" />
               <Mapping SourceColumn="nvc_dd1" DataSetColumn="nvc_dd1" />
               <Mapping SourceColumn="nvc_dd2" DataSetColumn="nvc_dd2" />
+              <Mapping SourceColumn="bt_iter" DataSetColumn="bt_iter" />
+              <Mapping SourceColumn="in_jml_iter" DataSetColumn="in_jml_iter" />
+              <Mapping SourceColumn="bt_tanpaobat" DataSetColumn="bt_tanpaobat" />
+              <Mapping SourceColumn="vc_catatan" DataSetColumn="vc_catatan" />
+              <Mapping SourceColumn="num_jml" DataSetColumn="num_jml" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -240,7 +248,7 @@ WHERE        (dbo.fa_rx_resep_h.vc_kode_rx =@kresep)</CommandText>
               <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="yakkumdatabase.dbo.fa_rx_resep_h" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [fa_rx_resep_h] ([vc_kode_rx], [vc_no_reg], [vc_no_rm], [vc_k_dokter], [vc_k_klinik], [vc_status], [int_k_status], [dt_order], [dt_respon], [bt_lock]) VALUES (@vc_kode_rx, @vc_no_reg, @vc_no_rm, @vc_k_dokter, @vc_k_klinik, @vc_status, @int_k_status, @dt_order, @dt_respon, @bt_lock)</CommandText>
+                    <CommandText>INSERT INTO [fa_rx_resep_h] ([vc_kode_rx], [vc_no_reg], [vc_no_rm], [vc_k_dokter], [vc_k_klinik], [vc_status], [int_k_status], [dt_order], [dt_respon], [bt_lock], [tgl_resep], [bt_iter], [in_jml_iter], [bt_tanpaobat], [vc_catatan]) VALUES (@vc_kode_rx, @vc_no_reg, @vc_no_rm, @vc_k_dokter, @vc_k_klinik, @vc_status, @int_k_status, @dt_order, @dt_respon, @bt_lock, @tgl_resep, @bt_iter, @in_jml_iter, @bt_tanpaobat, @vc_catatan)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@vc_kode_rx" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="vc_kode_rx" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@vc_no_reg" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="vc_no_reg" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -252,12 +260,17 @@ WHERE        (dbo.fa_rx_resep_h.vc_kode_rx =@kresep)</CommandText>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@dt_order" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="dt_order" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@dt_respon" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="dt_respon" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@bt_lock" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="bt_lock" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@tgl_resep" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="tgl_resep" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@bt_iter" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="bt_iter" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@in_jml_iter" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="in_jml_iter" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@bt_tanpaobat" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="bt_tanpaobat" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@vc_catatan" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="vc_catatan" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        fa_rx_resep_h.*
+                    <CommandText>SELECT        id, vc_kode_rx, vc_no_reg, vc_no_rm, vc_k_dokter, vc_k_klinik, vc_status, int_k_status, dt_order, dt_respon, bt_lock, tgl_resep, bt_iter, in_jml_iter, bt_tanpaobat, vc_catatan
 FROM            fa_rx_resep_h</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -276,8 +289,23 @@ FROM            fa_rx_resep_h</CommandText>
               <Mapping SourceColumn="dt_order" DataSetColumn="dt_order" />
               <Mapping SourceColumn="dt_respon" DataSetColumn="dt_respon" />
               <Mapping SourceColumn="bt_lock" DataSetColumn="bt_lock" />
+              <Mapping SourceColumn="tgl_resep" DataSetColumn="tgl_resep" />
+              <Mapping SourceColumn="bt_iter" DataSetColumn="bt_iter" />
+              <Mapping SourceColumn="in_jml_iter" DataSetColumn="in_jml_iter" />
+              <Mapping SourceColumn="bt_tanpaobat" DataSetColumn="bt_tanpaobat" />
+              <Mapping SourceColumn="vc_catatan" DataSetColumn="vc_catatan" />
             </Mappings>
             <Sources>
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="yakkumdatabase.dbo.fa_rx_resep_h" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByKdResep" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByKdResep" GeneratorSourceName="FillByKdResep" GetMethodModifier="Public" GetMethodName="GetDataByKdResep" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByKdResep" UserSourceName="FillByKdResep">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT bt_iter, bt_lock, bt_tanpaobat, dt_order, dt_respon, id, in_jml_iter, int_k_status, tgl_resep, vc_catatan, vc_k_dokter, vc_k_klinik, vc_kode_rx, vc_no_reg, vc_no_rm, vc_status FROM fa_rx_resep_h WHERE (vc_kode_rx = @kdrx)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="kdrx" ColumnName="vc_kode_rx" DataSourceName="yakkumdatabase.dbo.fa_rx_resep_h" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@kdrx" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="vc_kode_rx" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateResponTime" Modifier="Public" Name="UpdateResponTime" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="UpdateResponTime">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -416,7 +444,7 @@ WHERE        (no_reg = @noreg)</CommandText>
   <xs:element name="yakkumdb" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="yakkumdb" msprop:Generator_UserDSName="yakkumdb">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="resep_order" msprop:Generator_TableClassName="resep_orderDataTable" msprop:Generator_TableVarName="tableresep_order" msprop:Generator_RowChangedName="resep_orderRowChanged" msprop:Generator_TablePropName="resep_order" msprop:Generator_RowDeletingName="resep_orderRowDeleting" msprop:Generator_RowChangingName="resep_orderRowChanging" msprop:Generator_RowEvHandlerName="resep_orderRowChangeEventHandler" msprop:Generator_RowDeletedName="resep_orderRowDeleted" msprop:Generator_RowClassName="resep_orderRow" msprop:Generator_UserTableName="resep_order" msprop:Generator_RowEvArgName="resep_orderRowChangeEvent">
+        <xs:element name="resep_order" msprop:Generator_TableClassName="resep_orderDataTable" msprop:Generator_TableVarName="tableresep_order" msprop:Generator_TablePropName="resep_order" msprop:Generator_RowDeletingName="resep_orderRowDeleting" msprop:Generator_RowChangingName="resep_orderRowChanging" msprop:Generator_RowEvHandlerName="resep_orderRowChangeEventHandler" msprop:Generator_RowDeletedName="resep_orderRowDeleted" msprop:Generator_UserTableName="resep_order" msprop:Generator_RowChangedName="resep_orderRowChanged" msprop:Generator_RowEvArgName="resep_orderRowChangeEvent" msprop:Generator_RowClassName="resep_orderRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="vc_kode_rx" msprop:Generator_ColumnVarNameInTable="columnvc_kode_rx" msprop:Generator_ColumnPropNameInRow="vc_kode_rx" msprop:Generator_ColumnPropNameInTable="vc_kode_rxColumn" msprop:Generator_UserColumnName="vc_kode_rx" minOccurs="0">
@@ -490,10 +518,17 @@ WHERE        (no_reg = @noreg)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="VC_K_INSTANSI" msprop:Generator_ColumnVarNameInTable="columnVC_K_INSTANSI" msprop:Generator_ColumnPropNameInRow="VC_K_INSTANSI" msprop:Generator_ColumnPropNameInTable="VC_K_INSTANSIColumn" msprop:Generator_UserColumnName="VC_K_INSTANSI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="resep_detil" msprop:Generator_TableClassName="resep_detilDataTable" msprop:Generator_TableVarName="tableresep_detil" msprop:Generator_RowChangedName="resep_detilRowChanged" msprop:Generator_TablePropName="resep_detil" msprop:Generator_RowDeletingName="resep_detilRowDeleting" msprop:Generator_RowChangingName="resep_detilRowChanging" msprop:Generator_RowEvHandlerName="resep_detilRowChangeEventHandler" msprop:Generator_RowDeletedName="resep_detilRowDeleted" msprop:Generator_RowClassName="resep_detilRow" msprop:Generator_UserTableName="resep_detil" msprop:Generator_RowEvArgName="resep_detilRowChangeEvent">
+        <xs:element name="resep_detil" msprop:Generator_TableClassName="resep_detilDataTable" msprop:Generator_TableVarName="tableresep_detil" msprop:Generator_TablePropName="resep_detil" msprop:Generator_RowDeletingName="resep_detilRowDeleting" msprop:Generator_RowChangingName="resep_detilRowChanging" msprop:Generator_RowEvHandlerName="resep_detilRowChangeEventHandler" msprop:Generator_RowDeletedName="resep_detilRowDeleted" msprop:Generator_UserTableName="resep_detil" msprop:Generator_RowChangedName="resep_detilRowChanged" msprop:Generator_RowEvArgName="resep_detilRowChangeEvent" msprop:Generator_RowClassName="resep_detilRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -597,7 +632,7 @@ WHERE        (no_reg = @noreg)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="data_pasien" msprop:Generator_TableClassName="data_pasienDataTable" msprop:Generator_TableVarName="tabledata_pasien" msprop:Generator_RowChangedName="data_pasienRowChanged" msprop:Generator_TablePropName="data_pasien" msprop:Generator_RowDeletingName="data_pasienRowDeleting" msprop:Generator_RowChangingName="data_pasienRowChanging" msprop:Generator_RowEvHandlerName="data_pasienRowChangeEventHandler" msprop:Generator_RowDeletedName="data_pasienRowDeleted" msprop:Generator_RowClassName="data_pasienRow" msprop:Generator_UserTableName="data_pasien" msprop:Generator_RowEvArgName="data_pasienRowChangeEvent">
+        <xs:element name="data_pasien" msprop:Generator_TableClassName="data_pasienDataTable" msprop:Generator_TableVarName="tabledata_pasien" msprop:Generator_TablePropName="data_pasien" msprop:Generator_RowDeletingName="data_pasienRowDeleting" msprop:Generator_RowChangingName="data_pasienRowChanging" msprop:Generator_RowEvHandlerName="data_pasienRowChangeEventHandler" msprop:Generator_RowDeletedName="data_pasienRowDeleted" msprop:Generator_UserTableName="data_pasien" msprop:Generator_RowChangedName="data_pasienRowChanged" msprop:Generator_RowEvArgName="data_pasienRowChangeEvent" msprop:Generator_RowClassName="data_pasienRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="vc_kode_rx" msprop:Generator_ColumnVarNameInTable="columnvc_kode_rx" msprop:Generator_ColumnPropNameInRow="vc_kode_rx" msprop:Generator_ColumnPropNameInTable="vc_kode_rxColumn" msprop:Generator_UserColumnName="vc_kode_rx" minOccurs="0">
@@ -774,7 +809,7 @@ WHERE        (no_reg = @noreg)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="data_resep" msprop:Generator_TableClassName="data_resepDataTable" msprop:Generator_TableVarName="tabledata_resep" msprop:Generator_RowChangedName="data_resepRowChanged" msprop:Generator_TablePropName="data_resep" msprop:Generator_RowDeletingName="data_resepRowDeleting" msprop:Generator_RowChangingName="data_resepRowChanging" msprop:Generator_RowEvHandlerName="data_resepRowChangeEventHandler" msprop:Generator_RowDeletedName="data_resepRowDeleted" msprop:Generator_RowClassName="data_resepRow" msprop:Generator_UserTableName="data_resep" msprop:Generator_RowEvArgName="data_resepRowChangeEvent">
+        <xs:element name="data_resep" msprop:Generator_TableClassName="data_resepDataTable" msprop:Generator_TableVarName="tabledata_resep" msprop:Generator_TablePropName="data_resep" msprop:Generator_RowDeletingName="data_resepRowDeleting" msprop:Generator_RowChangingName="data_resepRowChanging" msprop:Generator_RowEvHandlerName="data_resepRowChangeEventHandler" msprop:Generator_RowDeletedName="data_resepRowDeleted" msprop:Generator_UserTableName="data_resep" msprop:Generator_RowChangedName="data_resepRowChanged" msprop:Generator_RowEvArgName="data_resepRowChangeEvent" msprop:Generator_RowClassName="data_resepRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="vc_kode_rx" msprop:Generator_ColumnVarNameInTable="columnvc_kode_rx" msprop:Generator_ColumnPropNameInRow="vc_kode_rx" msprop:Generator_ColumnPropNameInTable="vc_kode_rxColumn" msprop:Generator_UserColumnName="vc_kode_rx" minOccurs="0">
@@ -902,10 +937,20 @@ WHERE        (no_reg = @noreg)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="bt_iter" msprop:Generator_ColumnVarNameInTable="columnbt_iter" msprop:Generator_ColumnPropNameInRow="bt_iter" msprop:Generator_ColumnPropNameInTable="bt_iterColumn" msprop:Generator_UserColumnName="bt_iter" type="xs:boolean" minOccurs="0" />
+              <xs:element name="in_jml_iter" msprop:Generator_ColumnVarNameInTable="columnin_jml_iter" msprop:Generator_ColumnPropNameInRow="in_jml_iter" msprop:Generator_ColumnPropNameInTable="in_jml_iterColumn" msprop:Generator_UserColumnName="in_jml_iter" type="xs:int" minOccurs="0" />
+              <xs:element name="bt_tanpaobat" msprop:Generator_ColumnVarNameInTable="columnbt_tanpaobat" msprop:Generator_ColumnPropNameInRow="bt_tanpaobat" msprop:Generator_ColumnPropNameInTable="bt_tanpaobatColumn" msprop:Generator_UserColumnName="bt_tanpaobat" type="xs:boolean" minOccurs="0" />
+              <xs:element name="vc_catatan" msprop:Generator_ColumnVarNameInTable="columnvc_catatan" msprop:Generator_ColumnPropNameInRow="vc_catatan" msprop:Generator_ColumnPropNameInTable="vc_catatanColumn" msprop:Generator_UserColumnName="vc_catatan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="fa_rx_resep_h" msprop:Generator_TableClassName="fa_rx_resep_hDataTable" msprop:Generator_TableVarName="tablefa_rx_resep_h" msprop:Generator_TablePropName="fa_rx_resep_h" msprop:Generator_RowDeletingName="fa_rx_resep_hRowDeleting" msprop:Generator_RowChangingName="fa_rx_resep_hRowChanging" msprop:Generator_RowEvHandlerName="fa_rx_resep_hRowChangeEventHandler" msprop:Generator_RowDeletedName="fa_rx_resep_hRowDeleted" msprop:Generator_UserTableName="fa_rx_resep_h" msprop:Generator_RowChangedName="fa_rx_resep_hRowChanged" msprop:Generator_RowEvArgName="fa_rx_resep_hRowChangeEvent" msprop:Generator_RowClassName="fa_rx_resep_hRow">
+        <xs:element name="fa_rx_resep_h" msprop:Generator_TableClassName="fa_rx_resep_hDataTable" msprop:Generator_TableVarName="tablefa_rx_resep_h" msprop:Generator_RowChangedName="fa_rx_resep_hRowChanged" msprop:Generator_TablePropName="fa_rx_resep_h" msprop:Generator_RowDeletingName="fa_rx_resep_hRowDeleting" msprop:Generator_RowChangingName="fa_rx_resep_hRowChanging" msprop:Generator_RowEvHandlerName="fa_rx_resep_hRowChangeEventHandler" msprop:Generator_RowDeletedName="fa_rx_resep_hRowDeleted" msprop:Generator_RowClassName="fa_rx_resep_hRow" msprop:Generator_UserTableName="fa_rx_resep_h" msprop:Generator_RowEvArgName="fa_rx_resep_hRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -955,10 +1000,21 @@ WHERE        (no_reg = @noreg)</CommandText>
               <xs:element name="dt_order" msprop:Generator_ColumnVarNameInTable="columndt_order" msprop:Generator_ColumnPropNameInRow="dt_order" msprop:Generator_ColumnPropNameInTable="dt_orderColumn" msprop:Generator_UserColumnName="dt_order" type="xs:dateTime" minOccurs="0" />
               <xs:element name="dt_respon" msprop:Generator_ColumnVarNameInTable="columndt_respon" msprop:Generator_ColumnPropNameInRow="dt_respon" msprop:Generator_ColumnPropNameInTable="dt_responColumn" msprop:Generator_UserColumnName="dt_respon" type="xs:dateTime" minOccurs="0" />
               <xs:element name="bt_lock" msprop:Generator_ColumnVarNameInTable="columnbt_lock" msprop:Generator_ColumnPropNameInRow="bt_lock" msprop:Generator_ColumnPropNameInTable="bt_lockColumn" msprop:Generator_UserColumnName="bt_lock" type="xs:boolean" minOccurs="0" />
+              <xs:element name="tgl_resep" msprop:Generator_ColumnVarNameInTable="columntgl_resep" msprop:Generator_ColumnPropNameInRow="tgl_resep" msprop:Generator_ColumnPropNameInTable="tgl_resepColumn" msprop:Generator_UserColumnName="tgl_resep" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="bt_iter" msprop:Generator_ColumnVarNameInTable="columnbt_iter" msprop:Generator_ColumnPropNameInRow="bt_iter" msprop:Generator_ColumnPropNameInTable="bt_iterColumn" msprop:Generator_UserColumnName="bt_iter" type="xs:boolean" minOccurs="0" />
+              <xs:element name="in_jml_iter" msprop:Generator_ColumnVarNameInTable="columnin_jml_iter" msprop:Generator_ColumnPropNameInRow="in_jml_iter" msprop:Generator_ColumnPropNameInTable="in_jml_iterColumn" msprop:Generator_UserColumnName="in_jml_iter" type="xs:int" minOccurs="0" />
+              <xs:element name="bt_tanpaobat" msprop:Generator_ColumnVarNameInTable="columnbt_tanpaobat" msprop:Generator_ColumnPropNameInRow="bt_tanpaobat" msprop:Generator_ColumnPropNameInTable="bt_tanpaobatColumn" msprop:Generator_UserColumnName="bt_tanpaobat" type="xs:boolean" minOccurs="0" />
+              <xs:element name="vc_catatan" msprop:Generator_ColumnVarNameInTable="columnvc_catatan" msprop:Generator_ColumnPropNameInRow="vc_catatan" msprop:Generator_ColumnPropNameInTable="vc_catatanColumn" msprop:Generator_UserColumnName="vc_catatan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="fa_rx_tindakan" msprop:Generator_TableClassName="fa_rx_tindakanDataTable" msprop:Generator_TableVarName="tablefa_rx_tindakan" msprop:Generator_TablePropName="fa_rx_tindakan" msprop:Generator_RowDeletingName="fa_rx_tindakanRowDeleting" msprop:Generator_RowChangingName="fa_rx_tindakanRowChanging" msprop:Generator_RowEvHandlerName="fa_rx_tindakanRowChangeEventHandler" msprop:Generator_RowDeletedName="fa_rx_tindakanRowDeleted" msprop:Generator_UserTableName="fa_rx_tindakan" msprop:Generator_RowChangedName="fa_rx_tindakanRowChanged" msprop:Generator_RowEvArgName="fa_rx_tindakanRowChangeEvent" msprop:Generator_RowClassName="fa_rx_tindakanRow">
+        <xs:element name="fa_rx_tindakan" msprop:Generator_TableClassName="fa_rx_tindakanDataTable" msprop:Generator_TableVarName="tablefa_rx_tindakan" msprop:Generator_RowChangedName="fa_rx_tindakanRowChanged" msprop:Generator_TablePropName="fa_rx_tindakan" msprop:Generator_RowDeletingName="fa_rx_tindakanRowDeleting" msprop:Generator_RowChangingName="fa_rx_tindakanRowChanging" msprop:Generator_RowEvHandlerName="fa_rx_tindakanRowChangeEventHandler" msprop:Generator_RowDeletedName="fa_rx_tindakanRowDeleted" msprop:Generator_RowClassName="fa_rx_tindakanRow" msprop:Generator_UserTableName="fa_rx_tindakan" msprop:Generator_RowEvArgName="fa_rx_tindakanRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="vc_no_resep" msprop:Generator_ColumnVarNameInTable="columnvc_no_resep" msprop:Generator_ColumnPropNameInRow="vc_no_resep" msprop:Generator_ColumnPropNameInTable="vc_no_resepColumn" msprop:Generator_UserColumnName="vc_no_resep" minOccurs="0">
@@ -978,7 +1034,7 @@ WHERE        (no_reg = @noreg)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="fa_rx_racikan" msprop:Generator_TableClassName="fa_rx_racikanDataTable" msprop:Generator_TableVarName="tablefa_rx_racikan" msprop:Generator_RowChangedName="fa_rx_racikanRowChanged" msprop:Generator_TablePropName="fa_rx_racikan" msprop:Generator_RowDeletingName="fa_rx_racikanRowDeleting" msprop:Generator_RowChangingName="fa_rx_racikanRowChanging" msprop:Generator_RowEvHandlerName="fa_rx_racikanRowChangeEventHandler" msprop:Generator_RowDeletedName="fa_rx_racikanRowDeleted" msprop:Generator_RowClassName="fa_rx_racikanRow" msprop:Generator_UserTableName="fa_rx_racikan" msprop:Generator_RowEvArgName="fa_rx_racikanRowChangeEvent">
+        <xs:element name="fa_rx_racikan" msprop:Generator_TableClassName="fa_rx_racikanDataTable" msprop:Generator_TableVarName="tablefa_rx_racikan" msprop:Generator_TablePropName="fa_rx_racikan" msprop:Generator_RowDeletingName="fa_rx_racikanRowDeleting" msprop:Generator_RowChangingName="fa_rx_racikanRowChanging" msprop:Generator_RowEvHandlerName="fa_rx_racikanRowChangeEventHandler" msprop:Generator_RowDeletedName="fa_rx_racikanRowDeleted" msprop:Generator_UserTableName="fa_rx_racikan" msprop:Generator_RowChangedName="fa_rx_racikanRowChanged" msprop:Generator_RowEvArgName="fa_rx_racikanRowChangeEvent" msprop:Generator_RowClassName="fa_rx_racikanRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="in_no_urut" msprop:Generator_ColumnVarNameInTable="columnin_no_urut" msprop:Generator_ColumnPropNameInRow="in_no_urut" msprop:Generator_ColumnPropNameInTable="in_no_urutColumn" msprop:Generator_UserColumnName="in_no_urut" type="xs:int" minOccurs="0" />
@@ -1013,7 +1069,7 @@ WHERE        (no_reg = @noreg)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="fa_rx_prosedur" msprop:Generator_TableClassName="fa_rx_prosedurDataTable" msprop:Generator_TableVarName="tablefa_rx_prosedur" msprop:Generator_RowChangedName="fa_rx_prosedurRowChanged" msprop:Generator_TablePropName="fa_rx_prosedur" msprop:Generator_RowDeletingName="fa_rx_prosedurRowDeleting" msprop:Generator_RowChangingName="fa_rx_prosedurRowChanging" msprop:Generator_RowEvHandlerName="fa_rx_prosedurRowChangeEventHandler" msprop:Generator_RowDeletedName="fa_rx_prosedurRowDeleted" msprop:Generator_RowClassName="fa_rx_prosedurRow" msprop:Generator_UserTableName="fa_rx_prosedur" msprop:Generator_RowEvArgName="fa_rx_prosedurRowChangeEvent">
+        <xs:element name="fa_rx_prosedur" msprop:Generator_TableClassName="fa_rx_prosedurDataTable" msprop:Generator_TableVarName="tablefa_rx_prosedur" msprop:Generator_TablePropName="fa_rx_prosedur" msprop:Generator_RowDeletingName="fa_rx_prosedurRowDeleting" msprop:Generator_RowChangingName="fa_rx_prosedurRowChanging" msprop:Generator_RowEvHandlerName="fa_rx_prosedurRowChangeEventHandler" msprop:Generator_RowDeletedName="fa_rx_prosedurRowDeleted" msprop:Generator_UserTableName="fa_rx_prosedur" msprop:Generator_RowChangedName="fa_rx_prosedurRowChanged" msprop:Generator_RowEvArgName="fa_rx_prosedurRowChangeEvent" msprop:Generator_RowClassName="fa_rx_prosedurRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />

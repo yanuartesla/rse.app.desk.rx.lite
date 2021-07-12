@@ -90,7 +90,8 @@ namespace rse.app.desk.rx.pharmacist
                         namaklinik = r["nama_klinik"].ToString(),
                         tgllahir = "tgl.Lahir : " + r["tgllahir"].ToString() + " / " + r["umur"].ToString(),
                         jk = r["vc_jenis_k"].ToString(),
-                        alamat = r["alamat"].ToString()
+                        alamat = r["alamat"].ToString(),
+                        png = r["VC_K_INSTANSI"].ToString()
                     };
 
                     if (flowLayout.Controls.Count < 0)

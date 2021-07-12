@@ -344,6 +344,7 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Iter";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Visible = false;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // EtherCheck
@@ -364,6 +365,7 @@
             this.EtherCheck.UncheckedState.BorderThickness = 0;
             this.EtherCheck.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.EtherCheck.UncheckedState.Parent = this.EtherCheck;
+            this.EtherCheck.Visible = false;
             this.EtherCheck.CheckedChanged += new System.EventHandler(this.guna2CustomCheckBox1_CheckedChanged);
             // 
             // txtSignalain
@@ -387,7 +389,7 @@
             this.txtSignalain.PlaceholderText = "Signa Lain";
             this.txtSignalain.SelectedText = "";
             this.txtSignalain.ShadowDecoration.Parent = this.txtSignalain;
-            this.txtSignalain.Size = new System.Drawing.Size(432, 73);
+            this.txtSignalain.Size = new System.Drawing.Size(432, 95);
             this.txtSignalain.TabIndex = 4;
             this.txtSignalain.TextChanged += new System.EventHandler(this.txtSignalain_TextChanged);
             // 
@@ -414,7 +416,6 @@
             this.retensi.Size = new System.Drawing.Size(244, 23);
             this.retensi.TabIndex = 4;
             this.retensi.Text = "Retriksi";
-            this.retensi.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.retensi.Click += new System.EventHandler(this.retensi_Click);
             // 
             // guna2Separator1

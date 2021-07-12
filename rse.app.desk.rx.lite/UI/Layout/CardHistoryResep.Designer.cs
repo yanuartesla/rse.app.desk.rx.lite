@@ -32,6 +32,7 @@ namespace rse.app.desk.rx.lite.UI.Layout
             this.components = new System.ComponentModel.Container();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
             this.lblPenanggung = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblKlinik = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblNamaDokter = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -41,7 +42,6 @@ namespace rse.app.desk.rx.lite.UI.Layout
             this.btnCopyRsp = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +51,6 @@ namespace rse.app.desk.rx.lite.UI.Layout
             this.treeView1.BackColor = System.Drawing.Color.Linen;
             this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Enabled = false;
             this.treeView1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.treeView1.Indent = 10;
             this.treeView1.ItemHeight = 14;
@@ -76,6 +75,13 @@ namespace rse.app.desk.rx.lite.UI.Layout
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(396, 54);
             this.guna2Panel1.TabIndex = 1;
+            // 
+            // guna2Separator3
+            // 
+            this.guna2Separator3.Location = new System.Drawing.Point(8, 41);
+            this.guna2Separator3.Name = "guna2Separator3";
+            this.guna2Separator3.Size = new System.Drawing.Size(380, 10);
+            this.guna2Separator3.TabIndex = 3;
             // 
             // lblPenanggung
             // 
@@ -168,13 +174,6 @@ namespace rse.app.desk.rx.lite.UI.Layout
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(380, 10);
             this.guna2Separator1.TabIndex = 2;
-            // 
-            // guna2Separator3
-            // 
-            this.guna2Separator3.Location = new System.Drawing.Point(8, 41);
-            this.guna2Separator3.Name = "guna2Separator3";
-            this.guna2Separator3.Size = new System.Drawing.Size(380, 10);
-            this.guna2Separator3.TabIndex = 3;
             // 
             // CardHistoryResep
             // 

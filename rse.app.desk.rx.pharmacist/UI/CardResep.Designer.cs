@@ -89,7 +89,7 @@
             this.lblNama.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNama.Location = new System.Drawing.Point(16, 41);
             this.lblNama.Name = "lblNama";
-            this.lblNama.Size = new System.Drawing.Size(49, 22);
+            this.lblNama.Size = new System.Drawing.Size(49, 23);
             this.lblNama.TabIndex = 3;
             this.lblNama.Text = "Nama";
             // 
@@ -168,7 +168,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackColor = System.Drawing.Color.Beige;
             this.Controls.Add(this.lblJK);
             this.Controls.Add(this.lblAlamat);
             this.Controls.Add(this.lblNamaKlinik);

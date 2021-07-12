@@ -25,6 +25,7 @@ namespace rse.app.desk.rx.pharmacist.UI
         private string _jeniskelamin;
         private string _alamat;
         private string _namaklinik;
+        private string _png;
 
 
 
@@ -75,6 +76,22 @@ namespace rse.app.desk.rx.pharmacist.UI
         {
             get { return _namaklinik; }
             set { _namaklinik = value; lblNamaKlinik.Text = value; }
+        }
+
+        [Category("Custom Prop")]
+        public string png
+        {
+            get { return _png; }
+            set { _png = value; 
+            if(_png == "323")
+                {
+                    BackColor = Color.MediumAquamarine;
+                }
+                else
+                {
+                    BackColor = Color.Beige;
+                }
+            }
         }
 
         private void CardResep_MouseHover(object sender, EventArgs e)

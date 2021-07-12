@@ -62,10 +62,10 @@ namespace rse.app.desk.rx.lite.UI
                     break;
             }
 
-            obat _obat = new obat(_noreg, _kodedokter, _kodeFornas, _norm);
+            obat _obat = new obat(_noreg, _kodedokter, _kodeFornas, _norm, dr["VC_K_INSTANSI"].ToString());
             _obat.Dock = DockStyle.Fill;
             tbResepBody.Controls.Add(_obat);
-
+              
             _koderesep = "RX" + _noreg + _kodedokter;
             
             LoadICD10();
@@ -228,28 +228,69 @@ namespace rse.app.desk.rx.lite.UI
 
         private void btnFinish_Click(object sender, EventArgs e)
         {
-
+            var dh = new dataset.yakkumdbTableAdapters.resep_hTableAdapter();
+            var dh2 = new dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
+            var jmlObat = (int)dh2.ScalarQueryJmlObat(_koderesep);
+            //MessageBox.Show(jmlObat.ToString());
             UpsertResep();
 
-            var dh = new dataset.yakkumdbTableAdapters.resep_hTableAdapter();
             Pilihan pl = new Pilihan();
-            var result = pl.ShowDialog();
-            if (result == DialogResult.Yes)
-            {
-                dh.UpdateStatus("WAITING", 2, DateTime.Now, _koderesep);
-            }
-            if (result == DialogResult.No)
-            {
-                dh.UpdateStatus("ORDER", 3, DateTime.Now, _koderesep);
-            }
 
-            insertCPPT();
-            insertDiagnosa();
-            insertProcedure();
-
-            MessageBox.Show("Resep Berhasil di Simpan");
-            LoadHome();
+            if (jmlObat == 0)
+            {
+                NoDrugDialog nd = new NoDrugDialog(_koderesep);
+                var hasil = nd.ShowDialog();
+                if (hasil == DialogResult.Yes)
+                {
+                    dh.UpdateStatus("ORDER", 3, DateTime.Now, _koderesep);
+                    var result2 = pl.ShowDialog();
+                    if (result2 == DialogResult.Yes)
+                    {
+                        dh.UpdateStatus("WAITING", 2, DateTime.Now, _koderesep);
+                    }
+                    if (result2 == DialogResult.No)
+                    {
+                        dh.UpdateStatus("ORDER", 3, DateTime.Now, _koderesep);
+                    }
+                    if (cbIterResep.Checked)
+                    {
+                        dh.UpdateIter(true, (int)numIterResep.Value, _koderesep, _noreg);
+                    }
+                    insertCPPT();
+                    insertDiagnosa();
+                    insertProcedure();
+                    dh.UpdateTanpaObat("", false, _koderesep);
+                    MessageBox.Show("Resep Berhasil di Simpan");
+                    LoadHome();
+                }
+            }
             
+            if(jmlObat > 0)
+            {
+                
+                var result = pl.ShowDialog();
+                if (result == DialogResult.Yes)
+                {
+                    dh.UpdateStatus("WAITING", 2, DateTime.Now, _koderesep);
+                }
+                if (result == DialogResult.No)
+                {
+                    dh.UpdateStatus("ORDER", 3, DateTime.Now, _koderesep);
+                }
+                if (cbIterResep.Checked)
+                {
+                    dh.UpdateIter(true, (int)numIterResep.Value, _koderesep, _noreg);
+                }
+                insertCPPT();
+                insertDiagnosa();
+                insertProcedure();
+                dh.UpdateTanpaObat("", false, _koderesep);
+                MessageBox.Show("Resep Berhasil di Simpan");
+                LoadHome();
+            }
+
+
+
         }
         private void insertProcedure()
         {
@@ -275,14 +316,16 @@ namespace rse.app.desk.rx.lite.UI
 
             var dt = new dataset.rmdbTableAdapters.diagnosa_utamaTableAdapter();
             var ds = new dataset.rmdbTableAdapters.RMIcdSekunderRalanTableAdapter();
+            var dy = new dataset.yakkumdbTableAdapters.fa_rx_diagnosaTableAdapter();
             for (int i = 0; i < dgvDiagnosa.RowCount - 1; i++)
             {
                 if (dgvDiagnosa.Rows[i].Cells[1].Value.Equals(null))
                 {
-
+                    
                 }
                 if(i==0)
                 {
+                    
                     dt.InsertQuery(
                         _noreg,
                         txtNoRM.Text,
@@ -290,9 +333,19 @@ namespace rse.app.desk.rx.lite.UI
                         _kodedokter,
                         dgvDiagnosa.Rows[i].Cells[1].Value.ToString()
                          );
+                    //insert ke database Yakkum RSE
+                    dy.InsertQuery(
+                        _noreg,
+                        dgvDiagnosa.Rows[i].Cells[1].Value.ToString(),
+                        dgvDiagnosa.Rows[i].Cells[2].Value.ToString(),
+                        1,
+                        true,
+                        DateTime.Now
+                        );
                 }
                 if(i>0)
                 {
+                    //insert ke database RM
                     ds.InsertQuery(
                         _noreg,
                         txtNoRM.Text,
@@ -300,6 +353,16 @@ namespace rse.app.desk.rx.lite.UI
                         dgvDiagnosa.Rows[i].Cells[2].Value.ToString(),
                         _kodedokter,
                         "E-Presc"
+                        );
+
+                    //insert ke database Yakkum RSE
+                    dy.InsertQuery(
+                        _noreg,
+                        dgvDiagnosa.Rows[i].Cells[1].Value.ToString(),
+                        dgvDiagnosa.Rows[i].Cells[2].Value.ToString(),
+                        i+1,
+                        false,
+                        DateTime.Now
                         );
                 }
             }
@@ -343,10 +406,20 @@ namespace rse.app.desk.rx.lite.UI
         }
         private void LoadHome ()
         {
-            Home hm = new Home(_kodeKlinik, _kodedokter) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.Controls.Clear();
-            this.Controls.Add(hm);
-            hm.Show();
+            if (!MainMenu.Instance.PnlContainer.Controls.ContainsKey("Home"))
+            {
+                Home hm = new Home(_kodeKlinik, _kodedokter) { Dock = DockStyle.Fill, TopLevel = false , TopMost = true };
+                MainMenu.Instance.PnlContainer.Controls.Clear();
+                MainMenu.Instance.PnlContainer.Controls.Add(hm);
+                hm.Show();
+                //MessageBox.Show("Masuk sini");
+            }
+            //MainMenu.Instance.PnlContainer.Controls["Home"].BringToFront();
+            //MessageBox.Show("tapi Masuk sini");
+            //Home hm = new Home(_kodeKlinik, _kodedokter) { Dock = DockStyle.Fill, TopLevel = false };//, TopMost = true };
+            //Controls.Clear();
+            //Controls.Add(hm);
+            //hm.Show();
         }
 
         private void btnBackResep_Click(object sender, EventArgs e)
@@ -470,7 +543,7 @@ namespace rse.app.desk.rx.lite.UI
                 
                 
             }
-            if (e.ColumnIndex == this.dgvDiagnosa.Columns["btnDelete"].Index)
+            if (e.ColumnIndex == this.dgvDiagnosa.Columns["btnDelete"].Index && !string.IsNullOrEmpty(dgvDiagnosa.Rows[e.RowIndex].Cells[2].Value as string))
             {
 
                 this.dgvDiagnosa.Rows.Remove(dgvDiagnosa.Rows[e.RowIndex]);
@@ -485,7 +558,7 @@ namespace rse.app.desk.rx.lite.UI
 
             //I supposed your button column is at index 0
 
-            if (e.ColumnIndex == this.dgvDiagnosa.Columns["btnDelete"].Index)
+            if (e.ColumnIndex == this.dgvDiagnosa.Columns["btnDelete"].Index )
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
@@ -525,7 +598,7 @@ namespace rse.app.desk.rx.lite.UI
             if (e.RowIndex < 0)
                 return;
             
-            if (e.ColumnIndex == this.dgvProcedure.Columns["btnDel"].Index)
+            if (e.ColumnIndex == this.dgvProcedure.Columns["btnDel"].Index && !string.IsNullOrEmpty(dgvProcedure.Rows[e.RowIndex].Cells[2].Value as string))
             {
                 this.dgvProcedure.Rows.Remove(dgvProcedure.Rows[e.RowIndex]);
             }
@@ -543,6 +616,18 @@ namespace rse.app.desk.rx.lite.UI
         {
             HistoryCPPT hcppt = new HistoryCPPT(_norm);
             hcppt.Show();
+        }
+
+        private void cbIterResep_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbIterResep.Checked)
+            {
+                numIterResep.Visible = true;
+            }
+            else if (!cbIterResep.Checked)
+            {
+                numIterResep.Visible = false;
+            }
         }
     }
 }

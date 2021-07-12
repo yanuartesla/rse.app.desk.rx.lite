@@ -95,7 +95,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(1006, 257);
+            this.guna2Panel1.Size = new System.Drawing.Size(1069, 257);
             this.guna2Panel1.TabIndex = 0;
             // 
             // guna2PictureBox1
@@ -108,7 +108,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Padding = new System.Windows.Forms.Padding(5);
             this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(520, 257);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(583, 257);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 1;
             this.guna2PictureBox1.TabStop = false;
@@ -306,7 +306,7 @@ namespace rse.app.desk.rx.lite.UI
             this.HomeChildPanel.Location = new System.Drawing.Point(0, 257);
             this.HomeChildPanel.Name = "HomeChildPanel";
             this.HomeChildPanel.ShadowDecoration.Parent = this.HomeChildPanel;
-            this.HomeChildPanel.Size = new System.Drawing.Size(1006, 508);
+            this.HomeChildPanel.Size = new System.Drawing.Size(1069, 508);
             this.HomeChildPanel.TabIndex = 1;
             // 
             // DaftarPasienPanel
@@ -317,7 +317,7 @@ namespace rse.app.desk.rx.lite.UI
             this.DaftarPasienPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DaftarPasienPanel.Location = new System.Drawing.Point(0, 10);
             this.DaftarPasienPanel.Name = "DaftarPasienPanel";
-            this.DaftarPasienPanel.Size = new System.Drawing.Size(1006, 498);
+            this.DaftarPasienPanel.Size = new System.Drawing.Size(1069, 498);
             this.DaftarPasienPanel.TabIndex = 1;
             // 
             // flpPasien
@@ -327,7 +327,7 @@ namespace rse.app.desk.rx.lite.UI
             this.flpPasien.Location = new System.Drawing.Point(0, 89);
             this.flpPasien.Name = "flpPasien";
             this.flpPasien.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.flpPasien.Size = new System.Drawing.Size(1006, 379);
+            this.flpPasien.Size = new System.Drawing.Size(1069, 379);
             this.flpPasien.TabIndex = 1;
             // 
             // guna2Panel3
@@ -337,7 +337,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2Panel3.Location = new System.Drawing.Point(0, 468);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
-            this.guna2Panel3.Size = new System.Drawing.Size(1006, 30);
+            this.guna2Panel3.Size = new System.Drawing.Size(1069, 30);
             this.guna2Panel3.TabIndex = 2;
             // 
             // guna2HtmlLabel4
@@ -346,7 +346,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(822, 9);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(885, 9);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(177, 15);
             this.guna2HtmlLabel4.TabIndex = 0;
@@ -362,7 +362,7 @@ namespace rse.app.desk.rx.lite.UI
             this.SearchPasienPanel.Name = "SearchPasienPanel";
             this.SearchPasienPanel.Padding = new System.Windows.Forms.Padding(20, 10, 20, 10);
             this.SearchPasienPanel.ShadowDecoration.Parent = this.SearchPasienPanel;
-            this.SearchPasienPanel.Size = new System.Drawing.Size(1006, 89);
+            this.SearchPasienPanel.Size = new System.Drawing.Size(1069, 89);
             this.SearchPasienPanel.TabIndex = 0;
             // 
             // txtCariPasien
@@ -390,7 +390,7 @@ namespace rse.app.desk.rx.lite.UI
             this.txtCariPasien.PlaceholderText = "Cari Nama atau No. RM Pasien (Pencarian sudah dapat di gunakan)";
             this.txtCariPasien.SelectedText = "";
             this.txtCariPasien.ShadowDecoration.Parent = this.txtCariPasien;
-            this.txtCariPasien.Size = new System.Drawing.Size(892, 40);
+            this.txtCariPasien.Size = new System.Drawing.Size(998, 40);
             this.txtCariPasien.TabIndex = 0;
             this.txtCariPasien.TextChanged += new System.EventHandler(this.txtCariPasien_TextChanged);
             // 
@@ -402,7 +402,7 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel5.Location = new System.Drawing.Point(20, 10);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(966, 29);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(1029, 29);
             this.guna2HtmlLabel5.TabIndex = 1;
             this.guna2HtmlLabel5.Text = "Daftar Pasien";
             // 
@@ -412,7 +412,7 @@ namespace rse.app.desk.rx.lite.UI
             this.MenuLabel.Location = new System.Drawing.Point(0, 0);
             this.MenuLabel.Name = "MenuLabel";
             this.MenuLabel.ShadowDecoration.Parent = this.MenuLabel;
-            this.MenuLabel.Size = new System.Drawing.Size(1006, 10);
+            this.MenuLabel.Size = new System.Drawing.Size(1069, 10);
             this.MenuLabel.TabIndex = 0;
             // 
             // bsPasien
@@ -443,7 +443,7 @@ namespace rse.app.desk.rx.lite.UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1006, 765);
+            this.ClientSize = new System.Drawing.Size(1069, 765);
             this.Controls.Add(this.HomeChildPanel);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

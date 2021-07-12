@@ -10,6 +10,7 @@ namespace rse.app.desk.rx.lite.UI
     {
         AutoCompleteStringCollection namesCollection =
         new AutoCompleteStringCollection();
+        private int _kdtemplateracikan { get; set; }
         private int _kodefornas { get; set; }
         private Boolean _btIter { get; set; }
         private decimal _jmliter { get; set; }
@@ -19,11 +20,12 @@ namespace rse.app.desk.rx.lite.UI
         private string _kracik { get; set; }
         private string _kdokter { get; set; }
         private int _nourut { get; set; }
-        private bool _template { get; set; }
+        private int _template { get; set; }
 
-        public Racikan(int kodefornas, string namaracikan, string koderxd, string koderx, string kracik, string kdokter, int nourut, bool temp)
+        public Racikan(int kdtemplateracikan, int kodefornas, string namaracikan, string koderxd, string koderx, string kracik, string kdokter, int nourut, int temp)
         {
             InitializeComponent();
+            _kdtemplateracikan = kdtemplateracikan;
             _kodefornas = kodefornas;
             _namaracikan = namaracikan;
             Obat.Text = _namaracikan;
@@ -32,7 +34,7 @@ namespace rse.app.desk.rx.lite.UI
             _kracik = kracik;
             _nourut = nourut;
             _kdokter = kdokter;
-            _template = temp;
+            _template = temp; // TODO : _template: 0 = reguler, 1 = template, 2 = edit
             load_Template();
         }
 
@@ -139,63 +141,101 @@ namespace rse.app.desk.rx.lite.UI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            
-            if(txtJumlah.Text == "")
+            switch (cekkelengkapan())
             {
-                MessageBox.Show("Masukkan Jumlah Racikan");
-            }
-            //if(cmbSatuanDosis.SelectedIndex == -1)
-            //{
-            //    MessageBox.Show("Pilih Satuan Dosis");
-            //}
-            else
-            {
-                var dt = new dataset.yakkumdbTableAdapters.fa_rx_racikanTableAdapter();
-                for (int i = 0; i < dgvRacik.RowCount - 1; i++)
-                {
-
-                    if (dgvRacik.Rows[i].Cells[1].Value.Equals(null))
+                case false:
+                    //MessageBox.Show("Salah");
+                    break;
+                case true:
+                    //MessageBox.Show("Benar");
+                    var dt = new dataset.yakkumdbTableAdapters.fa_rx_racikanTableAdapter();
+                    dt.DeleteQueryByKodeRXD(_koderxd);
+                    for (int i = 0; i < dgvRacik.RowCount - 1; i++)
                     {
-                        MessageBox.Show("Masukan Obat Racikan");
+                        dt.InsertQuery(
+                             _koderxd,
+                             i + 1,
+                             dgvRacik.Rows[i].Cells[5].Value.ToString(),
+                             dgvRacik.Rows[i].Cells[1].Value.ToString(),
+                             dgvRacik.Rows[i].Cells[2].Value.ToString(),
+                             dgvRacik.Rows[i].Cells[3].Value.ToString()
+                          );
+                        //if (dgvRacik.Rows[i].Cells[2].Value.ToString() == "" || string.IsNullOrEmpty(dgvRacik.Rows[i].Cells[3].Value as string))
+                        //{
+                        //    MessageBox.Show("Masukan Obat Racikan");
+                        //}
+                        //else
+                        //{
+                        //dt.InsertQuery(
+                        //   _koderxd,
+                        //   i + 1,
+                        //   dgvRacik.Rows[i].Cells[5].Value.ToString(),
+                        //   dgvRacik.Rows[i].Cells[1].Value.ToString(),
+                        //   dgvRacik.Rows[i].Cells[2].Value.ToString(),
+                        //   dgvRacik.Rows[i].Cells[3].Value.ToString()
+                        //);
+                        //}
+                    }
+                    var dh = new dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
+                    if (_template == 2)
+                    {
+                        dh.UpdateQuery(
+                            Double.Parse(txtJumlah.Text),
+                            cmbSatuan.Text,
+                            txtdd1.Text,
+                            txtdd2.Text,
+                            cmbSatuanDosis.Text,
+                            txtSignalain.Text,
+                            _koderxd,
+                            _nourut
+                            );
                     }
                     else
                     {
-                        dt.InsertQuery(
-                           _koderxd,
-                           i + 1,
-                           dgvRacik.Rows[i].Cells[5].Value.ToString(),
-                           dgvRacik.Rows[i].Cells[1].Value.ToString(),
-                           dgvRacik.Rows[i].Cells[2].Value.ToString(),
-                           dgvRacik.Rows[i].Cells[3].Value.ToString()
+                        dh.InsertQuery
+                        (_koderx,
+                        _koderxd,
+                        "999999",
+                        _kracik,
+                        true,
+                        txtSignalain.Text,
+                        _btIter,
+                        _jmliter,
+                        false,
+                        Int32.Parse(txtJumlah.Text),
+                        _kdokter,
+                        _nourut,
+                        txtdd1.Text,
+                        txtdd2.Text,
+                        cmbSatuan.Text,
+                        _namaracikan,
+                        cmbSatuanDosis.Text
+
                         );
                     }
-
-                }
-                var dh = new dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
-                dh.InsertQuery
-                    (_koderx,
-                    _koderxd,
-                    "999999",
-                    _kracik,
-                    true,
-                    txtSignalain.Text,
-                    _btIter,
-                    _jmliter,
-                    false,
-                    Int32.Parse(txtJumlah.Text),
-                    _kdokter,
-                    _nourut,
-                    txtdd1.Text,
-                    txtdd2.Text,
-                    cmbSatuan.Text,
-                    _namaracikan,
-                    cmbSatuanDosis.Text
-
-                    );
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                    break;
             }
-            
+
+
+            //if(cekkelengkapan() == false) { MessageBox.Show("Salah"); }
+            //if (cekkelengkapan() == true) 
+            //{
+                
+            //}
+            ////if (txtJumlah.Text == "")
+            ////{
+            ////    MessageBox.Show("Masukkan Jumlah Racikan");
+            ////}
+            ////if(cmbSatuanDosis.SelectedIndex == -1)
+            ////{
+            ////    MessageBox.Show("Pilih Satuan Dosis");
+            ////}
+            //else
+            //{
+               
+            //}
         }
 
         private void dgvRacik_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -229,6 +269,12 @@ namespace rse.app.desk.rx.lite.UI
             //{ MessageBox.Show("Masukan Satuan Dosis"); return false; }
             else if (cmbSatuan.Text == "")
             { MessageBox.Show("Masukan Satuan Jumlah Obat"); return false; }
+
+            else if (dgvRacik.Rows.Count < 2)
+            {
+                MessageBox.Show("Masukan Obat Racikan");
+                return false;
+            }
             else
             {
                 return true;
@@ -237,13 +283,14 @@ namespace rse.app.desk.rx.lite.UI
 
         private void load_Template()
         {
+            // TODO : _template: 0 = reguler, 1 = template, 2 = edit
             //MessageBox.Show("Show");
-            if (_template == true)
+            if (_template == 1)
             {
                // MessageBox.Show(_namaracikan.Substring(0, _namaracikan.Length - 3) + "0106");
                 var dh = new dataset.yakkumdbTableAdapters.fa_rx_template_racikanTableAdapter();
                 dh.FillByTempDokter(yakkumdb.fa_rx_template_racikan, _namaracikan.Substring(0, _namaracikan.Length - 3).TrimStart(), _kdokter, _kodefornas);
-                DataTable dt = dh.GetDataByTempDokter(_namaracikan.Substring(0, _namaracikan.Length - 3).TrimStart(), _kdokter, _kodefornas);
+                DataTable dt = dh.GetDataByTempDokter(_namaracikan.Substring(0, _namaracikan.Length - 3).TrimStart(), _kdokter, _kdtemplateracikan);
 
                 foreach (DataRow r in dt.Rows)
                 {
@@ -258,10 +305,46 @@ namespace rse.app.desk.rx.lite.UI
                     dgvRacik.Rows.Add(row);
                 }
             }
+            if (_template == 2)
+            {
+                var dt = new dataset.yakkumdbTableAdapters.fa_rx_racikanTableAdapter();
+                var dh = new dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
+                DataRow dr = dh.GetDataByRXD(_koderxd).Rows[0];
+                //Obat.Text = dr["vc_namaobat"].ToString();
+                //lblkodeobat.Text = dr["vc_kode_obat"].ToString();
+                txtdd1.Text = dr["nvc_dd1"].ToString();
+                txtdd2.Text = dr["nvc_dd2"].ToString();
+                txtJumlah.Text = dr["num_jml"].ToString();
+                txtSignalain.Text = dr["vc_signalain"].ToString();
+                cmbSatuanDosis.Text = dr["vc_satuan_dosis"].ToString();
+                cmbSatuan.Text = dr["vc_satuan"].ToString();
+
+                DataTable t = dt.GetDataByKodeRD(_koderxd);
+                foreach (DataRow r in t.Rows)
+                {
+                    DataGridViewRow row = (DataGridViewRow)dgvRacik.Rows[0].Clone();
+                    row.Cells[1].Value = r["vc_nama_obat"].ToString();
+                    row.Cells[2].Value = r["vc_dosis"].ToString();
+                    row.Cells[3].Value = r["vc_satuan"].ToString();
+                    row.Cells[5].Value = r["vc_k_obat"].ToString();
+
+                    dgvRacik.Rows.Add(row);
+                }
+            }
+
             else {
                 // MessageBox.Show("TEst");
                 }
         }
-        
+
+        private void dgvRacik_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 4 && !string.IsNullOrEmpty(dgvRacik.Rows[e.RowIndex].Cells[1].Value as string))
+            {
+                dgvRacik.Rows.Remove(dgvRacik.Rows[e.RowIndex]);
+                //if (dgvRacik.Rows[e.RowIndex].Cells[1].Value.ToString() != "")
+                //{ dgvRacik.Rows.Remove(dgvRacik.Rows[e.RowIndex]); }
+            }
+        }
     }
 }

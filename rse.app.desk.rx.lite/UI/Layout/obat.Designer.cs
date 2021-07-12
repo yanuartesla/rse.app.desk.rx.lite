@@ -29,30 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            Guna.UI2.AnimatorNS.Animation animation3 = new Guna.UI2.AnimatorNS.Animation();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(obat));
             this.pnlResep = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.paneldgv = new System.Windows.Forms.Panel();
             this.dgvResep = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.in_no_urut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vc_nama_obat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numjmlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aturanpakai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vcsignalainDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numjmliterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.vc_kode_rx_d = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vc_kode_rx = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bs_view_resep = new System.Windows.Forms.BindingSource(this.components);
-            this.yakkumdb = new rse.app.desk.rx.lite.dataset.yakkumdb();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.flptemRacikan = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -70,22 +57,33 @@
             this.flpHistoriResep = new System.Windows.Forms.FlowLayoutPanel();
             this.cardHistoryResep1 = new rse.app.desk.rx.lite.UI.Layout.CardHistoryResep();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnHideHistory = new Guna.UI2.WinForms.Guna2ImageButton();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.bsObat = new System.Windows.Forms.BindingSource(this.components);
-            this.view_rse_fa_obatTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.view_rse_fa_obatTableAdapter();
-            this.view_resepTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.view_resepTableAdapter();
             this.pnlhresepShow = new Guna.UI2.WinForms.Guna2Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
-            this.btnHideHistory = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.bs_view_resep = new System.Windows.Forms.BindingSource(this.components);
+            this.yakkumdb = new rse.app.desk.rx.lite.dataset.yakkumdb();
+            this.bsObat = new System.Windows.Forms.BindingSource(this.components);
+            this.view_rse_fa_obatTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.view_rse_fa_obatTableAdapter();
+            this.view_resepTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.view_resepTableAdapter();
+            this.in_no_urut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vc_nama_obat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numjmlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aturanpakai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vcsignalainDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vc_kode_rx_d = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vc_kode_rx = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bt_racikan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnlResep.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.paneldgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResep)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_view_resep)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).BeginInit();
             this.guna2Panel6.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -95,8 +93,10 @@
             this.flpHistoriResep.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsObat)).BeginInit();
             this.pnlhresepShow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_view_resep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsObat)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlResep
@@ -108,7 +108,7 @@
             this.pnlResep.Location = new System.Drawing.Point(88, 15);
             this.pnlResep.Name = "pnlResep";
             this.pnlResep.ShadowDecoration.Parent = this.pnlResep;
-            this.pnlResep.Size = new System.Drawing.Size(889, 495);
+            this.pnlResep.Size = new System.Drawing.Size(889, 467);
             this.pnlResep.TabIndex = 2;
             // 
             // guna2Panel4
@@ -119,7 +119,7 @@
             this.guna2Panel4.Location = new System.Drawing.Point(0, 74);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
-            this.guna2Panel4.Size = new System.Drawing.Size(889, 421);
+            this.guna2Panel4.Size = new System.Drawing.Size(889, 393);
             this.guna2Panel4.TabIndex = 2;
             // 
             // panel2
@@ -130,7 +130,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(889, 421);
+            this.panel2.Size = new System.Drawing.Size(889, 393);
             this.panel2.TabIndex = 3;
             // 
             // paneldgv
@@ -142,29 +142,29 @@
             this.paneldgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.paneldgv.Location = new System.Drawing.Point(0, 0);
             this.paneldgv.Name = "paneldgv";
-            this.paneldgv.Size = new System.Drawing.Size(889, 421);
+            this.paneldgv.Size = new System.Drawing.Size(889, 393);
             this.paneldgv.TabIndex = 3;
             // 
             // dgvResep
             // 
             this.dgvResep.AllowUserToAddRows = false;
             this.dgvResep.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            this.dgvResep.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvResep.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvResep.AutoGenerateColumns = false;
             this.dgvResep.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvResep.BackgroundColor = System.Drawing.Color.White;
             this.dgvResep.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvResep.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvResep.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvResep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvResep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvResep.ColumnHeadersHeight = 50;
             this.dgvResep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvResep.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -173,22 +173,22 @@
             this.numjmlDataGridViewTextBoxColumn,
             this.aturanpakai,
             this.vcsignalainDataGridViewTextBoxColumn,
-            this.numjmliterDataGridViewTextBoxColumn,
-            this.edit,
-            this.Delete,
             this.vc_kode_rx_d,
             this.vc_kode_rx,
-            this.dataGridViewTextBoxColumn1});
+            this.dataGridViewTextBoxColumn1,
+            this.bt_racikan,
+            this.edit,
+            this.Delete});
             this.dgvResep.DataSource = this.bs_view_resep;
             this.guna2Transition1.SetDecoration(this.dgvResep, Guna.UI2.AnimatorNS.DecorationType.None);
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvResep.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvResep.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvResep.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvResep.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvResep.EnableHeadersVisualStyles = false;
@@ -196,18 +196,18 @@
             this.dgvResep.Location = new System.Drawing.Point(0, 0);
             this.dgvResep.Name = "dgvResep";
             this.dgvResep.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvResep.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvResep.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvResep.RowHeadersVisible = false;
             this.dgvResep.RowTemplate.Height = 30;
             this.dgvResep.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvResep.Size = new System.Drawing.Size(745, 421);
+            this.dgvResep.Size = new System.Drawing.Size(706, 393);
             this.dgvResep.TabIndex = 1;
             this.dgvResep.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvResep.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -237,117 +237,16 @@
             this.dgvResep.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvResep_RowPostPaint);
             this.dgvResep.MouseHover += new System.EventHandler(this.dgvResep_MouseHover);
             // 
-            // in_no_urut
-            // 
-            this.in_no_urut.FillWeight = 20F;
-            this.in_no_urut.HeaderText = "No.";
-            this.in_no_urut.Name = "in_no_urut";
-            this.in_no_urut.ReadOnly = true;
-            // 
-            // vc_nama_obat
-            // 
-            this.vc_nama_obat.DataPropertyName = "vc_nama_obat";
-            this.vc_nama_obat.FillWeight = 175F;
-            this.vc_nama_obat.HeaderText = "Nama Obat";
-            this.vc_nama_obat.Name = "vc_nama_obat";
-            this.vc_nama_obat.ReadOnly = true;
-            // 
-            // numjmlDataGridViewTextBoxColumn
-            // 
-            this.numjmlDataGridViewTextBoxColumn.DataPropertyName = "num_jml";
-            this.numjmlDataGridViewTextBoxColumn.FillWeight = 25F;
-            this.numjmlDataGridViewTextBoxColumn.HeaderText = "Jml";
-            this.numjmlDataGridViewTextBoxColumn.Name = "numjmlDataGridViewTextBoxColumn";
-            this.numjmlDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // aturanpakai
-            // 
-            this.aturanpakai.DataPropertyName = "aturanpakai";
-            this.aturanpakai.FillWeight = 50F;
-            this.aturanpakai.HeaderText = "Aturan Pakai";
-            this.aturanpakai.Name = "aturanpakai";
-            this.aturanpakai.ReadOnly = true;
-            // 
-            // vcsignalainDataGridViewTextBoxColumn
-            // 
-            this.vcsignalainDataGridViewTextBoxColumn.DataPropertyName = "vc_signalain";
-            this.vcsignalainDataGridViewTextBoxColumn.HeaderText = "Signa Lain";
-            this.vcsignalainDataGridViewTextBoxColumn.Name = "vcsignalainDataGridViewTextBoxColumn";
-            this.vcsignalainDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // numjmliterDataGridViewTextBoxColumn
-            // 
-            this.numjmliterDataGridViewTextBoxColumn.DataPropertyName = "num_jmliter";
-            this.numjmliterDataGridViewTextBoxColumn.FillWeight = 20F;
-            this.numjmliterDataGridViewTextBoxColumn.HeaderText = "Iter";
-            this.numjmliterDataGridViewTextBoxColumn.Name = "numjmliterDataGridViewTextBoxColumn";
-            this.numjmliterDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // edit
-            // 
-            this.edit.FillWeight = 20F;
-            this.edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.edit.HeaderText = "Edit";
-            this.edit.Name = "edit";
-            this.edit.ReadOnly = true;
-            this.edit.Text = "Edit";
-            this.edit.ToolTipText = "Edit";
-            this.edit.Visible = false;
-            // 
-            // Delete
-            // 
-            this.Delete.FillWeight = 30F;
-            this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.ToolTipText = "Delete";
-            // 
-            // vc_kode_rx_d
-            // 
-            this.vc_kode_rx_d.DataPropertyName = "vc_kode_rx_d";
-            this.vc_kode_rx_d.HeaderText = "vc_kode_rx_d";
-            this.vc_kode_rx_d.Name = "vc_kode_rx_d";
-            this.vc_kode_rx_d.ReadOnly = true;
-            this.vc_kode_rx_d.Visible = false;
-            // 
-            // vc_kode_rx
-            // 
-            this.vc_kode_rx.DataPropertyName = "vc_kode_rx";
-            this.vc_kode_rx.HeaderText = "vc_kode_rx";
-            this.vc_kode_rx.Name = "vc_kode_rx";
-            this.vc_kode_rx.ReadOnly = true;
-            this.vc_kode_rx.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "in_no_urut";
-            this.dataGridViewTextBoxColumn1.HeaderText = "in_no_urut";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // bs_view_resep
-            // 
-            this.bs_view_resep.DataMember = "view_resep";
-            this.bs_view_resep.DataSource = this.yakkumdb;
-            // 
-            // yakkumdb
-            // 
-            this.yakkumdb.DataSetName = "yakkumdb";
-            this.yakkumdb.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // guna2Panel6
             // 
             this.guna2Panel6.Controls.Add(this.flptemRacikan);
             this.guna2Panel6.Controls.Add(this.guna2GradientPanel1);
             this.guna2Transition1.SetDecoration(this.guna2Panel6, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Panel6.Location = new System.Drawing.Point(745, 0);
+            this.guna2Panel6.Location = new System.Drawing.Point(706, 0);
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.ShadowDecoration.Parent = this.guna2Panel6;
-            this.guna2Panel6.Size = new System.Drawing.Size(144, 421);
+            this.guna2Panel6.Size = new System.Drawing.Size(183, 393);
             this.guna2Panel6.TabIndex = 2;
             // 
             // flptemRacikan
@@ -357,7 +256,7 @@
             this.flptemRacikan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flptemRacikan.Location = new System.Drawing.Point(0, 49);
             this.flptemRacikan.Name = "flptemRacikan";
-            this.flptemRacikan.Size = new System.Drawing.Size(144, 372);
+            this.flptemRacikan.Size = new System.Drawing.Size(183, 344);
             this.flptemRacikan.TabIndex = 1;
             // 
             // guna2GradientPanel1
@@ -369,7 +268,7 @@
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(144, 49);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(183, 49);
             this.guna2GradientPanel1.TabIndex = 0;
             // 
             // guna2HtmlLabel1
@@ -377,7 +276,7 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Transition1.SetDecoration(this.guna2HtmlLabel1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(6, 6);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(26, 6);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(131, 23);
             this.guna2HtmlLabel1.TabIndex = 0;
@@ -532,7 +431,7 @@
             this.pnlHistori.Name = "pnlHistori";
             this.pnlHistori.Padding = new System.Windows.Forms.Padding(5);
             this.pnlHistori.ShadowDecoration.Parent = this.pnlHistori;
-            this.pnlHistori.Size = new System.Drawing.Size(470, 495);
+            this.pnlHistori.Size = new System.Drawing.Size(271, 467);
             this.pnlHistori.TabIndex = 3;
             // 
             // flpHistoriResep
@@ -544,7 +443,7 @@
             this.flpHistoriResep.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpHistoriResep.Location = new System.Drawing.Point(5, 61);
             this.flpHistoriResep.Name = "flpHistoriResep";
-            this.flpHistoriResep.Size = new System.Drawing.Size(460, 429);
+            this.flpHistoriResep.Size = new System.Drawing.Size(261, 401);
             this.flpHistoriResep.TabIndex = 1;
             this.flpHistoriResep.Paint += new System.Windows.Forms.PaintEventHandler(this.flpHistoriResep_Paint);
             // 
@@ -574,8 +473,30 @@
             this.guna2Panel7.Location = new System.Drawing.Point(5, 5);
             this.guna2Panel7.Name = "guna2Panel7";
             this.guna2Panel7.ShadowDecoration.Parent = this.guna2Panel7;
-            this.guna2Panel7.Size = new System.Drawing.Size(460, 56);
+            this.guna2Panel7.Size = new System.Drawing.Size(261, 56);
             this.guna2Panel7.TabIndex = 0;
+            // 
+            // btnHideHistory
+            // 
+            this.btnHideHistory.BackColor = System.Drawing.Color.Transparent;
+            this.btnHideHistory.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnHideHistory.CheckedState.Parent = this.btnHideHistory;
+            this.guna2Transition1.SetDecoration(this.btnHideHistory, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnHideHistory.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnHideHistory.HoverState.Image = global::rse.app.desk.rx.lite.Properties.Resources.back_button__1_;
+            this.btnHideHistory.HoverState.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnHideHistory.HoverState.Parent = this.btnHideHistory;
+            this.btnHideHistory.Image = global::rse.app.desk.rx.lite.Properties.Resources.back_button__1_;
+            this.btnHideHistory.ImageRotate = 0F;
+            this.btnHideHistory.ImageSize = new System.Drawing.Size(26, 26);
+            this.btnHideHistory.Location = new System.Drawing.Point(212, 0);
+            this.btnHideHistory.Name = "btnHideHistory";
+            this.btnHideHistory.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnHideHistory.PressedState.Parent = this.btnHideHistory;
+            this.btnHideHistory.Size = new System.Drawing.Size(49, 56);
+            this.btnHideHistory.TabIndex = 6;
+            this.btnHideHistory.UseTransparentBackground = true;
+            this.btnHideHistory.Click += new System.EventHandler(this.btnHideHistory_Click);
             // 
             // label3
             // 
@@ -603,6 +524,64 @@
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
             // 
+            // pnlhresepShow
+            // 
+            this.pnlhresepShow.Controls.Add(this.guna2PictureBox1);
+            this.pnlhresepShow.Controls.Add(this.label4);
+            this.guna2Transition1.SetDecoration(this.pnlhresepShow, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pnlhresepShow.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlhresepShow.Location = new System.Drawing.Point(15, 15);
+            this.pnlhresepShow.Name = "pnlhresepShow";
+            this.pnlhresepShow.ShadowDecoration.Parent = this.pnlhresepShow;
+            this.pnlhresepShow.Size = new System.Drawing.Size(73, 467);
+            this.pnlhresepShow.TabIndex = 4;
+            this.pnlhresepShow.MouseHover += new System.EventHandler(this.pnlhresepShow_MouseHover);
+            // 
+            // label4
+            // 
+            this.label4.AutoEllipsis = true;
+            this.guna2Transition1.SetDecoration(this.label4, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.label4.Enabled = false;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Indigo;
+            this.label4.Location = new System.Drawing.Point(19, 67);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(30, 353);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "History   Resep";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2Transition1
+            // 
+            this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.HorizSlide;
+            this.guna2Transition1.Cursor = null;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation1;
+            // 
+            // bs_view_resep
+            // 
+            this.bs_view_resep.DataMember = "view_resep";
+            this.bs_view_resep.DataSource = this.yakkumdb;
+            // 
+            // yakkumdb
+            // 
+            this.yakkumdb.DataSetName = "yakkumdb";
+            this.yakkumdb.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // bsObat
             // 
             this.bsObat.DataMember = "view_rse_fa_obat";
@@ -616,60 +595,95 @@
             // 
             this.view_resepTableAdapter.ClearBeforeFill = true;
             // 
-            // pnlhresepShow
+            // in_no_urut
             // 
-            this.pnlhresepShow.Controls.Add(this.guna2PictureBox1);
-            this.pnlhresepShow.Controls.Add(this.label4);
-            this.guna2Transition1.SetDecoration(this.pnlhresepShow, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.pnlhresepShow.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlhresepShow.Location = new System.Drawing.Point(15, 15);
-            this.pnlhresepShow.Name = "pnlhresepShow";
-            this.pnlhresepShow.ShadowDecoration.Parent = this.pnlhresepShow;
-            this.pnlhresepShow.Size = new System.Drawing.Size(73, 495);
-            this.pnlhresepShow.TabIndex = 4;
-            this.pnlhresepShow.MouseHover += new System.EventHandler(this.pnlhresepShow_MouseHover);
+            this.in_no_urut.FillWeight = 20F;
+            this.in_no_urut.HeaderText = "No.";
+            this.in_no_urut.Name = "in_no_urut";
+            this.in_no_urut.ReadOnly = true;
             // 
-            // label4
+            // vc_nama_obat
             // 
-            this.label4.AutoEllipsis = true;
-            this.guna2Transition1.SetDecoration(this.label4, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label4.Enabled = false;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Indigo;
-            this.label4.Location = new System.Drawing.Point(19, 67);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 408);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "History Resep";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.vc_nama_obat.DataPropertyName = "vc_nama_obat";
+            this.vc_nama_obat.FillWeight = 175F;
+            this.vc_nama_obat.HeaderText = "Nama Obat";
+            this.vc_nama_obat.Name = "vc_nama_obat";
+            this.vc_nama_obat.ReadOnly = true;
             // 
-            // guna2Transition1
+            // numjmlDataGridViewTextBoxColumn
             // 
-            this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.HorizSlide;
-            this.guna2Transition1.Cursor = null;
-           
+            this.numjmlDataGridViewTextBoxColumn.DataPropertyName = "num_jml";
+            this.numjmlDataGridViewTextBoxColumn.FillWeight = 25F;
+            this.numjmlDataGridViewTextBoxColumn.HeaderText = "Jml";
+            this.numjmlDataGridViewTextBoxColumn.Name = "numjmlDataGridViewTextBoxColumn";
+            this.numjmlDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // btnHideHistory
+            // aturanpakai
             // 
-            this.btnHideHistory.BackColor = System.Drawing.Color.Transparent;
-            this.btnHideHistory.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnHideHistory.CheckedState.Parent = this.btnHideHistory;
-            this.guna2Transition1.SetDecoration(this.btnHideHistory, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.btnHideHistory.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnHideHistory.HoverState.Image = global::rse.app.desk.rx.lite.Properties.Resources.back_button__1_;
-            this.btnHideHistory.HoverState.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnHideHistory.HoverState.Parent = this.btnHideHistory;
-            this.btnHideHistory.Image = global::rse.app.desk.rx.lite.Properties.Resources.back_button__1_;
-            this.btnHideHistory.ImageRotate = 0F;
-            this.btnHideHistory.ImageSize = new System.Drawing.Size(26, 26);
-            this.btnHideHistory.Location = new System.Drawing.Point(411, 0);
-            this.btnHideHistory.Name = "btnHideHistory";
-            this.btnHideHistory.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnHideHistory.PressedState.Parent = this.btnHideHistory;
-            this.btnHideHistory.Size = new System.Drawing.Size(49, 56);
-            this.btnHideHistory.TabIndex = 6;
-            this.btnHideHistory.UseTransparentBackground = true;
-            this.btnHideHistory.Click += new System.EventHandler(this.btnHideHistory_Click);
+            this.aturanpakai.DataPropertyName = "aturanpakai";
+            this.aturanpakai.FillWeight = 50F;
+            this.aturanpakai.HeaderText = "Aturan Pakai";
+            this.aturanpakai.Name = "aturanpakai";
+            this.aturanpakai.ReadOnly = true;
+            // 
+            // vcsignalainDataGridViewTextBoxColumn
+            // 
+            this.vcsignalainDataGridViewTextBoxColumn.DataPropertyName = "vc_signalain";
+            this.vcsignalainDataGridViewTextBoxColumn.HeaderText = "Signa Lain";
+            this.vcsignalainDataGridViewTextBoxColumn.Name = "vcsignalainDataGridViewTextBoxColumn";
+            this.vcsignalainDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // vc_kode_rx_d
+            // 
+            this.vc_kode_rx_d.DataPropertyName = "vc_kode_rx_d";
+            this.vc_kode_rx_d.HeaderText = "vc_kode_rx_d";
+            this.vc_kode_rx_d.Name = "vc_kode_rx_d";
+            this.vc_kode_rx_d.ReadOnly = true;
+            this.vc_kode_rx_d.Visible = false;
+            // 
+            // vc_kode_rx
+            // 
+            this.vc_kode_rx.DataPropertyName = "vc_kode_rx";
+            this.vc_kode_rx.HeaderText = "vc_kode_rx";
+            this.vc_kode_rx.Name = "vc_kode_rx";
+            this.vc_kode_rx.ReadOnly = true;
+            this.vc_kode_rx.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "in_no_urut";
+            this.dataGridViewTextBoxColumn1.HeaderText = "in_no_urut";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // bt_racikan
+            // 
+            this.bt_racikan.DataPropertyName = "bt_racikan";
+            this.bt_racikan.HeaderText = "bt_racikan";
+            this.bt_racikan.Name = "bt_racikan";
+            this.bt_racikan.ReadOnly = true;
+            this.bt_racikan.Visible = false;
+            // 
+            // edit
+            // 
+            this.edit.FillWeight = 20F;
+            this.edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.edit.HeaderText = "Edit";
+            this.edit.Name = "edit";
+            this.edit.ReadOnly = true;
+            this.edit.Text = "Edit";
+            this.edit.ToolTipText = "Edit";
+            // 
+            // Delete
+            // 
+            this.Delete.FillWeight = 30F;
+            this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.ToolTipText = "Delete";
             // 
             // obat
             // 
@@ -682,14 +696,12 @@
             this.guna2Transition1.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
             this.Name = "obat";
             this.Padding = new System.Windows.Forms.Padding(15);
-            this.Size = new System.Drawing.Size(992, 525);
+            this.Size = new System.Drawing.Size(992, 497);
             this.pnlResep.ResumeLayout(false);
             this.guna2Panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.paneldgv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResep)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_view_resep)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).EndInit();
             this.guna2Panel6.ResumeLayout(false);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
@@ -703,8 +715,10 @@
             this.guna2Panel7.ResumeLayout(false);
             this.guna2Panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsObat)).EndInit();
             this.pnlhresepShow.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bs_view_resep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsObat)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -739,21 +753,21 @@
         private System.Windows.Forms.FlowLayoutPanel flpHistoriResep;
         private System.Windows.Forms.Label label3;
         private Layout.CardHistoryResep cardHistoryResep1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn in_no_urut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vc_nama_obat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numjmlDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aturanpakai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vcsignalainDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numjmliterDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn edit;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vc_kode_rx_d;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vc_kode_rx;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Panel pnlhresepShow;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
         private Guna.UI2.WinForms.Guna2ImageButton btnHideHistory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn in_no_urut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vc_nama_obat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numjmlDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aturanpakai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vcsignalainDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vc_kode_rx_d;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vc_kode_rx;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn bt_racikan;
+        private System.Windows.Forms.DataGridViewButtonColumn edit;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }

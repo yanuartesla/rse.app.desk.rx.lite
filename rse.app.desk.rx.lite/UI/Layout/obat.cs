@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using rse.app.desk.rx.lite.Fungtion;
 //using static rse.app.desk.rx.lite.UI.Login;
 
 namespace rse.app.desk.rx.lite.UI
@@ -21,20 +22,23 @@ namespace rse.app.desk.rx.lite.UI
         public string _norm { get; set; }
         public string[] _listobat { get; set; }
         public string[] _listobatdetil { get; set; }
+        private string _kdpng { get; set; }
 
         public Label lblRtx { get { return lblKodeRtx; } }
 
         AutoCompleteStringCollection namesCollection =
         new AutoCompleteStringCollection();
-        public obat(string noreg, string kdokter, int kfornas, string norm)
+        public obat(string noreg, string kdokter, int kfornas, string norm, string kdpng)
         {
             InitializeComponent();
             _kodefornas = kfornas;
             _noreg = noreg;
             _kdokter = kdokter;
             _norm = norm;
+            _kdpng = kdpng;
             //_currentroles = _roles;
             pnlHistori.Width = 0;
+            
         }
 
         private void txtCariObat_Load(object sender, EventArgs e)
@@ -122,7 +126,7 @@ namespace rse.app.desk.rx.lite.UI
                     var _maxno = (int)_resepdetail.ScalarQueryMaxNoUrutResep(lblKodeRtx.Text) + 1;
                     //MessageBox.Show(_maxno.ToString());
                     _kodeobat = txtCariObat.Text;
-                    dosis ds = new dosis(_kodeobat, lblKodeRtx.Text, _kdokter, _maxno,_kodefornas);
+                    dosis ds = new dosis(_kodeobat, lblKodeRtx.Text, _kdokter, _maxno,_kodefornas,"",false);
                     var result = ds.ShowDialog();
                     if (result == DialogResult.OK)
                     {
@@ -142,7 +146,7 @@ namespace rse.app.desk.rx.lite.UI
                 return;
 
             //I supposed your button column is at index 0
-            if (e.ColumnIndex == 6)
+            if (e.ColumnIndex == 9)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
@@ -154,7 +158,7 @@ namespace rse.app.desk.rx.lite.UI
                 e.Graphics.DrawImage(Properties.Resources.pencil, new Rectangle(x, y, w, h));
                 e.Handled = true;
             }
-            if (e.ColumnIndex == 7)
+            if (e.ColumnIndex == 10)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
@@ -166,6 +170,10 @@ namespace rse.app.desk.rx.lite.UI
                 e.Graphics.DrawImage(Properties.Resources.delete, new Rectangle(x, y, w, h));
                 e.Handled = true;
             }
+
+           
+            
+            
         }
 
         private void dgvResep_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -179,14 +187,68 @@ namespace rse.app.desk.rx.lite.UI
 
         private void dgvResep_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //MessageBox.Show(e.ColumnIndex.ToString());
+            string bt_racikan = this.dgvResep[8, e.RowIndex].Value.ToString();
             var rxd = new dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
+            var dtracikan = new dataset.yakkumdbTableAdapters.fa_rx_racikanTableAdapter();
+            var _kdrxd = this.dgvResep[5, e.RowIndex].Value.ToString();
+
             if (e.RowIndex < 0)
                 return;
 
             //I suposed you want to handle the event for column at index 1
-            if (e.ColumnIndex == 6)
+            if (e.ColumnIndex == 9)
             {
-                MessageBox.Show("Mohon Maaf fungsi ini sedang dalam pengembangan..");
+                
+                _kodeobat = this.dgvResep[1, e.RowIndex].Value.ToString();
+                
+
+                if (bt_racikan == "False")
+                {
+                    dosis ds = new dosis
+                        (_kodeobat, 
+                        lblKodeRtx.Text, 
+                        _kdokter, 
+                        (int)this.dgvResep[7, e.RowIndex].Value, 
+                        _kodefornas, 
+                        _kdrxd, 
+                        true);
+                    var result = ds.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep, lblKodeRtx.Text);
+                        bs_view_resep.Filter = "vc_kode_rx = '" + lblKodeRtx.Text + "'";
+                        dgvResep.Update();
+                        dgvResep.Refresh();
+                    }
+                }
+                if(bt_racikan == "True")
+                {
+                    //MessageBox.Show("Edit Racikan");
+                    var temp = 2;
+                    
+                    // MessageBox.Show(nurs.ToString());
+                    Racikan rc = new Racikan(
+                        0, 
+                        _kodefornas, 
+                        _kodeobat,
+                        _kdrxd, 
+                        lblKodeRtx.Text,
+                        this.dgvResep[7, e.RowIndex].Value.ToString(),
+                        _kdokter,
+                        (int)this.dgvResep[7, e.RowIndex].Value, 
+                        temp);
+                    var result = rc.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep, lblKodeRtx.Text);
+                        bs_view_resep.Filter = "vc_kode_rx = '" + lblKodeRtx.Text + "'";
+                        dgvResep.Update();
+                        dgvResep.Refresh();
+                    }
+                }
+
+                //MessageBox.Show(this.dgvResep[11, e.RowIndex].Value.ToString());
                 // TODO : Edit Event
                 //var kdrxd = this.dgvResep[8, e.RowIndex].Value.ToString();
                 //var kdrx = this.dgvResep[9, e.RowIndex].Value.ToString();
@@ -204,12 +266,16 @@ namespace rse.app.desk.rx.lite.UI
 
             }
 
-            if (e.ColumnIndex == 7)
+            if (e.ColumnIndex == 10)
             {
                 // Deleted event
-                var val = this.dgvResep[8, e.RowIndex].Value.ToString();
-                var no_urut = Int32.Parse(this.dgvResep[10, e.RowIndex].Value.ToString());
+                var val = this.dgvResep[5, e.RowIndex].Value.ToString();
+                var no_urut = Int32.Parse(this.dgvResep[7, e.RowIndex].Value.ToString());
                 rxd.DeleteObat(val,no_urut);
+                if(bt_racikan == "True")
+                {
+                    dtracikan.DeleteQueryByKodeRXD(_kdrxd);
+                }
 
                 this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep, lblKodeRtx.Text);
                 dgvResep.Update();
@@ -229,9 +295,9 @@ namespace rse.app.desk.rx.lite.UI
 
             var nu = dh.ScalarQueryMaxNoUrutResep(lblKodeRtx.Text).ToString();
             var nurs = int.Parse(nu) + 1;
-            var temp = false;
+            var temp = 0;
             // MessageBox.Show(nurs.ToString());
-            Racikan rc = new Racikan(_kodefornas, _namaracikan, _koderacikan, lblKodeRtx.Text, cs.ToString(), _kdokter, nurs,temp);
+            Racikan rc = new Racikan(0,_kodefornas, _namaracikan, _koderacikan, lblKodeRtx.Text, cs.ToString(), _kdokter, nurs,temp);
             var result = rc.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -273,11 +339,11 @@ namespace rse.app.desk.rx.lite.UI
         {
            // MessageBox.Show(_kodefornas.ToString());
             var _kodetmpracikan = 0;
-            if (_kodefornas == 0)
+            if (_kdpng == "323")
             {
-                _kodetmpracikan = 1;
+                _kodetmpracikan = 3;
             }
-            else { _kodetmpracikan = 3; }
+            else { _kodetmpracikan = 1; }
             var dh = new dataset.yakkumdbTableAdapters.fa_rx_template_racikanTableAdapter();
             dh.FillByDist(yakkumdb.fa_rx_template_racikan, _kdokter, _kodetmpracikan);
             DataTable dt = dh.GetDataByDist(_kdokter, _kodetmpracikan);
@@ -289,7 +355,7 @@ namespace rse.app.desk.rx.lite.UI
                 button.Tag = r["nid_dokter"].ToString()+ r["nama_template"].ToString();
                 button.Text = r["nama_template"].ToString();
                 button.AutoRoundedCorners = true;
-                button.AutoSize = true;
+                //button.AutoSize = true;
                 flptemRacikan.Controls.Add(button);
                 button.Click += button_MouseCliked;
             }
@@ -313,10 +379,19 @@ namespace rse.app.desk.rx.lite.UI
             var nu = dh.ScalarQueryMaxNoUrutResep(lblKodeRtx.Text).ToString();
             var nurs = int.Parse(nu) + 1;
 
-            bool temp = true;
-
+            int temp = 1;
+            var kdtemplateracikan = 0;
+            if(_kdpng == "323")
+            {
+                kdtemplateracikan = 3;
+            }
+            else
+            {
+                kdtemplateracikan = 1;
+            }
+            
             //Racikan rc = new Racikan(_kodefornas, _namaracikan, _koderacikan, lblKodeRtx.Text, cs.ToString(), _kdokter, nurs,temp);
-            Racikan rc = new Racikan(1, _namaracikan, _koderacikan, lblKodeRtx.Text, cs.ToString(), _kdokter, nurs, temp);
+            Racikan rc = new Racikan(kdtemplateracikan,_kodefornas, _namaracikan, _koderacikan, lblKodeRtx.Text, cs.ToString(), _kdokter, nurs, temp);
 
             var result = rc.ShowDialog();
             if (result == DialogResult.OK)
@@ -346,10 +421,10 @@ namespace rse.app.desk.rx.lite.UI
                 var uc = new CardHistoryResep
                 {
                     //Tag = r["vc_nid"].ToString() + r["vc_kode_rx"].ToString(),
-                    Tag = r["vc_kode_rx"].ToString() ,
+                    Tag = r["vc_kode_rx"].ToString(),
                     TGLReg = (DateTime)r["DT_TGL_REG"],
                     NamaDokter = r["nama_dokter"].ToString(),
-                    Klinik = r["vc_N_KLINIK"].ToString() ,
+                    Klinik = r["vc_N_KLINIK"].ToString(),
                     Penanggung = r["vc_n_png"].ToString(),
                     NoREG = r["VC_NO_REGJ"].ToString(),
                     NoRSP = r["vc_kode_rx"].ToString(),
@@ -389,8 +464,9 @@ namespace rse.app.desk.rx.lite.UI
             {
                 var nu = (int)dh.ScalarQueryMaxNoUrutResep(lblKodeRtx.Text) +1;
                 var sc = (int)dh.ScalarQueryNoRacikan(lblKodeRtx.Text) + 1;
+                
                 var _koderacikan = "RC" + _noreg + _kdokter + sc.ToString("00000");
-
+                //MessageBox.Show(_koderacikan);
                 if ((Boolean)r["bt_racikan"] == true)
                 {
                     dh.InsertQuery
@@ -413,7 +489,7 @@ namespace rse.app.desk.rx.lite.UI
                     r["vc_satuan_dosis"].ToString()
 
                     );
-                    DataTable tt = dt.GetDataByKodeRD(_koderacikan);
+                    DataTable tt = dt.GetDataByKodeRD(r["vc_kode_rx_d"].ToString());
                     foreach (DataRow t in tt.Rows)
                     {
                         dt.InsertQuery(
@@ -426,25 +502,28 @@ namespace rse.app.desk.rx.lite.UI
                        );
                     }
                 }
-                dh.InsertQuery
-                    (lblKodeRtx.Text,
-                    lblKodeRtx.Text + r["vc_kode_obat"].ToString(),
-                    r["vc_kode_obat"].ToString(),
-                    "",
-                    false,
-                    r["vc_signalain"].ToString(),
-                    (Boolean)r["bt_iter"],
-                    (Decimal)r["num_jmliter"],
-                    (Boolean)r["bt_fav"],
-                    (Decimal)r["num_jml"],
-                    _kdokter,
-                    nu,
-                    r["nvc_dd1"].ToString(),
-                    r["nvc_dd2"].ToString(),
-                    r["vc_satuan"].ToString(),
-                    r["vc_nama_obat"].ToString(),
-                    r["vc_satuan_dosis"].ToString()
-                    );
+                else {
+                    dh.InsertQuery
+                  (lblKodeRtx.Text,
+                  lblKodeRtx.Text + r["vc_kode_obat"].ToString(),
+                  r["vc_kode_obat"].ToString(),
+                  "",
+                  false,
+                  r["vc_signalain"].ToString(),
+                  (Boolean)r["bt_iter"],
+                  (Decimal)r["num_jmliter"],
+                  (Boolean)r["bt_fav"],
+                  (Decimal)r["num_jml"],
+                  _kdokter,
+                  nu,
+                  r["nvc_dd1"].ToString(),
+                  r["nvc_dd2"].ToString(),
+                  r["vc_satuan"].ToString(),
+                  r["vc_nama_obat"].ToString(),
+                  r["vc_satuan_dosis"].ToString()
+                  );
+                }
+                
             }
 
             this.view_resepTableAdapter.Fill(this.yakkumdb.view_resep, lblKodeRtx.Text);
@@ -530,7 +609,6 @@ namespace rse.app.desk.rx.lite.UI
                 _hresepstate = false;
                 pnlHistori.Visible = false;
                 pnlHistori.Width = 0;
-                
             }
 
         }

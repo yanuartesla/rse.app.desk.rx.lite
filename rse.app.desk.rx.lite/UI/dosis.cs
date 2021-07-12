@@ -27,8 +27,10 @@ namespace rse.app.desk.rx.lite.UI
         private decimal _jmliter { get; set; }
         private int _nourut { get; set; }
         private int _kfornas { get; set; }
+        private bool _edit { get; set;  }
+        private string _norxd { get; set; }
 
-        public dosis(string namaobat, string norx, string kodedokter, int nourut, int kodefornas)
+        public dosis(string namaobat, string norx, string kodedokter, int nourut, int kodefornas, string norxd, bool edit)
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 64, 64));
@@ -37,6 +39,8 @@ namespace rse.app.desk.rx.lite.UI
             _kdokter = kodedokter;
             _nourut = nourut;
             _kfornas = kodefornas;
+            _norxd = norxd;
+            _edit = edit;
         }
 
         private void dosis_Load(object sender, EventArgs e)
@@ -65,17 +69,6 @@ namespace rse.app.desk.rx.lite.UI
                         break;
                 }
    
-                //if (_kfornas == 0)
-                //{
-                //    _retriksi = 999;
-                //    _kobat = r.Field<string>(3);
-                //}
-                //else if (_kfornas == 3)
-                //{
-                //    _retriksi = r.Field<decimal>(0);
-                //    _kobat = r.Field<string>(3);
-                //}
-
                 if (_retriksi == 999)
                 {
                     retensi.Visible = false;
@@ -86,7 +79,7 @@ namespace rse.app.desk.rx.lite.UI
             retensi.Text = "Retriksi : " + retensi.Text + " / kasus";
 
             this.fa_rx_resep_dTableAdapter.FillByKrxD(this.yakkumdb.fa_rx_resep_d, _norx + _kobat);
-
+            loaddataedit();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -119,27 +112,46 @@ namespace rse.app.desk.rx.lite.UI
             }
             if (checkretriksi() == true)
             {
-
                 var dh = new dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
-                dh.InsertQuery
-                    (_norx,
-                    _norx + _kobat,
-                    _kobat,
-                    "",
-                    false,
-                    txtSignalain.Text,
-                    _btIter,
-                    _jmliter,
-                    _btFav,
-                    Int32.Parse(txtJumlah.Text),
-                    _kdokter,
-                    _nourut,
-                    txtdd1.Text,
-                    txtdd2.Text,
-                    lblSatuan.Text,
-                    Obat.Text,
-                    cmbSatuanDosis.Text
-                    );
+                switch (_edit)
+                {
+                    case true:
+                        dh.UpdateQuery(
+                            float.Parse(txtJumlah.Text),
+                            lblSatuan.Text,
+                            txtdd1.Text,
+                            txtdd2.Text,
+                            cmbSatuanDosis.Text,
+                            txtSignalain.Text,
+                            _norxd,
+                            _nourut
+                            );
+                        break;
+                    case false:
+                        dh.InsertQuery
+                               (_norx,
+                               _norx + _kobat,
+                               _kobat,
+                               "",
+                               false,
+                               txtSignalain.Text,
+                               _btIter,
+                               _jmliter,
+                               _btFav,
+                               Decimal.Parse(txtJumlah.Text),
+                               _kdokter,
+                               _nourut,
+                               txtdd1.Text,
+                               txtdd2.Text,
+                               lblSatuan.Text,
+                               Obat.Text,
+                               cmbSatuanDosis.Text
+                               );
+                        break;
+                }
+                    
+                
+               
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
@@ -199,6 +211,22 @@ namespace rse.app.desk.rx.lite.UI
         private void txtJumlah_TextChanged(object sender, EventArgs e)
         {
             checkretriksi();
+        }
+
+        private void loaddataedit()
+        {
+            if(_edit == true)
+            {
+                var dh = new dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
+                DataRow dr = dh.GetDataByRXD(_norxd).Rows[0];
+                Obat.Text = dr["vc_namaobat"].ToString();
+                lblkodeobat.Text = dr["vc_kode_obat"].ToString();
+                txtdd1.Text = dr["nvc_dd1"].ToString();
+                txtdd2.Text = dr["nvc_dd2"].ToString();
+                txtJumlah.Text = dr["num_jml"].ToString();
+                txtSignalain.Text = dr["vc_signalain"].ToString();
+                cmbSatuanDosis.Text = dr["vc_satuan_dosis"].ToString();
+            }
         }
 
         private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)

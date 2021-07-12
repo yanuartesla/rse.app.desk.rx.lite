@@ -12,22 +12,84 @@
               <Width>2.36595in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.35938in</Width>
+              <Width>0.65105in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.63542in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.70833in</Width>
+              <Width>0.875in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.01574in</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>0.33333in</Width>
+              <Width>1.84907in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
+            <TablixRow>
+              <Height>0.23622in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Iter </Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>=Fields!in_jml_iter.Value</Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value> x</Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>Silver</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BackgroundColor>Orange</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>6</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+              </TablixCells>
+            </TablixRow>
             <TablixRow>
               <Height>0.23333in</Height>
               <TablixCells>
@@ -220,47 +282,6 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox42</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <TopBorder>
-                          <Color>Silver</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <BackgroundColor>Azure</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox46">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Iter</Value>
-                              <Style>
-                                <FontFamily>Segoe UI</FontFamily>
-                                <FontSize>8pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox46</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -486,46 +507,6 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox47">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value />
-                              <Style>
-                                <FontFamily>Segoe UI</FontFamily>
-                                <FontSize>8pt</FontSize>
-                                <FontWeight>Normal</FontWeight>
-                                <Color>#333333</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox47</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <BottomBorder>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <BackgroundColor>CornflowerBlue</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
               </TablixCells>
             </TablixRow>
             <TablixRow>
@@ -613,7 +594,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="num_jml">
+                    <Textbox Name="num_jml1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -634,7 +615,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>num_jml</rd:DefaultName>
+                      <rd:DefaultName>num_jml1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -790,49 +771,6 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>vc_signalain</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <BottomBorder>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <BackgroundColor>White</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="num_jmliter">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Label>iter</Label>
-                              <Value>=IIf(Fields!num_jmliter.Value = 0, "", Fields!num_jmliter.Value)</Value>
-                              <Style>
-                                <FontFamily>Segoe UI</FontFamily>
-                                <FontSize>8pt</FontSize>
-                                <FontWeight>Normal</FontWeight>
-                                <Color>#333333</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>num_jmliter</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -1103,43 +1041,6 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox49">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value />
-                              <Style>
-                                <FontFamily>Segoe UI</FontFamily>
-                                <FontSize>8pt</FontSize>
-                                <FontWeight>Normal</FontWeight>
-                                <Color>#333333</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox49</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <BackgroundColor>White</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
               </TablixCells>
             </TablixRow>
           </TablixRows>
@@ -1152,11 +1053,15 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
           <TablixMembers>
+            <TablixMember>
+              <Visibility>
+                <Hidden>=Fields!bt_iter.Value = 0</Hidden>
+              </Visibility>
+            </TablixMember>
             <TablixMember />
             <TablixMember>
               <Group Name="golongan_obat">
@@ -1211,8 +1116,8 @@
         <DataSetName>dsResep</DataSetName>
         <Top>2.44218in</Top>
         <Left>0.13131in</Left>
-        <Height>0.74583in</Height>
-        <Width>6.59907in</Width>
+        <Height>0.98205in</Height>
+        <Width>6.55741in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2455,7 +2360,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsPasien</DataSetName>
-        <Top>0.14111cm</Top>
+        <Top>2.04611cm</Top>
         <Left>17.20102cm</Left>
         <Height>2.96693cm</Height>
         <Width>2.5cm</Width>
@@ -2936,7 +2841,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsPasien</DataSetName>
-        <Top>3.28252cm</Top>
+        <Top>5.18752cm</Top>
         <Left>17.20102cm</Left>
         <Height>8.98831cm</Height>
         <Width>2.5cm</Width>
@@ -2956,7 +2861,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>2.23216cm</Height>
+              <Height>2.17924cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -2976,7 +2881,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.44125cm</Height>
+              <Height>0.49417cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -2995,7 +2900,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -3033,7 +2938,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsPasien</DataSetName>
-        <Top>8.27394cm</Top>
+        <Top>9.34137cm</Top>
         <Left>11.07722cm</Left>
         <Height>2.67341cm</Height>
         <Width>5.17129cm</Width>
@@ -3609,11 +3514,248 @@
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox138">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Jam Order : </Value>
+                <Style>
+                  <FontFamily>Segoe UI Light</FontFamily>
+                  <FontSize>7pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>order</Label>
+                <Value>=First(Fields!dt_order.Value, "dsResep")</Value>
+                <Style>
+                  <FontFamily>Segoe UI Semibold</FontFamily>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <Format>H:mm</Format>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>jam Respon  : </Value>
+                <Style>
+                  <FontFamily>Segoe UI Light</FontFamily>
+                  <FontSize>7pt</FontSize>
+                  <Format>H:mm</Format>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>Respon</Label>
+                <Value>=First(Fields!dt_respon.Value, "dsResep")</Value>
+                <Style>
+                  <FontFamily>Segoe UI Semibold</FontFamily>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Format>H:mm</Format>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox138</rd:DefaultName>
+        <Top>0.17639cm</Top>
+        <Left>17.20102cm</Left>
+        <Height>1.70327cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Tablix Name="Tablix6">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>9.60076cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox5">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Catatan Dokter :</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>2.07341cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="vc_catatan1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!vc_catatan.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>vc_catatan1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="Details8" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>dsResepH</DataSetName>
+        <Top>9.34137cm</Top>
+        <Left>0.46945cm</Left>
+        <Height>2.67341cm</Height>
+        <Width>9.60076cm</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <TopBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </TopBorder>
+          <BottomBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </BottomBorder>
+          <LeftBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </LeftBorder>
+          <RightBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </RightBorder>
+        </Style>
+      </Tablix>
     </ReportItems>
-    <Height>12.27083cm</Height>
+    <Height>14.17583cm</Height>
     <Style />
   </Body>
-  <Width>19.97604cm</Width>
+  <Width>19.8733cm</Width>
   <Page>
     <PageHeader>
       <Height>1.75204cm</Height>
@@ -3652,10 +3794,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox54</rd:DefaultName>
-          <Top>0.07056cm</Top>
-          <Left>1.72931cm</Left>
+          <Top>0.03528cm</Top>
+          <Left>1.76458cm</Left>
           <Height>0.59132cm</Height>
-          <Width>5.2116cm</Width>
+          <Width>4.17091cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -3701,7 +3843,7 @@
           <Top>0.66188cm</Top>
           <Left>1.72931cm</Left>
           <Height>0.87863cm</Height>
-          <Width>5.2116cm</Width>
+          <Width>4.20618cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
@@ -3842,76 +3984,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox138">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Jam Order : </Value>
-                  <Style>
-                    <FontFamily>Segoe UI Light</FontFamily>
-                    <FontSize>7pt</FontSize>
-                  </Style>
-                </TextRun>
-                <TextRun>
-                  <Label>order</Label>
-                  <Value>=First(Fields!dt_order.Value, "dsResep")</Value>
-                  <Style>
-                    <FontFamily>Segoe UI Semibold</FontFamily>
-                    <FontSize>7pt</FontSize>
-                    <FontWeight>Normal</FontWeight>
-                    <Format>H:mm</Format>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>jam Respon  : </Value>
-                  <Style>
-                    <FontFamily>Segoe UI Light</FontFamily>
-                    <FontSize>7pt</FontSize>
-                    <Format>H:mm</Format>
-                  </Style>
-                </TextRun>
-                <TextRun>
-                  <Label>Respon</Label>
-                  <Value>=First(Fields!dt_respon.Value, "dsResep")</Value>
-                  <Style>
-                    <FontFamily>Segoe UI Semibold</FontFamily>
-                    <FontSize>7pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <Format>H:mm</Format>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox138</rd:DefaultName>
-          <Top>0.11452cm</Top>
-          <Left>8.67834cm</Left>
-          <Height>0.85258cm</Height>
-          <Width>3.9952cm</Width>
-          <ZIndex>5</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
         <Textbox Name="Textbox139">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -3923,7 +3995,8 @@
                   <Value>=First(Fields!vc_n_png.Value, "dsPasien")</Value>
                   <Style>
                     <FontFamily>Segoe UI Light</FontFamily>
-                    <FontSize>7pt</FontSize>
+                    <FontSize>11pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -3933,11 +4006,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox138</rd:DefaultName>
-          <Top>1.10821cm</Top>
-          <Left>7.1173cm</Left>
-          <Height>0.50272cm</Height>
-          <Width>5.93548cm</Width>
-          <ZIndex>6</ZIndex>
+          <Top>0.14112cm</Top>
+          <Left>6.11188cm</Left>
+          <Height>1.46981cm</Height>
+          <Width>6.9409cm</Width>
+          <ZIndex>5</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -3959,7 +4032,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>0.66294cm</Height>
+      <Height>0.58357cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -4194,6 +4267,26 @@
         </Field>
         <Field Name="nvc_dd2">
           <DataField>nvc_dd2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="bt_iter">
+          <DataField>bt_iter</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="in_jml_iter">
+          <DataField>in_jml_iter</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="num_jml1">
+          <DataField>num_jml</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="bt_tanpaobat">
+          <DataField>bt_tanpaobat</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="vc_catatan">
+          <DataField>vc_catatan</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -4484,6 +4577,86 @@
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
         <rd:TableAdapterName>fa_rx_prosedurTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="dsResepH">
+      <Query>
+        <DataSourceName>yakkumdb</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="id">
+          <DataField>id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="vc_kode_rx">
+          <DataField>vc_kode_rx</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="vc_no_reg">
+          <DataField>vc_no_reg</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="vc_no_rm">
+          <DataField>vc_no_rm</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="vc_k_dokter">
+          <DataField>vc_k_dokter</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="vc_k_klinik">
+          <DataField>vc_k_klinik</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="vc_status">
+          <DataField>vc_status</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="int_k_status">
+          <DataField>int_k_status</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="dt_order">
+          <DataField>dt_order</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="dt_respon">
+          <DataField>dt_respon</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="bt_lock">
+          <DataField>bt_lock</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="tgl_resep">
+          <DataField>tgl_resep</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="bt_iter">
+          <DataField>bt_iter</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="in_jml_iter">
+          <DataField>in_jml_iter</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="bt_tanpaobat">
+          <DataField>bt_tanpaobat</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="vc_catatan">
+          <DataField>vc_catatan</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>yakkumdb</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\HP\source\repos\rse.app.desk.rx.lite\rse.app.desk.rx.pharmacist\Dataset\yakkumdb.xsd</rd:SchemaPath>
+        <rd:TableName>fa_rx_resep_h</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>fa_rx_resep_hTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
