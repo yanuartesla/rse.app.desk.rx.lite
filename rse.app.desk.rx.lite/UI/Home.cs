@@ -118,7 +118,7 @@ namespace rse.app.desk.rx.lite.UI
         {
                 foreach (Control c in flpPasien.Controls)
                 {
-                    if (!c.Tag.ToString().ToLower().Contains(txtCariPasien.Text))
+                    if (!c.Tag.ToString().ToLower().Contains(txtCariPasien.Text.ToLower()))
                     {
                         c.Hide();
                         //flpPasien.Controls.Remove(c);

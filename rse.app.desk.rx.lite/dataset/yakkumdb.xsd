@@ -388,7 +388,7 @@ WHERE        (vc_kode_rx = @rx)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateTanpaObat" Modifier="Public" Name="UpdateTanpaObat" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="UpdateTanpaObat">
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateTanpaObat" Modifier="Public" Name="UpdateTanpaObat" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="UpdateTanpaObat">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       fa_rx_resep_h
@@ -402,7 +402,7 @@ WHERE        (vc_kode_rx = @kdresep)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpsertQuery" Modifier="Public" Name="UpsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="UpsertQuery">
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpsertQuery" Modifier="Public" Name="UpsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="UpsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>--MERGE SQL statement - Part 2
@@ -592,7 +592,7 @@ VALUES        (@vc_kode_rx,@vc_kode_rx_d,@vc_kode_obat,@vc_kode_racikan,@bt_raci
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ScalarQueryJmlObat" Modifier="Public" Name="ScalarQueryJmlObat" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="ScalarQueryJmlObat">
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ScalarQueryJmlObat" Modifier="Public" Name="ScalarQueryJmlObat" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="ScalarQueryJmlObat">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        COUNT(*) AS Jumlah_Obat
@@ -605,7 +605,7 @@ WHERE        (fa_rx_resep_d.vc_kode_rx = @kdrx)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ScalarQueryMaxNoUrutResep" Modifier="Public" Name="ScalarQueryMaxNoUrutResep" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="ScalarQueryMaxNoUrutResep">
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ScalarQueryMaxNoUrutResep" Modifier="Public" Name="ScalarQueryMaxNoUrutResep" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="ScalarQueryMaxNoUrutResep">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        CASE WHEN MAX(in_no_urut) IS NULL THEN 0 ELSE MAX(in_no_urut) END AS maxnourut
@@ -617,7 +617,7 @@ WHERE        (vc_kode_rx = @k_rx)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ScalarQueryNoRacikan" Modifier="Public" Name="ScalarQueryNoRacikan" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="ScalarQueryNoRacikan">
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ScalarQueryNoRacikan" Modifier="Public" Name="ScalarQueryNoRacikan" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="ScalarQueryNoRacikan">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        CASE WHEN MAX(CAST([vc_kode_racikan] AS int)) IS NULL THEN 0 ELSE MAX(CAST([vc_kode_racikan] AS int)) END AS maxnourut
@@ -629,7 +629,7 @@ WHERE        (vc_kode_rx = @k_rx)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       fa_rx_resep_d
@@ -1007,6 +1007,17 @@ FROM            fa_rx_diagnosa</CommandText>
               <Mapping SourceColumn="tgl_input" DataSetColumn="tgl_input" />
             </Mappings>
             <Sources>
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuerybyId" Modifier="Public" Name="DeleteQuerybyId" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuerybyId">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM fa_rx_diagnosa
+WHERE        (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="yakkumdatabase.dbo.fa_rx_diagnosa" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
               <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="yakkumdatabase.dbo.fa_rx_diagnosa" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByNoReg" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByNoReg" GeneratorSourceName="FillByNoReg" GetMethodModifier="Public" GetMethodName="GetDataByNoReg" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByNoReg" UserSourceName="FillByNoReg">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -1032,7 +1043,7 @@ WHERE        (RMKUNJUNG.VC_NO_RM = @norm)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [fa_rx_diagnosa] ([no_reg], [icd_code], [icd_desc], [no_urut], [bt_diagnosa_utama], [tgl_input]) VALUES (@no_reg, @icd_code, @icd_desc, @no_urut, @bt_diagnosa_utama, @tgl_input)</CommandText>
@@ -1046,6 +1057,44 @@ WHERE        (RMKUNJUNG.VC_NO_RM = @norm)</CommandText>
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQueryDiaglist2nd" Modifier="Public" Name="UpdateQueryDiaglist2nd" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQueryDiaglist2nd">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE       fa_rx_diagnosa
+SET                bt_diagnosa_utama = 0
+WHERE        (no_reg = @noreg)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="noreg" ColumnName="no_reg" DataSourceName="yakkumdatabase.dbo.fa_rx_diagnosa" DataTypeServer="varchar(25)" DbType="AnsiString" Direction="Input" ParameterName="@noreg" Precision="0" ProviderType="VarChar" Scale="0" Size="25" SourceColumn="no_reg" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQueryNoUrut" Modifier="Public" Name="UpdateQueryNoUrut" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="UpdateQueryNoUrut">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE       fa_rx_diagnosa
+SET                no_urut = @nourut, bt_diagnosa_utama = @btdiagnosa
+WHERE        (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="nourut" ColumnName="no_urut" DataSourceName="yakkumdatabase.dbo.fa_rx_diagnosa" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@nourut" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="no_urut" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="btdiagnosa" ColumnName="bt_diagnosa_utama" DataSourceName="yakkumdatabase.dbo.fa_rx_diagnosa" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@btdiagnosa" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="bt_diagnosa_utama" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="yakkumdatabase.dbo.fa_rx_diagnosa" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQueryPrimaryDiag" Modifier="Public" Name="UpdateQueryPrimaryDiag" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateQueryPrimaryDiag">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE       fa_rx_diagnosa
+SET                bt_diagnosa_utama = 1
+WHERE        (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="yakkumdatabase.dbo.fa_rx_diagnosa" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
               </DbSource>
             </Sources>
           </TableAdapter>
@@ -1302,6 +1351,18 @@ FROM            fa_rx_prosedur</CommandText>
               <Mapping SourceColumn="tgl_input" DataSetColumn="tgl_input" />
             </Mappings>
             <Sources>
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="yakkumdatabase.dbo.fa_rx_prosedur" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByNoReg" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByNoReg" GeneratorSourceName="FillByNoReg" GetMethodModifier="Public" GetMethodName="GetDataByNoReg" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByNoReg" UserSourceName="FillByNoReg">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id, no_reg, icd_code, icd_desk, no_urut, tgl_input
+FROM            fa_rx_prosedur
+WHERE        (no_reg = @noreg)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="noreg" ColumnName="no_reg" DataSourceName="yakkumdatabase.dbo.fa_rx_prosedur" DataTypeServer="varchar(25)" DbType="AnsiString" Direction="Input" ParameterName="@noreg" Precision="0" ProviderType="VarChar" Scale="0" Size="25" SourceColumn="no_reg" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -1315,6 +1376,19 @@ FROM            fa_rx_prosedur</CommandText>
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQueryNoUrut" Modifier="Public" Name="UpdateQueryNoUrut" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateQueryNoUrut">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE       fa_rx_prosedur
+SET                no_urut = @nourut
+WHERE        (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="nourut" ColumnName="no_urut" DataSourceName="yakkumdatabase.dbo.fa_rx_prosedur" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@nourut" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="no_urut" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="yakkumdatabase.dbo.fa_rx_prosedur" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
               </DbSource>
             </Sources>
           </TableAdapter>
@@ -1381,6 +1455,74 @@ ORDER BY kd_golongan, view_rse_fa_obat.vc_golongan</CommandText>
                 </SelectCommand>
               </DbSource>
             </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="view_diagnosaTableAdapter" GeneratorDataComponentClassName="view_diagnosaTableAdapter" Name="view_diagnosa" UserDataComponentName="view_diagnosaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="yakkumdatabase.dbo.fa_rx_diagnosa" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillbyNoReg" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByNoreg" GeneratorSourceName="FillbyNoReg" GetMethodModifier="Public" GetMethodName="GetDataByNoreg" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByNoreg" UserSourceName="FillbyNoReg">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [fa_rx_diagnosa] ([icd_code], [icd_desc], [bt_diagnosa_utama]) VALUES (@icd_code, @icd_desc, @bt_diagnosa_utama)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@icd_code" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="icd_code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@icd_desc" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="icd_desc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@bt_diagnosa_utama" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="bt_diagnosa_utama" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        icd_code, icd_desc, bt_diagnosa_utama, id
+FROM            fa_rx_diagnosa
+WHERE        (no_reg = @noreg)
+ORDER BY bt_diagnosa_utama DESC, id</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="noreg" ColumnName="no_reg" DataSourceName="yakkumdatabase.dbo.fa_rx_diagnosa" DataTypeServer="varchar(25)" DbType="AnsiString" Direction="Input" ParameterName="@noreg" Precision="0" ProviderType="VarChar" Scale="0" Size="25" SourceColumn="no_reg" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="icd_code" DataSetColumn="icd_code" />
+              <Mapping SourceColumn="icd_desc" DataSetColumn="icd_desc" />
+              <Mapping SourceColumn="bt_diagnosa_utama" DataSetColumn="bt_diagnosa_utama" />
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="view_ProcedureTableAdapter" GeneratorDataComponentClassName="view_ProcedureTableAdapter" Name="view_Procedure" UserDataComponentName="view_ProcedureTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="yakkumdatabaseConnectionString (Settings)" DbObjectName="yakkumdatabase.dbo.fa_rx_prosedur" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillNoReg" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataNoReg" GeneratorSourceName="FillNoReg" GetMethodModifier="Public" GetMethodName="GetDataNoReg" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataNoReg" UserSourceName="FillNoReg">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [fa_rx_prosedur] ([icd_code], [icd_desk], [no_reg]) VALUES (@icd_code, @icd_desk, @no_reg)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@icd_code" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="icd_code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@icd_desk" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="icd_desk" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@no_reg" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="no_reg" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id, icd_code, icd_desk, no_reg
+FROM            fa_rx_prosedur
+WHERE        (no_reg = @noreg)
+ORDER BY id</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="noreg" ColumnName="no_reg" DataSourceName="yakkumdatabase.dbo.fa_rx_prosedur" DataTypeServer="varchar(25)" DbType="AnsiString" Direction="Input" ParameterName="@noreg" Precision="0" ProviderType="VarChar" Scale="0" Size="25" SourceColumn="no_reg" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="icd_code" DataSetColumn="icd_code" />
+              <Mapping SourceColumn="icd_desk" DataSetColumn="icd_desk" />
+              <Mapping SourceColumn="no_reg" DataSetColumn="no_reg" />
+            </Mappings>
+            <Sources />
           </TableAdapter>
         </Tables>
         <Sources />
@@ -2921,6 +3063,56 @@ ORDER BY kd_golongan, view_rse_fa_obat.vc_golongan</CommandText>
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="view_diagnosa" msprop:Generator_TableClassName="view_diagnosaDataTable" msprop:Generator_TableVarName="tableview_diagnosa" msprop:Generator_RowChangedName="view_diagnosaRowChanged" msprop:Generator_TablePropName="view_diagnosa" msprop:Generator_RowDeletingName="view_diagnosaRowDeleting" msprop:Generator_RowChangingName="view_diagnosaRowChanging" msprop:Generator_RowEvHandlerName="view_diagnosaRowChangeEventHandler" msprop:Generator_RowDeletedName="view_diagnosaRowDeleted" msprop:Generator_RowClassName="view_diagnosaRow" msprop:Generator_UserTableName="view_diagnosa" msprop:Generator_RowEvArgName="view_diagnosaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="icd_code" msprop:Generator_ColumnVarNameInTable="columnicd_code" msprop:Generator_ColumnPropNameInRow="icd_code" msprop:Generator_ColumnPropNameInTable="icd_codeColumn" msprop:Generator_UserColumnName="icd_code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="icd_desc" msprop:Generator_ColumnVarNameInTable="columnicd_desc" msprop:Generator_ColumnPropNameInRow="icd_desc" msprop:Generator_ColumnPropNameInTable="icd_descColumn" msprop:Generator_UserColumnName="icd_desc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="bt_diagnosa_utama" msprop:Generator_ColumnVarNameInTable="columnbt_diagnosa_utama" msprop:Generator_ColumnPropNameInRow="bt_diagnosa_utama" msprop:Generator_ColumnPropNameInTable="bt_diagnosa_utamaColumn" msprop:Generator_UserColumnName="bt_diagnosa_utama" type="xs:boolean" minOccurs="0" />
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="view_Procedure" msprop:Generator_TableClassName="view_ProcedureDataTable" msprop:Generator_TableVarName="tableview_Procedure" msprop:Generator_TablePropName="view_Procedure" msprop:Generator_RowDeletingName="view_ProcedureRowDeleting" msprop:Generator_RowChangingName="view_ProcedureRowChanging" msprop:Generator_RowEvHandlerName="view_ProcedureRowChangeEventHandler" msprop:Generator_RowDeletedName="view_ProcedureRowDeleted" msprop:Generator_UserTableName="view_Procedure" msprop:Generator_RowChangedName="view_ProcedureRowChanged" msprop:Generator_RowEvArgName="view_ProcedureRowChangeEvent" msprop:Generator_RowClassName="view_ProcedureRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="icd_code" msprop:Generator_ColumnVarNameInTable="columnicd_code" msprop:Generator_ColumnPropNameInRow="icd_code" msprop:Generator_ColumnPropNameInTable="icd_codeColumn" msprop:Generator_UserColumnName="icd_code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="icd_desk" msprop:Generator_ColumnVarNameInTable="columnicd_desk" msprop:Generator_ColumnPropNameInRow="icd_desk" msprop:Generator_ColumnPropNameInTable="icd_deskColumn" msprop:Generator_UserColumnName="icd_desk" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="no_reg" msprop:Generator_ColumnVarNameInTable="columnno_reg" msprop:Generator_ColumnPropNameInRow="no_reg" msprop:Generator_ColumnPropNameInTable="no_regColumn" msprop:Generator_UserColumnName="no_reg" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

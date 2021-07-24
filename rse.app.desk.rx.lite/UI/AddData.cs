@@ -1,4 +1,6 @@
-﻿using System;
+﻿using rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters;
+using rse.app.desk.rx.lite.UI.Layout;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,11 +18,8 @@ namespace rse.app.desk.rx.lite.UI
     {
         public string _noreg { get; set; }
         public string _kodedokter { get; set; }
-
         public int _kodeFornas { get; set; }
-
         public string _kodeKlinik { get; set; }
-
         public string _koderesep { get; set; }
         public string _nik { get; set; }
         public string _norm { get; set; }
@@ -33,7 +32,6 @@ namespace rse.app.desk.rx.lite.UI
             _noreg = NoReg;
             _kodeKlinik = KodeKlinik;
             _kodedokter = KodeDokter;
-     
         }
 
         private void AddData_Load(object sender, EventArgs e)
@@ -71,6 +69,11 @@ namespace rse.app.desk.rx.lite.UI
             LoadICD10();
             LoadICD9();
             LoadTemplate();
+
+            this.view_diagnosaTableAdapter.FillbyNoReg(this.yakkumdb.view_diagnosa, _noreg);
+            this.dgvDiagnosa.Update();
+            this.view_ProcedureTableAdapter.FillNoReg(yakkumdb.view_Procedure, _noreg);
+            this.dgvProcedure.Update();
             //loadData();
         }
         private void loadData()
@@ -140,7 +143,7 @@ namespace rse.app.desk.rx.lite.UI
             }
 
         }
-            private void LoadICD10 ()
+        private void LoadICD10 ()
         {
 
             List<string> _icd10 = new List<string>();
@@ -289,8 +292,6 @@ namespace rse.app.desk.rx.lite.UI
                 LoadHome();
             }
 
-
-
         }
         private void insertProcedure()
         {
@@ -299,16 +300,18 @@ namespace rse.app.desk.rx.lite.UI
             {
                 if (!dgvProcedure.Rows[i].Cells[1].Value.Equals(null))
                 {
-                    //MessageBox.Show(dgvProcedure.Rows[i].Cells[1].Value.ToString());
-                   dt.InsertQuery(
-                   _noreg,
-                   dgvProcedure.Rows[i].Cells[1].Value.ToString(),
-                   dgvProcedure.Rows[i].Cells[2].Value.ToString(),
-                   Int32.Parse(dgvProcedure.Rows[i].Cells[0].Value.ToString()),
-                   DateTime.Now
-                   );
+
+                    dt.UpdateQueryNoUrut(i + 1, (int)dgvProcedure.Rows[i].Cells[3].Value);
+                   ////MessageBox.Show(i+1.ToString());
+                   //dt.InsertQuery(
+                   //_noreg,
+                   //dgvProcedure.Rows[i].Cells[1].Value.ToString(),
+                   //dgvProcedure.Rows[i].Cells[2].Value.ToString(),
+                   //i+1,
+                   ////Int32.Parse(dgvProcedure.Rows[i].Cells[0].Value.ToString()),
+                   //DateTime.Now
+                   //);
                 }
-                
             }
         }
         private void insertDiagnosa()
@@ -325,7 +328,6 @@ namespace rse.app.desk.rx.lite.UI
                 }
                 if(i==0)
                 {
-                    
                     dt.InsertQuery(
                         _noreg,
                         txtNoRM.Text,
@@ -334,16 +336,20 @@ namespace rse.app.desk.rx.lite.UI
                         dgvDiagnosa.Rows[i].Cells[1].Value.ToString()
                          );
                     //insert ke database Yakkum RSE
-                    dy.InsertQuery(
-                        _noreg,
-                        dgvDiagnosa.Rows[i].Cells[1].Value.ToString(),
-                        dgvDiagnosa.Rows[i].Cells[2].Value.ToString(),
-                        1,
-                        true,
-                        DateTime.Now
-                        );
+
+                    //MessageBox.Show(dgvDiagnosa.Rows[i].Cells["idDataGridViewTextBoxColumn1"].Value.ToString());
+                    dy.UpdateQueryNoUrut(1, true, (int)dgvDiagnosa.Rows[i].Cells["idDataGridViewTextBoxColumn1"].Value);
+
+                    //dy.InsertQuery(
+                    //    _noreg,
+                    //    dgvDiagnosa.Rows[i].Cells[1].Value.ToString(),
+                    //    dgvDiagnosa.Rows[i].Cells[2].Value.ToString(),
+                    //    1,
+                    //    true,
+                    //    DateTime.Now
+                    //    );
                 }
-                if(i>0)
+                if (i>0)
                 {
                     //insert ke database RM
                     ds.InsertQuery(
@@ -356,18 +362,20 @@ namespace rse.app.desk.rx.lite.UI
                         );
 
                     //insert ke database Yakkum RSE
-                    dy.InsertQuery(
-                        _noreg,
-                        dgvDiagnosa.Rows[i].Cells[1].Value.ToString(),
-                        dgvDiagnosa.Rows[i].Cells[2].Value.ToString(),
-                        i+1,
-                        false,
-                        DateTime.Now
-                        );
+                    //MessageBox.Show(dgvDiagnosa.Rows[i].Cells[4].Value.ToString());
+                    dy.UpdateQueryNoUrut(i+1,false, (int)dgvDiagnosa.Rows[i].Cells["idDataGridViewTextBoxColumn1"].Value);
+
+                    //dy.InsertQuery(
+                    //    _noreg,
+                    //    dgvDiagnosa.Rows[i].Cells[1].Value.ToString(),
+                    //    dgvDiagnosa.Rows[i].Cells[2].Value.ToString(),
+                    //    i+1,
+                    //    false,
+                    //    DateTime.Now
+                    //    );
                 }
             }
                 
-               
         }
         private void insertCPPT()
         {
@@ -434,6 +442,7 @@ namespace rse.app.desk.rx.lite.UI
             {
                 DataGridViewRow row = (DataGridViewRow)dgvDiagnosa.Rows[0].Clone();
                 var dh = new dataset.yakkumdbTableAdapters.ICD10_2019_CodesTableAdapter();
+                var dh2 = new fa_rx_diagnosaTableAdapter();
                 dh.Fill(yakkumdb.ICD10_2019_Codes,txtCariDiagnosa.Text);
                 DataTable dt = dh.GetData(txtCariDiagnosa.Text);
 
@@ -441,16 +450,23 @@ namespace rse.app.desk.rx.lite.UI
                 {
                     foreach (DataRow r in dt.Rows)
                     {
-                        row.Cells[1].Value = r["vc_codes"].ToString();
-                        row.Cells[2].Value = r["vc_desc_title"].ToString();
+                        
+                            dh2.InsertQuery(_noreg, r["vc_codes"].ToString(), r["vc_desc_title"].ToString(), null, null, DateTime.Now);
+                        //row.Cells[1].Value = r["vc_codes"].ToString();
+                        //row.Cells[2].Value = r["vc_desc_title"].ToString();
                     }
                 }
                 else 
                 {
-                    row.Cells[1].Value = "-";
-                    row.Cells[2].Value = txtCariDiagnosa.Text.ToString();
+                    dh2.InsertQuery(_noreg, "-", txtCariDiagnosa.Text.ToString(), null, null, DateTime.Now);
+                    //row.Cells[1].Value = "-";
+                    //row.Cells[2].Value = txtCariDiagnosa.Text.ToString();
                 }
-                dgvDiagnosa.Rows.Add(row);
+                //dgvDiagnosa.Rows.Add(row);
+                this.view_diagnosaTableAdapter.FillbyNoReg(yakkumdb.view_diagnosa, _noreg);
+                this.dgvDiagnosa.Update();
+                this.dgvDiagnosa.Refresh();
+
                 txtCariDiagnosa.Clear();
             }
         }
@@ -484,6 +500,7 @@ namespace rse.app.desk.rx.lite.UI
             {
                 DataGridViewRow row = (DataGridViewRow)dgvProcedure.Rows[0].Clone();
                 var dh = new dataset.yakkumdbTableAdapters.ICD9_CM_2011_Procedure_CodesTableAdapter();
+                var dh2 = new fa_rx_prosedurTableAdapter();
                 dh.Fill(yakkumdb.ICD9_CM_2011_Procedure_Codes, txtCariProsedur.Text);
                 DataTable dt = dh.GetData(txtCariProsedur.Text);
 
@@ -491,17 +508,20 @@ namespace rse.app.desk.rx.lite.UI
                 {
                     foreach (DataRow r in dt.Rows)
                     {
-                        row.Cells[1].Value = r["vc_code_sp"].ToString();
-                        row.Cells[2].Value = r["vc_long_description"].ToString();
+                        dh2.InsertQuery(_noreg, r["vc_code_sp"].ToString(), r["vc_long_description"].ToString(), null, DateTime.Now);
+                        //row.Cells[1].Value = r["vc_code_sp"].ToString();
+                        //row.Cells[2].Value = r["vc_long_description"].ToString();
                     }
                 }
                 else 
                 {
-                    row.Cells[1].Value = "-";
-                    row.Cells[2].Value = txtCariProsedur.Text.ToString();
+                    dh2.InsertQuery(_noreg,"-", txtCariProsedur.Text.ToString(),null, DateTime.Now);
+                    //row.Cells[1].Value = "-";
+                    //row.Cells[2].Value = txtCariProsedur.Text.ToString();
                 }
-                   
-                dgvProcedure.Rows.Add(row);
+                this.view_ProcedureTableAdapter.FillNoReg(yakkumdb.view_Procedure, _noreg);
+                this.dgvProcedure.Update();
+                //dgvProcedure.Rows.Add(row);
                 txtCariProsedur.Clear();
             }
                 
@@ -534,21 +554,42 @@ namespace rse.app.desk.rx.lite.UI
 
         private void dgvDiagnosa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            var dh = new fa_rx_diagnosaTableAdapter();
             if (e.RowIndex < 0)
                 return;
-            if (e.ColumnIndex == this.dgvDiagnosa.Columns["btnPrimary"].Index)
+            //if (e.ColumnIndex == this.dgvDiagnosa.Columns["btnPrimary"].Index)
+            //{
+            //    //this.dgvDiagnosa.Rows.Insert(0, dgvDiagnosa.Rows[e.RowIndex]);
+            //    //this.dgvDiagnosa.Rows.Remove(dgvDiagnosa.Rows[e.RowIndex]);
+            //}
+            //Check to ensure that the row CheckBox is clicked.
+            if ( e.ColumnIndex == 3 && !string.IsNullOrEmpty(dgvDiagnosa.Rows[e.RowIndex].Cells[2].Value as string))
             {
-                //this.dgvDiagnosa.Rows.Insert(0, dgvDiagnosa.Rows[e.RowIndex]);
-                //this.dgvDiagnosa.Rows.Remove(dgvDiagnosa.Rows[e.RowIndex]);
-                
-                
+                //Loop and uncheck all other CheckBoxes.
+                foreach (DataGridViewRow row in dgvDiagnosa.Rows)
+                {
+                    if (row.Index == e.RowIndex )
+                    {
+                        row.Cells["btdiagnosautamaDataGridViewCheckBoxColumn"].Value = !Convert.ToBoolean(row.Cells["btdiagnosautamaDataGridViewCheckBoxColumn"].EditedFormattedValue);
+                        dh.UpdateQueryDiaglist2nd(_noreg);
+                        dh.UpdateQueryPrimaryDiag((int)row.Cells["idDataGridViewTextBoxColumn1"].Value);
+
+                        this.view_diagnosaTableAdapter.FillbyNoReg(yakkumdb.view_diagnosa, _noreg);
+                        dgvDiagnosa.Update();
+                        //dgvDiagnosa.Refresh();
+                    }
+                    else
+                    {
+                        row.Cells["btdiagnosautamaDataGridViewCheckBoxColumn"].Value = false;
+                    }
+                }
             }
+
             if (e.ColumnIndex == this.dgvDiagnosa.Columns["btnDelete"].Index && !string.IsNullOrEmpty(dgvDiagnosa.Rows[e.RowIndex].Cells[2].Value as string))
             {
-
+                dh.DeleteQuerybyId(Int32.Parse( dgvDiagnosa.Rows[e.RowIndex].Cells["idDataGridViewTextBoxColumn1"].Value.ToString()));
                 this.dgvDiagnosa.Rows.Remove(dgvDiagnosa.Rows[e.RowIndex]);
             }
-
         }
 
         private void dgvDiagnosa_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -627,6 +668,142 @@ namespace rse.app.desk.rx.lite.UI
             else if (!cbIterResep.Checked)
             {
                 numIterResep.Visible = false;
+            }
+        }
+
+        public static DataTable Treedata(string noreg)
+        {
+            var dt = new DataTable();
+            dt.Columns.Add("EQUID", typeof(int));
+            dt.Columns.Add("DESEQU", typeof(string));
+            var parentColumn = dt.Columns.Add("PEQUID", typeof(int));
+
+            //Data Diagnosa
+            var dh = new dataset.yakkumdbTableAdapters.fa_rx_diagnosaTableAdapter();
+            var th = new dataset.yakkumdbTableAdapters.fa_rx_prosedurTableAdapter();
+
+
+            dt.Rows.Add(1, "Diagnosis");
+            DataTable ds = dh.GetDataByNoReg(noreg);
+            foreach (DataRow r in ds.Rows)
+            {
+                dt.Rows.Add(r["id"],r["no_urut"].ToString()+". "+r["icd_code"].ToString()+ " | " + r["icd_desc"].ToString(),1);
+            }
+            dt.Rows.Add(2, "Procedure");
+            DataTable ds2 = th.GetDataByNoReg(noreg);
+            foreach (DataRow r in ds2.Rows)
+            {
+                dt.Rows.Add(r["id"], r["no_urut"].ToString() + ". " + r["icd_code"].ToString() + " | " + r["icd_desc"].ToString(), 2);
+            }
+            
+            return (dt);
+        }
+
+        private void populateHistoryDiagnosa()
+        {
+
+            flpHsDiagnosa.SuspendLayout();
+            flpHsDiagnosa.Controls.Clear();
+            var ds = new RM_KUNJUNGTableAdapter();
+            DataTable dt = ds.GetDataByNoRM(_norm, _noreg);//"2107170200001");
+            foreach (DataRow r in dt.Rows)
+            {
+                var uc = new CardHistoryDiagnosa
+                {
+                    //Tag = r["vc_nid"].ToString() + r["vc_kode_rx"].ToString(),
+                    //Tag = r["VC_NO_REGJ"].ToString(),
+                    TGLReg = (DateTime)r["DT_TGL_REG"],
+                    NamaDokter = r["nama_dokter"].ToString(),
+                    Klinik = r["vc_N_KLINIK"].ToString(),
+                    //Penanggung = r["vc_n_png"].ToString(),
+                    NoREG = r["VC_NO_REGJ"].ToString(),
+                    //NoRSP = r["vc_kode_rx"].ToString(),
+                    Data = Treedata(r["VC_NO_REGJ"].ToString())
+                    //Data = Treedata("2104070700016")
+                };
+
+                if (flpHsDiagnosa.Controls.Count < 0)
+                {
+                    flpHsDiagnosa.Controls.Clear();
+                }
+
+                else
+                {
+                    //uc.InitializeTree();
+                    uc.LoadTreeData();
+                    uc.CpyDiagButtonClick += uc_cpyDiagClik;
+                    flpHsDiagnosa.Controls.Add(uc);
+                    //uc.Click += uc_MouseCliked;
+                }
+            }
+            flpHsDiagnosa.ResumeLayout();
+        }
+
+        private void uc_cpyDiagClik(object sender, EventArgs e)
+        {
+            Guna.UI2.WinForms.Guna2Button usx = (Guna.UI2.WinForms.Guna2Button)sender;
+
+            //MessageBox.Show ("TAG = " + usx.Tag.ToString());
+            var _cpyNoReg = usx.Tag.ToString();
+
+            var dh = new dataset.yakkumdbTableAdapters.fa_rx_diagnosaTableAdapter();
+            var dh2 = new fa_rx_prosedurTableAdapter();
+            DataTable dt = dh.GetDataByNoReg(_cpyNoReg);
+
+            foreach (DataRow r in dt.Rows)
+            {
+                dh.InsertQuery(_noreg, r["icd_code"].ToString(), r["icd_desc"].ToString(), null, false, DateTime.Now);
+                this.view_diagnosaTableAdapter.FillbyNoReg(yakkumdb.view_diagnosa,_noreg);
+                this.dgvDiagnosa.Update();
+                this.dgvDiagnosa.Refresh();
+
+                //DataGridViewRow row = (DataGridViewRow)dgvDiagnosa.Rows[0].Clone();
+                //row.Cells[1].Value = r["icd_code"].ToString();
+                //row.Cells[2].Value = r["icd_desc"].ToString();
+                //dgvDiagnosa.Rows.Add(row);
+            }
+
+            DataTable dt2 = dh2.GetDataByNoReg(_cpyNoReg);
+
+            foreach (DataRow r in dt2.Rows)
+            {
+                dh2.InsertQuery(_noreg, r["icd_code"].ToString(), r["icd_desc"].ToString(),null,DateTime.Now);
+                this.view_ProcedureTableAdapter.FillNoReg(yakkumdb.view_Procedure, _noreg);
+                this.dgvProcedure.Update();
+                //DataGridViewRow row2 = (DataGridViewRow)dgvProcedure.Rows[0].Clone();
+                //row2.Cells[1].Value = r["icd_code"].ToString();
+                //row2.Cells[2].Value = r["icd_desc"].ToString();
+                //dgvProcedure.Rows.Add(row2);
+            }
+
+        }
+
+        private void tabData_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabData.SelectedIndex == 1)
+            {
+                populateHistoryDiagnosa();
+
+                this.view_diagnosaTableAdapter.FillbyNoReg(this.yakkumdb.view_diagnosa, _noreg);
+                this.dgvDiagnosa.Update();
+                this.view_ProcedureTableAdapter.FillNoReg(yakkumdb.view_Procedure, _noreg);
+                this.dgvProcedure.Update();
+            }
+        }
+
+        private void dgvDiagnosa_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            dgvDiagnosa.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            if (e.RowIndex < 0)
+                return;
+            else
+            {
+                //MessageBox.Show("Code here");
+                //dgvDiagnosa.Rows[0].Cells["idDataGridViewTextBoxColumn1"].Value = true;
+                //if (dgvDiagnosa.Rows[0].Cells["idDataGridViewTextBoxColumn1"].Value = false)
+                //{
+                    
+                //}
             }
         }
     }

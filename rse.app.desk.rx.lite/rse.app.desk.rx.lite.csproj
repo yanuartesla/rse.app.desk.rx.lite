@@ -29,7 +29,7 @@
     <PublisherName>RSEmanuel</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>29</ApplicationRevision>
+    <ApplicationRevision>32</ApplicationRevision>
     <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -67,7 +67,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>
@@ -239,11 +239,11 @@
     <Compile Include="UI\Layout\CardResep.Designer.cs">
       <DependentUpon>CardResep.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Layout\CardHistoryDIagnosa.cs">
+    <Compile Include="UI\Layout\CardHistoryDiagnosa.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Layout\CardHistoryDIagnosa.Designer.cs">
-      <DependentUpon>CardHistoryDIagnosa.cs</DependentUpon>
+    <Compile Include="UI\Layout\CardHistoryDiagnosa.Designer.cs">
+      <DependentUpon>CardHistoryDiagnosa.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Login.cs">
       <SubType>Form</SubType>
@@ -337,8 +337,8 @@
     <EmbeddedResource Include="UI\Layout\CardResep.resx">
       <DependentUpon>CardResep.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Layout\CardHistoryDIagnosa.resx">
-      <DependentUpon>CardHistoryDIagnosa.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Layout\CardHistoryDiagnosa.resx">
+      <DependentUpon>CardHistoryDiagnosa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

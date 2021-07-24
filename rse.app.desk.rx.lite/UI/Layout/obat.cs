@@ -92,7 +92,6 @@ namespace rse.app.desk.rx.lite.UI
             populateHistoryResep();
         }
 
-
         private void txtCariObat_KeyDown(object sender, KeyEventArgs e)
         {
             // TODO : Cek Retensi dari Sini
@@ -123,8 +122,8 @@ namespace rse.app.desk.rx.lite.UI
                 //{ MessageBox.Show("Obat Sudah Berada di Resep, Edit untuk melakukan perubahan."); }
                 else
                 {
-                    var _maxno = (int)_resepdetail.ScalarQueryMaxNoUrutResep(lblKodeRtx.Text) + 1;
-                    //MessageBox.Show(_maxno.ToString());
+                      var _maxno = (int)_resepdetail.ScalarQueryMaxNoUrutResep(lblKodeRtx.Text) + 1;
+                     //MessageBox.Show(_maxno.ToString());
                     _kodeobat = txtCariObat.Text;
                     dosis ds = new dosis(_kodeobat, lblKodeRtx.Text, _kdokter, _maxno,_kodefornas,"",false);
                     var result = ds.ShowDialog();
@@ -134,6 +133,7 @@ namespace rse.app.desk.rx.lite.UI
                         bs_view_resep.Filter = "vc_kode_rx = '" + lblKodeRtx.Text + "'";
                         dgvResep.Update();
                         dgvResep.Refresh();
+
                     }
                 }
 
@@ -170,10 +170,6 @@ namespace rse.app.desk.rx.lite.UI
                 e.Graphics.DrawImage(Properties.Resources.delete, new Rectangle(x, y, w, h));
                 e.Handled = true;
             }
-
-           
-            
-            
         }
 
         private void dgvResep_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -454,7 +450,6 @@ namespace rse.app.desk.rx.lite.UI
         {
             Guna.UI2.WinForms.Guna2Button us = (Guna.UI2.WinForms.Guna2Button)sender;
             var _cpyNoResep = us.Tag.ToString();
-            
 
             //MessageBox.Show(_cpyNoResep);
             var dh = new dataset.yakkumdbTableAdapters.fa_rx_resep_dTableAdapter();
@@ -554,7 +549,7 @@ namespace rse.app.desk.rx.lite.UI
             DataTable ds = dh.GetDataByGolongan(noreg);
             foreach (DataRow r in ds.Rows)
             {
-                // Rows
+                //Rows
                 //MessageBox.Show(r["golongan_obat"].ToString());
                 dt.Rows.Add(Int32.Parse(r["kd_golongan"].ToString()), r["golongan_obat"].ToString());
                 DataTable ds2 = dh.GetData(noreg, r["kd_golongan"].ToString());//r["kd_golongan"].ToString()
@@ -626,6 +621,11 @@ namespace rse.app.desk.rx.lite.UI
         private void btnHideHistory_Click(object sender, EventArgs e)
         {
             hrclose();
+        }
+
+        private void dgvResep_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
         }
     }
 }

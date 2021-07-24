@@ -126,11 +126,11 @@ namespace rse.app.desk.rx.lite.UI
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(162, 475);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(70, 473);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(115, 15);
             this.guna2HtmlLabel4.TabIndex = 15;
-            this.guna2HtmlLabel4.Text = "Version 2 Build 1303.20";
+            this.guna2HtmlLabel4.Text = "Version 2 Build 2407.31";
             // 
             // HistoryResepChildPanel
             // 

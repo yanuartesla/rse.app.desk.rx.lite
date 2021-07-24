@@ -40,6 +40,19 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.paneldgv = new System.Windows.Forms.Panel();
             this.dgvResep = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.in_no_urut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vc_nama_obat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numjmlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aturanpakai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vcsignalainDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vc_kode_rx_d = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vc_kode_rx = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bt_racikan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.bs_view_resep = new System.Windows.Forms.BindingSource(this.components);
+            this.yakkumdb = new rse.app.desk.rx.lite.dataset.yakkumdb();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.flptemRacikan = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -63,27 +76,16 @@
             this.pnlhresepShow = new Guna.UI2.WinForms.Guna2Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
-            this.bs_view_resep = new System.Windows.Forms.BindingSource(this.components);
-            this.yakkumdb = new rse.app.desk.rx.lite.dataset.yakkumdb();
             this.bsObat = new System.Windows.Forms.BindingSource(this.components);
             this.view_rse_fa_obatTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.view_rse_fa_obatTableAdapter();
             this.view_resepTableAdapter = new rse.app.desk.rx.lite.dataset.yakkumdbTableAdapters.view_resepTableAdapter();
-            this.in_no_urut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vc_nama_obat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numjmlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aturanpakai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vcsignalainDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vc_kode_rx_d = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vc_kode_rx = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bt_racikan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnlResep.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.paneldgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_view_resep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).BeginInit();
             this.guna2Panel6.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -94,8 +96,6 @@
             this.guna2Panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.pnlhresepShow.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_view_resep)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsObat)).BeginInit();
             this.SuspendLayout();
             // 
@@ -233,9 +233,110 @@
             this.dgvResep.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvResep.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResep_CellClick);
             this.dgvResep.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvResep_CellFormatting);
+            this.dgvResep.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvResep_CellMouseDown);
             this.dgvResep.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvResep_CellPainting);
             this.dgvResep.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvResep_RowPostPaint);
             this.dgvResep.MouseHover += new System.EventHandler(this.dgvResep_MouseHover);
+            // 
+            // in_no_urut
+            // 
+            this.in_no_urut.FillWeight = 20F;
+            this.in_no_urut.HeaderText = "No.";
+            this.in_no_urut.Name = "in_no_urut";
+            this.in_no_urut.ReadOnly = true;
+            // 
+            // vc_nama_obat
+            // 
+            this.vc_nama_obat.DataPropertyName = "vc_nama_obat";
+            this.vc_nama_obat.FillWeight = 175F;
+            this.vc_nama_obat.HeaderText = "Nama Obat";
+            this.vc_nama_obat.Name = "vc_nama_obat";
+            this.vc_nama_obat.ReadOnly = true;
+            // 
+            // numjmlDataGridViewTextBoxColumn
+            // 
+            this.numjmlDataGridViewTextBoxColumn.DataPropertyName = "num_jml";
+            this.numjmlDataGridViewTextBoxColumn.FillWeight = 25F;
+            this.numjmlDataGridViewTextBoxColumn.HeaderText = "Jml";
+            this.numjmlDataGridViewTextBoxColumn.Name = "numjmlDataGridViewTextBoxColumn";
+            this.numjmlDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // aturanpakai
+            // 
+            this.aturanpakai.DataPropertyName = "aturanpakai";
+            this.aturanpakai.FillWeight = 50F;
+            this.aturanpakai.HeaderText = "Aturan Pakai";
+            this.aturanpakai.Name = "aturanpakai";
+            this.aturanpakai.ReadOnly = true;
+            // 
+            // vcsignalainDataGridViewTextBoxColumn
+            // 
+            this.vcsignalainDataGridViewTextBoxColumn.DataPropertyName = "vc_signalain";
+            this.vcsignalainDataGridViewTextBoxColumn.HeaderText = "Signa Lain";
+            this.vcsignalainDataGridViewTextBoxColumn.Name = "vcsignalainDataGridViewTextBoxColumn";
+            this.vcsignalainDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // vc_kode_rx_d
+            // 
+            this.vc_kode_rx_d.DataPropertyName = "vc_kode_rx_d";
+            this.vc_kode_rx_d.HeaderText = "vc_kode_rx_d";
+            this.vc_kode_rx_d.Name = "vc_kode_rx_d";
+            this.vc_kode_rx_d.ReadOnly = true;
+            this.vc_kode_rx_d.Visible = false;
+            // 
+            // vc_kode_rx
+            // 
+            this.vc_kode_rx.DataPropertyName = "vc_kode_rx";
+            this.vc_kode_rx.HeaderText = "vc_kode_rx";
+            this.vc_kode_rx.Name = "vc_kode_rx";
+            this.vc_kode_rx.ReadOnly = true;
+            this.vc_kode_rx.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "in_no_urut";
+            this.dataGridViewTextBoxColumn1.HeaderText = "in_no_urut";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // bt_racikan
+            // 
+            this.bt_racikan.DataPropertyName = "bt_racikan";
+            this.bt_racikan.HeaderText = "bt_racikan";
+            this.bt_racikan.Name = "bt_racikan";
+            this.bt_racikan.ReadOnly = true;
+            this.bt_racikan.Visible = false;
+            // 
+            // edit
+            // 
+            this.edit.FillWeight = 20F;
+            this.edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.edit.HeaderText = "Edit";
+            this.edit.Name = "edit";
+            this.edit.ReadOnly = true;
+            this.edit.Text = "Edit";
+            this.edit.ToolTipText = "Edit";
+            // 
+            // Delete
+            // 
+            this.Delete.FillWeight = 30F;
+            this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.ToolTipText = "Delete";
+            // 
+            // bs_view_resep
+            // 
+            this.bs_view_resep.DataMember = "view_resep";
+            this.bs_view_resep.DataSource = this.yakkumdb;
+            // 
+            // yakkumdb
+            // 
+            this.yakkumdb.DataSetName = "yakkumdb";
+            this.yakkumdb.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // guna2Panel6
             // 
@@ -572,16 +673,6 @@
             animation1.TransparencyCoeff = 0F;
             this.guna2Transition1.DefaultAnimation = animation1;
             // 
-            // bs_view_resep
-            // 
-            this.bs_view_resep.DataMember = "view_resep";
-            this.bs_view_resep.DataSource = this.yakkumdb;
-            // 
-            // yakkumdb
-            // 
-            this.yakkumdb.DataSetName = "yakkumdb";
-            this.yakkumdb.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // bsObat
             // 
             this.bsObat.DataMember = "view_rse_fa_obat";
@@ -594,96 +685,6 @@
             // view_resepTableAdapter
             // 
             this.view_resepTableAdapter.ClearBeforeFill = true;
-            // 
-            // in_no_urut
-            // 
-            this.in_no_urut.FillWeight = 20F;
-            this.in_no_urut.HeaderText = "No.";
-            this.in_no_urut.Name = "in_no_urut";
-            this.in_no_urut.ReadOnly = true;
-            // 
-            // vc_nama_obat
-            // 
-            this.vc_nama_obat.DataPropertyName = "vc_nama_obat";
-            this.vc_nama_obat.FillWeight = 175F;
-            this.vc_nama_obat.HeaderText = "Nama Obat";
-            this.vc_nama_obat.Name = "vc_nama_obat";
-            this.vc_nama_obat.ReadOnly = true;
-            // 
-            // numjmlDataGridViewTextBoxColumn
-            // 
-            this.numjmlDataGridViewTextBoxColumn.DataPropertyName = "num_jml";
-            this.numjmlDataGridViewTextBoxColumn.FillWeight = 25F;
-            this.numjmlDataGridViewTextBoxColumn.HeaderText = "Jml";
-            this.numjmlDataGridViewTextBoxColumn.Name = "numjmlDataGridViewTextBoxColumn";
-            this.numjmlDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // aturanpakai
-            // 
-            this.aturanpakai.DataPropertyName = "aturanpakai";
-            this.aturanpakai.FillWeight = 50F;
-            this.aturanpakai.HeaderText = "Aturan Pakai";
-            this.aturanpakai.Name = "aturanpakai";
-            this.aturanpakai.ReadOnly = true;
-            // 
-            // vcsignalainDataGridViewTextBoxColumn
-            // 
-            this.vcsignalainDataGridViewTextBoxColumn.DataPropertyName = "vc_signalain";
-            this.vcsignalainDataGridViewTextBoxColumn.HeaderText = "Signa Lain";
-            this.vcsignalainDataGridViewTextBoxColumn.Name = "vcsignalainDataGridViewTextBoxColumn";
-            this.vcsignalainDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // vc_kode_rx_d
-            // 
-            this.vc_kode_rx_d.DataPropertyName = "vc_kode_rx_d";
-            this.vc_kode_rx_d.HeaderText = "vc_kode_rx_d";
-            this.vc_kode_rx_d.Name = "vc_kode_rx_d";
-            this.vc_kode_rx_d.ReadOnly = true;
-            this.vc_kode_rx_d.Visible = false;
-            // 
-            // vc_kode_rx
-            // 
-            this.vc_kode_rx.DataPropertyName = "vc_kode_rx";
-            this.vc_kode_rx.HeaderText = "vc_kode_rx";
-            this.vc_kode_rx.Name = "vc_kode_rx";
-            this.vc_kode_rx.ReadOnly = true;
-            this.vc_kode_rx.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "in_no_urut";
-            this.dataGridViewTextBoxColumn1.HeaderText = "in_no_urut";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // bt_racikan
-            // 
-            this.bt_racikan.DataPropertyName = "bt_racikan";
-            this.bt_racikan.HeaderText = "bt_racikan";
-            this.bt_racikan.Name = "bt_racikan";
-            this.bt_racikan.ReadOnly = true;
-            this.bt_racikan.Visible = false;
-            // 
-            // edit
-            // 
-            this.edit.FillWeight = 20F;
-            this.edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.edit.HeaderText = "Edit";
-            this.edit.Name = "edit";
-            this.edit.ReadOnly = true;
-            this.edit.Text = "Edit";
-            this.edit.ToolTipText = "Edit";
-            // 
-            // Delete
-            // 
-            this.Delete.FillWeight = 30F;
-            this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.ToolTipText = "Delete";
             // 
             // obat
             // 
@@ -702,6 +703,8 @@
             this.panel2.ResumeLayout(false);
             this.paneldgv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_view_resep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).EndInit();
             this.guna2Panel6.ResumeLayout(false);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
@@ -716,8 +719,6 @@
             this.guna2Panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.pnlhresepShow.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bs_view_resep)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yakkumdb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsObat)).EndInit();
             this.ResumeLayout(false);
 

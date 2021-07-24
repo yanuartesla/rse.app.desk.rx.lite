@@ -22,7 +22,6 @@ namespace rse.app.desk.rx.lite
             using (var Key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION", true))
                 Key.SetValue(appName, 99999, RegistryValueKind.DWord);
 
-
             //string _url = "http://192.168.10.41/cppt/rm/admin/ppa/print_cppt.php?&no_rm=00537385";
             string _url = "http://192.168.10.41/cppt/rm/admin/ppa/print_cppt.php?&no_rm=" + _norm;
 
